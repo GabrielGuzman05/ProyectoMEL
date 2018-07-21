@@ -1,16 +1,47 @@
+
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Proyecto Weeb</title>
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: teal;
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+            }
+
+            li {
+                float: left;
+            }
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            /* Change the link color to #111 (black) on hover */
+            li a:hover {
+                background-color: #111;
+            }
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <ul id="navbar">
+            <li><a href="default.asp">Series</a></li>
+            <li><a href="news.asp">Anime</a></li>
+            <li><a href="contact.asp">Manga</a></li>
+            <li><a href="about.asp">Novelas ligeras</a></li>
+            <li style="float:right"><a href="login.jsp">Login</a></li>
+            <li style="float:right"><a href="register.jsp">Registrarse</a></li>
+        </ul>
+        
+        
     </body>
 </html>

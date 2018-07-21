@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: Universidad de La Frontera
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="orm.PublicadorOriginal" table="`PublicadorOriginal`" lazy="false">
+		<id name="idPublicadorOriginal" column="`idPublicadorOriginal`" type="integer" unsaved-value="0">
+			<generator class="increment">
+			</generator>
+		</id>
+		<property name="nombre" column="`nombre`" unique="true" type="string" length="255" not-null="true" lazy="false"/>
+		<set name="ORM_Novela" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`PublicadorOriginalidPublicadorOriginal`" not-null="true"/>
+			<one-to-many class="orm.Novela"/>
+		</set>
+	</class>
+</hibernate-mapping>
