@@ -9,9 +9,11 @@ public class ListProyectoProgramacionAvanzadaData {
 	private static final int ROW_COUNT = 100;
 	
 	public void listTestData() throws PersistentException {
-		System.out.println("Listing Novela...");
+            int length=0;
+            /*
+                System.out.println("Listing Novela...");
 		orm.Novela[] oRMNovelas = orm.NovelaDAO.listNovelaByQuery(null, null);
-		int length = Math.min(oRMNovelas.length, ROW_COUNT);
+		length = Math.min(oRMNovelas.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(oRMNovelas[i]);
 		}
@@ -144,13 +146,14 @@ public class ListProyectoProgramacionAvanzadaData {
 			System.out.println(oRMRatings[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
-		
+		*/
 		System.out.println("Listing Usuario...");
 		orm.Usuario[] oRMUsuarios = orm.UsuarioDAO.listUsuarioByQuery(null, null);
 		length = Math.min(oRMUsuarios.length, ROW_COUNT);
 		for (int i = 0; i < length; i++) {
 			System.out.println(oRMUsuarios[i]);
 		}
+                /*
 		System.out.println(length + " record(s) retrieved.");
 		
 		System.out.println("Listing Lista...");
@@ -168,7 +171,7 @@ public class ListProyectoProgramacionAvanzadaData {
 			System.out.println(oRMEntradaListas[i]);
 		}
 		System.out.println(length + " record(s) retrieved.");
-		
+		*/
 	}
 	
 	public void listByCriteria() throws PersistentException {
