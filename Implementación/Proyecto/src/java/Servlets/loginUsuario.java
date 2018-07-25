@@ -9,11 +9,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 
@@ -39,33 +41,37 @@ public class loginUsuario extends HttpServlet {
         ///*
         String user = request.getParameter("User");
         String pass = request.getParameter("password");
-        String estado = "Murio";
+        
+        HttpSession sesion = request.getSession();
+        Boolean login=false;
+        
         try {
             PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
             orm.Usuario oRMUsuario = orm.UsuarioDAO.loadUsuarioByQuery("nombre"
                     + "Usuario='"+user+"' and contraseñaUsuario='"+pass+"'", null);
             // Update the properties of the persistent object
             if (oRMUsuario !=null) {
-                estado="Bienvenido "+user;
+                sesion.setAttribute("usuario", oRMUsuario);
+                System.out.println("Found");
+                login=true;
+            }else{
+                
             }
             orm.UsuarioDAO.save(oRMUsuario);
         } catch (PersistentException ex) {
             Logger.getLogger(loginUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet loginUsuario</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>" + estado + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        
+        if (login) {
+            RequestDispatcher disp = request.getRequestDispatcher("/loginSucces.jsp");
+            disp.forward(request, response);
+            System.out.println("Responder 1");
+        }else{
+            RequestDispatcher disp = request.getRequestDispatcher("login.jsp");
+            request.setAttribute(pass, disp);
+            disp.forward(request, response);
+            System.out.println("Responder 2");
         }
-        //*/
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
