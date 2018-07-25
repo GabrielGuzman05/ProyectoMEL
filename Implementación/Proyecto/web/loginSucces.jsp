@@ -48,7 +48,7 @@
                     <div><img src="assets/img/Of_Fire_by_FallingToPieces.jpg" class="mr-3" style="height:100px;width:100px;"></div>
                     <div class="media-body">
                         <ul class="list-unstyled fa-ul">
-                            <li><i class="fa fa-user fa-li"></i><a href="#">${sessionScope.usuario}</a></li>
+                            <li><i class="fa fa-user fa-li"></i><a>${sessionScope.usuario}</a></li>
                             <li><i class="fa fa-envelope fa-li"></i><a href="#">admin@gmail.com </a></li>
                         </ul>
                     </div>
@@ -74,8 +74,14 @@
                 </div>
                 <div class="media"></div>
                 <hr>
-                <div class="col-md-4 align-self-center mx-auto text-center" style="width:360px;margin:-5px;padding:-26px;"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i></span>
-                    <p><a href="#">Crear nueva lista</a></p>
+                <div class="col-md-4 align-self-center mx-auto text-center" style="width:360px;margin:-5px;padding:-26px;">
+                    <a href="#">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <p>Crear nueva lista</p>
+                    </a>
                 </div>
             </div>
         </div>
