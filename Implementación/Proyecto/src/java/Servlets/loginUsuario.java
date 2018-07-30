@@ -41,32 +41,34 @@ public class loginUsuario extends HttpServlet {
         ///*
         String user = request.getParameter("User");
         String pass = request.getParameter("password");
-        
+
         HttpSession sesion = request.getSession();
-        Boolean login=false;
-        
+        Boolean login = false;
+
         try {
             PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
             orm.Usuario oRMUsuario = orm.UsuarioDAO.loadUsuarioByQuery("nombre"
-                    + "Usuario='"+user+"' and contraseñaUsuario='"+pass+"'", null);
+                    + "Usuario='" + user + "' and contraseñaUsuario='" + pass + "'", null);
             // Update the properties of the persistent object
-            if (oRMUsuario !=null) {
+            if (oRMUsuario != null) {
                 sesion.setAttribute("usuario", oRMUsuario);
                 System.out.println("Found");
-                login=true;
-            }else{
-                
+                login = true;
+            } else {
+
             }
             orm.UsuarioDAO.save(oRMUsuario);
         } catch (PersistentException ex) {
             Logger.getLogger(loginUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         if (login) {
             RequestDispatcher disp = request.getRequestDispatcher("/loginSucces.jsp");
             disp.forward(request, response);
             System.out.println("Responder 1");
-        }else{
+            System.out.println(""+ sesion.getId());
+            System.out.println(""+sesion.getAttribute(pass));
+        } else {
             RequestDispatcher disp = request.getRequestDispatcher("login.jsp");
             request.setAttribute(pass, disp);
             disp.forward(request, response);

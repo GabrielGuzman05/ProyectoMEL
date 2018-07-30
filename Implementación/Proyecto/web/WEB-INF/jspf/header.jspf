@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Proyecto Waaa</title>
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: teal;
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+            }
+
+            li {
+                float: left;
+            }
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            /* Change the link color to #111 (black) on hover */
+            li a:hover {
+                background-color: #111;
+            }
+        </style>
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/User-Activity-Panel.css">
+    </head>
+    <body>
+        <ul id="navbar">
+            <li><a href="SerieTemplate.html">Series</a></li>
+            <li><a href="news.asp">Anime</a></li>
+            <li><a href="contact.asp">Manga</a></li>
+            <li><a href="about.asp">Novelas ligeras</a></li>
+            <li style="float:right"><a href="login.html">Login</a></li>
+            <li style="float:right"><a href="register.jsp">Registrarse</a></li>
+        </ul>
