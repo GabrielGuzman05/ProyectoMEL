@@ -8,8 +8,8 @@ import org.orm.*;
 public class CreateProyectoProgramacionAvanzadaDatabaseSchema {
 	public static void main(String[] args) {
 		try {
-			ORMDatabaseInitiator.createSchema(orm.ProyectoProgramacionAvanzadaPersistentManager.instance());
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().disposePersistentManager();
+			ORMDatabaseInitiator.createSchema(ORM.ProyectoProgramacionAvanzadaPersistentManager.instance());
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().disposePersistentManager();
 		}
 		catch (Exception e) {
 			e.printStackTrace();

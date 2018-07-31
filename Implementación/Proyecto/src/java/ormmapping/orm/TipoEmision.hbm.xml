@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="orm.TipoEmision" table="`TipoEmision`" lazy="false">
-		<id name="idTipoEmision" column="`idTipoEmision`" type="integer" unsaved-value="0">
-			<generator class="native">
+  <class lazy="false" name="ORM.TipoEmision" table="`TipoEmision`">
+    <id column="`idTipoEmision`" name="idTipoEmision" type="integer" unsaved-value="0">
+      <generator class="native">
 			</generator>
-		</id>
-		<property name="nombre" column="`nombre`" type="integer" length="10" not-null="false" lazy="false"/>
-		<set name="ORM_Animacion" lazy="true" cascade="save-update,lock" inverse="true">
-			<key column="`TipoEmisionidTipoEmision`" not-null="true"/>
-			<one-to-many class="orm.Animacion"/>
-		</set>
-	</class>
+    </id>
+    <property column="`nombre`" lazy="false" length="10" name="nombre" not-null="false" type="integer"/>
+    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Animacion">
+      <key column="`TipoEmisionidTipoEmision`" not-null="true"/>
+      <one-to-many class="ORM.Animacion"/>
+    </set>
+  </class>
 </hibernate-mapping>

@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="orm.TipoManga" table="`TipoManga`" lazy="false">
-		<id name="idTipoManga" column="`idTipoManga`" type="integer" unsaved-value="0">
-			<generator class="native">
+  <class lazy="false" name="ORM.TipoManga" table="`TipoManga`">
+    <id column="`idTipoManga`" name="idTipoManga" type="integer" unsaved-value="0">
+      <generator class="native">
 			</generator>
-		</id>
-		<property name="nombre" column="`nombre`" type="string" length="255" not-null="false" lazy="false"/>
-		<set name="ORM_Manga" lazy="true" cascade="save-update,lock" inverse="true">
-			<key column="`TipoMangaidTipoManga`" not-null="false"/>
-			<one-to-many class="orm.Manga"/>
-		</set>
-	</class>
+    </id>
+    <property column="`nombre`" lazy="false" length="255" name="nombre" not-null="false" type="string"/>
+    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Manga">
+      <key column="`TipoMangaidTipoManga`" not-null="false"/>
+      <one-to-many class="ORM.Manga"/>
+    </set>
+  </class>
 </hibernate-mapping>

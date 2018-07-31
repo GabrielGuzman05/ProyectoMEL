@@ -3,12 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/loginSucces.jsp</file>
-            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/index.html</file>
-            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/bienvenido.jsp</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/Anime.html</file>
             <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/src/java/Servlets/loginUsuario.java</file>
-            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/login.html</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/WEB-INF/jspf/header.jspf</file>
             <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/login.jsp</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/SerieTemplate.html</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/index.html</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/src/java/ORM/AnimacionDAO.java</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/NovelasLigeras.html</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/assets/bootstrap/css/bootstrap.min.css</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/Manga.html</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/login.html</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/Series.html</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/src/java/ORM/AnimacionProcessor.java</file>
         </group>
     </open-files>
 </project-private>

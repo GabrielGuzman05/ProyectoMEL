@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="orm.Temporada" table="`Temporada`" lazy="false">
-		<id name="idTemporada" column="`idTemporada`" type="integer" unsaved-value="0">
-			<generator class="native">
+  <class lazy="false" name="ORM.Temporada" table="`Temporada`">
+    <id column="`idTemporada`" name="idTemporada" type="integer" unsaved-value="0">
+      <generator class="native">
 			</generator>
-		</id>
-		<property name="estacion" column="`estacion`" type="string" length="255" not-null="false" lazy="false"/>
-		<property name="año" column="`año`" type="integer" length="4" not-null="false" lazy="false"/>
-		<set name="ORM_Animacion" lazy="true" cascade="save-update,lock" inverse="true">
-			<key column="`TemporadaidTemporada`" not-null="true"/>
-			<one-to-many class="orm.Animacion"/>
-		</set>
-	</class>
+    </id>
+    <property column="`estacion`" lazy="false" length="255" name="estacion" not-null="false" type="string"/>
+    <property column="`año`" lazy="false" length="4" name="año" not-null="false" type="integer"/>
+    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Animacion">
+      <key column="`TemporadaidTemporada`" not-null="true"/>
+      <one-to-many class="ORM.Animacion"/>
+    </set>
+  </class>
 </hibernate-mapping>

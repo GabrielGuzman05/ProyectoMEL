@@ -23,10 +23,10 @@ public class SampleServlet extends HttpServlet {
 		String action = request.getParameter("action");
 		try {
 			if (action.equals("create")) {
-				ORMDatabaseInitiator.createSchema(orm.ProyectoProgramacionAvanzadaPersistentManager.instance());
+				ORMDatabaseInitiator.createSchema(ORM.ProyectoProgramacionAvanzadaPersistentManager.instance());
 			}
 			else if (action.equals("drop")) {
-				ORMDatabaseInitiator.dropSchema(orm.ProyectoProgramacionAvanzadaPersistentManager.instance());
+				ORMDatabaseInitiator.dropSchema(ORM.ProyectoProgramacionAvanzadaPersistentManager.instance());
 			}
 			else {
 				if (action.equals("insert")) {

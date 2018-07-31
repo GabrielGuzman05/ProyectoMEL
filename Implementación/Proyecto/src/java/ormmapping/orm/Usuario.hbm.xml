@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="orm.Usuario" table="`Usuario`" lazy="false">
-		<id name="idUsuario" column="`idUsuario`" type="integer" unsaved-value="0">
-			<generator class="increment">
+  <class lazy="false" name="ORM.Usuario" table="`Usuario`">
+    <id column="`idUsuario`" name="idUsuario" type="integer" unsaved-value="0">
+      <generator class="increment">
 			</generator>
-		</id>
-		<property name="nombreUsuario" column="`nombreUsuario`" unique="true" type="string" length="15" not-null="true" lazy="false"/>
-		<property name="contraseñaUsuario" column="`contraseñaUsuario`" type="string" length="20" not-null="true" lazy="false"/>
-		<set name="ORM_Lista" lazy="true" cascade="save-update,lock" inverse="true">
-			<key column="`UsuarioidUsuario`" not-null="true"/>
-			<one-to-many class="orm.Lista"/>
-		</set>
-	</class>
+    </id>
+    <property column="`nombreUsuario`" lazy="false" length="15" name="nombreUsuario" not-null="true" type="string" unique="true"/>
+    <property column="`contraseñaUsuario`" lazy="false" length="20" name="contraseñaUsuario" not-null="true" type="string"/>
+    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Lista">
+      <key column="`UsuarioidUsuario`" not-null="true"/>
+      <one-to-many class="ORM.Lista"/>
+    </set>
+  </class>
 </hibernate-mapping>

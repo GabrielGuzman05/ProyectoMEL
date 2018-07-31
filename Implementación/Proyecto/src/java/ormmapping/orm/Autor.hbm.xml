@@ -1,24 +1,24 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="orm.Autor" table="`Autor`" lazy="false">
-		<id name="idAutor" column="`idAutor`" type="integer" unsaved-value="0">
-			<generator class="increment">
+  <class lazy="false" name="ORM.Autor" table="`Autor`">
+    <id column="`idAutor`" name="idAutor" type="integer" unsaved-value="0">
+      <generator class="increment">
 			</generator>
-		</id>
-		<property name="nombre" column="`nombre`" type="string" length="255" not-null="false" lazy="false"/>
-		<set name="ORM_MangaidManga" table="`Autor_Manga`" lazy="true" cascade="save-update,lock">
-			<key column="`AutoridAutor`" not-null="true"/>
-			<many-to-many column="`MangaidManga`" class="orm.Manga">
+    </id>
+    <property column="`nombre`" lazy="false" length="255" name="nombre" not-null="false" type="string"/>
+    <set cascade="save-update,lock" lazy="true" name="ORM_MangaidManga" table="`Autor_Manga`">
+      <key column="`AutoridAutor`" not-null="true"/>
+      <many-to-many class="ORM.Manga" column="`MangaidManga`">
 			</many-to-many>
-		</set>
-		<set name="ORM_Novela" lazy="true" cascade="save-update,lock" inverse="true">
-			<key column="`AutoridAutor`" not-null="true"/>
-			<one-to-many class="orm.Novela"/>
-		</set>
-	</class>
+    </set>
+    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Novela">
+      <key column="`AutoridAutor`" not-null="true"/>
+      <one-to-many class="ORM.Novela"/>
+    </set>
+  </class>
 </hibernate-mapping>
