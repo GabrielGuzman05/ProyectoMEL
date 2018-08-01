@@ -38,7 +38,7 @@
     </head>
     <body>
         <ul id="navbar">
-            <li><a href="Series.html">Series</a></li>
+            <li><a href="Series">Series</a></li>
             <li><a href="Anime.html">Anime</a></li>
             <li><a href="Manga.html">Manga</a></li>
             <li><a href="NovelasLigeras.html">Novelas ligeras</a></li>

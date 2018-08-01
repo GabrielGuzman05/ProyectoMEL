@@ -9,9 +9,17 @@
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>Series</servlet-name>
+        <servlet-class>Servlets.Series</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Series</servlet-name>
+        <url-pattern>/Series</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -27,10 +35,10 @@
             <url-pattern>/NovelasLigeras.html</url-pattern>
             <url-pattern>/Manga.html</url-pattern>
             <url-pattern>/vistaLista.html</url-pattern>
+            <url-pattern>/Series.jsp</url-pattern>
             <url-pattern>/index.html</url-pattern>
             <url-pattern>/SerieTemplate.html</url-pattern>
             <url-pattern>/Anime.html</url-pattern>
-            <url-pattern>/Series.html</url-pattern>
             <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
         </jsp-property-group>
     </jsp-config>
