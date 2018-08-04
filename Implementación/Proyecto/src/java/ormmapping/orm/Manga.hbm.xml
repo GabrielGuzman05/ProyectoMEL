@@ -1,50 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class lazy="false" name="ORM.Manga" table="`Manga`">
-    <id column="`idManga`" name="idManga" type="integer" unsaved-value="0">
-      <generator class="native">
+	<class name="orm.Manga" table="`Manga`" lazy="false">
+		<id name="idManga" column="`idManga`" type="integer" unsaved-value="0">
+			<generator class="native">
 			</generator>
-    </id>
-    <property column="`EstadoUsuarioidEstadoUsuario`" lazy="false" length="10" name="estadoUsuarioidEstadoUsuario" not-null="true" type="integer"/>
-    <property column="`nombreManga`" lazy="false" length="255" name="nombreManga" not-null="false" type="string"/>
-    <property column="`nombreAlternativo`" lazy="false" length="255" name="nombreAlternativo" not-null="false" type="string"/>
-    <property column="`completamenteScanlated`" lazy="false" length="1" name="completamenteScanlated" not-null="false" type="byte"/>
-    <property column="`tieneAnimacion`" lazy="false" length="1" name="tieneAnimacion" not-null="false" type="byte"/>
-    <property column="`año`" lazy="false" length="4" name="año" not-null="false" type="string"/>
-    <property column="`licenciado`" lazy="false" length="1" name="licenciado" not-null="true" type="byte"/>
-    <property column="`bakaUpdatesCode`" lazy="false" length="255" name="bakaUpdatesCode" not-null="false" type="string"/>
-    <property column="`estadoEnPaisDeOrigen`" lazy="false" length="255" name="estadoEnPaisDeOrigen" not-null="false" type="string"/>
-    <property column="`animeStartEnd`" lazy="false" length="255" name="animeStartEnd" not-null="false" type="string"/>
-    <many-to-one access="field" cascade="lock" class="ORM.TipoManga" column="`TipoMangaidTipoManga`" lazy="proxy" name="tipoMangaidTipoManga" not-null="false">
+		</id>
+		<property name="nombreManga" column="`nombreManga`" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="nombreAlternativo" column="`nombreAlternativo`" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="completamenteScanlated" column="`completamenteScanlated`" type="byte" length="1" not-null="false" lazy="false"/>
+		<property name="tieneAnimacion" column="`tieneAnimacion`" type="byte" length="1" not-null="false" lazy="false"/>
+		<property name="año" column="`año`" type="string" length="4" not-null="false" lazy="false"/>
+		<property name="licenciado" column="`licenciado`" type="byte" length="1" not-null="true" lazy="false"/>
+		<property name="bakaUpdatesCode" column="`bakaUpdatesCode`" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="estadoEnPaisDeOrigen" column="`estadoEnPaisDeOrigen`" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="animeStartEnd" column="`animeStartEnd`" type="string" length="255" not-null="false" lazy="false"/>
+		<many-to-one name="tipoMangaidTipoManga" cascade="lock" column="`TipoMangaidTipoManga`" class="orm.TipoManga" not-null="false" lazy="proxy" access="field">
 		</many-to-one>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_GeneroidGenero" table="`Genero_Manga`">
-      <key column="`MangaidManga`" not-null="true"/>
-      <many-to-many class="ORM.Genero" column="`GeneroidGenero`">
+		<set name="ORM_GeneroidGenero" table="`Genero_Manga`" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`MangaidManga`" not-null="true"/>
+			<many-to-many column="`GeneroidGenero`" class="orm.Genero">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_AutoridAutor" table="`Autor_Manga`">
-      <key column="`MangaidManga`" not-null="true"/>
-      <many-to-many class="ORM.Autor" column="`AutoridAutor`">
+		</set>
+		<set name="ORM_AutoridAutor" table="`Autor_Manga`" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`MangaidManga`" not-null="true"/>
+			<many-to-many column="`AutoridAutor`" class="orm.Autor">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_TagidTag" table="`Tag_Manga`">
-      <key column="`MangaidManga`" not-null="true"/>
-      <many-to-many class="ORM.Tag" column="`TagidTag`">
+		</set>
+		<set name="ORM_TagidTag" table="`Tag_Manga`" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`MangaidManga`" not-null="true"/>
+			<many-to-many column="`TagidTag`" class="orm.Tag">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_AristaidArtista" table="`Arista_Manga`">
-      <key column="`MangaidManga`" not-null="true"/>
-      <many-to-many class="ORM.Artista" column="`AristaidArtista`">
+		</set>
+		<set name="ORM_AristaidArtista" table="`Arista_Manga`" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`MangaidManga`" not-null="true"/>
+			<many-to-many column="`AristaidArtista`" class="orm.Artista">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_EntradaLista">
-      <key column="`MangaidManga`" not-null="false"/>
-      <one-to-many class="ORM.EntradaLista"/>
-    </set>
-  </class>
+		</set>
+		<set name="ORM_EntradaLista" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`MangaidManga`" not-null="false"/>
+			<one-to-many class="orm.EntradaLista"/>
+		</set>
+	</class>
 </hibernate-mapping>

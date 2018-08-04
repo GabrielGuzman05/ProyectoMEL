@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class lazy="false" name="ORM.Lista" table="`Lista`">
-    <id column="`idLista`" name="idLista" type="integer" unsaved-value="0">
-      <generator class="increment">
+	<class name="orm.Lista" table="`Lista`" lazy="false">
+		<id name="idLista" column="`idLista`" type="integer" unsaved-value="0">
+			<generator class="increment">
 			</generator>
-    </id>
-    <property column="`nombreLista`" lazy="false" length="15" name="nombreLista" not-null="true" type="string"/>
-    <many-to-one access="field" cascade="lock" class="ORM.Usuario" column="`UsuarioidUsuario`" lazy="proxy" name="usuarioidUsuario" not-null="true">
+		</id>
+		<property name="nombreLista" column="`nombreLista`" type="string" length="15" not-null="true" lazy="false"/>
+		<many-to-one name="usuarioidUsuario" cascade="lock" column="`UsuarioidUsuario`" class="orm.Usuario" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_EntradaLista">
-      <key column="`ListaidLista`" not-null="true"/>
-      <one-to-many class="ORM.EntradaLista"/>
-    </set>
-  </class>
+		<set name="ORM_EntradaLista" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`ListaidLista`" not-null="true"/>
+			<one-to-many class="orm.EntradaLista"/>
+		</set>
+	</class>
 </hibernate-mapping>

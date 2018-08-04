@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
 import org.orm.*;
 import java.io.IOException;

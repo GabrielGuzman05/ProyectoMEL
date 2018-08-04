@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
 import org.orm.*;
 
@@ -78,7 +78,6 @@ public class NovelaSetCollection extends org.orm.util.ORMSet {
 	 * <li>completamenteTraducido</li>
 	 * <li>novelUpdateUrl</li>
 	 * <li>estrellas</li>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -97,7 +96,6 @@ public class NovelaSetCollection extends org.orm.util.ORMSet {
 	 * <li>completamenteTraducido</li>
 	 * <li>novelUpdateUrl</li>
 	 * <li>estrellas</li>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array
@@ -107,7 +105,7 @@ public class NovelaSetCollection extends org.orm.util.ORMSet {
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return ORM.ProyectoProgramacionAvanzadaPersistentManager.instance();
+		return orm.ProyectoProgramacionAvanzadaPersistentManager.instance();
 	}
 	
 }

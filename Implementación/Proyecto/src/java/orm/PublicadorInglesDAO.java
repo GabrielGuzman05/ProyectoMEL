@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class PublicadorInglesDAO {
 	public static PublicadorIngles loadPublicadorInglesByORMID(int idPublicadorIngles) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorInglesByORMID(session, idPublicadorIngles);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class PublicadorInglesDAO {
 	
 	public static PublicadorIngles getPublicadorInglesByORMID(int idPublicadorIngles) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getPublicadorInglesByORMID(session, idPublicadorIngles);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class PublicadorInglesDAO {
 	
 	public static PublicadorIngles loadPublicadorInglesByORMID(int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorInglesByORMID(session, idPublicadorIngles, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class PublicadorInglesDAO {
 	
 	public static PublicadorIngles getPublicadorInglesByORMID(int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getPublicadorInglesByORMID(session, idPublicadorIngles, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class PublicadorInglesDAO {
 	
 	public static PublicadorIngles loadPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles) throws PersistentException {
 		try {
-			return (PublicadorIngles) session.load(ORM.PublicadorIngles.class, new Integer(idPublicadorIngles));
+			return (PublicadorIngles) session.load(orm.PublicadorIngles.class, new Integer(idPublicadorIngles));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class PublicadorInglesDAO {
 	
 	public static PublicadorIngles getPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles) throws PersistentException {
 		try {
-			return (PublicadorIngles) session.get(ORM.PublicadorIngles.class, new Integer(idPublicadorIngles));
+			return (PublicadorIngles) session.get(orm.PublicadorIngles.class, new Integer(idPublicadorIngles));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class PublicadorInglesDAO {
 	
 	public static PublicadorIngles loadPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (PublicadorIngles) session.load(ORM.PublicadorIngles.class, new Integer(idPublicadorIngles), lockMode);
+			return (PublicadorIngles) session.load(orm.PublicadorIngles.class, new Integer(idPublicadorIngles), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class PublicadorInglesDAO {
 	
 	public static PublicadorIngles getPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (PublicadorIngles) session.get(ORM.PublicadorIngles.class, new Integer(idPublicadorIngles), lockMode);
+			return (PublicadorIngles) session.get(orm.PublicadorIngles.class, new Integer(idPublicadorIngles), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class PublicadorInglesDAO {
 	
 	public static List queryPublicadorIngles(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryPublicadorIngles(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class PublicadorInglesDAO {
 	
 	public static List queryPublicadorIngles(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryPublicadorIngles(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class PublicadorInglesDAO {
 	
 	public static PublicadorIngles[] listPublicadorInglesByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listPublicadorInglesByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class PublicadorInglesDAO {
 	
 	public static PublicadorIngles[] listPublicadorInglesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listPublicadorInglesByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class PublicadorInglesDAO {
 	
 	public static PublicadorIngles loadPublicadorInglesByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorInglesByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class PublicadorInglesDAO {
 	
 	public static PublicadorIngles loadPublicadorInglesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorInglesByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class PublicadorInglesDAO {
 	
 	public static java.util.Iterator iteratePublicadorInglesByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iteratePublicadorInglesByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class PublicadorInglesDAO {
 	
 	public static java.util.Iterator iteratePublicadorInglesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iteratePublicadorInglesByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -296,12 +296,12 @@ public class PublicadorInglesDAO {
 	}
 	
 	public static PublicadorIngles createPublicadorIngles() {
-		return new ORM.PublicadorIngles();
+		return new orm.PublicadorIngles();
 	}
 	
-	public static boolean save(ORM.PublicadorIngles publicadorIngles) throws PersistentException {
+	public static boolean save(orm.PublicadorIngles publicadorIngles) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(publicadorIngles);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(publicadorIngles);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static boolean delete(ORM.PublicadorIngles publicadorIngles) throws PersistentException {
+	public static boolean delete(orm.PublicadorIngles publicadorIngles) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(publicadorIngles);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(publicadorIngles);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,9 +321,9 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(ORM.PublicadorIngles publicadorIngles)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.PublicadorIngles publicadorIngles)throws PersistentException {
 		try {
-			ORM.Novela[] lNovelas = publicadorIngles.novela.toArray();
+			orm.Novela[] lNovelas = publicadorIngles.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
 				lNovelas[i].setPublicadorInglesidPublicadorIngles(null);
 			}
@@ -335,9 +335,9 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(ORM.PublicadorIngles publicadorIngles, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.PublicadorIngles publicadorIngles, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			ORM.Novela[] lNovelas = publicadorIngles.novela.toArray();
+			orm.Novela[] lNovelas = publicadorIngles.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
 				lNovelas[i].setPublicadorInglesidPublicadorIngles(null);
 			}
@@ -354,9 +354,9 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static boolean refresh(ORM.PublicadorIngles publicadorIngles) throws PersistentException {
+	public static boolean refresh(orm.PublicadorIngles publicadorIngles) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(publicadorIngles);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(publicadorIngles);
 			return true;
 		}
 		catch (Exception e) {
@@ -365,9 +365,9 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static boolean evict(ORM.PublicadorIngles publicadorIngles) throws PersistentException {
+	public static boolean evict(orm.PublicadorIngles publicadorIngles) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(publicadorIngles);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(publicadorIngles);
 			return true;
 		}
 		catch (Exception e) {
@@ -376,15 +376,4 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles loadPublicadorInglesByCriteria(PublicadorInglesCriteria publicadorInglesCriteria) {
-		PublicadorIngles[] publicadorIngleses = listPublicadorInglesByCriteria(publicadorInglesCriteria);
-		if(publicadorIngleses == null || publicadorIngleses.length == 0) {
-			return null;
-		}
-		return publicadorIngleses[0];
-	}
-	
-	public static PublicadorIngles[] listPublicadorInglesByCriteria(PublicadorInglesCriteria publicadorInglesCriteria) {
-		return publicadorInglesCriteria.listPublicadorIngles();
-	}
 }

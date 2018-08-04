@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
 import org.orm.*;
 
@@ -70,7 +70,6 @@ public class MangaSetCollection extends org.orm.util.ORMSet {
 	/**
 	 * Return an sorted array containing all of the persistent objects in ORMSet
 	 * @param propertyName Name of the property for sorting:<ul>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * <li>idManga</li>
 	 * <li>nombreManga</li>
 	 * <li>nombreAlternativo</li>
@@ -91,7 +90,6 @@ public class MangaSetCollection extends org.orm.util.ORMSet {
 	/**
 	 * Return an sorted array containing all of the persistent objects in ORMSet
 	 * @param propertyName Name of the property for sorting:<ul>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * <li>idManga</li>
 	 * <li>nombreManga</li>
 	 * <li>nombreAlternativo</li>
@@ -111,7 +109,7 @@ public class MangaSetCollection extends org.orm.util.ORMSet {
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return ORM.ProyectoProgramacionAvanzadaPersistentManager.instance();
+		return orm.ProyectoProgramacionAvanzadaPersistentManager.instance();
 	}
 	
 }

@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class TipoDAO {
 	public static Tipo loadTipoByORMID(int idTipo) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoByORMID(session, idTipo);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class TipoDAO {
 	
 	public static Tipo getTipoByORMID(int idTipo) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTipoByORMID(session, idTipo);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class TipoDAO {
 	
 	public static Tipo loadTipoByORMID(int idTipo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoByORMID(session, idTipo, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class TipoDAO {
 	
 	public static Tipo getTipoByORMID(int idTipo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTipoByORMID(session, idTipo, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class TipoDAO {
 	
 	public static Tipo loadTipoByORMID(PersistentSession session, int idTipo) throws PersistentException {
 		try {
-			return (Tipo) session.load(ORM.Tipo.class, new Integer(idTipo));
+			return (Tipo) session.load(orm.Tipo.class, new Integer(idTipo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class TipoDAO {
 	
 	public static Tipo getTipoByORMID(PersistentSession session, int idTipo) throws PersistentException {
 		try {
-			return (Tipo) session.get(ORM.Tipo.class, new Integer(idTipo));
+			return (Tipo) session.get(orm.Tipo.class, new Integer(idTipo));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class TipoDAO {
 	
 	public static Tipo loadTipoByORMID(PersistentSession session, int idTipo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Tipo) session.load(ORM.Tipo.class, new Integer(idTipo), lockMode);
+			return (Tipo) session.load(orm.Tipo.class, new Integer(idTipo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class TipoDAO {
 	
 	public static Tipo getTipoByORMID(PersistentSession session, int idTipo, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Tipo) session.get(ORM.Tipo.class, new Integer(idTipo), lockMode);
+			return (Tipo) session.get(orm.Tipo.class, new Integer(idTipo), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class TipoDAO {
 	
 	public static List queryTipo(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTipo(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class TipoDAO {
 	
 	public static List queryTipo(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTipo(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class TipoDAO {
 	
 	public static Tipo[] listTipoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTipoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class TipoDAO {
 	
 	public static Tipo[] listTipoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTipoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class TipoDAO {
 	
 	public static Tipo loadTipoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class TipoDAO {
 	
 	public static Tipo loadTipoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class TipoDAO {
 	
 	public static java.util.Iterator iterateTipoByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTipoByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class TipoDAO {
 	
 	public static java.util.Iterator iterateTipoByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTipoByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -296,12 +296,12 @@ public class TipoDAO {
 	}
 	
 	public static Tipo createTipo() {
-		return new ORM.Tipo();
+		return new orm.Tipo();
 	}
 	
-	public static boolean save(ORM.Tipo tipo) throws PersistentException {
+	public static boolean save(orm.Tipo tipo) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(tipo);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(tipo);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class TipoDAO {
 		}
 	}
 	
-	public static boolean delete(ORM.Tipo tipo) throws PersistentException {
+	public static boolean delete(orm.Tipo tipo) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(tipo);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(tipo);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,9 +321,9 @@ public class TipoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(ORM.Tipo tipo)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.Tipo tipo)throws PersistentException {
 		try {
-			ORM.Novela[] lNovelas = tipo.novela.toArray();
+			orm.Novela[] lNovelas = tipo.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
 				lNovelas[i].setTipoidTipo(null);
 			}
@@ -335,9 +335,9 @@ public class TipoDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(ORM.Tipo tipo, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.Tipo tipo, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			ORM.Novela[] lNovelas = tipo.novela.toArray();
+			orm.Novela[] lNovelas = tipo.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
 				lNovelas[i].setTipoidTipo(null);
 			}
@@ -354,9 +354,9 @@ public class TipoDAO {
 		}
 	}
 	
-	public static boolean refresh(ORM.Tipo tipo) throws PersistentException {
+	public static boolean refresh(orm.Tipo tipo) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(tipo);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(tipo);
 			return true;
 		}
 		catch (Exception e) {
@@ -365,9 +365,9 @@ public class TipoDAO {
 		}
 	}
 	
-	public static boolean evict(ORM.Tipo tipo) throws PersistentException {
+	public static boolean evict(orm.Tipo tipo) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(tipo);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(tipo);
 			return true;
 		}
 		catch (Exception e) {
@@ -376,15 +376,4 @@ public class TipoDAO {
 		}
 	}
 	
-	public static Tipo loadTipoByCriteria(TipoCriteria tipoCriteria) {
-		Tipo[] tipos = listTipoByCriteria(tipoCriteria);
-		if(tipos == null || tipos.length == 0) {
-			return null;
-		}
-		return tipos[0];
-	}
-	
-	public static Tipo[] listTipoByCriteria(TipoCriteria tipoCriteria) {
-		return tipoCriteria.listTipo();
-	}
 }

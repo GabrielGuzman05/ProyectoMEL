@@ -11,21 +11,20 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
-import java.io.Serializable;
-public class Novela implements Serializable {
+public class Novela {
 	public Novela() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == ORM.ORMConstants.KEY_NOVELA_GENEROIDGENERO) {
+		if (key == orm.ORMConstants.KEY_NOVELA_GENEROIDGENERO) {
 			return ORM_generoidGenero;
 		}
-		else if (key == ORM.ORMConstants.KEY_NOVELA_TAGIDTAG) {
+		else if (key == orm.ORMConstants.KEY_NOVELA_TAGIDTAG) {
 			return ORM_tagidTag;
 		}
-		else if (key == ORM.ORMConstants.KEY_NOVELA_ENTRADALISTA) {
+		else if (key == orm.ORMConstants.KEY_NOVELA_ENTRADALISTA) {
 			return ORM_entradaLista;
 		}
 		
@@ -33,28 +32,28 @@ public class Novela implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == ORM.ORMConstants.KEY_NOVELA_PUBLICADORORIGINALIDPUBLICADORORIGINAL) {
-			this.publicadorOriginalidPublicadorOriginal = (ORM.PublicadorOriginal) owner;
+		if (key == orm.ORMConstants.KEY_NOVELA_PUBLICADORORIGINALIDPUBLICADORORIGINAL) {
+			this.publicadorOriginalidPublicadorOriginal = (orm.PublicadorOriginal) owner;
 		}
 		
-		else if (key == ORM.ORMConstants.KEY_NOVELA_AUTORIDAUTOR) {
-			this.autoridAutor = (ORM.Autor) owner;
+		else if (key == orm.ORMConstants.KEY_NOVELA_AUTORIDAUTOR) {
+			this.autoridAutor = (orm.Autor) owner;
 		}
 		
-		else if (key == ORM.ORMConstants.KEY_NOVELA_PUBLICADORINGLESIDPUBLICADORINGLES) {
-			this.publicadorInglesidPublicadorIngles = (ORM.PublicadorIngles) owner;
+		else if (key == orm.ORMConstants.KEY_NOVELA_PUBLICADORINGLESIDPUBLICADORINGLES) {
+			this.publicadorInglesidPublicadorIngles = (orm.PublicadorIngles) owner;
 		}
 		
-		else if (key == ORM.ORMConstants.KEY_NOVELA_TIPOIDTIPO) {
-			this.tipoidTipo = (ORM.Tipo) owner;
+		else if (key == orm.ORMConstants.KEY_NOVELA_TIPOIDTIPO) {
+			this.tipoidTipo = (orm.Tipo) owner;
 		}
 		
-		else if (key == ORM.ORMConstants.KEY_NOVELA_LENGUAJEORIGINALIDLENGUAJE) {
-			this.lenguajeOriginalidLenguaje = (ORM.LenguajeOriginal) owner;
+		else if (key == orm.ORMConstants.KEY_NOVELA_LENGUAJEORIGINALIDLENGUAJE) {
+			this.lenguajeOriginalidLenguaje = (orm.LenguajeOriginal) owner;
 		}
 		
-		else if (key == ORM.ORMConstants.KEY_NOVELA_ARTISTAIDARTISTA) {
-			this.artistaidArtista = (ORM.Artista) owner;
+		else if (key == orm.ORMConstants.KEY_NOVELA_ARTISTAIDARTISTA) {
+			this.artistaidArtista = (orm.Artista) owner;
 		}
 	}
 	
@@ -85,19 +84,17 @@ public class Novela implements Serializable {
 	
 	private Integer estrellas;
 	
-	private ORM.PublicadorOriginal publicadorOriginalidPublicadorOriginal;
+	private orm.PublicadorOriginal publicadorOriginalidPublicadorOriginal;
 	
-	private ORM.Autor autoridAutor;
+	private orm.Autor autoridAutor;
 	
-	private ORM.PublicadorIngles publicadorInglesidPublicadorIngles;
+	private orm.PublicadorIngles publicadorInglesidPublicadorIngles;
 	
-	private ORM.Tipo tipoidTipo;
+	private orm.Tipo tipoidTipo;
 	
-	private int estadoUsuarioidEstadoUsuario;
+	private orm.LenguajeOriginal lenguajeOriginalidLenguaje;
 	
-	private ORM.LenguajeOriginal lenguajeOriginalidLenguaje;
-	
-	private ORM.Artista artistaidArtista;
+	private orm.Artista artistaidArtista;
 	
 	private java.util.Set ORM_generoidGenero = new java.util.HashSet();
 	
@@ -185,14 +182,6 @@ public class Novela implements Serializable {
 		return estrellas;
 	}
 	
-	public void setEstadoUsuarioidEstadoUsuario(int value) {
-		this.estadoUsuarioidEstadoUsuario = value;
-	}
-	
-	public int getEstadoUsuarioidEstadoUsuario() {
-		return estadoUsuarioidEstadoUsuario;
-	}
-	
 	private void setORM_GeneroidGenero(java.util.Set value) {
 		this.ORM_generoidGenero = value;
 	}
@@ -201,9 +190,9 @@ public class Novela implements Serializable {
 		return ORM_generoidGenero;
 	}
 	
-	public final ORM.GeneroSetCollection generoidGenero = new ORM.GeneroSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_NOVELA_GENEROIDGENERO, ORM.ORMConstants.KEY_GENERO_NOVELAIDNOVELA, ORM.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_NOVELA_GENEROIDGENERO, orm.ORMConstants.KEY_GENERO_NOVELAIDNOVELA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
-	public void setPublicadorOriginalidPublicadorOriginal(ORM.PublicadorOriginal value) {
+	public void setPublicadorOriginalidPublicadorOriginal(orm.PublicadorOriginal value) {
 		if (publicadorOriginalidPublicadorOriginal != null) {
 			publicadorOriginalidPublicadorOriginal.novela.remove(this);
 		}
@@ -212,22 +201,22 @@ public class Novela implements Serializable {
 		}
 	}
 	
-	public ORM.PublicadorOriginal getPublicadorOriginalidPublicadorOriginal() {
+	public orm.PublicadorOriginal getPublicadorOriginalidPublicadorOriginal() {
 		return publicadorOriginalidPublicadorOriginal;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_PublicadorOriginalidPublicadorOriginal(ORM.PublicadorOriginal value) {
+	public void setORM_PublicadorOriginalidPublicadorOriginal(orm.PublicadorOriginal value) {
 		this.publicadorOriginalidPublicadorOriginal = value;
 	}
 	
-	private ORM.PublicadorOriginal getORM_PublicadorOriginalidPublicadorOriginal() {
+	private orm.PublicadorOriginal getORM_PublicadorOriginalidPublicadorOriginal() {
 		return publicadorOriginalidPublicadorOriginal;
 	}
 	
-	public void setAutoridAutor(ORM.Autor value) {
+	public void setAutoridAutor(orm.Autor value) {
 		if (autoridAutor != null) {
 			autoridAutor.novela.remove(this);
 		}
@@ -236,22 +225,22 @@ public class Novela implements Serializable {
 		}
 	}
 	
-	public ORM.Autor getAutoridAutor() {
+	public orm.Autor getAutoridAutor() {
 		return autoridAutor;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_AutoridAutor(ORM.Autor value) {
+	public void setORM_AutoridAutor(orm.Autor value) {
 		this.autoridAutor = value;
 	}
 	
-	private ORM.Autor getORM_AutoridAutor() {
+	private orm.Autor getORM_AutoridAutor() {
 		return autoridAutor;
 	}
 	
-	public void setPublicadorInglesidPublicadorIngles(ORM.PublicadorIngles value) {
+	public void setPublicadorInglesidPublicadorIngles(orm.PublicadorIngles value) {
 		if (publicadorInglesidPublicadorIngles != null) {
 			publicadorInglesidPublicadorIngles.novela.remove(this);
 		}
@@ -260,22 +249,22 @@ public class Novela implements Serializable {
 		}
 	}
 	
-	public ORM.PublicadorIngles getPublicadorInglesidPublicadorIngles() {
+	public orm.PublicadorIngles getPublicadorInglesidPublicadorIngles() {
 		return publicadorInglesidPublicadorIngles;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_PublicadorInglesidPublicadorIngles(ORM.PublicadorIngles value) {
+	public void setORM_PublicadorInglesidPublicadorIngles(orm.PublicadorIngles value) {
 		this.publicadorInglesidPublicadorIngles = value;
 	}
 	
-	private ORM.PublicadorIngles getORM_PublicadorInglesidPublicadorIngles() {
+	private orm.PublicadorIngles getORM_PublicadorInglesidPublicadorIngles() {
 		return publicadorInglesidPublicadorIngles;
 	}
 	
-	public void setTipoidTipo(ORM.Tipo value) {
+	public void setTipoidTipo(orm.Tipo value) {
 		if (tipoidTipo != null) {
 			tipoidTipo.novela.remove(this);
 		}
@@ -284,22 +273,22 @@ public class Novela implements Serializable {
 		}
 	}
 	
-	public ORM.Tipo getTipoidTipo() {
+	public orm.Tipo getTipoidTipo() {
 		return tipoidTipo;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_TipoidTipo(ORM.Tipo value) {
+	public void setORM_TipoidTipo(orm.Tipo value) {
 		this.tipoidTipo = value;
 	}
 	
-	private ORM.Tipo getORM_TipoidTipo() {
+	private orm.Tipo getORM_TipoidTipo() {
 		return tipoidTipo;
 	}
 	
-	public void setLenguajeOriginalidLenguaje(ORM.LenguajeOriginal value) {
+	public void setLenguajeOriginalidLenguaje(orm.LenguajeOriginal value) {
 		if (lenguajeOriginalidLenguaje != null) {
 			lenguajeOriginalidLenguaje.novela.remove(this);
 		}
@@ -308,22 +297,22 @@ public class Novela implements Serializable {
 		}
 	}
 	
-	public ORM.LenguajeOriginal getLenguajeOriginalidLenguaje() {
+	public orm.LenguajeOriginal getLenguajeOriginalidLenguaje() {
 		return lenguajeOriginalidLenguaje;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_LenguajeOriginalidLenguaje(ORM.LenguajeOriginal value) {
+	public void setORM_LenguajeOriginalidLenguaje(orm.LenguajeOriginal value) {
 		this.lenguajeOriginalidLenguaje = value;
 	}
 	
-	private ORM.LenguajeOriginal getORM_LenguajeOriginalidLenguaje() {
+	private orm.LenguajeOriginal getORM_LenguajeOriginalidLenguaje() {
 		return lenguajeOriginalidLenguaje;
 	}
 	
-	public void setArtistaidArtista(ORM.Artista value) {
+	public void setArtistaidArtista(orm.Artista value) {
 		if (artistaidArtista != null) {
 			artistaidArtista.novela.remove(this);
 		}
@@ -332,18 +321,18 @@ public class Novela implements Serializable {
 		}
 	}
 	
-	public ORM.Artista getArtistaidArtista() {
+	public orm.Artista getArtistaidArtista() {
 		return artistaidArtista;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_ArtistaidArtista(ORM.Artista value) {
+	public void setORM_ArtistaidArtista(orm.Artista value) {
 		this.artistaidArtista = value;
 	}
 	
-	private ORM.Artista getORM_ArtistaidArtista() {
+	private orm.Artista getORM_ArtistaidArtista() {
 		return artistaidArtista;
 	}
 	
@@ -355,7 +344,7 @@ public class Novela implements Serializable {
 		return ORM_tagidTag;
 	}
 	
-	public final ORM.TagSetCollection tagidTag = new ORM.TagSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_NOVELA_TAGIDTAG, ORM.ORMConstants.KEY_TAG_NOVELAIDNOVELA, ORM.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.TagSetCollection tagidTag = new orm.TagSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_NOVELA_TAGIDTAG, orm.ORMConstants.KEY_TAG_NOVELAIDNOVELA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_EntradaLista(java.util.Set value) {
 		this.ORM_entradaLista = value;
@@ -365,7 +354,7 @@ public class Novela implements Serializable {
 		return ORM_entradaLista;
 	}
 	
-	public final ORM.EntradaListaSetCollection entradaLista = new ORM.EntradaListaSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_NOVELA_ENTRADALISTA, ORM.ORMConstants.KEY_ENTRADALISTA_NOVELAIDNOVELA, ORM.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_NOVELA_ENTRADALISTA, orm.ORMConstants.KEY_ENTRADALISTA_NOVELAIDNOVELA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdNovela());

@@ -7,68 +7,68 @@ package ormsamples;
 import org.orm.*;
 public class DeleteProyectoProgramacionAvanzadaData {
 	public void deleteTestData() throws PersistentException {
-		PersistentTransaction t = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
+		PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
 		try {
-			ORM.Novela oRMNovela = ORM.NovelaDAO.loadNovelaByQuery(null, null);
+			orm.Novela oRMNovela = orm.NovelaDAO.loadNovelaByQuery(null, null);
 			// Delete the persistent object
-			ORM.NovelaDAO.delete(oRMNovela);
-			ORM.LenguajeOriginal oRMLenguajeOriginal = ORM.LenguajeOriginalDAO.loadLenguajeOriginalByQuery(null, null);
+			orm.NovelaDAO.delete(oRMNovela);
+			orm.LenguajeOriginal oRMLenguajeOriginal = orm.LenguajeOriginalDAO.loadLenguajeOriginalByQuery(null, null);
 			// Delete the persistent object
-			ORM.LenguajeOriginalDAO.delete(oRMLenguajeOriginal);
-			ORM.PublicadorOriginal oRMPublicadorOriginal = ORM.PublicadorOriginalDAO.loadPublicadorOriginalByQuery(null, null);
+			orm.LenguajeOriginalDAO.delete(oRMLenguajeOriginal);
+			orm.PublicadorOriginal oRMPublicadorOriginal = orm.PublicadorOriginalDAO.loadPublicadorOriginalByQuery(null, null);
 			// Delete the persistent object
-			ORM.PublicadorOriginalDAO.delete(oRMPublicadorOriginal);
-			ORM.PublicadorIngles oRMPublicadorIngles = ORM.PublicadorInglesDAO.loadPublicadorInglesByQuery(null, null);
+			orm.PublicadorOriginalDAO.delete(oRMPublicadorOriginal);
+			orm.PublicadorIngles oRMPublicadorIngles = orm.PublicadorInglesDAO.loadPublicadorInglesByQuery(null, null);
 			// Delete the persistent object
-			ORM.PublicadorInglesDAO.delete(oRMPublicadorIngles);
-			ORM.Tag oRMTag = ORM.TagDAO.loadTagByQuery(null, null);
+			orm.PublicadorInglesDAO.delete(oRMPublicadorIngles);
+			orm.Tag oRMTag = orm.TagDAO.loadTagByQuery(null, null);
 			// Delete the persistent object
-			ORM.TagDAO.delete(oRMTag);
-			ORM.Tipo oRMTipo = ORM.TipoDAO.loadTipoByQuery(null, null);
+			orm.TagDAO.delete(oRMTag);
+			orm.Tipo oRMTipo = orm.TipoDAO.loadTipoByQuery(null, null);
 			// Delete the persistent object
-			ORM.TipoDAO.delete(oRMTipo);
-			ORM.Genero oRMGenero = ORM.GeneroDAO.loadGeneroByQuery(null, null);
+			orm.TipoDAO.delete(oRMTipo);
+			orm.Genero oRMGenero = orm.GeneroDAO.loadGeneroByQuery(null, null);
 			// Delete the persistent object
-			ORM.GeneroDAO.delete(oRMGenero);
-			ORM.Autor oRMAutor = ORM.AutorDAO.loadAutorByQuery(null, null);
+			orm.GeneroDAO.delete(oRMGenero);
+			orm.Autor oRMAutor = orm.AutorDAO.loadAutorByQuery(null, null);
 			// Delete the persistent object
-			ORM.AutorDAO.delete(oRMAutor);
-			ORM.Animacion oRMAnimacion = ORM.AnimacionDAO.loadAnimacionByQuery(null, null);
+			orm.AutorDAO.delete(oRMAutor);
+			orm.Animacion oRMAnimacion = orm.AnimacionDAO.loadAnimacionByQuery(null, null);
 			// Delete the persistent object
-			ORM.AnimacionDAO.delete(oRMAnimacion);
-			ORM.Estudio oRMEstudio = ORM.EstudioDAO.loadEstudioByQuery(null, null);
+			orm.AnimacionDAO.delete(oRMAnimacion);
+			orm.Estudio oRMEstudio = orm.EstudioDAO.loadEstudioByQuery(null, null);
 			// Delete the persistent object
-			ORM.EstudioDAO.delete(oRMEstudio);
-			ORM.Temporada oRMTemporada = ORM.TemporadaDAO.loadTemporadaByQuery(null, null);
+			orm.EstudioDAO.delete(oRMEstudio);
+			orm.Temporada oRMTemporada = orm.TemporadaDAO.loadTemporadaByQuery(null, null);
 			// Delete the persistent object
-			ORM.TemporadaDAO.delete(oRMTemporada);
-			ORM.TipoEmision oRMTipoEmision = ORM.TipoEmisionDAO.loadTipoEmisionByQuery(null, null);
+			orm.TemporadaDAO.delete(oRMTemporada);
+			orm.TipoEmision oRMTipoEmision = orm.TipoEmisionDAO.loadTipoEmisionByQuery(null, null);
 			// Delete the persistent object
-			ORM.TipoEmisionDAO.delete(oRMTipoEmision);
-			ORM.Manga oRMManga = ORM.MangaDAO.loadMangaByQuery(null, null);
+			orm.TipoEmisionDAO.delete(oRMTipoEmision);
+			orm.Manga oRMManga = orm.MangaDAO.loadMangaByQuery(null, null);
 			// Delete the persistent object
-			ORM.MangaDAO.delete(oRMManga);
-			ORM.Artista oRMArtista = ORM.ArtistaDAO.loadArtistaByQuery(null, null);
+			orm.MangaDAO.delete(oRMManga);
+			orm.Artista oRMArtista = orm.ArtistaDAO.loadArtistaByQuery(null, null);
 			// Delete the persistent object
-			ORM.ArtistaDAO.delete(oRMArtista);
-			ORM.TipoManga oRMTipoManga = ORM.TipoMangaDAO.loadTipoMangaByQuery(null, null);
+			orm.ArtistaDAO.delete(oRMArtista);
+			orm.TipoManga oRMTipoManga = orm.TipoMangaDAO.loadTipoMangaByQuery(null, null);
 			// Delete the persistent object
-			ORM.TipoMangaDAO.delete(oRMTipoManga);
-			ORM.SerieGenerica oRMSerieGenerica = ORM.SerieGenericaDAO.loadSerieGenericaByQuery(null, null);
+			orm.TipoMangaDAO.delete(oRMTipoManga);
+			orm.SerieGenerica oRMSerieGenerica = orm.SerieGenericaDAO.loadSerieGenericaByQuery(null, null);
 			// Delete the persistent object
-			ORM.SerieGenericaDAO.delete(oRMSerieGenerica);
-			ORM.Rating oRMRating = ORM.RatingDAO.loadRatingByQuery(null, null);
+			orm.SerieGenericaDAO.delete(oRMSerieGenerica);
+			orm.Rating oRMRating = orm.RatingDAO.loadRatingByQuery(null, null);
 			// Delete the persistent object
-			ORM.RatingDAO.delete(oRMRating);
-			ORM.Usuario oRMUsuario = ORM.UsuarioDAO.loadUsuarioByQuery(null, null);
+			orm.RatingDAO.delete(oRMRating);
+			orm.Usuario oRMUsuario = orm.UsuarioDAO.loadUsuarioByQuery(null, null);
 			// Delete the persistent object
-			ORM.UsuarioDAO.delete(oRMUsuario);
-			ORM.Lista oRMLista = ORM.ListaDAO.loadListaByQuery(null, null);
+			orm.UsuarioDAO.delete(oRMUsuario);
+			orm.Lista oRMLista = orm.ListaDAO.loadListaByQuery(null, null);
 			// Delete the persistent object
-			ORM.ListaDAO.delete(oRMLista);
-			ORM.EntradaLista oRMEntradaLista = ORM.EntradaListaDAO.loadEntradaListaByQuery(null, null);
+			orm.ListaDAO.delete(oRMLista);
+			orm.EntradaLista oRMEntradaLista = orm.EntradaListaDAO.loadEntradaListaByQuery(null, null);
 			// Delete the persistent object
-			ORM.EntradaListaDAO.delete(oRMEntradaLista);
+			orm.EntradaListaDAO.delete(oRMEntradaLista);
 			t.commit();
 		}
 		catch (Exception e) {
@@ -84,7 +84,7 @@ public class DeleteProyectoProgramacionAvanzadaData {
 				deleteProyectoProgramacionAvanzadaData.deleteTestData();
 			}
 			finally {
-				ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().disposePersistentManager();
+				orm.ProyectoProgramacionAvanzadaPersistentManager.instance().disposePersistentManager();
 			}
 		}
 		catch (Exception e) {

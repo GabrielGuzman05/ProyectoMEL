@@ -1,36 +1,36 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class lazy="false" name="ORM.Genero" table="`Genero`">
-    <id column="`idGenero`" name="idGenero" type="integer" unsaved-value="0">
-      <generator class="native">
+	<class name="orm.Genero" table="`Genero`" lazy="false">
+		<id name="idGenero" column="`idGenero`" type="integer" unsaved-value="0">
+			<generator class="native">
 			</generator>
-    </id>
-    <property column="`nombre`" lazy="false" length="255" name="nombre" not-null="true" type="string" unique="true"/>
-    <property column="`descripcion`" lazy="false" length="1000" name="descripcion" not-null="false" type="string"/>
-    <set cascade="save-update,lock" lazy="true" name="ORM_NovelaidNovela" table="`Genero_Novela`">
-      <key column="`GeneroidGenero`" not-null="true"/>
-      <many-to-many class="ORM.Novela" column="`NovelaidNovela`">
+		</id>
+		<property name="nombre" column="`nombre`" unique="true" type="string" length="255" not-null="true" lazy="false"/>
+		<property name="descripcion" column="`descripcion`" type="string" length="1000" not-null="false" lazy="false"/>
+		<set name="ORM_NovelaidNovela" table="`Genero_Novela`" lazy="true" cascade="save-update,lock">
+			<key column="`GeneroidGenero`" not-null="true"/>
+			<many-to-many column="`NovelaidNovela`" class="orm.Novela">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" lazy="true" name="ORM_AnimacionidAnimacion" table="`Genero_Animacion`">
-      <key column="`GeneroidGenero`" not-null="true"/>
-      <many-to-many class="ORM.Animacion" column="`AnimacionidAnimacion`">
+		</set>
+		<set name="ORM_AnimacionidAnimacion" table="`Genero_Animacion`" lazy="true" cascade="save-update,lock">
+			<key column="`GeneroidGenero`" not-null="true"/>
+			<many-to-many column="`AnimacionidAnimacion`" class="orm.Animacion">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" lazy="true" name="ORM_MangaidManga" table="`Genero_Manga`">
-      <key column="`GeneroidGenero`" not-null="true"/>
-      <many-to-many class="ORM.Manga" column="`MangaidManga`">
+		</set>
+		<set name="ORM_MangaidManga" table="`Genero_Manga`" lazy="true" cascade="save-update,lock">
+			<key column="`GeneroidGenero`" not-null="true"/>
+			<many-to-many column="`MangaidManga`" class="orm.Manga">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" lazy="true" name="ORM_SerieGenericaidSerie" table="`Genero_SerieGenerica`">
-      <key column="`GeneroidGenero`" not-null="true"/>
-      <many-to-many class="ORM.SerieGenerica" column="`SerieGenericaidSerie`">
+		</set>
+		<set name="ORM_SerieGenericaidSerie" table="`Genero_SerieGenerica`" lazy="true" cascade="save-update,lock">
+			<key column="`GeneroidGenero`" not-null="true"/>
+			<many-to-many column="`SerieGenericaidSerie`" class="orm.SerieGenerica">
 			</many-to-many>
-    </set>
-  </class>
+		</set>
+	</class>
 </hibernate-mapping>

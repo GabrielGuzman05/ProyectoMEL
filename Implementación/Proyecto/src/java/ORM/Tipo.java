@@ -11,15 +11,14 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
-import java.io.Serializable;
-public class Tipo implements Serializable {
+public class Tipo {
 	public Tipo() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == ORM.ORMConstants.KEY_TIPO_NOVELA) {
+		if (key == orm.ORMConstants.KEY_TIPO_NOVELA) {
 			return ORM_novela;
 		}
 		
@@ -67,7 +66,7 @@ public class Tipo implements Serializable {
 		return ORM_novela;
 	}
 	
-	public final ORM.NovelaSetCollection novela = new ORM.NovelaSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_TIPO_NOVELA, ORM.ORMConstants.KEY_NOVELA_TIPOIDTIPO, ORM.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_TIPO_NOVELA, orm.ORMConstants.KEY_NOVELA_TIPOIDTIPO, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTipo());

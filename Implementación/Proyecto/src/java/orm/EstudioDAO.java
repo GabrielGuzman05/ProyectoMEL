@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class EstudioDAO {
 	public static Estudio loadEstudioByORMID(int idEstudio) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEstudioByORMID(session, idEstudio);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class EstudioDAO {
 	
 	public static Estudio getEstudioByORMID(int idEstudio) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getEstudioByORMID(session, idEstudio);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class EstudioDAO {
 	
 	public static Estudio loadEstudioByORMID(int idEstudio, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEstudioByORMID(session, idEstudio, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class EstudioDAO {
 	
 	public static Estudio getEstudioByORMID(int idEstudio, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getEstudioByORMID(session, idEstudio, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class EstudioDAO {
 	
 	public static Estudio loadEstudioByORMID(PersistentSession session, int idEstudio) throws PersistentException {
 		try {
-			return (Estudio) session.load(ORM.Estudio.class, new Integer(idEstudio));
+			return (Estudio) session.load(orm.Estudio.class, new Integer(idEstudio));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class EstudioDAO {
 	
 	public static Estudio getEstudioByORMID(PersistentSession session, int idEstudio) throws PersistentException {
 		try {
-			return (Estudio) session.get(ORM.Estudio.class, new Integer(idEstudio));
+			return (Estudio) session.get(orm.Estudio.class, new Integer(idEstudio));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class EstudioDAO {
 	
 	public static Estudio loadEstudioByORMID(PersistentSession session, int idEstudio, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Estudio) session.load(ORM.Estudio.class, new Integer(idEstudio), lockMode);
+			return (Estudio) session.load(orm.Estudio.class, new Integer(idEstudio), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class EstudioDAO {
 	
 	public static Estudio getEstudioByORMID(PersistentSession session, int idEstudio, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Estudio) session.get(ORM.Estudio.class, new Integer(idEstudio), lockMode);
+			return (Estudio) session.get(orm.Estudio.class, new Integer(idEstudio), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class EstudioDAO {
 	
 	public static List queryEstudio(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryEstudio(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class EstudioDAO {
 	
 	public static List queryEstudio(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryEstudio(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class EstudioDAO {
 	
 	public static Estudio[] listEstudioByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listEstudioByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class EstudioDAO {
 	
 	public static Estudio[] listEstudioByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listEstudioByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class EstudioDAO {
 	
 	public static Estudio loadEstudioByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEstudioByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class EstudioDAO {
 	
 	public static Estudio loadEstudioByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEstudioByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class EstudioDAO {
 	
 	public static java.util.Iterator iterateEstudioByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateEstudioByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class EstudioDAO {
 	
 	public static java.util.Iterator iterateEstudioByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateEstudioByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -296,12 +296,12 @@ public class EstudioDAO {
 	}
 	
 	public static Estudio createEstudio() {
-		return new ORM.Estudio();
+		return new orm.Estudio();
 	}
 	
-	public static boolean save(ORM.Estudio estudio) throws PersistentException {
+	public static boolean save(orm.Estudio estudio) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(estudio);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(estudio);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class EstudioDAO {
 		}
 	}
 	
-	public static boolean delete(ORM.Estudio estudio) throws PersistentException {
+	public static boolean delete(orm.Estudio estudio) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(estudio);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(estudio);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,9 +321,9 @@ public class EstudioDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(ORM.Estudio estudio)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.Estudio estudio)throws PersistentException {
 		try {
-			ORM.Animacion[] lAnimacionidAnimacions = estudio.animacionidAnimacion.toArray();
+			orm.Animacion[] lAnimacionidAnimacions = estudio.animacionidAnimacion.toArray();
 			for(int i = 0; i < lAnimacionidAnimacions.length; i++) {
 				lAnimacionidAnimacions[i].estudioidEstudio.remove(estudio);
 			}
@@ -335,9 +335,9 @@ public class EstudioDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(ORM.Estudio estudio, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.Estudio estudio, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			ORM.Animacion[] lAnimacionidAnimacions = estudio.animacionidAnimacion.toArray();
+			orm.Animacion[] lAnimacionidAnimacions = estudio.animacionidAnimacion.toArray();
 			for(int i = 0; i < lAnimacionidAnimacions.length; i++) {
 				lAnimacionidAnimacions[i].estudioidEstudio.remove(estudio);
 			}
@@ -354,9 +354,9 @@ public class EstudioDAO {
 		}
 	}
 	
-	public static boolean refresh(ORM.Estudio estudio) throws PersistentException {
+	public static boolean refresh(orm.Estudio estudio) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(estudio);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(estudio);
 			return true;
 		}
 		catch (Exception e) {
@@ -365,9 +365,9 @@ public class EstudioDAO {
 		}
 	}
 	
-	public static boolean evict(ORM.Estudio estudio) throws PersistentException {
+	public static boolean evict(orm.Estudio estudio) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(estudio);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(estudio);
 			return true;
 		}
 		catch (Exception e) {
@@ -376,15 +376,4 @@ public class EstudioDAO {
 		}
 	}
 	
-	public static Estudio loadEstudioByCriteria(EstudioCriteria estudioCriteria) {
-		Estudio[] estudios = listEstudioByCriteria(estudioCriteria);
-		if(estudios == null || estudios.length == 0) {
-			return null;
-		}
-		return estudios[0];
-	}
-	
-	public static Estudio[] listEstudioByCriteria(EstudioCriteria estudioCriteria) {
-		return estudioCriteria.listEstudio();
-	}
 }

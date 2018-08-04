@@ -1,48 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class lazy="false" name="ORM.Novela" table="`Novela`">
-    <id column="`idNovela`" name="idNovela" type="integer" unsaved-value="0">
-      <generator class="increment">
+	<class name="orm.Novela" table="`Novela`" lazy="false">
+		<id name="idNovela" column="`idNovela`" type="integer" unsaved-value="0">
+			<generator class="increment">
 			</generator>
-    </id>
-    <property column="`nombre`" lazy="false" length="255" name="nombre" not-null="false" type="string"/>
-    <property column="`nombreAlternativo`" lazy="false" length="500" name="nombreAlternativo" not-null="false" type="string"/>
-    <property column="`año`" lazy="false" length="4" name="año" not-null="false" type="string"/>
-    <property column="`licenciado`" lazy="false" length="1" name="licenciado" not-null="false" type="byte"/>
-    <property column="`completamenteTraducido`" lazy="false" length="1" name="completamenteTraducido" not-null="false" type="byte"/>
-    <property column="`novelUpdateUrl`" lazy="false" length="255" name="novelUpdateUrl" not-null="false" type="string"/>
-    <property column="`estrellas`" lazy="false" length="1" name="estrellas" not-null="false" type="integer"/>
-    <many-to-one access="field" cascade="lock" class="ORM.PublicadorOriginal" column="`PublicadorOriginalidPublicadorOriginal`" lazy="proxy" name="publicadorOriginalidPublicadorOriginal" not-null="true">
+		</id>
+		<property name="nombre" column="`nombre`" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="nombreAlternativo" column="`nombreAlternativo`" type="string" length="500" not-null="false" lazy="false"/>
+		<property name="año" column="`año`" type="string" length="4" not-null="false" lazy="false"/>
+		<property name="licenciado" column="`licenciado`" type="byte" length="1" not-null="false" lazy="false"/>
+		<property name="completamenteTraducido" column="`completamenteTraducido`" type="byte" length="1" not-null="false" lazy="false"/>
+		<property name="novelUpdateUrl" column="`novelUpdateUrl`" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="estrellas" column="`estrellas`" type="integer" length="1" not-null="false" lazy="false"/>
+		<many-to-one name="publicadorOriginalidPublicadorOriginal" cascade="lock" column="`PublicadorOriginalidPublicadorOriginal`" class="orm.PublicadorOriginal" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-    <many-to-one access="field" cascade="lock" class="ORM.Autor" column="`AutoridAutor`" lazy="proxy" name="autoridAutor" not-null="true">
+		<many-to-one name="autoridAutor" cascade="lock" column="`AutoridAutor`" class="orm.Autor" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-    <many-to-one access="field" cascade="lock" class="ORM.PublicadorIngles" column="`PublicadorInglesidPublicadorIngles`" lazy="proxy" name="publicadorInglesidPublicadorIngles" not-null="true">
+		<many-to-one name="publicadorInglesidPublicadorIngles" cascade="lock" column="`PublicadorInglesidPublicadorIngles`" class="orm.PublicadorIngles" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-    <many-to-one access="field" cascade="lock" class="ORM.Tipo" column="`TipoidTipo`" lazy="proxy" name="tipoidTipo" not-null="true">
+		<many-to-one name="tipoidTipo" cascade="lock" column="`TipoidTipo`" class="orm.Tipo" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-    <property column="`EstadoUsuarioidEstadoUsuario`" lazy="false" length="10" name="estadoUsuarioidEstadoUsuario" not-null="true" type="integer"/>
-    <many-to-one access="field" cascade="lock" class="ORM.LenguajeOriginal" column="`LenguajeOriginalidLenguaje`" lazy="proxy" name="lenguajeOriginalidLenguaje" not-null="true">
+		<many-to-one name="lenguajeOriginalidLenguaje" cascade="lock" column="`LenguajeOriginalidLenguaje`" class="orm.LenguajeOriginal" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-    <many-to-one access="field" cascade="lock" class="ORM.Artista" column="`ArtistaidArtista`" lazy="proxy" name="artistaidArtista" not-null="true">
+		<many-to-one name="artistaidArtista" cascade="lock" column="`ArtistaidArtista`" class="orm.Artista" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_GeneroidGenero" table="`Genero_Novela`">
-      <key column="`NovelaidNovela`" not-null="true"/>
-      <many-to-many class="ORM.Genero" column="`GeneroidGenero`">
+		<set name="ORM_GeneroidGenero" table="`Genero_Novela`" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`NovelaidNovela`" not-null="true"/>
+			<many-to-many column="`GeneroidGenero`" class="orm.Genero">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" lazy="true" name="ORM_TagidTag" table="`Novela_Tag`">
-      <key column="`NovelaidNovela`" not-null="true"/>
-      <many-to-many class="ORM.Tag" column="`TagidTag`">
+		</set>
+		<set name="ORM_TagidTag" table="`Novela_Tag`" lazy="true" cascade="save-update,lock">
+			<key column="`NovelaidNovela`" not-null="true"/>
+			<many-to-many column="`TagidTag`" class="orm.Tag">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_EntradaLista">
-      <key column="`NovelaidNovela`" not-null="false"/>
-      <one-to-many class="ORM.EntradaLista"/>
-    </set>
-  </class>
+		</set>
+		<set name="ORM_EntradaLista" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`NovelaidNovela`" not-null="false"/>
+			<one-to-many class="orm.EntradaLista"/>
+		</set>
+	</class>
 </hibernate-mapping>

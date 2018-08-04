@@ -1,27 +1,27 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class lazy="false" name="ORM.SerieGenerica" table="`SerieGenerica`">
-    <id column="`idSerie`" name="idSerie" type="integer" unsaved-value="0">
-      <generator class="native">
+	<class name="orm.SerieGenerica" table="`SerieGenerica`" lazy="false">
+		<id name="idSerie" column="`idSerie`" type="integer" unsaved-value="0">
+			<generator class="native">
 			</generator>
-    </id>
-    <property column="`nombre`" lazy="false" length="255" name="nombre" not-null="false" type="string"/>
-    <property column="`nombreAlternativo`" lazy="false" length="255" name="nombreAlternativo" not-null="false" type="string"/>
-    <property column="`cadena`" lazy="false" length="255" name="cadena" not-null="false" type="string"/>
-    <property column="`episodios`" lazy="false" length="10" name="episodios" not-null="false" type="integer"/>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_GeneroidGenero" table="`Genero_SerieGenerica`">
-      <key column="`SerieGenericaidSerie`" not-null="true"/>
-      <many-to-many class="ORM.Genero" column="`GeneroidGenero`">
+		</id>
+		<property name="nombre" column="`nombre`" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="nombreAlternativo" column="`nombreAlternativo`" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="cadena" column="`cadena`" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="episodios" column="`episodios`" type="integer" length="10" not-null="false" lazy="false"/>
+		<set name="ORM_GeneroidGenero" table="`Genero_SerieGenerica`" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`SerieGenericaidSerie`" not-null="true"/>
+			<many-to-many column="`GeneroidGenero`" class="orm.Genero">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_EntradaLista">
-      <key column="`SerieGenericaidSerie`" not-null="false"/>
-      <one-to-many class="ORM.EntradaLista"/>
-    </set>
-  </class>
+		</set>
+		<set name="ORM_EntradaLista" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`SerieGenericaidSerie`" not-null="false"/>
+			<one-to-many class="orm.EntradaLista"/>
+		</set>
+	</class>
 </hibernate-mapping>

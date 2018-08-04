@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
 public interface ORMConstants extends org.orm.util.ORMBaseConstants {
 	final int KEY_ANIMACION_ENTRADALISTA = 1203273302;

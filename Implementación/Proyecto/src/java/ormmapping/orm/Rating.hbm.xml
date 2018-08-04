@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class lazy="false" name="ORM.Rating" table="`Rating`">
-    <id column="`idRating`" name="idRating" type="integer" unsaved-value="0">
-      <generator class="native">
+	<class name="orm.Rating" table="`Rating`" lazy="false">
+		<id name="idRating" column="`idRating`" type="integer" unsaved-value="0">
+			<generator class="native">
 			</generator>
-    </id>
-    <property column="`nombre`" lazy="false" length="255" name="nombre" not-null="false" type="string"/>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_Animacion">
-      <key column="`RatingidRating`" not-null="true"/>
-      <one-to-many class="ORM.Animacion"/>
-    </set>
-  </class>
+		</id>
+		<property name="nombre" column="`nombre`" type="string" length="255" not-null="false" lazy="false"/>
+		<set name="ORM_Animacion" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`RatingidRating`" not-null="true"/>
+			<one-to-many class="orm.Animacion"/>
+		</set>
+	</class>
 </hibernate-mapping>

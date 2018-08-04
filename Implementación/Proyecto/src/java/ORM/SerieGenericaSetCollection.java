@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
 import org.orm.*;
 
@@ -73,7 +73,6 @@ public class SerieGenericaSetCollection extends org.orm.util.ORMSet {
 	 * <li>idSerie</li>
 	 * <li>nombre</li>
 	 * <li>nombreAlternativo</li>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * <li>cadena</li>
 	 * <li>episodios</li>
 	 * </ul>
@@ -89,7 +88,6 @@ public class SerieGenericaSetCollection extends org.orm.util.ORMSet {
 	 * <li>idSerie</li>
 	 * <li>nombre</li>
 	 * <li>nombreAlternativo</li>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * <li>cadena</li>
 	 * <li>episodios</li>
 	 * </ul>
@@ -101,7 +99,7 @@ public class SerieGenericaSetCollection extends org.orm.util.ORMSet {
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return ORM.ProyectoProgramacionAvanzadaPersistentManager.instance();
+		return orm.ProyectoProgramacionAvanzadaPersistentManager.instance();
 	}
 	
 }

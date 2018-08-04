@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class MangaDAO {
 	public static Manga loadMangaByORMID(int idManga) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadMangaByORMID(session, idManga);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class MangaDAO {
 	
 	public static Manga getMangaByORMID(int idManga) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getMangaByORMID(session, idManga);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class MangaDAO {
 	
 	public static Manga loadMangaByORMID(int idManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadMangaByORMID(session, idManga, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class MangaDAO {
 	
 	public static Manga getMangaByORMID(int idManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getMangaByORMID(session, idManga, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class MangaDAO {
 	
 	public static Manga loadMangaByORMID(PersistentSession session, int idManga) throws PersistentException {
 		try {
-			return (Manga) session.load(ORM.Manga.class, new Integer(idManga));
+			return (Manga) session.load(orm.Manga.class, new Integer(idManga));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class MangaDAO {
 	
 	public static Manga getMangaByORMID(PersistentSession session, int idManga) throws PersistentException {
 		try {
-			return (Manga) session.get(ORM.Manga.class, new Integer(idManga));
+			return (Manga) session.get(orm.Manga.class, new Integer(idManga));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class MangaDAO {
 	
 	public static Manga loadMangaByORMID(PersistentSession session, int idManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Manga) session.load(ORM.Manga.class, new Integer(idManga), lockMode);
+			return (Manga) session.load(orm.Manga.class, new Integer(idManga), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class MangaDAO {
 	
 	public static Manga getMangaByORMID(PersistentSession session, int idManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Manga) session.get(ORM.Manga.class, new Integer(idManga), lockMode);
+			return (Manga) session.get(orm.Manga.class, new Integer(idManga), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class MangaDAO {
 	
 	public static List queryManga(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryManga(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class MangaDAO {
 	
 	public static List queryManga(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryManga(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class MangaDAO {
 	
 	public static Manga[] listMangaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listMangaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class MangaDAO {
 	
 	public static Manga[] listMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listMangaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class MangaDAO {
 	
 	public static Manga loadMangaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadMangaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class MangaDAO {
 	
 	public static Manga loadMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadMangaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class MangaDAO {
 	
 	public static java.util.Iterator iterateMangaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateMangaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class MangaDAO {
 	
 	public static java.util.Iterator iterateMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateMangaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -296,12 +296,12 @@ public class MangaDAO {
 	}
 	
 	public static Manga createManga() {
-		return new ORM.Manga();
+		return new orm.Manga();
 	}
 	
-	public static boolean save(ORM.Manga manga) throws PersistentException {
+	public static boolean save(orm.Manga manga) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(manga);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(manga);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class MangaDAO {
 		}
 	}
 	
-	public static boolean delete(ORM.Manga manga) throws PersistentException {
+	public static boolean delete(orm.Manga manga) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(manga);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(manga);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,29 +321,29 @@ public class MangaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(ORM.Manga manga)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.Manga manga)throws PersistentException {
 		try {
 			if (manga.getTipoMangaidTipoManga() != null) {
 				manga.getTipoMangaidTipoManga().manga.remove(manga);
 			}
 			
-			ORM.Genero[] lGeneroidGeneros = manga.generoidGenero.toArray();
+			orm.Genero[] lGeneroidGeneros = manga.generoidGenero.toArray();
 			for(int i = 0; i < lGeneroidGeneros.length; i++) {
 				lGeneroidGeneros[i].mangaidManga.remove(manga);
 			}
-			ORM.Autor[] lAutoridAutors = manga.autoridAutor.toArray();
+			orm.Autor[] lAutoridAutors = manga.autoridAutor.toArray();
 			for(int i = 0; i < lAutoridAutors.length; i++) {
 				lAutoridAutors[i].mangaidManga.remove(manga);
 			}
-			ORM.Tag[] lTagidTags = manga.tagidTag.toArray();
+			orm.Tag[] lTagidTags = manga.tagidTag.toArray();
 			for(int i = 0; i < lTagidTags.length; i++) {
 				lTagidTags[i].mangaidManga.remove(manga);
 			}
-			ORM.Artista[] lAristaidArtistas = manga.aristaidArtista.toArray();
+			orm.Artista[] lAristaidArtistas = manga.aristaidArtista.toArray();
 			for(int i = 0; i < lAristaidArtistas.length; i++) {
 				lAristaidArtistas[i].mangaidManga.remove(manga);
 			}
-			ORM.EntradaLista[] lEntradaListas = manga.entradaLista.toArray();
+			orm.EntradaLista[] lEntradaListas = manga.entradaLista.toArray();
 			for(int i = 0; i < lEntradaListas.length; i++) {
 				lEntradaListas[i].setMangaidManga(null);
 			}
@@ -355,29 +355,29 @@ public class MangaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(ORM.Manga manga, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.Manga manga, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (manga.getTipoMangaidTipoManga() != null) {
 				manga.getTipoMangaidTipoManga().manga.remove(manga);
 			}
 			
-			ORM.Genero[] lGeneroidGeneros = manga.generoidGenero.toArray();
+			orm.Genero[] lGeneroidGeneros = manga.generoidGenero.toArray();
 			for(int i = 0; i < lGeneroidGeneros.length; i++) {
 				lGeneroidGeneros[i].mangaidManga.remove(manga);
 			}
-			ORM.Autor[] lAutoridAutors = manga.autoridAutor.toArray();
+			orm.Autor[] lAutoridAutors = manga.autoridAutor.toArray();
 			for(int i = 0; i < lAutoridAutors.length; i++) {
 				lAutoridAutors[i].mangaidManga.remove(manga);
 			}
-			ORM.Tag[] lTagidTags = manga.tagidTag.toArray();
+			orm.Tag[] lTagidTags = manga.tagidTag.toArray();
 			for(int i = 0; i < lTagidTags.length; i++) {
 				lTagidTags[i].mangaidManga.remove(manga);
 			}
-			ORM.Artista[] lAristaidArtistas = manga.aristaidArtista.toArray();
+			orm.Artista[] lAristaidArtistas = manga.aristaidArtista.toArray();
 			for(int i = 0; i < lAristaidArtistas.length; i++) {
 				lAristaidArtistas[i].mangaidManga.remove(manga);
 			}
-			ORM.EntradaLista[] lEntradaListas = manga.entradaLista.toArray();
+			orm.EntradaLista[] lEntradaListas = manga.entradaLista.toArray();
 			for(int i = 0; i < lEntradaListas.length; i++) {
 				lEntradaListas[i].setMangaidManga(null);
 			}
@@ -394,9 +394,9 @@ public class MangaDAO {
 		}
 	}
 	
-	public static boolean refresh(ORM.Manga manga) throws PersistentException {
+	public static boolean refresh(orm.Manga manga) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(manga);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(manga);
 			return true;
 		}
 		catch (Exception e) {
@@ -405,9 +405,9 @@ public class MangaDAO {
 		}
 	}
 	
-	public static boolean evict(ORM.Manga manga) throws PersistentException {
+	public static boolean evict(orm.Manga manga) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(manga);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(manga);
 			return true;
 		}
 		catch (Exception e) {
@@ -416,15 +416,4 @@ public class MangaDAO {
 		}
 	}
 	
-	public static Manga loadMangaByCriteria(MangaCriteria mangaCriteria) {
-		Manga[] mangas = listMangaByCriteria(mangaCriteria);
-		if(mangas == null || mangas.length == 0) {
-			return null;
-		}
-		return mangas[0];
-	}
-	
-	public static Manga[] listMangaByCriteria(MangaCriteria mangaCriteria) {
-		return mangaCriteria.listManga();
-	}
 }

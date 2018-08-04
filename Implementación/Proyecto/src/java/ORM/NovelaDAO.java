@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class NovelaDAO {
 	public static Novela loadNovelaByORMID(int idNovela) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadNovelaByORMID(session, idNovela);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class NovelaDAO {
 	
 	public static Novela getNovelaByORMID(int idNovela) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getNovelaByORMID(session, idNovela);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class NovelaDAO {
 	
 	public static Novela loadNovelaByORMID(int idNovela, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadNovelaByORMID(session, idNovela, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class NovelaDAO {
 	
 	public static Novela getNovelaByORMID(int idNovela, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getNovelaByORMID(session, idNovela, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class NovelaDAO {
 	
 	public static Novela loadNovelaByORMID(PersistentSession session, int idNovela) throws PersistentException {
 		try {
-			return (Novela) session.load(ORM.Novela.class, new Integer(idNovela));
+			return (Novela) session.load(orm.Novela.class, new Integer(idNovela));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class NovelaDAO {
 	
 	public static Novela getNovelaByORMID(PersistentSession session, int idNovela) throws PersistentException {
 		try {
-			return (Novela) session.get(ORM.Novela.class, new Integer(idNovela));
+			return (Novela) session.get(orm.Novela.class, new Integer(idNovela));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class NovelaDAO {
 	
 	public static Novela loadNovelaByORMID(PersistentSession session, int idNovela, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Novela) session.load(ORM.Novela.class, new Integer(idNovela), lockMode);
+			return (Novela) session.load(orm.Novela.class, new Integer(idNovela), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class NovelaDAO {
 	
 	public static Novela getNovelaByORMID(PersistentSession session, int idNovela, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Novela) session.get(ORM.Novela.class, new Integer(idNovela), lockMode);
+			return (Novela) session.get(orm.Novela.class, new Integer(idNovela), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class NovelaDAO {
 	
 	public static List queryNovela(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryNovela(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class NovelaDAO {
 	
 	public static List queryNovela(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryNovela(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class NovelaDAO {
 	
 	public static Novela[] listNovelaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listNovelaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class NovelaDAO {
 	
 	public static Novela[] listNovelaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listNovelaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class NovelaDAO {
 	
 	public static Novela loadNovelaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadNovelaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class NovelaDAO {
 	
 	public static Novela loadNovelaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadNovelaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class NovelaDAO {
 	
 	public static java.util.Iterator iterateNovelaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateNovelaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class NovelaDAO {
 	
 	public static java.util.Iterator iterateNovelaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateNovelaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -296,12 +296,12 @@ public class NovelaDAO {
 	}
 	
 	public static Novela createNovela() {
-		return new ORM.Novela();
+		return new orm.Novela();
 	}
 	
-	public static boolean save(ORM.Novela novela) throws PersistentException {
+	public static boolean save(orm.Novela novela) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(novela);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(novela);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class NovelaDAO {
 		}
 	}
 	
-	public static boolean delete(ORM.Novela novela) throws PersistentException {
+	public static boolean delete(orm.Novela novela) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(novela);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(novela);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,7 +321,7 @@ public class NovelaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(ORM.Novela novela)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.Novela novela)throws PersistentException {
 		try {
 			if (novela.getPublicadorOriginalidPublicadorOriginal() != null) {
 				novela.getPublicadorOriginalidPublicadorOriginal().novela.remove(novela);
@@ -347,15 +347,15 @@ public class NovelaDAO {
 				novela.getArtistaidArtista().novela.remove(novela);
 			}
 			
-			ORM.Genero[] lGeneroidGeneros = novela.generoidGenero.toArray();
+			orm.Genero[] lGeneroidGeneros = novela.generoidGenero.toArray();
 			for(int i = 0; i < lGeneroidGeneros.length; i++) {
 				lGeneroidGeneros[i].novelaidNovela.remove(novela);
 			}
-			ORM.Tag[] lTagidTags = novela.tagidTag.toArray();
+			orm.Tag[] lTagidTags = novela.tagidTag.toArray();
 			for(int i = 0; i < lTagidTags.length; i++) {
 				lTagidTags[i].novelaidNovela.remove(novela);
 			}
-			ORM.EntradaLista[] lEntradaListas = novela.entradaLista.toArray();
+			orm.EntradaLista[] lEntradaListas = novela.entradaLista.toArray();
 			for(int i = 0; i < lEntradaListas.length; i++) {
 				lEntradaListas[i].setNovelaidNovela(null);
 			}
@@ -367,7 +367,7 @@ public class NovelaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(ORM.Novela novela, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(orm.Novela novela, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (novela.getPublicadorOriginalidPublicadorOriginal() != null) {
 				novela.getPublicadorOriginalidPublicadorOriginal().novela.remove(novela);
@@ -393,15 +393,15 @@ public class NovelaDAO {
 				novela.getArtistaidArtista().novela.remove(novela);
 			}
 			
-			ORM.Genero[] lGeneroidGeneros = novela.generoidGenero.toArray();
+			orm.Genero[] lGeneroidGeneros = novela.generoidGenero.toArray();
 			for(int i = 0; i < lGeneroidGeneros.length; i++) {
 				lGeneroidGeneros[i].novelaidNovela.remove(novela);
 			}
-			ORM.Tag[] lTagidTags = novela.tagidTag.toArray();
+			orm.Tag[] lTagidTags = novela.tagidTag.toArray();
 			for(int i = 0; i < lTagidTags.length; i++) {
 				lTagidTags[i].novelaidNovela.remove(novela);
 			}
-			ORM.EntradaLista[] lEntradaListas = novela.entradaLista.toArray();
+			orm.EntradaLista[] lEntradaListas = novela.entradaLista.toArray();
 			for(int i = 0; i < lEntradaListas.length; i++) {
 				lEntradaListas[i].setNovelaidNovela(null);
 			}
@@ -418,9 +418,9 @@ public class NovelaDAO {
 		}
 	}
 	
-	public static boolean refresh(ORM.Novela novela) throws PersistentException {
+	public static boolean refresh(orm.Novela novela) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(novela);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(novela);
 			return true;
 		}
 		catch (Exception e) {
@@ -429,9 +429,9 @@ public class NovelaDAO {
 		}
 	}
 	
-	public static boolean evict(ORM.Novela novela) throws PersistentException {
+	public static boolean evict(orm.Novela novela) throws PersistentException {
 		try {
-			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(novela);
+			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(novela);
 			return true;
 		}
 		catch (Exception e) {
@@ -440,15 +440,4 @@ public class NovelaDAO {
 		}
 	}
 	
-	public static Novela loadNovelaByCriteria(NovelaCriteria novelaCriteria) {
-		Novela[] novelas = listNovelaByCriteria(novelaCriteria);
-		if(novelas == null || novelas.length == 0) {
-			return null;
-		}
-		return novelas[0];
-	}
-	
-	public static Novela[] listNovelaByCriteria(NovelaCriteria novelaCriteria) {
-		return novelaCriteria.listNovela();
-	}
 }

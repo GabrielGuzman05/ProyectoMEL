@@ -1,41 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class lazy="false" name="ORM.Animacion" table="`Animacion`">
-    <id column="`idAnimacion`" name="idAnimacion" type="integer" unsaved-value="0">
-      <generator class="native">
+	<class name="orm.Animacion" table="`Animacion`" lazy="false">
+		<id name="idAnimacion" column="`idAnimacion`" type="integer" unsaved-value="0">
+			<generator class="native">
 			</generator>
-    </id>
-    <property column="`nombre`" lazy="false" length="255" name="nombre" not-null="false" type="string"/>
-    <property column="`nombreAlternativo`" lazy="false" length="255" name="nombreAlternativo" not-null="false" type="string"/>
-    <property column="`fuente`" lazy="false" length="10" name="fuente" not-null="false" type="string"/>
-    <property column="`enEmision`" lazy="false" length="1" name="enEmision" not-null="false" type="byte"/>
-    <property column="`episodios`" lazy="false" length="10" name="episodios" not-null="false" type="integer"/>
-    <property column="`MALCode`" lazy="false" length="255" name="MALCode" not-null="false" type="string"/>
-    <property column="`EstadoUsuarioidEstadoUsuario`" lazy="false" length="10" name="estadoUsuarioidEstadoUsuario" not-null="true" type="integer"/>
-    <many-to-one access="field" cascade="lock" class="ORM.Temporada" column="`TemporadaidTemporada`" lazy="proxy" name="temporadaidTemporada" not-null="true">
+		</id>
+		<property name="nombre" column="`nombre`" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="nombreAlternativo" column="`nombreAlternativo`" type="string" length="255" not-null="false" lazy="false"/>
+		<property name="fuente" column="`fuente`" type="string" length="10" not-null="false" lazy="false"/>
+		<property name="enEmision" column="`enEmision`" type="byte" length="1" not-null="false" lazy="false"/>
+		<property name="episodios" column="`episodios`" type="integer" length="10" not-null="false" lazy="false"/>
+		<property name="MALCode" column="`MALCode`" type="string" length="255" not-null="false" lazy="false"/>
+		<many-to-one name="temporadaidTemporada" cascade="lock" column="`TemporadaidTemporada`" class="orm.Temporada" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-    <many-to-one access="field" cascade="lock" class="ORM.TipoEmision" column="`TipoEmisionidTipoEmision`" lazy="proxy" name="tipoEmisionidTipoEmision" not-null="true">
+		<many-to-one name="tipoEmisionidTipoEmision" cascade="lock" column="`TipoEmisionidTipoEmision`" class="orm.TipoEmision" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-    <many-to-one access="field" cascade="lock" class="ORM.Rating" column="`RatingidRating`" lazy="proxy" name="ratingidRating" not-null="true">
+		<many-to-one name="ratingidRating" cascade="lock" column="`RatingidRating`" class="orm.Rating" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_EstudioidEstudio" table="`Estudio_Animacion`">
-      <key column="`AnimacionidAnimacion`" not-null="true"/>
-      <many-to-many class="ORM.Estudio" column="`EstudioidEstudio`">
+		<set name="ORM_EstudioidEstudio" table="`Estudio_Animacion`" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`AnimacionidAnimacion`" not-null="true"/>
+			<many-to-many column="`EstudioidEstudio`" class="orm.Estudio">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_GeneroidGenero" table="`Genero_Animacion`">
-      <key column="`AnimacionidAnimacion`" not-null="true"/>
-      <many-to-many class="ORM.Genero" column="`GeneroidGenero`">
+		</set>
+		<set name="ORM_GeneroidGenero" table="`Genero_Animacion`" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`AnimacionidAnimacion`" not-null="true"/>
+			<many-to-many column="`GeneroidGenero`" class="orm.Genero">
 			</many-to-many>
-    </set>
-    <set cascade="save-update,lock" inverse="true" lazy="true" name="ORM_EntradaLista">
-      <key column="`AnimacionidAnimacion`" not-null="false"/>
-      <one-to-many class="ORM.EntradaLista"/>
-    </set>
-  </class>
+		</set>
+		<set name="ORM_EntradaLista" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`AnimacionidAnimacion`" not-null="false"/>
+			<one-to-many class="orm.EntradaLista"/>
+		</set>
+	</class>
 </hibernate-mapping>

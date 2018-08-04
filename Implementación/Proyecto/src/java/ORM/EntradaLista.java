@@ -11,32 +11,31 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
-import java.io.Serializable;
-public class EntradaLista implements Serializable {
+public class EntradaLista {
 	public EntradaLista() {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == ORM.ORMConstants.KEY_ENTRADALISTA_LISTAIDLISTA) {
-			this.listaidLista = (ORM.Lista) owner;
+		if (key == orm.ORMConstants.KEY_ENTRADALISTA_LISTAIDLISTA) {
+			this.listaidLista = (orm.Lista) owner;
 		}
 		
-		else if (key == ORM.ORMConstants.KEY_ENTRADALISTA_NOVELAIDNOVELA) {
-			this.novelaidNovela = (ORM.Novela) owner;
+		else if (key == orm.ORMConstants.KEY_ENTRADALISTA_NOVELAIDNOVELA) {
+			this.novelaidNovela = (orm.Novela) owner;
 		}
 		
-		else if (key == ORM.ORMConstants.KEY_ENTRADALISTA_MANGAIDMANGA) {
-			this.mangaidManga = (ORM.Manga) owner;
+		else if (key == orm.ORMConstants.KEY_ENTRADALISTA_MANGAIDMANGA) {
+			this.mangaidManga = (orm.Manga) owner;
 		}
 		
-		else if (key == ORM.ORMConstants.KEY_ENTRADALISTA_ANIMACIONIDANIMACION) {
-			this.animacionidAnimacion = (ORM.Animacion) owner;
+		else if (key == orm.ORMConstants.KEY_ENTRADALISTA_ANIMACIONIDANIMACION) {
+			this.animacionidAnimacion = (orm.Animacion) owner;
 		}
 		
-		else if (key == ORM.ORMConstants.KEY_ENTRADALISTA_SERIEGENERICAIDSERIE) {
-			this.serieGenericaidSerie = (ORM.SerieGenerica) owner;
+		else if (key == orm.ORMConstants.KEY_ENTRADALISTA_SERIEGENERICAIDSERIE) {
+			this.serieGenericaidSerie = (orm.SerieGenerica) owner;
 		}
 	}
 	
@@ -57,15 +56,15 @@ public class EntradaLista implements Serializable {
 	
 	private int tipo;
 	
-	private ORM.Lista listaidLista;
+	private orm.Lista listaidLista;
 	
-	private ORM.Novela novelaidNovela;
+	private orm.Novela novelaidNovela;
 	
-	private ORM.Manga mangaidManga;
+	private orm.Manga mangaidManga;
 	
-	private ORM.Animacion animacionidAnimacion;
+	private orm.Animacion animacionidAnimacion;
 	
-	private ORM.SerieGenerica serieGenericaidSerie;
+	private orm.SerieGenerica serieGenericaidSerie;
 	
 	private void setIdEntrada(int value) {
 		this.idEntrada = value;
@@ -111,7 +110,7 @@ public class EntradaLista implements Serializable {
 		return tipo;
 	}
 	
-	public void setListaidLista(ORM.Lista value) {
+	public void setListaidLista(orm.Lista value) {
 		if (listaidLista != null) {
 			listaidLista.entradaLista.remove(this);
 		}
@@ -120,22 +119,22 @@ public class EntradaLista implements Serializable {
 		}
 	}
 	
-	public ORM.Lista getListaidLista() {
+	public orm.Lista getListaidLista() {
 		return listaidLista;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_ListaidLista(ORM.Lista value) {
+	public void setORM_ListaidLista(orm.Lista value) {
 		this.listaidLista = value;
 	}
 	
-	private ORM.Lista getORM_ListaidLista() {
+	private orm.Lista getORM_ListaidLista() {
 		return listaidLista;
 	}
 	
-	public void setNovelaidNovela(ORM.Novela value) {
+	public void setNovelaidNovela(orm.Novela value) {
 		if (novelaidNovela != null) {
 			novelaidNovela.entradaLista.remove(this);
 		}
@@ -144,22 +143,22 @@ public class EntradaLista implements Serializable {
 		}
 	}
 	
-	public ORM.Novela getNovelaidNovela() {
+	public orm.Novela getNovelaidNovela() {
 		return novelaidNovela;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_NovelaidNovela(ORM.Novela value) {
+	public void setORM_NovelaidNovela(orm.Novela value) {
 		this.novelaidNovela = value;
 	}
 	
-	private ORM.Novela getORM_NovelaidNovela() {
+	private orm.Novela getORM_NovelaidNovela() {
 		return novelaidNovela;
 	}
 	
-	public void setMangaidManga(ORM.Manga value) {
+	public void setMangaidManga(orm.Manga value) {
 		if (mangaidManga != null) {
 			mangaidManga.entradaLista.remove(this);
 		}
@@ -168,22 +167,22 @@ public class EntradaLista implements Serializable {
 		}
 	}
 	
-	public ORM.Manga getMangaidManga() {
+	public orm.Manga getMangaidManga() {
 		return mangaidManga;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_MangaidManga(ORM.Manga value) {
+	public void setORM_MangaidManga(orm.Manga value) {
 		this.mangaidManga = value;
 	}
 	
-	private ORM.Manga getORM_MangaidManga() {
+	private orm.Manga getORM_MangaidManga() {
 		return mangaidManga;
 	}
 	
-	public void setAnimacionidAnimacion(ORM.Animacion value) {
+	public void setAnimacionidAnimacion(orm.Animacion value) {
 		if (animacionidAnimacion != null) {
 			animacionidAnimacion.entradaLista.remove(this);
 		}
@@ -192,22 +191,22 @@ public class EntradaLista implements Serializable {
 		}
 	}
 	
-	public ORM.Animacion getAnimacionidAnimacion() {
+	public orm.Animacion getAnimacionidAnimacion() {
 		return animacionidAnimacion;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_AnimacionidAnimacion(ORM.Animacion value) {
+	public void setORM_AnimacionidAnimacion(orm.Animacion value) {
 		this.animacionidAnimacion = value;
 	}
 	
-	private ORM.Animacion getORM_AnimacionidAnimacion() {
+	private orm.Animacion getORM_AnimacionidAnimacion() {
 		return animacionidAnimacion;
 	}
 	
-	public void setSerieGenericaidSerie(ORM.SerieGenerica value) {
+	public void setSerieGenericaidSerie(orm.SerieGenerica value) {
 		if (serieGenericaidSerie != null) {
 			serieGenericaidSerie.entradaLista.remove(this);
 		}
@@ -216,18 +215,18 @@ public class EntradaLista implements Serializable {
 		}
 	}
 	
-	public ORM.SerieGenerica getSerieGenericaidSerie() {
+	public orm.SerieGenerica getSerieGenericaidSerie() {
 		return serieGenericaidSerie;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_SerieGenericaidSerie(ORM.SerieGenerica value) {
+	public void setORM_SerieGenericaidSerie(orm.SerieGenerica value) {
 		this.serieGenericaidSerie = value;
 	}
 	
-	private ORM.SerieGenerica getORM_SerieGenericaidSerie() {
+	private orm.SerieGenerica getORM_SerieGenericaidSerie() {
 		return serieGenericaidSerie;
 	}
 	

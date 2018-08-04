@@ -11,15 +11,14 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
-import java.io.Serializable;
-public class Temporada implements Serializable {
+public class Temporada {
 	public Temporada() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == ORM.ORMConstants.KEY_TEMPORADA_ANIMACION) {
+		if (key == orm.ORMConstants.KEY_TEMPORADA_ANIMACION) {
 			return ORM_animacion;
 		}
 		
@@ -81,7 +80,7 @@ public class Temporada implements Serializable {
 		return ORM_animacion;
 	}
 	
-	public final ORM.AnimacionSetCollection animacion = new ORM.AnimacionSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_TEMPORADA_ANIMACION, ORM.ORMConstants.KEY_ANIMACION_TEMPORADAIDTEMPORADA, ORM.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_TEMPORADA_ANIMACION, orm.ORMConstants.KEY_ANIMACION_TEMPORADAIDTEMPORADA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTemporada());

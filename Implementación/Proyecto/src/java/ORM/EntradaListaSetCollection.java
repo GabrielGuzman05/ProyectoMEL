@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
 import org.orm.*;
 
@@ -99,7 +99,7 @@ public class EntradaListaSetCollection extends org.orm.util.ORMSet {
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return ORM.ProyectoProgramacionAvanzadaPersistentManager.instance();
+		return orm.ProyectoProgramacionAvanzadaPersistentManager.instance();
 	}
 	
 }

@@ -11,18 +11,17 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package ORM;
+package orm;
 
-import java.io.Serializable;
-public class SerieGenerica implements Serializable {
+public class SerieGenerica {
 	public SerieGenerica() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == ORM.ORMConstants.KEY_SERIEGENERICA_GENEROIDGENERO) {
+		if (key == orm.ORMConstants.KEY_SERIEGENERICA_GENEROIDGENERO) {
 			return ORM_generoidGenero;
 		}
-		else if (key == ORM.ORMConstants.KEY_SERIEGENERICA_ENTRADALISTA) {
+		else if (key == orm.ORMConstants.KEY_SERIEGENERICA_ENTRADALISTA) {
 			return ORM_entradaLista;
 		}
 		
@@ -106,7 +105,7 @@ public class SerieGenerica implements Serializable {
 		return ORM_generoidGenero;
 	}
 	
-	public final ORM.GeneroSetCollection generoidGenero = new ORM.GeneroSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_SERIEGENERICA_GENEROIDGENERO, ORM.ORMConstants.KEY_GENERO_SERIEGENERICAIDSERIE, ORM.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_SERIEGENERICA_GENEROIDGENERO, orm.ORMConstants.KEY_GENERO_SERIEGENERICAIDSERIE, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_EntradaLista(java.util.Set value) {
 		this.ORM_entradaLista = value;
@@ -116,7 +115,7 @@ public class SerieGenerica implements Serializable {
 		return ORM_entradaLista;
 	}
 	
-	public final ORM.EntradaListaSetCollection entradaLista = new ORM.EntradaListaSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_SERIEGENERICA_ENTRADALISTA, ORM.ORMConstants.KEY_ENTRADALISTA_SERIEGENERICAIDSERIE, ORM.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_SERIEGENERICA_ENTRADALISTA, orm.ORMConstants.KEY_ENTRADALISTA_SERIEGENERICAIDSERIE, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdSerie());

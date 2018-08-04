@@ -1,28 +1,28 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0" encoding="utf-8" ?>
 <!--
 Licensee: Universidad de La Frontera
 License Type: Academic
 -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class lazy="false" name="ORM.EntradaLista" table="`EntradaLista`">
-    <id column="`idEntrada`" name="idEntrada" type="integer" unsaved-value="0">
-      <generator class="increment">
+	<class name="orm.EntradaLista" table="`EntradaLista`" lazy="false">
+		<id name="idEntrada" column="`idEntrada`" type="integer" unsaved-value="0">
+			<generator class="increment">
 			</generator>
-    </id>
-    <property column="`alDia`" lazy="false" length="1" name="alDia" not-null="true" type="boolean"/>
-    <property column="`ultimoCapitulo`" lazy="false" length="6" name="ultimoCapitulo" not-null="true" type="integer"/>
-    <property column="`terminado`" lazy="false" length="1" name="terminado" not-null="true" type="boolean"/>
-    <property column="`tipo`" lazy="false" length="1" name="tipo" not-null="true" type="integer"/>
-    <many-to-one access="field" cascade="lock" class="ORM.Lista" column="`ListaidLista`" lazy="proxy" name="listaidLista" not-null="true">
+		</id>
+		<property name="alDia" column="`alDia`" type="boolean" length="1" not-null="true" lazy="false"/>
+		<property name="ultimoCapitulo" column="`ultimoCapitulo`" type="integer" length="6" not-null="true" lazy="false"/>
+		<property name="terminado" column="`terminado`" type="boolean" length="1" not-null="true" lazy="false"/>
+		<property name="tipo" column="`tipo`" type="integer" length="1" not-null="true" lazy="false"/>
+		<many-to-one name="listaidLista" cascade="lock" column="`ListaidLista`" class="orm.Lista" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-    <many-to-one access="field" cascade="lock" class="ORM.Novela" column="`NovelaidNovela`" lazy="proxy" name="novelaidNovela" not-null="false">
+		<many-to-one name="novelaidNovela" cascade="lock" column="`NovelaidNovela`" class="orm.Novela" not-null="false" lazy="proxy" access="field">
 		</many-to-one>
-    <many-to-one access="field" cascade="lock" class="ORM.Manga" column="`MangaidManga`" lazy="proxy" name="mangaidManga" not-null="false">
+		<many-to-one name="mangaidManga" cascade="lock" column="`MangaidManga`" class="orm.Manga" not-null="false" lazy="proxy" access="field">
 		</many-to-one>
-    <many-to-one access="field" cascade="lock" class="ORM.Animacion" column="`AnimacionidAnimacion`" lazy="proxy" name="animacionidAnimacion" not-null="false">
+		<many-to-one name="animacionidAnimacion" cascade="lock" column="`AnimacionidAnimacion`" class="orm.Animacion" not-null="false" lazy="proxy" access="field">
 		</many-to-one>
-    <many-to-one access="field" cascade="lock" class="ORM.SerieGenerica" column="`SerieGenericaidSerie`" lazy="proxy" name="serieGenericaidSerie" not-null="false">
+		<many-to-one name="serieGenericaidSerie" cascade="lock" column="`SerieGenericaidSerie`" class="orm.SerieGenerica" not-null="false" lazy="proxy" access="field">
 		</many-to-one>
-  </class>
+	</class>
 </hibernate-mapping>
