@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.io.Serializable;
 public class Animacion implements Serializable {
@@ -19,13 +19,13 @@ public class Animacion implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_ANIMACION_ESTUDIOIDESTUDIO) {
+		if (key == ORM.ORMConstants.KEY_ANIMACION_ESTUDIOIDESTUDIO) {
 			return ORM_estudioidEstudio;
 		}
-		else if (key == orm.ORMConstants.KEY_ANIMACION_GENEROIDGENERO) {
+		else if (key == ORM.ORMConstants.KEY_ANIMACION_GENEROIDGENERO) {
 			return ORM_generoidGenero;
 		}
-		else if (key == orm.ORMConstants.KEY_ANIMACION_ENTRADALISTA) {
+		else if (key == ORM.ORMConstants.KEY_ANIMACION_ENTRADALISTA) {
 			return ORM_entradaLista;
 		}
 		
@@ -33,16 +33,16 @@ public class Animacion implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == orm.ORMConstants.KEY_ANIMACION_TEMPORADAIDTEMPORADA) {
-			this.temporadaidTemporada = (orm.Temporada) owner;
+		if (key == ORM.ORMConstants.KEY_ANIMACION_TEMPORADAIDTEMPORADA) {
+			this.temporadaidTemporada = (ORM.Temporada) owner;
 		}
 		
-		else if (key == orm.ORMConstants.KEY_ANIMACION_TIPOEMISIONIDTIPOEMISION) {
-			this.tipoEmisionidTipoEmision = (orm.TipoEmision) owner;
+		else if (key == ORM.ORMConstants.KEY_ANIMACION_TIPOEMISIONIDTIPOEMISION) {
+			this.tipoEmisionidTipoEmision = (ORM.TipoEmision) owner;
 		}
 		
-		else if (key == orm.ORMConstants.KEY_ANIMACION_RATINGIDRATING) {
-			this.ratingidRating = (orm.Rating) owner;
+		else if (key == ORM.ORMConstants.KEY_ANIMACION_RATINGIDRATING) {
+			this.ratingidRating = (ORM.Rating) owner;
 		}
 	}
 	
@@ -73,11 +73,11 @@ public class Animacion implements Serializable {
 	
 	private int estadoUsuarioidEstadoUsuario;
 	
-	private orm.Temporada temporadaidTemporada;
+	private ORM.Temporada temporadaidTemporada;
 	
-	private orm.TipoEmision tipoEmisionidTipoEmision;
+	private ORM.TipoEmision tipoEmisionidTipoEmision;
 	
-	private orm.Rating ratingidRating;
+	private ORM.Rating ratingidRating;
 	
 	private java.util.Set ORM_estudioidEstudio = new java.util.HashSet();
 	
@@ -169,7 +169,7 @@ public class Animacion implements Serializable {
 		return ORM_estudioidEstudio;
 	}
 	
-	public final orm.EstudioSetCollection estudioidEstudio = new orm.EstudioSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_ANIMACION_ESTUDIOIDESTUDIO, orm.ORMConstants.KEY_ESTUDIO_ANIMACIONIDANIMACION, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final ORM.EstudioSetCollection estudioidEstudio = new ORM.EstudioSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_ANIMACION_ESTUDIOIDESTUDIO, ORM.ORMConstants.KEY_ESTUDIO_ANIMACIONIDANIMACION, ORM.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_GeneroidGenero(java.util.Set value) {
 		this.ORM_generoidGenero = value;
@@ -179,9 +179,9 @@ public class Animacion implements Serializable {
 		return ORM_generoidGenero;
 	}
 	
-	public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_ANIMACION_GENEROIDGENERO, orm.ORMConstants.KEY_GENERO_ANIMACIONIDANIMACION, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final ORM.GeneroSetCollection generoidGenero = new ORM.GeneroSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_ANIMACION_GENEROIDGENERO, ORM.ORMConstants.KEY_GENERO_ANIMACIONIDANIMACION, ORM.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
-	public void setTemporadaidTemporada(orm.Temporada value) {
+	public void setTemporadaidTemporada(ORM.Temporada value) {
 		if (temporadaidTemporada != null) {
 			temporadaidTemporada.animacion.remove(this);
 		}
@@ -190,22 +190,22 @@ public class Animacion implements Serializable {
 		}
 	}
 	
-	public orm.Temporada getTemporadaidTemporada() {
+	public ORM.Temporada getTemporadaidTemporada() {
 		return temporadaidTemporada;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_TemporadaidTemporada(orm.Temporada value) {
+	public void setORM_TemporadaidTemporada(ORM.Temporada value) {
 		this.temporadaidTemporada = value;
 	}
 	
-	private orm.Temporada getORM_TemporadaidTemporada() {
+	private ORM.Temporada getORM_TemporadaidTemporada() {
 		return temporadaidTemporada;
 	}
 	
-	public void setTipoEmisionidTipoEmision(orm.TipoEmision value) {
+	public void setTipoEmisionidTipoEmision(ORM.TipoEmision value) {
 		if (tipoEmisionidTipoEmision != null) {
 			tipoEmisionidTipoEmision.animacion.remove(this);
 		}
@@ -214,22 +214,22 @@ public class Animacion implements Serializable {
 		}
 	}
 	
-	public orm.TipoEmision getTipoEmisionidTipoEmision() {
+	public ORM.TipoEmision getTipoEmisionidTipoEmision() {
 		return tipoEmisionidTipoEmision;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_TipoEmisionidTipoEmision(orm.TipoEmision value) {
+	public void setORM_TipoEmisionidTipoEmision(ORM.TipoEmision value) {
 		this.tipoEmisionidTipoEmision = value;
 	}
 	
-	private orm.TipoEmision getORM_TipoEmisionidTipoEmision() {
+	private ORM.TipoEmision getORM_TipoEmisionidTipoEmision() {
 		return tipoEmisionidTipoEmision;
 	}
 	
-	public void setRatingidRating(orm.Rating value) {
+	public void setRatingidRating(ORM.Rating value) {
 		if (ratingidRating != null) {
 			ratingidRating.animacion.remove(this);
 		}
@@ -238,18 +238,18 @@ public class Animacion implements Serializable {
 		}
 	}
 	
-	public orm.Rating getRatingidRating() {
+	public ORM.Rating getRatingidRating() {
 		return ratingidRating;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_RatingidRating(orm.Rating value) {
+	public void setORM_RatingidRating(ORM.Rating value) {
 		this.ratingidRating = value;
 	}
 	
-	private orm.Rating getORM_RatingidRating() {
+	private ORM.Rating getORM_RatingidRating() {
 		return ratingidRating;
 	}
 	
@@ -261,7 +261,7 @@ public class Animacion implements Serializable {
 		return ORM_entradaLista;
 	}
 	
-	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_ANIMACION_ENTRADALISTA, orm.ORMConstants.KEY_ENTRADALISTA_ANIMACIONIDANIMACION, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final ORM.EntradaListaSetCollection entradaLista = new ORM.EntradaListaSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_ANIMACION_ENTRADALISTA, ORM.ORMConstants.KEY_ENTRADALISTA_ANIMACIONIDANIMACION, ORM.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdAnimacion());

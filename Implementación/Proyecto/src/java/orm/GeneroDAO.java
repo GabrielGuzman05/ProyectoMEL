@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class GeneroDAO {
 	public static Genero loadGeneroByORMID(int idGenero) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadGeneroByORMID(session, idGenero);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class GeneroDAO {
 	
 	public static Genero getGeneroByORMID(int idGenero) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getGeneroByORMID(session, idGenero);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class GeneroDAO {
 	
 	public static Genero loadGeneroByORMID(int idGenero, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadGeneroByORMID(session, idGenero, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class GeneroDAO {
 	
 	public static Genero getGeneroByORMID(int idGenero, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getGeneroByORMID(session, idGenero, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class GeneroDAO {
 	
 	public static Genero loadGeneroByORMID(PersistentSession session, int idGenero) throws PersistentException {
 		try {
-			return (Genero) session.load(orm.Genero.class, new Integer(idGenero));
+			return (Genero) session.load(ORM.Genero.class, new Integer(idGenero));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class GeneroDAO {
 	
 	public static Genero getGeneroByORMID(PersistentSession session, int idGenero) throws PersistentException {
 		try {
-			return (Genero) session.get(orm.Genero.class, new Integer(idGenero));
+			return (Genero) session.get(ORM.Genero.class, new Integer(idGenero));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class GeneroDAO {
 	
 	public static Genero loadGeneroByORMID(PersistentSession session, int idGenero, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Genero) session.load(orm.Genero.class, new Integer(idGenero), lockMode);
+			return (Genero) session.load(ORM.Genero.class, new Integer(idGenero), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class GeneroDAO {
 	
 	public static Genero getGeneroByORMID(PersistentSession session, int idGenero, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Genero) session.get(orm.Genero.class, new Integer(idGenero), lockMode);
+			return (Genero) session.get(ORM.Genero.class, new Integer(idGenero), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class GeneroDAO {
 	
 	public static List queryGenero(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryGenero(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class GeneroDAO {
 	
 	public static List queryGenero(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryGenero(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class GeneroDAO {
 	
 	public static Genero[] listGeneroByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listGeneroByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class GeneroDAO {
 	
 	public static Genero[] listGeneroByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listGeneroByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class GeneroDAO {
 	
 	public static Genero loadGeneroByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadGeneroByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class GeneroDAO {
 	
 	public static Genero loadGeneroByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadGeneroByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class GeneroDAO {
 	
 	public static java.util.Iterator iterateGeneroByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateGeneroByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class GeneroDAO {
 	
 	public static java.util.Iterator iterateGeneroByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateGeneroByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -296,12 +296,12 @@ public class GeneroDAO {
 	}
 	
 	public static Genero createGenero() {
-		return new orm.Genero();
+		return new ORM.Genero();
 	}
 	
-	public static boolean save(orm.Genero genero) throws PersistentException {
+	public static boolean save(ORM.Genero genero) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(genero);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(genero);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class GeneroDAO {
 		}
 	}
 	
-	public static boolean delete(orm.Genero genero) throws PersistentException {
+	public static boolean delete(ORM.Genero genero) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(genero);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(genero);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,21 +321,21 @@ public class GeneroDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Genero genero)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.Genero genero)throws PersistentException {
 		try {
-			orm.Novela[] lNovelaidNovelas = genero.novelaidNovela.toArray();
+			ORM.Novela[] lNovelaidNovelas = genero.novelaidNovela.toArray();
 			for(int i = 0; i < lNovelaidNovelas.length; i++) {
 				lNovelaidNovelas[i].generoidGenero.remove(genero);
 			}
-			orm.Animacion[] lAnimacionidAnimacions = genero.animacionidAnimacion.toArray();
+			ORM.Animacion[] lAnimacionidAnimacions = genero.animacionidAnimacion.toArray();
 			for(int i = 0; i < lAnimacionidAnimacions.length; i++) {
 				lAnimacionidAnimacions[i].generoidGenero.remove(genero);
 			}
-			orm.Manga[] lMangaidMangas = genero.mangaidManga.toArray();
+			ORM.Manga[] lMangaidMangas = genero.mangaidManga.toArray();
 			for(int i = 0; i < lMangaidMangas.length; i++) {
 				lMangaidMangas[i].generoidGenero.remove(genero);
 			}
-			orm.SerieGenerica[] lSerieGenericaidSeries = genero.serieGenericaidSerie.toArray();
+			ORM.SerieGenerica[] lSerieGenericaidSeries = genero.serieGenericaidSerie.toArray();
 			for(int i = 0; i < lSerieGenericaidSeries.length; i++) {
 				lSerieGenericaidSeries[i].generoidGenero.remove(genero);
 			}
@@ -347,21 +347,21 @@ public class GeneroDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Genero genero, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.Genero genero, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			orm.Novela[] lNovelaidNovelas = genero.novelaidNovela.toArray();
+			ORM.Novela[] lNovelaidNovelas = genero.novelaidNovela.toArray();
 			for(int i = 0; i < lNovelaidNovelas.length; i++) {
 				lNovelaidNovelas[i].generoidGenero.remove(genero);
 			}
-			orm.Animacion[] lAnimacionidAnimacions = genero.animacionidAnimacion.toArray();
+			ORM.Animacion[] lAnimacionidAnimacions = genero.animacionidAnimacion.toArray();
 			for(int i = 0; i < lAnimacionidAnimacions.length; i++) {
 				lAnimacionidAnimacions[i].generoidGenero.remove(genero);
 			}
-			orm.Manga[] lMangaidMangas = genero.mangaidManga.toArray();
+			ORM.Manga[] lMangaidMangas = genero.mangaidManga.toArray();
 			for(int i = 0; i < lMangaidMangas.length; i++) {
 				lMangaidMangas[i].generoidGenero.remove(genero);
 			}
-			orm.SerieGenerica[] lSerieGenericaidSeries = genero.serieGenericaidSerie.toArray();
+			ORM.SerieGenerica[] lSerieGenericaidSeries = genero.serieGenericaidSerie.toArray();
 			for(int i = 0; i < lSerieGenericaidSeries.length; i++) {
 				lSerieGenericaidSeries[i].generoidGenero.remove(genero);
 			}
@@ -378,9 +378,9 @@ public class GeneroDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.Genero genero) throws PersistentException {
+	public static boolean refresh(ORM.Genero genero) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(genero);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(genero);
 			return true;
 		}
 		catch (Exception e) {
@@ -389,9 +389,9 @@ public class GeneroDAO {
 		}
 	}
 	
-	public static boolean evict(orm.Genero genero) throws PersistentException {
+	public static boolean evict(ORM.Genero genero) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(genero);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(genero);
 			return true;
 		}
 		catch (Exception e) {

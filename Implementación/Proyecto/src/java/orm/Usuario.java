@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.io.Serializable;
 public class Usuario implements Serializable {
@@ -19,7 +19,7 @@ public class Usuario implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_USUARIO_LISTA) {
+		if (key == ORM.ORMConstants.KEY_USUARIO_LISTA) {
 			return ORM_lista;
 		}
 		
@@ -77,7 +77,7 @@ public class Usuario implements Serializable {
 		return ORM_lista;
 	}
 	
-	public final orm.ListaSetCollection lista = new orm.ListaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_USUARIO_LISTA, orm.ORMConstants.KEY_LISTA_USUARIOIDUSUARIO, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final ORM.ListaSetCollection lista = new ORM.ListaSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_USUARIO_LISTA, ORM.ORMConstants.KEY_LISTA_USUARIOIDUSUARIO, ORM.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdUsuario())+" - "+nombreUsuario+" ";

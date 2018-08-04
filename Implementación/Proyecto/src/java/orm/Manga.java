@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.io.Serializable;
 public class Manga implements Serializable {
@@ -19,19 +19,19 @@ public class Manga implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_MANGA_GENEROIDGENERO) {
+		if (key == ORM.ORMConstants.KEY_MANGA_GENEROIDGENERO) {
 			return ORM_generoidGenero;
 		}
-		else if (key == orm.ORMConstants.KEY_MANGA_AUTORIDAUTOR) {
+		else if (key == ORM.ORMConstants.KEY_MANGA_AUTORIDAUTOR) {
 			return ORM_autoridAutor;
 		}
-		else if (key == orm.ORMConstants.KEY_MANGA_TAGIDTAG) {
+		else if (key == ORM.ORMConstants.KEY_MANGA_TAGIDTAG) {
 			return ORM_tagidTag;
 		}
-		else if (key == orm.ORMConstants.KEY_MANGA_ARISTAIDARTISTA) {
+		else if (key == ORM.ORMConstants.KEY_MANGA_ARISTAIDARTISTA) {
 			return ORM_aristaidArtista;
 		}
-		else if (key == orm.ORMConstants.KEY_MANGA_ENTRADALISTA) {
+		else if (key == ORM.ORMConstants.KEY_MANGA_ENTRADALISTA) {
 			return ORM_entradaLista;
 		}
 		
@@ -39,8 +39,8 @@ public class Manga implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == orm.ORMConstants.KEY_MANGA_TIPOMANGAIDTIPOMANGA) {
-			this.tipoMangaidTipoManga = (orm.TipoManga) owner;
+		if (key == ORM.ORMConstants.KEY_MANGA_TIPOMANGAIDTIPOMANGA) {
+			this.tipoMangaidTipoManga = (ORM.TipoManga) owner;
 		}
 	}
 	
@@ -77,7 +77,7 @@ public class Manga implements Serializable {
 	
 	private String animeStartEnd;
 	
-	private orm.TipoManga tipoMangaidTipoManga;
+	private ORM.TipoManga tipoMangaidTipoManga;
 	
 	private java.util.Set ORM_generoidGenero = new java.util.HashSet();
 	
@@ -197,7 +197,7 @@ public class Manga implements Serializable {
 		return ORM_generoidGenero;
 	}
 	
-	public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_MANGA_GENEROIDGENERO, orm.ORMConstants.KEY_GENERO_MANGAIDMANGA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final ORM.GeneroSetCollection generoidGenero = new ORM.GeneroSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_MANGA_GENEROIDGENERO, ORM.ORMConstants.KEY_GENERO_MANGAIDMANGA, ORM.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_AutoridAutor(java.util.Set value) {
 		this.ORM_autoridAutor = value;
@@ -207,7 +207,7 @@ public class Manga implements Serializable {
 		return ORM_autoridAutor;
 	}
 	
-	public final orm.AutorSetCollection autoridAutor = new orm.AutorSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_MANGA_AUTORIDAUTOR, orm.ORMConstants.KEY_AUTOR_MANGAIDMANGA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final ORM.AutorSetCollection autoridAutor = new ORM.AutorSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_MANGA_AUTORIDAUTOR, ORM.ORMConstants.KEY_AUTOR_MANGAIDMANGA, ORM.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_TagidTag(java.util.Set value) {
 		this.ORM_tagidTag = value;
@@ -217,7 +217,7 @@ public class Manga implements Serializable {
 		return ORM_tagidTag;
 	}
 	
-	public final orm.TagSetCollection tagidTag = new orm.TagSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_MANGA_TAGIDTAG, orm.ORMConstants.KEY_TAG_MANGAIDMANGA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final ORM.TagSetCollection tagidTag = new ORM.TagSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_MANGA_TAGIDTAG, ORM.ORMConstants.KEY_TAG_MANGAIDMANGA, ORM.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_AristaidArtista(java.util.Set value) {
 		this.ORM_aristaidArtista = value;
@@ -227,9 +227,9 @@ public class Manga implements Serializable {
 		return ORM_aristaidArtista;
 	}
 	
-	public final orm.ArtistaSetCollection aristaidArtista = new orm.ArtistaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_MANGA_ARISTAIDARTISTA, orm.ORMConstants.KEY_ARTISTA_MANGAIDMANGA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final ORM.ArtistaSetCollection aristaidArtista = new ORM.ArtistaSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_MANGA_ARISTAIDARTISTA, ORM.ORMConstants.KEY_ARTISTA_MANGAIDMANGA, ORM.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
-	public void setTipoMangaidTipoManga(orm.TipoManga value) {
+	public void setTipoMangaidTipoManga(ORM.TipoManga value) {
 		if (tipoMangaidTipoManga != null) {
 			tipoMangaidTipoManga.manga.remove(this);
 		}
@@ -238,18 +238,18 @@ public class Manga implements Serializable {
 		}
 	}
 	
-	public orm.TipoManga getTipoMangaidTipoManga() {
+	public ORM.TipoManga getTipoMangaidTipoManga() {
 		return tipoMangaidTipoManga;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_TipoMangaidTipoManga(orm.TipoManga value) {
+	public void setORM_TipoMangaidTipoManga(ORM.TipoManga value) {
 		this.tipoMangaidTipoManga = value;
 	}
 	
-	private orm.TipoManga getORM_TipoMangaidTipoManga() {
+	private ORM.TipoManga getORM_TipoMangaidTipoManga() {
 		return tipoMangaidTipoManga;
 	}
 	
@@ -261,7 +261,7 @@ public class Manga implements Serializable {
 		return ORM_entradaLista;
 	}
 	
-	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_MANGA_ENTRADALISTA, orm.ORMConstants.KEY_ENTRADALISTA_MANGAIDMANGA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final ORM.EntradaListaSetCollection entradaLista = new ORM.EntradaListaSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_MANGA_ENTRADALISTA, ORM.ORMConstants.KEY_ENTRADALISTA_MANGAIDMANGA, ORM.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdManga());

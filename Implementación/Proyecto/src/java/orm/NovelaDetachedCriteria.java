@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -45,7 +45,7 @@ public class NovelaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression entradaLista;
 	
 	public NovelaDetachedCriteria() {
-		super(orm.Novela.class, orm.NovelaCriteria.class);
+		super(ORM.Novela.class, ORM.NovelaCriteria.class);
 		idNovela = new IntegerExpression("idNovela", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		nombreAlternativo = new StringExpression("nombreAlternativo", this.getDetachedCriteria());
@@ -73,7 +73,7 @@ public class NovelaDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public NovelaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.NovelaCriteria.class);
+		super(aDetachedCriteria, ORM.NovelaCriteria.class);
 		idNovela = new IntegerExpression("idNovela", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		nombreAlternativo = new StringExpression("nombreAlternativo", this.getDetachedCriteria());
@@ -124,16 +124,16 @@ public class NovelaDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new ArtistaDetachedCriteria(createCriteria("artistaidArtista"));
 	}
 	
-	public orm.GeneroDetachedCriteria createGeneroidGeneroCriteria() {
-		return new orm.GeneroDetachedCriteria(createCriteria("ORM_GeneroidGenero"));
+	public ORM.GeneroDetachedCriteria createGeneroidGeneroCriteria() {
+		return new ORM.GeneroDetachedCriteria(createCriteria("ORM_GeneroidGenero"));
 	}
 	
-	public orm.TagDetachedCriteria createTagidTagCriteria() {
-		return new orm.TagDetachedCriteria(createCriteria("ORM_TagidTag"));
+	public ORM.TagDetachedCriteria createTagidTagCriteria() {
+		return new ORM.TagDetachedCriteria(createCriteria("ORM_TagidTag"));
 	}
 	
-	public orm.EntradaListaDetachedCriteria createEntradaListaCriteria() {
-		return new orm.EntradaListaDetachedCriteria(createCriteria("ORM_EntradaLista"));
+	public ORM.EntradaListaDetachedCriteria createEntradaListaCriteria() {
+		return new ORM.EntradaListaDetachedCriteria(createCriteria("ORM_EntradaLista"));
 	}
 	
 	public Novela uniqueNovela(PersistentSession session) {

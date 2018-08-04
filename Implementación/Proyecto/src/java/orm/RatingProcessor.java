@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class RatingProcessor {
@@ -49,7 +49,7 @@ public class RatingProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Rating _rating = orm.RatingDAO.loadRatingByORMID(getIdRating());
+				ORM.Rating _rating = ORM.RatingDAO.loadRatingByORMID(getIdRating());
 				if (_rating!= null) {
 					copyFromBean(_rating);
 					result = "Search success";
@@ -64,7 +64,7 @@ public class RatingProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Rating _rating = orm.RatingDAO.createRating();
+				ORM.Rating _rating = ORM.RatingDAO.createRating();
 				copyToBean(_rating);
 				if (ORM.RatingDAO.save(_rating)) {
 					result = "Insert success";
@@ -79,7 +79,7 @@ public class RatingProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Rating _rating= orm.RatingDAO.loadRatingByORMID(getIdRating());
+				ORM.Rating _rating= ORM.RatingDAO.loadRatingByORMID(getIdRating());
 				if (_rating != null) {
 					copyToBean(_rating);
 					if (ORM.RatingDAO.save(_rating)) {
@@ -100,7 +100,7 @@ public class RatingProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Rating _rating = orm.RatingDAO.loadRatingByORMID(getIdRating());
+				ORM.Rating _rating = ORM.RatingDAO.loadRatingByORMID(getIdRating());
 				if (_rating != null && ORM.RatingDAO.deleteAndDissociate(_rating)) {
 					result = "Delete success";
 				}
@@ -119,12 +119,12 @@ public class RatingProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Rating _rating) {
+	private void copyFromBean(ORM.Rating _rating) {
 		setNombre(_rating.getNombre());
 		setIdRating(_rating.getORMID());
 	}
 	
-	private void copyToBean(orm.Rating _rating) {
+	private void copyToBean(ORM.Rating _rating) {
 		_rating.setNombre(getNombre());
 	}
 	

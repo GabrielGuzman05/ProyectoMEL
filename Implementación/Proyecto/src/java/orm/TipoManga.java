@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.io.Serializable;
 public class TipoManga implements Serializable {
@@ -19,7 +19,7 @@ public class TipoManga implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_TIPOMANGA_MANGA) {
+		if (key == ORM.ORMConstants.KEY_TIPOMANGA_MANGA) {
 			return ORM_manga;
 		}
 		
@@ -67,7 +67,7 @@ public class TipoManga implements Serializable {
 		return ORM_manga;
 	}
 	
-	public final orm.MangaSetCollection manga = new orm.MangaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_TIPOMANGA_MANGA, orm.ORMConstants.KEY_MANGA_TIPOMANGAIDTIPOMANGA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final ORM.MangaSetCollection manga = new ORM.MangaSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_TIPOMANGA_MANGA, ORM.ORMConstants.KEY_MANGA_TIPOMANGAIDTIPOMANGA, ORM.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTipoManga());

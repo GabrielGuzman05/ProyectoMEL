@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -24,21 +24,21 @@ public class TipoMangaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression manga;
 	
 	public TipoMangaDetachedCriteria() {
-		super(orm.TipoManga.class, orm.TipoMangaCriteria.class);
+		super(ORM.TipoManga.class, ORM.TipoMangaCriteria.class);
 		idTipoManga = new IntegerExpression("idTipoManga", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		manga = new CollectionExpression("ORM_Manga", this.getDetachedCriteria());
 	}
 	
 	public TipoMangaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.TipoMangaCriteria.class);
+		super(aDetachedCriteria, ORM.TipoMangaCriteria.class);
 		idTipoManga = new IntegerExpression("idTipoManga", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		manga = new CollectionExpression("ORM_Manga", this.getDetachedCriteria());
 	}
 	
-	public orm.MangaDetachedCriteria createMangaCriteria() {
-		return new orm.MangaDetachedCriteria(createCriteria("ORM_Manga"));
+	public ORM.MangaDetachedCriteria createMangaCriteria() {
+		return new ORM.MangaDetachedCriteria(createCriteria("ORM_Manga"));
 	}
 	
 	public TipoManga uniqueTipoManga(PersistentSession session) {

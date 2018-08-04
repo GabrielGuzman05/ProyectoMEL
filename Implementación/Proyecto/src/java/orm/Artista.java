@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.io.Serializable;
 public class Artista implements Serializable {
@@ -19,10 +19,10 @@ public class Artista implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_ARTISTA_MANGAIDMANGA) {
+		if (key == ORM.ORMConstants.KEY_ARTISTA_MANGAIDMANGA) {
 			return ORM_mangaidManga;
 		}
-		else if (key == orm.ORMConstants.KEY_ARTISTA_NOVELA) {
+		else if (key == ORM.ORMConstants.KEY_ARTISTA_NOVELA) {
 			return ORM_novela;
 		}
 		
@@ -72,7 +72,7 @@ public class Artista implements Serializable {
 		return ORM_mangaidManga;
 	}
 	
-	public final orm.MangaSetCollection mangaidManga = new orm.MangaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_ARTISTA_MANGAIDMANGA, orm.ORMConstants.KEY_MANGA_ARISTAIDARTISTA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final ORM.MangaSetCollection mangaidManga = new ORM.MangaSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_ARTISTA_MANGAIDMANGA, ORM.ORMConstants.KEY_MANGA_ARISTAIDARTISTA, ORM.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_Novela(java.util.Set value) {
 		this.ORM_novela = value;
@@ -82,7 +82,7 @@ public class Artista implements Serializable {
 		return ORM_novela;
 	}
 	
-	public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_ARTISTA_NOVELA, orm.ORMConstants.KEY_NOVELA_ARTISTAIDARTISTA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final ORM.NovelaSetCollection novela = new ORM.NovelaSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_ARTISTA_NOVELA, ORM.ORMConstants.KEY_NOVELA_ARTISTAIDARTISTA, ORM.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdArtista());

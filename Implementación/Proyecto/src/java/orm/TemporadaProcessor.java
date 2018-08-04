@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class TemporadaProcessor {
@@ -63,7 +63,7 @@ public class TemporadaProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Temporada _temporada = orm.TemporadaDAO.loadTemporadaByORMID(getIdTemporada());
+				ORM.Temporada _temporada = ORM.TemporadaDAO.loadTemporadaByORMID(getIdTemporada());
 				if (_temporada!= null) {
 					copyFromBean(_temporada);
 					result = "Search success";
@@ -78,7 +78,7 @@ public class TemporadaProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Temporada _temporada = orm.TemporadaDAO.createTemporada();
+				ORM.Temporada _temporada = ORM.TemporadaDAO.createTemporada();
 				copyToBean(_temporada);
 				if (ORM.TemporadaDAO.save(_temporada)) {
 					result = "Insert success";
@@ -93,7 +93,7 @@ public class TemporadaProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Temporada _temporada= orm.TemporadaDAO.loadTemporadaByORMID(getIdTemporada());
+				ORM.Temporada _temporada= ORM.TemporadaDAO.loadTemporadaByORMID(getIdTemporada());
 				if (_temporada != null) {
 					copyToBean(_temporada);
 					if (ORM.TemporadaDAO.save(_temporada)) {
@@ -114,7 +114,7 @@ public class TemporadaProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Temporada _temporada = orm.TemporadaDAO.loadTemporadaByORMID(getIdTemporada());
+				ORM.Temporada _temporada = ORM.TemporadaDAO.loadTemporadaByORMID(getIdTemporada());
 				if (_temporada != null && ORM.TemporadaDAO.deleteAndDissociate(_temporada)) {
 					result = "Delete success";
 				}
@@ -133,13 +133,13 @@ public class TemporadaProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Temporada _temporada) {
+	private void copyFromBean(ORM.Temporada _temporada) {
 		setEstacion(_temporada.getEstacion());
 		setAño(_temporada.getAño());
 		setIdTemporada(_temporada.getORMID());
 	}
 	
-	private void copyToBean(orm.Temporada _temporada) {
+	private void copyToBean(ORM.Temporada _temporada) {
 		_temporada.setEstacion(getEstacion());
 		_temporada.setAño(getAño());
 	}

@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.io.Serializable;
 public class TipoEmision implements Serializable {
@@ -19,7 +19,7 @@ public class TipoEmision implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_TIPOEMISION_ANIMACION) {
+		if (key == ORM.ORMConstants.KEY_TIPOEMISION_ANIMACION) {
 			return ORM_animacion;
 		}
 		
@@ -71,7 +71,7 @@ public class TipoEmision implements Serializable {
 		return ORM_animacion;
 	}
 	
-	public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_TIPOEMISION_ANIMACION, orm.ORMConstants.KEY_ANIMACION_TIPOEMISIONIDTIPOEMISION, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final ORM.AnimacionSetCollection animacion = new ORM.AnimacionSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_TIPOEMISION_ANIMACION, ORM.ORMConstants.KEY_ANIMACION_TIPOEMISIONIDTIPOEMISION, ORM.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTipoEmision());

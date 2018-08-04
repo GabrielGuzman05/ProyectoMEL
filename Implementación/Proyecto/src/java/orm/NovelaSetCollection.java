@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.*;
 
@@ -107,7 +107,7 @@ public class NovelaSetCollection extends org.orm.util.ORMSet {
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return orm.ProyectoProgramacionAvanzadaPersistentManager.instance();
+		return ORM.ProyectoProgramacionAvanzadaPersistentManager.instance();
 	}
 	
 }

@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class UsuarioProcessor {
@@ -59,7 +59,7 @@ public class UsuarioProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Usuario _usuario = orm.UsuarioDAO.loadUsuarioByORMID(getIdUsuario());
+				ORM.Usuario _usuario = ORM.UsuarioDAO.loadUsuarioByORMID(getIdUsuario());
 				if (_usuario!= null) {
 					copyFromBean(_usuario);
 					result = "Search success";
@@ -74,7 +74,7 @@ public class UsuarioProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Usuario _usuario = orm.UsuarioDAO.createUsuario();
+				ORM.Usuario _usuario = ORM.UsuarioDAO.createUsuario();
 				copyToBean(_usuario);
 				if (ORM.UsuarioDAO.save(_usuario)) {
 					result = "Insert success";
@@ -89,7 +89,7 @@ public class UsuarioProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Usuario _usuario= orm.UsuarioDAO.loadUsuarioByORMID(getIdUsuario());
+				ORM.Usuario _usuario= ORM.UsuarioDAO.loadUsuarioByORMID(getIdUsuario());
 				if (_usuario != null) {
 					copyToBean(_usuario);
 					if (ORM.UsuarioDAO.save(_usuario)) {
@@ -110,7 +110,7 @@ public class UsuarioProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Usuario _usuario = orm.UsuarioDAO.loadUsuarioByORMID(getIdUsuario());
+				ORM.Usuario _usuario = ORM.UsuarioDAO.loadUsuarioByORMID(getIdUsuario());
 				if (_usuario != null && ORM.UsuarioDAO.deleteAndDissociate(_usuario)) {
 					result = "Delete success";
 				}
@@ -129,13 +129,13 @@ public class UsuarioProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Usuario _usuario) {
+	private void copyFromBean(ORM.Usuario _usuario) {
 		setNombreUsuario(_usuario.getNombreUsuario());
 		setContraseñaUsuario(_usuario.getContraseñaUsuario());
 		setIdUsuario(_usuario.getORMID());
 	}
 	
-	private void copyToBean(orm.Usuario _usuario) {
+	private void copyToBean(ORM.Usuario _usuario) {
 		_usuario.setNombreUsuario(getNombreUsuario());
 		_usuario.setContraseñaUsuario(getContraseñaUsuario());
 	}

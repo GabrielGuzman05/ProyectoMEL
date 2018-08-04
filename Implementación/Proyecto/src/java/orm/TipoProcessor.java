@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class TipoProcessor {
@@ -49,7 +49,7 @@ public class TipoProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Tipo _tipo = orm.TipoDAO.loadTipoByORMID(getIdTipo());
+				ORM.Tipo _tipo = ORM.TipoDAO.loadTipoByORMID(getIdTipo());
 				if (_tipo!= null) {
 					copyFromBean(_tipo);
 					result = "Search success";
@@ -64,7 +64,7 @@ public class TipoProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Tipo _tipo = orm.TipoDAO.createTipo();
+				ORM.Tipo _tipo = ORM.TipoDAO.createTipo();
 				copyToBean(_tipo);
 				if (ORM.TipoDAO.save(_tipo)) {
 					result = "Insert success";
@@ -79,7 +79,7 @@ public class TipoProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Tipo _tipo= orm.TipoDAO.loadTipoByORMID(getIdTipo());
+				ORM.Tipo _tipo= ORM.TipoDAO.loadTipoByORMID(getIdTipo());
 				if (_tipo != null) {
 					copyToBean(_tipo);
 					if (ORM.TipoDAO.save(_tipo)) {
@@ -100,7 +100,7 @@ public class TipoProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Tipo _tipo = orm.TipoDAO.loadTipoByORMID(getIdTipo());
+				ORM.Tipo _tipo = ORM.TipoDAO.loadTipoByORMID(getIdTipo());
 				if (_tipo != null && ORM.TipoDAO.deleteAndDissociate(_tipo)) {
 					result = "Delete success";
 				}
@@ -119,12 +119,12 @@ public class TipoProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Tipo _tipo) {
+	private void copyFromBean(ORM.Tipo _tipo) {
 		setNombre(_tipo.getNombre());
 		setIdTipo(_tipo.getORMID());
 	}
 	
-	private void copyToBean(orm.Tipo _tipo) {
+	private void copyToBean(ORM.Tipo _tipo) {
 		_tipo.setNombre(getNombre());
 	}
 	

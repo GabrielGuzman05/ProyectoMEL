@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class MangaProcessor {
@@ -157,7 +157,7 @@ public class MangaProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Manga _manga = orm.MangaDAO.loadMangaByORMID(getIdManga());
+				ORM.Manga _manga = ORM.MangaDAO.loadMangaByORMID(getIdManga());
 				if (_manga!= null) {
 					copyFromBean(_manga);
 					result = "Search success";
@@ -172,7 +172,7 @@ public class MangaProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Manga _manga = orm.MangaDAO.createManga();
+				ORM.Manga _manga = ORM.MangaDAO.createManga();
 				copyToBean(_manga);
 				if (ORM.MangaDAO.save(_manga)) {
 					result = "Insert success";
@@ -187,7 +187,7 @@ public class MangaProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Manga _manga= orm.MangaDAO.loadMangaByORMID(getIdManga());
+				ORM.Manga _manga= ORM.MangaDAO.loadMangaByORMID(getIdManga());
 				if (_manga != null) {
 					copyToBean(_manga);
 					if (ORM.MangaDAO.save(_manga)) {
@@ -208,7 +208,7 @@ public class MangaProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Manga _manga = orm.MangaDAO.loadMangaByORMID(getIdManga());
+				ORM.Manga _manga = ORM.MangaDAO.loadMangaByORMID(getIdManga());
 				if (_manga != null && ORM.MangaDAO.deleteAndDissociate(_manga)) {
 					result = "Delete success";
 				}
@@ -227,7 +227,7 @@ public class MangaProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Manga _manga) {
+	private void copyFromBean(ORM.Manga _manga) {
 		setEstadoUsuarioidEstadoUsuario(_manga.getEstadoUsuarioidEstadoUsuario());
 		setNombreManga(_manga.getNombreManga());
 		setNombreAlternativo(_manga.getNombreAlternativo());
@@ -241,7 +241,7 @@ public class MangaProcessor {
 		setIdManga(_manga.getORMID());
 		
 		{
-			orm.TipoManga _tipoManga = _manga.getTipoMangaidTipoManga();
+			ORM.TipoManga _tipoManga = _manga.getTipoMangaidTipoManga();
 			if (_tipoManga != null) {
 				setTipoMangaidTipoManga_tipoMangaidTipoManga(_tipoManga.getORMID());
 			}
@@ -249,7 +249,7 @@ public class MangaProcessor {
 		
 	}
 	
-	private void copyToBean(orm.Manga _manga) {
+	private void copyToBean(ORM.Manga _manga) {
 		_manga.setEstadoUsuarioidEstadoUsuario(getEstadoUsuarioidEstadoUsuario());
 		_manga.setNombreManga(getNombreManga());
 		_manga.setNombreAlternativo(getNombreAlternativo());
@@ -261,7 +261,7 @@ public class MangaProcessor {
 		_manga.setEstadoEnPaisDeOrigen(getEstadoEnPaisDeOrigen());
 		_manga.setAnimeStartEnd(getAnimeStartEnd());
 		try  {
-			orm.TipoManga _tipoMangaidTipoManga = orm.TipoMangaDAO.loadTipoMangaByORMID(getTipoMangaidTipoManga_tipoMangaidTipoManga());
+			ORM.TipoManga _tipoMangaidTipoManga = ORM.TipoMangaDAO.loadTipoMangaByORMID(getTipoMangaidTipoManga_tipoMangaidTipoManga());
 			_manga.setTipoMangaidTipoManga(_tipoMangaidTipoManga);
 		}
 		catch (PersistentException e) {

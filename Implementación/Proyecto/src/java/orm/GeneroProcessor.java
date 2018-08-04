@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class GeneroProcessor {
@@ -59,7 +59,7 @@ public class GeneroProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Genero _genero = orm.GeneroDAO.loadGeneroByORMID(getIdGenero());
+				ORM.Genero _genero = ORM.GeneroDAO.loadGeneroByORMID(getIdGenero());
 				if (_genero!= null) {
 					copyFromBean(_genero);
 					result = "Search success";
@@ -74,7 +74,7 @@ public class GeneroProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Genero _genero = orm.GeneroDAO.createGenero();
+				ORM.Genero _genero = ORM.GeneroDAO.createGenero();
 				copyToBean(_genero);
 				if (ORM.GeneroDAO.save(_genero)) {
 					result = "Insert success";
@@ -89,7 +89,7 @@ public class GeneroProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Genero _genero= orm.GeneroDAO.loadGeneroByORMID(getIdGenero());
+				ORM.Genero _genero= ORM.GeneroDAO.loadGeneroByORMID(getIdGenero());
 				if (_genero != null) {
 					copyToBean(_genero);
 					if (ORM.GeneroDAO.save(_genero)) {
@@ -110,7 +110,7 @@ public class GeneroProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Genero _genero = orm.GeneroDAO.loadGeneroByORMID(getIdGenero());
+				ORM.Genero _genero = ORM.GeneroDAO.loadGeneroByORMID(getIdGenero());
 				if (_genero != null && ORM.GeneroDAO.deleteAndDissociate(_genero)) {
 					result = "Delete success";
 				}
@@ -129,13 +129,13 @@ public class GeneroProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Genero _genero) {
+	private void copyFromBean(ORM.Genero _genero) {
 		setNombre(_genero.getNombre());
 		setDescripcion(_genero.getDescripcion());
 		setIdGenero(_genero.getORMID());
 	}
 	
-	private void copyToBean(orm.Genero _genero) {
+	private void copyToBean(ORM.Genero _genero) {
 		_genero.setNombre(getNombre());
 		_genero.setDescripcion(getDescripcion());
 	}

@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class TipoEmisionProcessor {
@@ -53,7 +53,7 @@ public class TipoEmisionProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.TipoEmision _tipoEmision = orm.TipoEmisionDAO.loadTipoEmisionByORMID(getIdTipoEmision());
+				ORM.TipoEmision _tipoEmision = ORM.TipoEmisionDAO.loadTipoEmisionByORMID(getIdTipoEmision());
 				if (_tipoEmision!= null) {
 					copyFromBean(_tipoEmision);
 					result = "Search success";
@@ -68,7 +68,7 @@ public class TipoEmisionProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.TipoEmision _tipoEmision = orm.TipoEmisionDAO.createTipoEmision();
+				ORM.TipoEmision _tipoEmision = ORM.TipoEmisionDAO.createTipoEmision();
 				copyToBean(_tipoEmision);
 				if (ORM.TipoEmisionDAO.save(_tipoEmision)) {
 					result = "Insert success";
@@ -83,7 +83,7 @@ public class TipoEmisionProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.TipoEmision _tipoEmision= orm.TipoEmisionDAO.loadTipoEmisionByORMID(getIdTipoEmision());
+				ORM.TipoEmision _tipoEmision= ORM.TipoEmisionDAO.loadTipoEmisionByORMID(getIdTipoEmision());
 				if (_tipoEmision != null) {
 					copyToBean(_tipoEmision);
 					if (ORM.TipoEmisionDAO.save(_tipoEmision)) {
@@ -104,7 +104,7 @@ public class TipoEmisionProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.TipoEmision _tipoEmision = orm.TipoEmisionDAO.loadTipoEmisionByORMID(getIdTipoEmision());
+				ORM.TipoEmision _tipoEmision = ORM.TipoEmisionDAO.loadTipoEmisionByORMID(getIdTipoEmision());
 				if (_tipoEmision != null && ORM.TipoEmisionDAO.deleteAndDissociate(_tipoEmision)) {
 					result = "Delete success";
 				}
@@ -123,12 +123,12 @@ public class TipoEmisionProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.TipoEmision _tipoEmision) {
+	private void copyFromBean(ORM.TipoEmision _tipoEmision) {
 		setNombre(_tipoEmision.getNombre());
 		setIdTipoEmision(_tipoEmision.getORMID());
 	}
 	
-	private void copyToBean(orm.TipoEmision _tipoEmision) {
+	private void copyToBean(ORM.TipoEmision _tipoEmision) {
 		_tipoEmision.setNombre(getNombre());
 	}
 	

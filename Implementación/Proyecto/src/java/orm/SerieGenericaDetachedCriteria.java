@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -29,7 +29,7 @@ public class SerieGenericaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression entradaLista;
 	
 	public SerieGenericaDetachedCriteria() {
-		super(orm.SerieGenerica.class, orm.SerieGenericaCriteria.class);
+		super(ORM.SerieGenerica.class, ORM.SerieGenericaCriteria.class);
 		idSerie = new IntegerExpression("idSerie", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		nombreAlternativo = new StringExpression("nombreAlternativo", this.getDetachedCriteria());
@@ -41,7 +41,7 @@ public class SerieGenericaDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public SerieGenericaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.SerieGenericaCriteria.class);
+		super(aDetachedCriteria, ORM.SerieGenericaCriteria.class);
 		idSerie = new IntegerExpression("idSerie", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		nombreAlternativo = new StringExpression("nombreAlternativo", this.getDetachedCriteria());
@@ -52,12 +52,12 @@ public class SerieGenericaDetachedCriteria extends AbstractORMDetachedCriteria {
 		entradaLista = new CollectionExpression("ORM_EntradaLista", this.getDetachedCriteria());
 	}
 	
-	public orm.GeneroDetachedCriteria createGeneroidGeneroCriteria() {
-		return new orm.GeneroDetachedCriteria(createCriteria("ORM_GeneroidGenero"));
+	public ORM.GeneroDetachedCriteria createGeneroidGeneroCriteria() {
+		return new ORM.GeneroDetachedCriteria(createCriteria("ORM_GeneroidGenero"));
 	}
 	
-	public orm.EntradaListaDetachedCriteria createEntradaListaCriteria() {
-		return new orm.EntradaListaDetachedCriteria(createCriteria("ORM_EntradaLista"));
+	public ORM.EntradaListaDetachedCriteria createEntradaListaCriteria() {
+		return new ORM.EntradaListaDetachedCriteria(createCriteria("ORM_EntradaLista"));
 	}
 	
 	public SerieGenerica uniqueSerieGenerica(PersistentSession session) {

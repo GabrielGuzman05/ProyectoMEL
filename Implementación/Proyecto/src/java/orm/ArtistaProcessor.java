@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class ArtistaProcessor {
@@ -49,7 +49,7 @@ public class ArtistaProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Artista _artista = orm.ArtistaDAO.loadArtistaByORMID(getIdArtista());
+				ORM.Artista _artista = ORM.ArtistaDAO.loadArtistaByORMID(getIdArtista());
 				if (_artista!= null) {
 					copyFromBean(_artista);
 					result = "Search success";
@@ -64,7 +64,7 @@ public class ArtistaProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Artista _artista = orm.ArtistaDAO.createArtista();
+				ORM.Artista _artista = ORM.ArtistaDAO.createArtista();
 				copyToBean(_artista);
 				if (ORM.ArtistaDAO.save(_artista)) {
 					result = "Insert success";
@@ -79,7 +79,7 @@ public class ArtistaProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Artista _artista= orm.ArtistaDAO.loadArtistaByORMID(getIdArtista());
+				ORM.Artista _artista= ORM.ArtistaDAO.loadArtistaByORMID(getIdArtista());
 				if (_artista != null) {
 					copyToBean(_artista);
 					if (ORM.ArtistaDAO.save(_artista)) {
@@ -100,7 +100,7 @@ public class ArtistaProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Artista _artista = orm.ArtistaDAO.loadArtistaByORMID(getIdArtista());
+				ORM.Artista _artista = ORM.ArtistaDAO.loadArtistaByORMID(getIdArtista());
 				if (_artista != null && ORM.ArtistaDAO.deleteAndDissociate(_artista)) {
 					result = "Delete success";
 				}
@@ -119,12 +119,12 @@ public class ArtistaProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Artista _artista) {
+	private void copyFromBean(ORM.Artista _artista) {
 		setNombre(_artista.getNombre());
 		setIdArtista(_artista.getORMID());
 	}
 	
-	private void copyToBean(orm.Artista _artista) {
+	private void copyToBean(ORM.Artista _artista) {
 		_artista.setNombre(getNombre());
 	}
 	

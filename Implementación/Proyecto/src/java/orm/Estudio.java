@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.io.Serializable;
 public class Estudio implements Serializable {
@@ -19,7 +19,7 @@ public class Estudio implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_ESTUDIO_ANIMACIONIDANIMACION) {
+		if (key == ORM.ORMConstants.KEY_ESTUDIO_ANIMACIONIDANIMACION) {
 			return ORM_animacionidAnimacion;
 		}
 		
@@ -67,7 +67,7 @@ public class Estudio implements Serializable {
 		return ORM_animacionidAnimacion;
 	}
 	
-	public final orm.AnimacionSetCollection animacionidAnimacion = new orm.AnimacionSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_ESTUDIO_ANIMACIONIDANIMACION, orm.ORMConstants.KEY_ANIMACION_ESTUDIOIDESTUDIO, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final ORM.AnimacionSetCollection animacionidAnimacion = new ORM.AnimacionSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_ESTUDIO_ANIMACIONIDANIMACION, ORM.ORMConstants.KEY_ANIMACION_ESTUDIOIDESTUDIO, ORM.ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdEstudio());

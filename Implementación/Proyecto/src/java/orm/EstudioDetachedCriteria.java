@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -24,21 +24,21 @@ public class EstudioDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression animacionidAnimacion;
 	
 	public EstudioDetachedCriteria() {
-		super(orm.Estudio.class, orm.EstudioCriteria.class);
+		super(ORM.Estudio.class, ORM.EstudioCriteria.class);
 		idEstudio = new IntegerExpression("idEstudio", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		animacionidAnimacion = new CollectionExpression("ORM_AnimacionidAnimacion", this.getDetachedCriteria());
 	}
 	
 	public EstudioDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.EstudioCriteria.class);
+		super(aDetachedCriteria, ORM.EstudioCriteria.class);
 		idEstudio = new IntegerExpression("idEstudio", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		animacionidAnimacion = new CollectionExpression("ORM_AnimacionidAnimacion", this.getDetachedCriteria());
 	}
 	
-	public orm.AnimacionDetachedCriteria createAnimacionidAnimacionCriteria() {
-		return new orm.AnimacionDetachedCriteria(createCriteria("ORM_AnimacionidAnimacion"));
+	public ORM.AnimacionDetachedCriteria createAnimacionidAnimacionCriteria() {
+		return new ORM.AnimacionDetachedCriteria(createCriteria("ORM_AnimacionidAnimacion"));
 	}
 	
 	public Estudio uniqueEstudio(PersistentSession session) {

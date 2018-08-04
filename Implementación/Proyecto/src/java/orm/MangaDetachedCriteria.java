@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -39,7 +39,7 @@ public class MangaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression entradaLista;
 	
 	public MangaDetachedCriteria() {
-		super(orm.Manga.class, orm.MangaCriteria.class);
+		super(ORM.Manga.class, ORM.MangaCriteria.class);
 		estadoUsuarioidEstadoUsuario = new IntegerExpression("estadoUsuarioidEstadoUsuario", this.getDetachedCriteria());
 		idManga = new IntegerExpression("idManga", this.getDetachedCriteria());
 		nombreManga = new StringExpression("nombreManga", this.getDetachedCriteria());
@@ -61,7 +61,7 @@ public class MangaDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public MangaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.MangaCriteria.class);
+		super(aDetachedCriteria, ORM.MangaCriteria.class);
 		estadoUsuarioidEstadoUsuario = new IntegerExpression("estadoUsuarioidEstadoUsuario", this.getDetachedCriteria());
 		idManga = new IntegerExpression("idManga", this.getDetachedCriteria());
 		nombreManga = new StringExpression("nombreManga", this.getDetachedCriteria());
@@ -86,24 +86,24 @@ public class MangaDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new TipoMangaDetachedCriteria(createCriteria("tipoMangaidTipoManga"));
 	}
 	
-	public orm.GeneroDetachedCriteria createGeneroidGeneroCriteria() {
-		return new orm.GeneroDetachedCriteria(createCriteria("ORM_GeneroidGenero"));
+	public ORM.GeneroDetachedCriteria createGeneroidGeneroCriteria() {
+		return new ORM.GeneroDetachedCriteria(createCriteria("ORM_GeneroidGenero"));
 	}
 	
-	public orm.AutorDetachedCriteria createAutoridAutorCriteria() {
-		return new orm.AutorDetachedCriteria(createCriteria("ORM_AutoridAutor"));
+	public ORM.AutorDetachedCriteria createAutoridAutorCriteria() {
+		return new ORM.AutorDetachedCriteria(createCriteria("ORM_AutoridAutor"));
 	}
 	
-	public orm.TagDetachedCriteria createTagidTagCriteria() {
-		return new orm.TagDetachedCriteria(createCriteria("ORM_TagidTag"));
+	public ORM.TagDetachedCriteria createTagidTagCriteria() {
+		return new ORM.TagDetachedCriteria(createCriteria("ORM_TagidTag"));
 	}
 	
-	public orm.ArtistaDetachedCriteria createAristaidArtistaCriteria() {
-		return new orm.ArtistaDetachedCriteria(createCriteria("ORM_AristaidArtista"));
+	public ORM.ArtistaDetachedCriteria createAristaidArtistaCriteria() {
+		return new ORM.ArtistaDetachedCriteria(createCriteria("ORM_AristaidArtista"));
 	}
 	
-	public orm.EntradaListaDetachedCriteria createEntradaListaCriteria() {
-		return new orm.EntradaListaDetachedCriteria(createCriteria("ORM_EntradaLista"));
+	public ORM.EntradaListaDetachedCriteria createEntradaListaCriteria() {
+		return new ORM.EntradaListaDetachedCriteria(createCriteria("ORM_EntradaLista"));
 	}
 	
 	public Manga uniqueManga(PersistentSession session) {

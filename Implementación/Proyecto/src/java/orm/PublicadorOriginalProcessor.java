@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class PublicadorOriginalProcessor {
@@ -49,7 +49,7 @@ public class PublicadorOriginalProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.PublicadorOriginal _publicadorOriginal = orm.PublicadorOriginalDAO.loadPublicadorOriginalByORMID(getIdPublicadorOriginal());
+				ORM.PublicadorOriginal _publicadorOriginal = ORM.PublicadorOriginalDAO.loadPublicadorOriginalByORMID(getIdPublicadorOriginal());
 				if (_publicadorOriginal!= null) {
 					copyFromBean(_publicadorOriginal);
 					result = "Search success";
@@ -64,7 +64,7 @@ public class PublicadorOriginalProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.PublicadorOriginal _publicadorOriginal = orm.PublicadorOriginalDAO.createPublicadorOriginal();
+				ORM.PublicadorOriginal _publicadorOriginal = ORM.PublicadorOriginalDAO.createPublicadorOriginal();
 				copyToBean(_publicadorOriginal);
 				if (ORM.PublicadorOriginalDAO.save(_publicadorOriginal)) {
 					result = "Insert success";
@@ -79,7 +79,7 @@ public class PublicadorOriginalProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.PublicadorOriginal _publicadorOriginal= orm.PublicadorOriginalDAO.loadPublicadorOriginalByORMID(getIdPublicadorOriginal());
+				ORM.PublicadorOriginal _publicadorOriginal= ORM.PublicadorOriginalDAO.loadPublicadorOriginalByORMID(getIdPublicadorOriginal());
 				if (_publicadorOriginal != null) {
 					copyToBean(_publicadorOriginal);
 					if (ORM.PublicadorOriginalDAO.save(_publicadorOriginal)) {
@@ -100,7 +100,7 @@ public class PublicadorOriginalProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.PublicadorOriginal _publicadorOriginal = orm.PublicadorOriginalDAO.loadPublicadorOriginalByORMID(getIdPublicadorOriginal());
+				ORM.PublicadorOriginal _publicadorOriginal = ORM.PublicadorOriginalDAO.loadPublicadorOriginalByORMID(getIdPublicadorOriginal());
 				if (_publicadorOriginal != null && ORM.PublicadorOriginalDAO.deleteAndDissociate(_publicadorOriginal)) {
 					result = "Delete success";
 				}
@@ -119,12 +119,12 @@ public class PublicadorOriginalProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.PublicadorOriginal _publicadorOriginal) {
+	private void copyFromBean(ORM.PublicadorOriginal _publicadorOriginal) {
 		setNombre(_publicadorOriginal.getNombre());
 		setIdPublicadorOriginal(_publicadorOriginal.getORMID());
 	}
 	
-	private void copyToBean(orm.PublicadorOriginal _publicadorOriginal) {
+	private void copyToBean(ORM.PublicadorOriginal _publicadorOriginal) {
 		_publicadorOriginal.setNombre(getNombre());
 	}
 	

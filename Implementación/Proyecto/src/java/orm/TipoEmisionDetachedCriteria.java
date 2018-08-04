@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -24,21 +24,21 @@ public class TipoEmisionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression animacion;
 	
 	public TipoEmisionDetachedCriteria() {
-		super(orm.TipoEmision.class, orm.TipoEmisionCriteria.class);
+		super(ORM.TipoEmision.class, ORM.TipoEmisionCriteria.class);
 		idTipoEmision = new IntegerExpression("idTipoEmision", this.getDetachedCriteria());
 		nombre = new IntegerExpression("nombre", this.getDetachedCriteria());
 		animacion = new CollectionExpression("ORM_Animacion", this.getDetachedCriteria());
 	}
 	
 	public TipoEmisionDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.TipoEmisionCriteria.class);
+		super(aDetachedCriteria, ORM.TipoEmisionCriteria.class);
 		idTipoEmision = new IntegerExpression("idTipoEmision", this.getDetachedCriteria());
 		nombre = new IntegerExpression("nombre", this.getDetachedCriteria());
 		animacion = new CollectionExpression("ORM_Animacion", this.getDetachedCriteria());
 	}
 	
-	public orm.AnimacionDetachedCriteria createAnimacionCriteria() {
-		return new orm.AnimacionDetachedCriteria(createCriteria("ORM_Animacion"));
+	public ORM.AnimacionDetachedCriteria createAnimacionCriteria() {
+		return new ORM.AnimacionDetachedCriteria(createCriteria("ORM_Animacion"));
 	}
 	
 	public TipoEmision uniqueTipoEmision(PersistentSession session) {

@@ -42,8 +42,6 @@ public class SerieGenerica implements Serializable {
 	
 	private String nombreAlternativo;
 	
-	private int estadoUsuarioidEstadoUsuario;
-	
 	private String cadena;
 	
 	private Integer episodios;
@@ -78,14 +76,6 @@ public class SerieGenerica implements Serializable {
 	
 	public String getNombreAlternativo() {
 		return nombreAlternativo;
-	}
-	
-	public void setEstadoUsuarioidEstadoUsuario(int value) {
-		this.estadoUsuarioidEstadoUsuario = value;
-	}
-	
-	public int getEstadoUsuarioidEstadoUsuario() {
-		return estadoUsuarioidEstadoUsuario;
 	}
 	
 	public void setCadena(String value) {

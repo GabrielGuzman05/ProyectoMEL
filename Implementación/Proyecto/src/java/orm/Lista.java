@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.io.Serializable;
 public class Lista implements Serializable {
@@ -19,7 +19,7 @@ public class Lista implements Serializable {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_LISTA_ENTRADALISTA) {
+		if (key == ORM.ORMConstants.KEY_LISTA_ENTRADALISTA) {
 			return ORM_entradaLista;
 		}
 		
@@ -27,8 +27,8 @@ public class Lista implements Serializable {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == orm.ORMConstants.KEY_LISTA_USUARIOIDUSUARIO) {
-			this.usuarioidUsuario = (orm.Usuario) owner;
+		if (key == ORM.ORMConstants.KEY_LISTA_USUARIOIDUSUARIO) {
+			this.usuarioidUsuario = (ORM.Usuario) owner;
 		}
 	}
 	
@@ -47,7 +47,7 @@ public class Lista implements Serializable {
 	
 	private String nombreLista;
 	
-	private orm.Usuario usuarioidUsuario;
+	private ORM.Usuario usuarioidUsuario;
 	
 	private java.util.Set ORM_entradaLista = new java.util.HashSet();
 	
@@ -71,7 +71,7 @@ public class Lista implements Serializable {
 		return nombreLista;
 	}
 	
-	public void setUsuarioidUsuario(orm.Usuario value) {
+	public void setUsuarioidUsuario(ORM.Usuario value) {
 		if (usuarioidUsuario != null) {
 			usuarioidUsuario.lista.remove(this);
 		}
@@ -80,18 +80,18 @@ public class Lista implements Serializable {
 		}
 	}
 	
-	public orm.Usuario getUsuarioidUsuario() {
+	public ORM.Usuario getUsuarioidUsuario() {
 		return usuarioidUsuario;
 	}
 	
 	/**
 	 * This method is for internal use only.
 	 */
-	public void setORM_UsuarioidUsuario(orm.Usuario value) {
+	public void setORM_UsuarioidUsuario(ORM.Usuario value) {
 		this.usuarioidUsuario = value;
 	}
 	
-	private orm.Usuario getORM_UsuarioidUsuario() {
+	private ORM.Usuario getORM_UsuarioidUsuario() {
 		return usuarioidUsuario;
 	}
 	
@@ -103,7 +103,7 @@ public class Lista implements Serializable {
 		return ORM_entradaLista;
 	}
 	
-	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_LISTA_ENTRADALISTA, orm.ORMConstants.KEY_ENTRADALISTA_LISTAIDLISTA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final ORM.EntradaListaSetCollection entradaLista = new ORM.EntradaListaSetCollection(this, _ormAdapter, ORM.ORMConstants.KEY_LISTA_ENTRADALISTA, ORM.ORMConstants.KEY_ENTRADALISTA_LISTAIDLISTA, ORM.ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdLista());

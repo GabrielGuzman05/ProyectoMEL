@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class ArtistaDAO {
 	public static Artista loadArtistaByORMID(int idArtista) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadArtistaByORMID(session, idArtista);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class ArtistaDAO {
 	
 	public static Artista getArtistaByORMID(int idArtista) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getArtistaByORMID(session, idArtista);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class ArtistaDAO {
 	
 	public static Artista loadArtistaByORMID(int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadArtistaByORMID(session, idArtista, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class ArtistaDAO {
 	
 	public static Artista getArtistaByORMID(int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getArtistaByORMID(session, idArtista, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class ArtistaDAO {
 	
 	public static Artista loadArtistaByORMID(PersistentSession session, int idArtista) throws PersistentException {
 		try {
-			return (Artista) session.load(orm.Artista.class, new Integer(idArtista));
+			return (Artista) session.load(ORM.Artista.class, new Integer(idArtista));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class ArtistaDAO {
 	
 	public static Artista getArtistaByORMID(PersistentSession session, int idArtista) throws PersistentException {
 		try {
-			return (Artista) session.get(orm.Artista.class, new Integer(idArtista));
+			return (Artista) session.get(ORM.Artista.class, new Integer(idArtista));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class ArtistaDAO {
 	
 	public static Artista loadArtistaByORMID(PersistentSession session, int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Artista) session.load(orm.Artista.class, new Integer(idArtista), lockMode);
+			return (Artista) session.load(ORM.Artista.class, new Integer(idArtista), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class ArtistaDAO {
 	
 	public static Artista getArtistaByORMID(PersistentSession session, int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Artista) session.get(orm.Artista.class, new Integer(idArtista), lockMode);
+			return (Artista) session.get(ORM.Artista.class, new Integer(idArtista), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class ArtistaDAO {
 	
 	public static List queryArtista(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryArtista(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class ArtistaDAO {
 	
 	public static List queryArtista(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryArtista(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class ArtistaDAO {
 	
 	public static Artista[] listArtistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listArtistaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class ArtistaDAO {
 	
 	public static Artista[] listArtistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listArtistaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class ArtistaDAO {
 	
 	public static Artista loadArtistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadArtistaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class ArtistaDAO {
 	
 	public static Artista loadArtistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadArtistaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class ArtistaDAO {
 	
 	public static java.util.Iterator iterateArtistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateArtistaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class ArtistaDAO {
 	
 	public static java.util.Iterator iterateArtistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateArtistaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -296,12 +296,12 @@ public class ArtistaDAO {
 	}
 	
 	public static Artista createArtista() {
-		return new orm.Artista();
+		return new ORM.Artista();
 	}
 	
-	public static boolean save(orm.Artista artista) throws PersistentException {
+	public static boolean save(ORM.Artista artista) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(artista);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(artista);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean delete(orm.Artista artista) throws PersistentException {
+	public static boolean delete(ORM.Artista artista) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(artista);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(artista);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,13 +321,13 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Artista artista)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.Artista artista)throws PersistentException {
 		try {
-			orm.Manga[] lMangaidMangas = artista.mangaidManga.toArray();
+			ORM.Manga[] lMangaidMangas = artista.mangaidManga.toArray();
 			for(int i = 0; i < lMangaidMangas.length; i++) {
 				lMangaidMangas[i].aristaidArtista.remove(artista);
 			}
-			orm.Novela[] lNovelas = artista.novela.toArray();
+			ORM.Novela[] lNovelas = artista.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
 				lNovelas[i].setArtistaidArtista(null);
 			}
@@ -339,13 +339,13 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Artista artista, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.Artista artista, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			orm.Manga[] lMangaidMangas = artista.mangaidManga.toArray();
+			ORM.Manga[] lMangaidMangas = artista.mangaidManga.toArray();
 			for(int i = 0; i < lMangaidMangas.length; i++) {
 				lMangaidMangas[i].aristaidArtista.remove(artista);
 			}
-			orm.Novela[] lNovelas = artista.novela.toArray();
+			ORM.Novela[] lNovelas = artista.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
 				lNovelas[i].setArtistaidArtista(null);
 			}
@@ -362,9 +362,9 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.Artista artista) throws PersistentException {
+	public static boolean refresh(ORM.Artista artista) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(artista);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(artista);
 			return true;
 		}
 		catch (Exception e) {
@@ -373,9 +373,9 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean evict(orm.Artista artista) throws PersistentException {
+	public static boolean evict(ORM.Artista artista) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(artista);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(artista);
 			return true;
 		}
 		catch (Exception e) {

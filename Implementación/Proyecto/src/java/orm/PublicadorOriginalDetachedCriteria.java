@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -24,21 +24,21 @@ public class PublicadorOriginalDetachedCriteria extends AbstractORMDetachedCrite
 	public final CollectionExpression novela;
 	
 	public PublicadorOriginalDetachedCriteria() {
-		super(orm.PublicadorOriginal.class, orm.PublicadorOriginalCriteria.class);
+		super(ORM.PublicadorOriginal.class, ORM.PublicadorOriginalCriteria.class);
 		idPublicadorOriginal = new IntegerExpression("idPublicadorOriginal", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		novela = new CollectionExpression("ORM_Novela", this.getDetachedCriteria());
 	}
 	
 	public PublicadorOriginalDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.PublicadorOriginalCriteria.class);
+		super(aDetachedCriteria, ORM.PublicadorOriginalCriteria.class);
 		idPublicadorOriginal = new IntegerExpression("idPublicadorOriginal", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		novela = new CollectionExpression("ORM_Novela", this.getDetachedCriteria());
 	}
 	
-	public orm.NovelaDetachedCriteria createNovelaCriteria() {
-		return new orm.NovelaDetachedCriteria(createCriteria("ORM_Novela"));
+	public ORM.NovelaDetachedCriteria createNovelaCriteria() {
+		return new ORM.NovelaDetachedCriteria(createCriteria("ORM_Novela"));
 	}
 	
 	public PublicadorOriginal uniquePublicadorOriginal(PersistentSession session) {

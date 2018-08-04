@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class PublicadorOriginalDAO {
 	public static PublicadorOriginal loadPublicadorOriginalByORMID(int idPublicadorOriginal) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorOriginalByORMID(session, idPublicadorOriginal);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class PublicadorOriginalDAO {
 	
 	public static PublicadorOriginal getPublicadorOriginalByORMID(int idPublicadorOriginal) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getPublicadorOriginalByORMID(session, idPublicadorOriginal);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class PublicadorOriginalDAO {
 	
 	public static PublicadorOriginal loadPublicadorOriginalByORMID(int idPublicadorOriginal, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorOriginalByORMID(session, idPublicadorOriginal, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class PublicadorOriginalDAO {
 	
 	public static PublicadorOriginal getPublicadorOriginalByORMID(int idPublicadorOriginal, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getPublicadorOriginalByORMID(session, idPublicadorOriginal, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class PublicadorOriginalDAO {
 	
 	public static PublicadorOriginal loadPublicadorOriginalByORMID(PersistentSession session, int idPublicadorOriginal) throws PersistentException {
 		try {
-			return (PublicadorOriginal) session.load(orm.PublicadorOriginal.class, new Integer(idPublicadorOriginal));
+			return (PublicadorOriginal) session.load(ORM.PublicadorOriginal.class, new Integer(idPublicadorOriginal));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class PublicadorOriginalDAO {
 	
 	public static PublicadorOriginal getPublicadorOriginalByORMID(PersistentSession session, int idPublicadorOriginal) throws PersistentException {
 		try {
-			return (PublicadorOriginal) session.get(orm.PublicadorOriginal.class, new Integer(idPublicadorOriginal));
+			return (PublicadorOriginal) session.get(ORM.PublicadorOriginal.class, new Integer(idPublicadorOriginal));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class PublicadorOriginalDAO {
 	
 	public static PublicadorOriginal loadPublicadorOriginalByORMID(PersistentSession session, int idPublicadorOriginal, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (PublicadorOriginal) session.load(orm.PublicadorOriginal.class, new Integer(idPublicadorOriginal), lockMode);
+			return (PublicadorOriginal) session.load(ORM.PublicadorOriginal.class, new Integer(idPublicadorOriginal), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class PublicadorOriginalDAO {
 	
 	public static PublicadorOriginal getPublicadorOriginalByORMID(PersistentSession session, int idPublicadorOriginal, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (PublicadorOriginal) session.get(orm.PublicadorOriginal.class, new Integer(idPublicadorOriginal), lockMode);
+			return (PublicadorOriginal) session.get(ORM.PublicadorOriginal.class, new Integer(idPublicadorOriginal), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class PublicadorOriginalDAO {
 	
 	public static List queryPublicadorOriginal(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryPublicadorOriginal(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class PublicadorOriginalDAO {
 	
 	public static List queryPublicadorOriginal(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryPublicadorOriginal(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class PublicadorOriginalDAO {
 	
 	public static PublicadorOriginal[] listPublicadorOriginalByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listPublicadorOriginalByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class PublicadorOriginalDAO {
 	
 	public static PublicadorOriginal[] listPublicadorOriginalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listPublicadorOriginalByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class PublicadorOriginalDAO {
 	
 	public static PublicadorOriginal loadPublicadorOriginalByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorOriginalByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class PublicadorOriginalDAO {
 	
 	public static PublicadorOriginal loadPublicadorOriginalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorOriginalByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class PublicadorOriginalDAO {
 	
 	public static java.util.Iterator iteratePublicadorOriginalByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iteratePublicadorOriginalByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class PublicadorOriginalDAO {
 	
 	public static java.util.Iterator iteratePublicadorOriginalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iteratePublicadorOriginalByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -296,12 +296,12 @@ public class PublicadorOriginalDAO {
 	}
 	
 	public static PublicadorOriginal createPublicadorOriginal() {
-		return new orm.PublicadorOriginal();
+		return new ORM.PublicadorOriginal();
 	}
 	
-	public static boolean save(orm.PublicadorOriginal publicadorOriginal) throws PersistentException {
+	public static boolean save(ORM.PublicadorOriginal publicadorOriginal) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(publicadorOriginal);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(publicadorOriginal);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class PublicadorOriginalDAO {
 		}
 	}
 	
-	public static boolean delete(orm.PublicadorOriginal publicadorOriginal) throws PersistentException {
+	public static boolean delete(ORM.PublicadorOriginal publicadorOriginal) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(publicadorOriginal);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(publicadorOriginal);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,9 +321,9 @@ public class PublicadorOriginalDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.PublicadorOriginal publicadorOriginal)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.PublicadorOriginal publicadorOriginal)throws PersistentException {
 		try {
-			orm.Novela[] lNovelas = publicadorOriginal.novela.toArray();
+			ORM.Novela[] lNovelas = publicadorOriginal.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
 				lNovelas[i].setPublicadorOriginalidPublicadorOriginal(null);
 			}
@@ -335,9 +335,9 @@ public class PublicadorOriginalDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.PublicadorOriginal publicadorOriginal, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.PublicadorOriginal publicadorOriginal, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			orm.Novela[] lNovelas = publicadorOriginal.novela.toArray();
+			ORM.Novela[] lNovelas = publicadorOriginal.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
 				lNovelas[i].setPublicadorOriginalidPublicadorOriginal(null);
 			}
@@ -354,9 +354,9 @@ public class PublicadorOriginalDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.PublicadorOriginal publicadorOriginal) throws PersistentException {
+	public static boolean refresh(ORM.PublicadorOriginal publicadorOriginal) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(publicadorOriginal);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(publicadorOriginal);
 			return true;
 		}
 		catch (Exception e) {
@@ -365,9 +365,9 @@ public class PublicadorOriginalDAO {
 		}
 	}
 	
-	public static boolean evict(orm.PublicadorOriginal publicadorOriginal) throws PersistentException {
+	public static boolean evict(ORM.PublicadorOriginal publicadorOriginal) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(publicadorOriginal);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(publicadorOriginal);
 			return true;
 		}
 		catch (Exception e) {

@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -25,7 +25,7 @@ public class AutorDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression novela;
 	
 	public AutorDetachedCriteria() {
-		super(orm.Autor.class, orm.AutorCriteria.class);
+		super(ORM.Autor.class, ORM.AutorCriteria.class);
 		idAutor = new IntegerExpression("idAutor", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		mangaidManga = new CollectionExpression("ORM_MangaidManga", this.getDetachedCriteria());
@@ -33,19 +33,19 @@ public class AutorDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public AutorDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.AutorCriteria.class);
+		super(aDetachedCriteria, ORM.AutorCriteria.class);
 		idAutor = new IntegerExpression("idAutor", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		mangaidManga = new CollectionExpression("ORM_MangaidManga", this.getDetachedCriteria());
 		novela = new CollectionExpression("ORM_Novela", this.getDetachedCriteria());
 	}
 	
-	public orm.MangaDetachedCriteria createMangaidMangaCriteria() {
-		return new orm.MangaDetachedCriteria(createCriteria("ORM_MangaidManga"));
+	public ORM.MangaDetachedCriteria createMangaidMangaCriteria() {
+		return new ORM.MangaDetachedCriteria(createCriteria("ORM_MangaidManga"));
 	}
 	
-	public orm.NovelaDetachedCriteria createNovelaCriteria() {
-		return new orm.NovelaDetachedCriteria(createCriteria("ORM_Novela"));
+	public ORM.NovelaDetachedCriteria createNovelaCriteria() {
+		return new ORM.NovelaDetachedCriteria(createCriteria("ORM_Novela"));
 	}
 	
 	public Autor uniqueAutor(PersistentSession session) {

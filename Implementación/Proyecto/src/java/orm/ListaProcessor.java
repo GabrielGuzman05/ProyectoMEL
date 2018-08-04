@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class ListaProcessor {
@@ -59,7 +59,7 @@ public class ListaProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Lista _lista = orm.ListaDAO.loadListaByORMID(getIdLista());
+				ORM.Lista _lista = ORM.ListaDAO.loadListaByORMID(getIdLista());
 				if (_lista!= null) {
 					copyFromBean(_lista);
 					result = "Search success";
@@ -74,7 +74,7 @@ public class ListaProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Lista _lista = orm.ListaDAO.createLista();
+				ORM.Lista _lista = ORM.ListaDAO.createLista();
 				copyToBean(_lista);
 				if (ORM.ListaDAO.save(_lista)) {
 					result = "Insert success";
@@ -89,7 +89,7 @@ public class ListaProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Lista _lista= orm.ListaDAO.loadListaByORMID(getIdLista());
+				ORM.Lista _lista= ORM.ListaDAO.loadListaByORMID(getIdLista());
 				if (_lista != null) {
 					copyToBean(_lista);
 					if (ORM.ListaDAO.save(_lista)) {
@@ -110,7 +110,7 @@ public class ListaProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Lista _lista = orm.ListaDAO.loadListaByORMID(getIdLista());
+				ORM.Lista _lista = ORM.ListaDAO.loadListaByORMID(getIdLista());
 				if (_lista != null && ORM.ListaDAO.deleteAndDissociate(_lista)) {
 					result = "Delete success";
 				}
@@ -129,12 +129,12 @@ public class ListaProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Lista _lista) {
+	private void copyFromBean(ORM.Lista _lista) {
 		setNombreLista(_lista.getNombreLista());
 		setIdLista(_lista.getORMID());
 		
 		{
-			orm.Usuario _usuario = _lista.getUsuarioidUsuario();
+			ORM.Usuario _usuario = _lista.getUsuarioidUsuario();
 			if (_usuario != null) {
 				setUsuarioidUsuario_usuarioidUsuario(_usuario.getORMID());
 			}
@@ -142,10 +142,10 @@ public class ListaProcessor {
 		
 	}
 	
-	private void copyToBean(orm.Lista _lista) {
+	private void copyToBean(ORM.Lista _lista) {
 		_lista.setNombreLista(getNombreLista());
 		try  {
-			orm.Usuario _usuarioidUsuario = orm.UsuarioDAO.loadUsuarioByORMID(getUsuarioidUsuario_usuarioidUsuario());
+			ORM.Usuario _usuarioidUsuario = ORM.UsuarioDAO.loadUsuarioByORMID(getUsuarioidUsuario_usuarioidUsuario());
 			_lista.setUsuarioidUsuario(_usuarioidUsuario);
 		}
 		catch (PersistentException e) {

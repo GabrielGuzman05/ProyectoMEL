@@ -50,7 +50,7 @@
                     <div><img src="assets/img/Of_Fire_by_FallingToPieces.jpg" class="mr-3" style="height:100px;width:100px;"></div>
                     <div class="media-body">
                         <ul class="list-unstyled fa-ul">
-                            <li><i class="fa fa-user fa-li"></i><a>${sessionScope.usuario}</a></li>
+                            <li><i class="fa fa-user fa-li"></i><a>${sessionScope.usuario.getNombreUsuario()}</a></li>
                             <li><i class="fa fa-envelope fa-li"></i><a href="#">admin@gmail.com </a></li>
                         </ul>
                     </div>

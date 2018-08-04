@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class PublicadorInglesProcessor {
@@ -49,7 +49,7 @@ public class PublicadorInglesProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.PublicadorIngles _publicadorIngles = orm.PublicadorInglesDAO.loadPublicadorInglesByORMID(getIdPublicadorIngles());
+				ORM.PublicadorIngles _publicadorIngles = ORM.PublicadorInglesDAO.loadPublicadorInglesByORMID(getIdPublicadorIngles());
 				if (_publicadorIngles!= null) {
 					copyFromBean(_publicadorIngles);
 					result = "Search success";
@@ -64,7 +64,7 @@ public class PublicadorInglesProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.PublicadorIngles _publicadorIngles = orm.PublicadorInglesDAO.createPublicadorIngles();
+				ORM.PublicadorIngles _publicadorIngles = ORM.PublicadorInglesDAO.createPublicadorIngles();
 				copyToBean(_publicadorIngles);
 				if (ORM.PublicadorInglesDAO.save(_publicadorIngles)) {
 					result = "Insert success";
@@ -79,7 +79,7 @@ public class PublicadorInglesProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.PublicadorIngles _publicadorIngles= orm.PublicadorInglesDAO.loadPublicadorInglesByORMID(getIdPublicadorIngles());
+				ORM.PublicadorIngles _publicadorIngles= ORM.PublicadorInglesDAO.loadPublicadorInglesByORMID(getIdPublicadorIngles());
 				if (_publicadorIngles != null) {
 					copyToBean(_publicadorIngles);
 					if (ORM.PublicadorInglesDAO.save(_publicadorIngles)) {
@@ -100,7 +100,7 @@ public class PublicadorInglesProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.PublicadorIngles _publicadorIngles = orm.PublicadorInglesDAO.loadPublicadorInglesByORMID(getIdPublicadorIngles());
+				ORM.PublicadorIngles _publicadorIngles = ORM.PublicadorInglesDAO.loadPublicadorInglesByORMID(getIdPublicadorIngles());
 				if (_publicadorIngles != null && ORM.PublicadorInglesDAO.deleteAndDissociate(_publicadorIngles)) {
 					result = "Delete success";
 				}
@@ -119,12 +119,12 @@ public class PublicadorInglesProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.PublicadorIngles _publicadorIngles) {
+	private void copyFromBean(ORM.PublicadorIngles _publicadorIngles) {
 		setNombre(_publicadorIngles.getNombre());
 		setIdPublicadorIngles(_publicadorIngles.getORMID());
 	}
 	
-	private void copyToBean(orm.PublicadorIngles _publicadorIngles) {
+	private void copyToBean(ORM.PublicadorIngles _publicadorIngles) {
 		_publicadorIngles.setNombre(getNombre());
 	}
 	

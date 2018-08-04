@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -65,31 +65,31 @@ public class MangaCriteria extends AbstractORMCriteria {
 	}
 	
 	public MangaCriteria() throws PersistentException {
-		this(orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession());
+		this(ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession());
 	}
 	
 	public TipoMangaCriteria createTipoMangaidTipoMangaCriteria() {
 		return new TipoMangaCriteria(createCriteria("tipoMangaidTipoManga"));
 	}
 	
-	public orm.GeneroCriteria createGeneroidGeneroCriteria() {
-		return new orm.GeneroCriteria(createCriteria("ORM_GeneroidGenero"));
+	public ORM.GeneroCriteria createGeneroidGeneroCriteria() {
+		return new ORM.GeneroCriteria(createCriteria("ORM_GeneroidGenero"));
 	}
 	
-	public orm.AutorCriteria createAutoridAutorCriteria() {
-		return new orm.AutorCriteria(createCriteria("ORM_AutoridAutor"));
+	public ORM.AutorCriteria createAutoridAutorCriteria() {
+		return new ORM.AutorCriteria(createCriteria("ORM_AutoridAutor"));
 	}
 	
-	public orm.TagCriteria createTagidTagCriteria() {
-		return new orm.TagCriteria(createCriteria("ORM_TagidTag"));
+	public ORM.TagCriteria createTagidTagCriteria() {
+		return new ORM.TagCriteria(createCriteria("ORM_TagidTag"));
 	}
 	
-	public orm.ArtistaCriteria createAristaidArtistaCriteria() {
-		return new orm.ArtistaCriteria(createCriteria("ORM_AristaidArtista"));
+	public ORM.ArtistaCriteria createAristaidArtistaCriteria() {
+		return new ORM.ArtistaCriteria(createCriteria("ORM_AristaidArtista"));
 	}
 	
-	public orm.EntradaListaCriteria createEntradaListaCriteria() {
-		return new orm.EntradaListaCriteria(createCriteria("ORM_EntradaLista"));
+	public ORM.EntradaListaCriteria createEntradaListaCriteria() {
+		return new ORM.EntradaListaCriteria(createCriteria("ORM_EntradaLista"));
 	}
 	
 	public Manga uniqueManga() {

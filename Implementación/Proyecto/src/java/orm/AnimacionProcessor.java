@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class AnimacionProcessor {
@@ -147,7 +147,7 @@ public class AnimacionProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Animacion _animacion = orm.AnimacionDAO.loadAnimacionByORMID(getIdAnimacion());
+				ORM.Animacion _animacion = ORM.AnimacionDAO.loadAnimacionByORMID(getIdAnimacion());
 				if (_animacion!= null) {
 					copyFromBean(_animacion);
 					result = "Search success";
@@ -162,7 +162,7 @@ public class AnimacionProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Animacion _animacion = orm.AnimacionDAO.createAnimacion();
+				ORM.Animacion _animacion = ORM.AnimacionDAO.createAnimacion();
 				copyToBean(_animacion);
 				if (ORM.AnimacionDAO.save(_animacion)) {
 					result = "Insert success";
@@ -177,7 +177,7 @@ public class AnimacionProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Animacion _animacion= orm.AnimacionDAO.loadAnimacionByORMID(getIdAnimacion());
+				ORM.Animacion _animacion= ORM.AnimacionDAO.loadAnimacionByORMID(getIdAnimacion());
 				if (_animacion != null) {
 					copyToBean(_animacion);
 					if (ORM.AnimacionDAO.save(_animacion)) {
@@ -198,7 +198,7 @@ public class AnimacionProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Animacion _animacion = orm.AnimacionDAO.loadAnimacionByORMID(getIdAnimacion());
+				ORM.Animacion _animacion = ORM.AnimacionDAO.loadAnimacionByORMID(getIdAnimacion());
 				if (_animacion != null && ORM.AnimacionDAO.deleteAndDissociate(_animacion)) {
 					result = "Delete success";
 				}
@@ -217,7 +217,7 @@ public class AnimacionProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Animacion _animacion) {
+	private void copyFromBean(ORM.Animacion _animacion) {
 		setNombre(_animacion.getNombre());
 		setNombreAlternativo(_animacion.getNombreAlternativo());
 		setFuente(_animacion.getFuente());
@@ -228,7 +228,7 @@ public class AnimacionProcessor {
 		setIdAnimacion(_animacion.getORMID());
 		
 		{
-			orm.Temporada _temporada = _animacion.getTemporadaidTemporada();
+			ORM.Temporada _temporada = _animacion.getTemporadaidTemporada();
 			if (_temporada != null) {
 				setTemporadaidTemporada_temporadaidTemporada(_temporada.getORMID());
 			}
@@ -236,7 +236,7 @@ public class AnimacionProcessor {
 		
 		
 		{
-			orm.TipoEmision _tipoEmision = _animacion.getTipoEmisionidTipoEmision();
+			ORM.TipoEmision _tipoEmision = _animacion.getTipoEmisionidTipoEmision();
 			if (_tipoEmision != null) {
 				setTipoEmisionidTipoEmision_tipoEmisionidTipoEmision(_tipoEmision.getORMID());
 			}
@@ -244,7 +244,7 @@ public class AnimacionProcessor {
 		
 		
 		{
-			orm.Rating _rating = _animacion.getRatingidRating();
+			ORM.Rating _rating = _animacion.getRatingidRating();
 			if (_rating != null) {
 				setRatingidRating_ratingidRating(_rating.getORMID());
 			}
@@ -252,7 +252,7 @@ public class AnimacionProcessor {
 		
 	}
 	
-	private void copyToBean(orm.Animacion _animacion) {
+	private void copyToBean(ORM.Animacion _animacion) {
 		_animacion.setNombre(getNombre());
 		_animacion.setNombreAlternativo(getNombreAlternativo());
 		_animacion.setFuente(getFuente());
@@ -261,21 +261,21 @@ public class AnimacionProcessor {
 		_animacion.setMALCode(getMALCode());
 		_animacion.setEstadoUsuarioidEstadoUsuario(getEstadoUsuarioidEstadoUsuario());
 		try  {
-			orm.Temporada _temporadaidTemporada = orm.TemporadaDAO.loadTemporadaByORMID(getTemporadaidTemporada_temporadaidTemporada());
+			ORM.Temporada _temporadaidTemporada = ORM.TemporadaDAO.loadTemporadaByORMID(getTemporadaidTemporada_temporadaidTemporada());
 			_animacion.setTemporadaidTemporada(_temporadaidTemporada);
 		}
 		catch (PersistentException e) {
 		}
 		
 		try  {
-			orm.TipoEmision _tipoEmisionidTipoEmision = orm.TipoEmisionDAO.loadTipoEmisionByORMID(getTipoEmisionidTipoEmision_tipoEmisionidTipoEmision());
+			ORM.TipoEmision _tipoEmisionidTipoEmision = ORM.TipoEmisionDAO.loadTipoEmisionByORMID(getTipoEmisionidTipoEmision_tipoEmisionidTipoEmision());
 			_animacion.setTipoEmisionidTipoEmision(_tipoEmisionidTipoEmision);
 		}
 		catch (PersistentException e) {
 		}
 		
 		try  {
-			orm.Rating _ratingidRating = orm.RatingDAO.loadRatingByORMID(getRatingidRating_ratingidRating());
+			ORM.Rating _ratingidRating = ORM.RatingDAO.loadRatingByORMID(getRatingidRating_ratingidRating());
 			_animacion.setRatingidRating(_ratingidRating);
 		}
 		catch (PersistentException e) {

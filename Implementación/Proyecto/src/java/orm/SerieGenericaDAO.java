@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class SerieGenericaDAO {
 	public static SerieGenerica loadSerieGenericaByORMID(int idSerie) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadSerieGenericaByORMID(session, idSerie);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class SerieGenericaDAO {
 	
 	public static SerieGenerica getSerieGenericaByORMID(int idSerie) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getSerieGenericaByORMID(session, idSerie);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class SerieGenericaDAO {
 	
 	public static SerieGenerica loadSerieGenericaByORMID(int idSerie, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadSerieGenericaByORMID(session, idSerie, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class SerieGenericaDAO {
 	
 	public static SerieGenerica getSerieGenericaByORMID(int idSerie, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getSerieGenericaByORMID(session, idSerie, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class SerieGenericaDAO {
 	
 	public static SerieGenerica loadSerieGenericaByORMID(PersistentSession session, int idSerie) throws PersistentException {
 		try {
-			return (SerieGenerica) session.load(orm.SerieGenerica.class, new Integer(idSerie));
+			return (SerieGenerica) session.load(ORM.SerieGenerica.class, new Integer(idSerie));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class SerieGenericaDAO {
 	
 	public static SerieGenerica getSerieGenericaByORMID(PersistentSession session, int idSerie) throws PersistentException {
 		try {
-			return (SerieGenerica) session.get(orm.SerieGenerica.class, new Integer(idSerie));
+			return (SerieGenerica) session.get(ORM.SerieGenerica.class, new Integer(idSerie));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class SerieGenericaDAO {
 	
 	public static SerieGenerica loadSerieGenericaByORMID(PersistentSession session, int idSerie, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (SerieGenerica) session.load(orm.SerieGenerica.class, new Integer(idSerie), lockMode);
+			return (SerieGenerica) session.load(ORM.SerieGenerica.class, new Integer(idSerie), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class SerieGenericaDAO {
 	
 	public static SerieGenerica getSerieGenericaByORMID(PersistentSession session, int idSerie, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (SerieGenerica) session.get(orm.SerieGenerica.class, new Integer(idSerie), lockMode);
+			return (SerieGenerica) session.get(ORM.SerieGenerica.class, new Integer(idSerie), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class SerieGenericaDAO {
 	
 	public static List querySerieGenerica(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return querySerieGenerica(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class SerieGenericaDAO {
 	
 	public static List querySerieGenerica(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return querySerieGenerica(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class SerieGenericaDAO {
 	
 	public static SerieGenerica[] listSerieGenericaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listSerieGenericaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class SerieGenericaDAO {
 	
 	public static SerieGenerica[] listSerieGenericaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listSerieGenericaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -148,7 +148,7 @@ public class SerieGenericaDAO {
 	}
 	
 	public static List querySerieGenerica(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From orm.SerieGenerica as SerieGenerica");
+		StringBuffer sb = new StringBuffer("From SerieGenerica");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class SerieGenericaDAO {
 	}
 	
 	public static List querySerieGenerica(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From orm.SerieGenerica as SerieGenerica");
+		StringBuffer sb = new StringBuffer("From SerieGenerica");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -204,7 +204,7 @@ public class SerieGenericaDAO {
 	
 	public static SerieGenerica loadSerieGenericaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadSerieGenericaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class SerieGenericaDAO {
 	
 	public static SerieGenerica loadSerieGenericaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadSerieGenericaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class SerieGenericaDAO {
 	
 	public static java.util.Iterator iterateSerieGenericaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateSerieGenericaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class SerieGenericaDAO {
 	
 	public static java.util.Iterator iterateSerieGenericaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateSerieGenericaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -296,12 +296,12 @@ public class SerieGenericaDAO {
 	}
 	
 	public static SerieGenerica createSerieGenerica() {
-		return new orm.SerieGenerica();
+		return new ORM.SerieGenerica();
 	}
 	
-	public static boolean save(orm.SerieGenerica serieGenerica) throws PersistentException {
+	public static boolean save(ORM.SerieGenerica serieGenerica) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(serieGenerica);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(serieGenerica);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class SerieGenericaDAO {
 		}
 	}
 	
-	public static boolean delete(orm.SerieGenerica serieGenerica) throws PersistentException {
+	public static boolean delete(ORM.SerieGenerica serieGenerica) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(serieGenerica);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(serieGenerica);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,13 +321,13 @@ public class SerieGenericaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.SerieGenerica serieGenerica)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.SerieGenerica serieGenerica)throws PersistentException {
 		try {
-			orm.Genero[] lGeneroidGeneros = serieGenerica.generoidGenero.toArray();
+			ORM.Genero[] lGeneroidGeneros = serieGenerica.generoidGenero.toArray();
 			for(int i = 0; i < lGeneroidGeneros.length; i++) {
 				lGeneroidGeneros[i].serieGenericaidSerie.remove(serieGenerica);
 			}
-			orm.EntradaLista[] lEntradaListas = serieGenerica.entradaLista.toArray();
+			ORM.EntradaLista[] lEntradaListas = serieGenerica.entradaLista.toArray();
 			for(int i = 0; i < lEntradaListas.length; i++) {
 				lEntradaListas[i].setSerieGenericaidSerie(null);
 			}
@@ -339,13 +339,13 @@ public class SerieGenericaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.SerieGenerica serieGenerica, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.SerieGenerica serieGenerica, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			orm.Genero[] lGeneroidGeneros = serieGenerica.generoidGenero.toArray();
+			ORM.Genero[] lGeneroidGeneros = serieGenerica.generoidGenero.toArray();
 			for(int i = 0; i < lGeneroidGeneros.length; i++) {
 				lGeneroidGeneros[i].serieGenericaidSerie.remove(serieGenerica);
 			}
-			orm.EntradaLista[] lEntradaListas = serieGenerica.entradaLista.toArray();
+			ORM.EntradaLista[] lEntradaListas = serieGenerica.entradaLista.toArray();
 			for(int i = 0; i < lEntradaListas.length; i++) {
 				lEntradaListas[i].setSerieGenericaidSerie(null);
 			}
@@ -362,9 +362,9 @@ public class SerieGenericaDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.SerieGenerica serieGenerica) throws PersistentException {
+	public static boolean refresh(ORM.SerieGenerica serieGenerica) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(serieGenerica);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(serieGenerica);
 			return true;
 		}
 		catch (Exception e) {
@@ -373,9 +373,9 @@ public class SerieGenericaDAO {
 		}
 	}
 	
-	public static boolean evict(orm.SerieGenerica serieGenerica) throws PersistentException {
+	public static boolean evict(ORM.SerieGenerica serieGenerica) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(serieGenerica);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(serieGenerica);
 			return true;
 		}
 		catch (Exception e) {

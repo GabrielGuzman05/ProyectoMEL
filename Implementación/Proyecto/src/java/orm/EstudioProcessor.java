@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class EstudioProcessor {
@@ -49,7 +49,7 @@ public class EstudioProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Estudio _estudio = orm.EstudioDAO.loadEstudioByORMID(getIdEstudio());
+				ORM.Estudio _estudio = ORM.EstudioDAO.loadEstudioByORMID(getIdEstudio());
 				if (_estudio!= null) {
 					copyFromBean(_estudio);
 					result = "Search success";
@@ -64,7 +64,7 @@ public class EstudioProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Estudio _estudio = orm.EstudioDAO.createEstudio();
+				ORM.Estudio _estudio = ORM.EstudioDAO.createEstudio();
 				copyToBean(_estudio);
 				if (ORM.EstudioDAO.save(_estudio)) {
 					result = "Insert success";
@@ -79,7 +79,7 @@ public class EstudioProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Estudio _estudio= orm.EstudioDAO.loadEstudioByORMID(getIdEstudio());
+				ORM.Estudio _estudio= ORM.EstudioDAO.loadEstudioByORMID(getIdEstudio());
 				if (_estudio != null) {
 					copyToBean(_estudio);
 					if (ORM.EstudioDAO.save(_estudio)) {
@@ -100,7 +100,7 @@ public class EstudioProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Estudio _estudio = orm.EstudioDAO.loadEstudioByORMID(getIdEstudio());
+				ORM.Estudio _estudio = ORM.EstudioDAO.loadEstudioByORMID(getIdEstudio());
 				if (_estudio != null && ORM.EstudioDAO.deleteAndDissociate(_estudio)) {
 					result = "Delete success";
 				}
@@ -119,12 +119,12 @@ public class EstudioProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Estudio _estudio) {
+	private void copyFromBean(ORM.Estudio _estudio) {
 		setNombre(_estudio.getNombre());
 		setIdEstudio(_estudio.getORMID());
 	}
 	
-	private void copyToBean(orm.Estudio _estudio) {
+	private void copyToBean(ORM.Estudio _estudio) {
 		_estudio.setNombre(getNombre());
 	}
 	

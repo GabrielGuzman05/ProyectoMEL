@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -25,7 +25,7 @@ public class TemporadaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression animacion;
 	
 	public TemporadaDetachedCriteria() {
-		super(orm.Temporada.class, orm.TemporadaCriteria.class);
+		super(ORM.Temporada.class, ORM.TemporadaCriteria.class);
 		idTemporada = new IntegerExpression("idTemporada", this.getDetachedCriteria());
 		estacion = new StringExpression("estacion", this.getDetachedCriteria());
 		año = new IntegerExpression("año", this.getDetachedCriteria());
@@ -33,15 +33,15 @@ public class TemporadaDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public TemporadaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.TemporadaCriteria.class);
+		super(aDetachedCriteria, ORM.TemporadaCriteria.class);
 		idTemporada = new IntegerExpression("idTemporada", this.getDetachedCriteria());
 		estacion = new StringExpression("estacion", this.getDetachedCriteria());
 		año = new IntegerExpression("año", this.getDetachedCriteria());
 		animacion = new CollectionExpression("ORM_Animacion", this.getDetachedCriteria());
 	}
 	
-	public orm.AnimacionDetachedCriteria createAnimacionCriteria() {
-		return new orm.AnimacionDetachedCriteria(createCriteria("ORM_Animacion"));
+	public ORM.AnimacionDetachedCriteria createAnimacionCriteria() {
+		return new ORM.AnimacionDetachedCriteria(createCriteria("ORM_Animacion"));
 	}
 	
 	public Temporada uniqueTemporada(PersistentSession session) {

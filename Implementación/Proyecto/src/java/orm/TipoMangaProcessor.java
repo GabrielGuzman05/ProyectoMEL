@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class TipoMangaProcessor {
@@ -49,7 +49,7 @@ public class TipoMangaProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.TipoManga _tipoManga = orm.TipoMangaDAO.loadTipoMangaByORMID(getIdTipoManga());
+				ORM.TipoManga _tipoManga = ORM.TipoMangaDAO.loadTipoMangaByORMID(getIdTipoManga());
 				if (_tipoManga!= null) {
 					copyFromBean(_tipoManga);
 					result = "Search success";
@@ -64,7 +64,7 @@ public class TipoMangaProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.TipoManga _tipoManga = orm.TipoMangaDAO.createTipoManga();
+				ORM.TipoManga _tipoManga = ORM.TipoMangaDAO.createTipoManga();
 				copyToBean(_tipoManga);
 				if (ORM.TipoMangaDAO.save(_tipoManga)) {
 					result = "Insert success";
@@ -79,7 +79,7 @@ public class TipoMangaProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.TipoManga _tipoManga= orm.TipoMangaDAO.loadTipoMangaByORMID(getIdTipoManga());
+				ORM.TipoManga _tipoManga= ORM.TipoMangaDAO.loadTipoMangaByORMID(getIdTipoManga());
 				if (_tipoManga != null) {
 					copyToBean(_tipoManga);
 					if (ORM.TipoMangaDAO.save(_tipoManga)) {
@@ -100,7 +100,7 @@ public class TipoMangaProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.TipoManga _tipoManga = orm.TipoMangaDAO.loadTipoMangaByORMID(getIdTipoManga());
+				ORM.TipoManga _tipoManga = ORM.TipoMangaDAO.loadTipoMangaByORMID(getIdTipoManga());
 				if (_tipoManga != null && ORM.TipoMangaDAO.deleteAndDissociate(_tipoManga)) {
 					result = "Delete success";
 				}
@@ -119,12 +119,12 @@ public class TipoMangaProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.TipoManga _tipoManga) {
+	private void copyFromBean(ORM.TipoManga _tipoManga) {
 		setNombre(_tipoManga.getNombre());
 		setIdTipoManga(_tipoManga.getORMID());
 	}
 	
-	private void copyToBean(orm.TipoManga _tipoManga) {
+	private void copyToBean(ORM.TipoManga _tipoManga) {
 		_tipoManga.setNombre(getNombre());
 	}
 	

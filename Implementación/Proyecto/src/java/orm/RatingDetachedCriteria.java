@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -24,21 +24,21 @@ public class RatingDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression animacion;
 	
 	public RatingDetachedCriteria() {
-		super(orm.Rating.class, orm.RatingCriteria.class);
+		super(ORM.Rating.class, ORM.RatingCriteria.class);
 		idRating = new IntegerExpression("idRating", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		animacion = new CollectionExpression("ORM_Animacion", this.getDetachedCriteria());
 	}
 	
 	public RatingDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.RatingCriteria.class);
+		super(aDetachedCriteria, ORM.RatingCriteria.class);
 		idRating = new IntegerExpression("idRating", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		animacion = new CollectionExpression("ORM_Animacion", this.getDetachedCriteria());
 	}
 	
-	public orm.AnimacionDetachedCriteria createAnimacionCriteria() {
-		return new orm.AnimacionDetachedCriteria(createCriteria("ORM_Animacion"));
+	public ORM.AnimacionDetachedCriteria createAnimacionCriteria() {
+		return new ORM.AnimacionDetachedCriteria(createCriteria("ORM_Animacion"));
 	}
 	
 	public Rating uniqueRating(PersistentSession session) {

@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class NovelaProcessor {
@@ -191,7 +191,7 @@ public class NovelaProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Novela _novela = orm.NovelaDAO.loadNovelaByORMID(getIdNovela());
+				ORM.Novela _novela = ORM.NovelaDAO.loadNovelaByORMID(getIdNovela());
 				if (_novela!= null) {
 					copyFromBean(_novela);
 					result = "Search success";
@@ -206,7 +206,7 @@ public class NovelaProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Novela _novela = orm.NovelaDAO.createNovela();
+				ORM.Novela _novela = ORM.NovelaDAO.createNovela();
 				copyToBean(_novela);
 				if (ORM.NovelaDAO.save(_novela)) {
 					result = "Insert success";
@@ -221,7 +221,7 @@ public class NovelaProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Novela _novela= orm.NovelaDAO.loadNovelaByORMID(getIdNovela());
+				ORM.Novela _novela= ORM.NovelaDAO.loadNovelaByORMID(getIdNovela());
 				if (_novela != null) {
 					copyToBean(_novela);
 					if (ORM.NovelaDAO.save(_novela)) {
@@ -242,7 +242,7 @@ public class NovelaProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Novela _novela = orm.NovelaDAO.loadNovelaByORMID(getIdNovela());
+				ORM.Novela _novela = ORM.NovelaDAO.loadNovelaByORMID(getIdNovela());
 				if (_novela != null && ORM.NovelaDAO.deleteAndDissociate(_novela)) {
 					result = "Delete success";
 				}
@@ -261,7 +261,7 @@ public class NovelaProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Novela _novela) {
+	private void copyFromBean(ORM.Novela _novela) {
 		setNombre(_novela.getNombre());
 		setNombreAlternativo(_novela.getNombreAlternativo());
 		setAño(_novela.getAño());
@@ -273,7 +273,7 @@ public class NovelaProcessor {
 		setIdNovela(_novela.getORMID());
 		
 		{
-			orm.PublicadorOriginal _publicadorOriginal = _novela.getPublicadorOriginalidPublicadorOriginal();
+			ORM.PublicadorOriginal _publicadorOriginal = _novela.getPublicadorOriginalidPublicadorOriginal();
 			if (_publicadorOriginal != null) {
 				setPublicadorOriginalidPublicadorOriginal_publicadorOriginalidPublicadorOriginal(_publicadorOriginal.getORMID());
 			}
@@ -281,7 +281,7 @@ public class NovelaProcessor {
 		
 		
 		{
-			orm.Autor _autor = _novela.getAutoridAutor();
+			ORM.Autor _autor = _novela.getAutoridAutor();
 			if (_autor != null) {
 				setAutoridAutor_autoridAutor(_autor.getORMID());
 			}
@@ -289,7 +289,7 @@ public class NovelaProcessor {
 		
 		
 		{
-			orm.PublicadorIngles _publicadorIngles = _novela.getPublicadorInglesidPublicadorIngles();
+			ORM.PublicadorIngles _publicadorIngles = _novela.getPublicadorInglesidPublicadorIngles();
 			if (_publicadorIngles != null) {
 				setPublicadorInglesidPublicadorIngles_publicadorInglesidPublicadorIngles(_publicadorIngles.getORMID());
 			}
@@ -297,7 +297,7 @@ public class NovelaProcessor {
 		
 		
 		{
-			orm.Tipo _tipo = _novela.getTipoidTipo();
+			ORM.Tipo _tipo = _novela.getTipoidTipo();
 			if (_tipo != null) {
 				setTipoidTipo_tipoidTipo(_tipo.getORMID());
 			}
@@ -305,7 +305,7 @@ public class NovelaProcessor {
 		
 		
 		{
-			orm.LenguajeOriginal _lenguajeOriginal = _novela.getLenguajeOriginalidLenguaje();
+			ORM.LenguajeOriginal _lenguajeOriginal = _novela.getLenguajeOriginalidLenguaje();
 			if (_lenguajeOriginal != null) {
 				setLenguajeOriginalidLenguaje_lenguajeOriginalidLenguaje(_lenguajeOriginal.getORMID());
 			}
@@ -313,7 +313,7 @@ public class NovelaProcessor {
 		
 		
 		{
-			orm.Artista _artista = _novela.getArtistaidArtista();
+			ORM.Artista _artista = _novela.getArtistaidArtista();
 			if (_artista != null) {
 				setArtistaidArtista_artistaidArtista(_artista.getORMID());
 			}
@@ -321,7 +321,7 @@ public class NovelaProcessor {
 		
 	}
 	
-	private void copyToBean(orm.Novela _novela) {
+	private void copyToBean(ORM.Novela _novela) {
 		_novela.setNombre(getNombre());
 		_novela.setNombreAlternativo(getNombreAlternativo());
 		_novela.setAño(getAño());
@@ -331,42 +331,42 @@ public class NovelaProcessor {
 		_novela.setEstrellas(getEstrellas());
 		_novela.setEstadoUsuarioidEstadoUsuario(getEstadoUsuarioidEstadoUsuario());
 		try  {
-			orm.PublicadorOriginal _publicadorOriginalidPublicadorOriginal = orm.PublicadorOriginalDAO.loadPublicadorOriginalByORMID(getPublicadorOriginalidPublicadorOriginal_publicadorOriginalidPublicadorOriginal());
+			ORM.PublicadorOriginal _publicadorOriginalidPublicadorOriginal = ORM.PublicadorOriginalDAO.loadPublicadorOriginalByORMID(getPublicadorOriginalidPublicadorOriginal_publicadorOriginalidPublicadorOriginal());
 			_novela.setPublicadorOriginalidPublicadorOriginal(_publicadorOriginalidPublicadorOriginal);
 		}
 		catch (PersistentException e) {
 		}
 		
 		try  {
-			orm.Autor _autoridAutor = orm.AutorDAO.loadAutorByORMID(getAutoridAutor_autoridAutor());
+			ORM.Autor _autoridAutor = ORM.AutorDAO.loadAutorByORMID(getAutoridAutor_autoridAutor());
 			_novela.setAutoridAutor(_autoridAutor);
 		}
 		catch (PersistentException e) {
 		}
 		
 		try  {
-			orm.PublicadorIngles _publicadorInglesidPublicadorIngles = orm.PublicadorInglesDAO.loadPublicadorInglesByORMID(getPublicadorInglesidPublicadorIngles_publicadorInglesidPublicadorIngles());
+			ORM.PublicadorIngles _publicadorInglesidPublicadorIngles = ORM.PublicadorInglesDAO.loadPublicadorInglesByORMID(getPublicadorInglesidPublicadorIngles_publicadorInglesidPublicadorIngles());
 			_novela.setPublicadorInglesidPublicadorIngles(_publicadorInglesidPublicadorIngles);
 		}
 		catch (PersistentException e) {
 		}
 		
 		try  {
-			orm.Tipo _tipoidTipo = orm.TipoDAO.loadTipoByORMID(getTipoidTipo_tipoidTipo());
+			ORM.Tipo _tipoidTipo = ORM.TipoDAO.loadTipoByORMID(getTipoidTipo_tipoidTipo());
 			_novela.setTipoidTipo(_tipoidTipo);
 		}
 		catch (PersistentException e) {
 		}
 		
 		try  {
-			orm.LenguajeOriginal _lenguajeOriginalidLenguaje = orm.LenguajeOriginalDAO.loadLenguajeOriginalByORMID(getLenguajeOriginalidLenguaje_lenguajeOriginalidLenguaje());
+			ORM.LenguajeOriginal _lenguajeOriginalidLenguaje = ORM.LenguajeOriginalDAO.loadLenguajeOriginalByORMID(getLenguajeOriginalidLenguaje_lenguajeOriginalidLenguaje());
 			_novela.setLenguajeOriginalidLenguaje(_lenguajeOriginalidLenguaje);
 		}
 		catch (PersistentException e) {
 		}
 		
 		try  {
-			orm.Artista _artistaidArtista = orm.ArtistaDAO.loadArtistaByORMID(getArtistaidArtista_artistaidArtista());
+			ORM.Artista _artistaidArtista = ORM.ArtistaDAO.loadArtistaByORMID(getArtistaidArtista_artistaidArtista());
 			_novela.setArtistaidArtista(_artistaidArtista);
 		}
 		catch (PersistentException e) {

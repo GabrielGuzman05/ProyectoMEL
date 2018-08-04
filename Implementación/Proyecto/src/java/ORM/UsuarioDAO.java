@@ -148,7 +148,7 @@ public class UsuarioDAO {
 	}
 	
 	public static List queryUsuario(PersistentSession session, String condition, String orderBy) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From orm.Usuario as Usuario");
+		StringBuffer sb = new StringBuffer("From Usuario");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)
@@ -164,7 +164,7 @@ public class UsuarioDAO {
 	}
 	
 	public static List queryUsuario(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
-		StringBuffer sb = new StringBuffer("From orm.Usuario as Usuario");
+		StringBuffer sb = new StringBuffer("From Usuario");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
 		if (orderBy != null)

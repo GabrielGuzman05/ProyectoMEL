@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class EntradaListaProcessor {
@@ -129,7 +129,7 @@ public class EntradaListaProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.EntradaLista _entradaLista = orm.EntradaListaDAO.loadEntradaListaByORMID(getIdEntrada());
+				ORM.EntradaLista _entradaLista = ORM.EntradaListaDAO.loadEntradaListaByORMID(getIdEntrada());
 				if (_entradaLista!= null) {
 					copyFromBean(_entradaLista);
 					result = "Search success";
@@ -144,7 +144,7 @@ public class EntradaListaProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.EntradaLista _entradaLista = orm.EntradaListaDAO.createEntradaLista();
+				ORM.EntradaLista _entradaLista = ORM.EntradaListaDAO.createEntradaLista();
 				copyToBean(_entradaLista);
 				if (ORM.EntradaListaDAO.save(_entradaLista)) {
 					result = "Insert success";
@@ -159,7 +159,7 @@ public class EntradaListaProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.EntradaLista _entradaLista= orm.EntradaListaDAO.loadEntradaListaByORMID(getIdEntrada());
+				ORM.EntradaLista _entradaLista= ORM.EntradaListaDAO.loadEntradaListaByORMID(getIdEntrada());
 				if (_entradaLista != null) {
 					copyToBean(_entradaLista);
 					if (ORM.EntradaListaDAO.save(_entradaLista)) {
@@ -180,7 +180,7 @@ public class EntradaListaProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.EntradaLista _entradaLista = orm.EntradaListaDAO.loadEntradaListaByORMID(getIdEntrada());
+				ORM.EntradaLista _entradaLista = ORM.EntradaListaDAO.loadEntradaListaByORMID(getIdEntrada());
 				if (_entradaLista != null && ORM.EntradaListaDAO.deleteAndDissociate(_entradaLista)) {
 					result = "Delete success";
 				}
@@ -199,7 +199,7 @@ public class EntradaListaProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.EntradaLista _entradaLista) {
+	private void copyFromBean(ORM.EntradaLista _entradaLista) {
 		setAlDia(_entradaLista.getAlDia());
 		setUltimoCapitulo(_entradaLista.getUltimoCapitulo());
 		setTerminado(_entradaLista.getTerminado());
@@ -207,7 +207,7 @@ public class EntradaListaProcessor {
 		setIdEntrada(_entradaLista.getORMID());
 		
 		{
-			orm.Lista _lista = _entradaLista.getListaidLista();
+			ORM.Lista _lista = _entradaLista.getListaidLista();
 			if (_lista != null) {
 				setListaidLista_listaidLista(_lista.getORMID());
 			}
@@ -215,7 +215,7 @@ public class EntradaListaProcessor {
 		
 		
 		{
-			orm.Novela _novela = _entradaLista.getNovelaidNovela();
+			ORM.Novela _novela = _entradaLista.getNovelaidNovela();
 			if (_novela != null) {
 				setNovelaidNovela_novelaidNovela(_novela.getORMID());
 			}
@@ -223,7 +223,7 @@ public class EntradaListaProcessor {
 		
 		
 		{
-			orm.Manga _manga = _entradaLista.getMangaidManga();
+			ORM.Manga _manga = _entradaLista.getMangaidManga();
 			if (_manga != null) {
 				setMangaidManga_mangaidManga(_manga.getORMID());
 			}
@@ -231,7 +231,7 @@ public class EntradaListaProcessor {
 		
 		
 		{
-			orm.Animacion _animacion = _entradaLista.getAnimacionidAnimacion();
+			ORM.Animacion _animacion = _entradaLista.getAnimacionidAnimacion();
 			if (_animacion != null) {
 				setAnimacionidAnimacion_animacionidAnimacion(_animacion.getORMID());
 			}
@@ -239,7 +239,7 @@ public class EntradaListaProcessor {
 		
 		
 		{
-			orm.SerieGenerica _serieGenerica = _entradaLista.getSerieGenericaidSerie();
+			ORM.SerieGenerica _serieGenerica = _entradaLista.getSerieGenericaidSerie();
 			if (_serieGenerica != null) {
 				setSerieGenericaidSerie_serieGenericaidSerie(_serieGenerica.getORMID());
 			}
@@ -247,41 +247,41 @@ public class EntradaListaProcessor {
 		
 	}
 	
-	private void copyToBean(orm.EntradaLista _entradaLista) {
+	private void copyToBean(ORM.EntradaLista _entradaLista) {
 		_entradaLista.setAlDia(getAlDia());
 		_entradaLista.setUltimoCapitulo(getUltimoCapitulo());
 		_entradaLista.setTerminado(getTerminado());
 		_entradaLista.setTipo(getTipo());
 		try  {
-			orm.Lista _listaidLista = orm.ListaDAO.loadListaByORMID(getListaidLista_listaidLista());
+			ORM.Lista _listaidLista = ORM.ListaDAO.loadListaByORMID(getListaidLista_listaidLista());
 			_entradaLista.setListaidLista(_listaidLista);
 		}
 		catch (PersistentException e) {
 		}
 		
 		try  {
-			orm.Novela _novelaidNovela = orm.NovelaDAO.loadNovelaByORMID(getNovelaidNovela_novelaidNovela());
+			ORM.Novela _novelaidNovela = ORM.NovelaDAO.loadNovelaByORMID(getNovelaidNovela_novelaidNovela());
 			_entradaLista.setNovelaidNovela(_novelaidNovela);
 		}
 		catch (PersistentException e) {
 		}
 		
 		try  {
-			orm.Manga _mangaidManga = orm.MangaDAO.loadMangaByORMID(getMangaidManga_mangaidManga());
+			ORM.Manga _mangaidManga = ORM.MangaDAO.loadMangaByORMID(getMangaidManga_mangaidManga());
 			_entradaLista.setMangaidManga(_mangaidManga);
 		}
 		catch (PersistentException e) {
 		}
 		
 		try  {
-			orm.Animacion _animacionidAnimacion = orm.AnimacionDAO.loadAnimacionByORMID(getAnimacionidAnimacion_animacionidAnimacion());
+			ORM.Animacion _animacionidAnimacion = ORM.AnimacionDAO.loadAnimacionByORMID(getAnimacionidAnimacion_animacionidAnimacion());
 			_entradaLista.setAnimacionidAnimacion(_animacionidAnimacion);
 		}
 		catch (PersistentException e) {
 		}
 		
 		try  {
-			orm.SerieGenerica _serieGenericaidSerie = orm.SerieGenericaDAO.loadSerieGenericaByORMID(getSerieGenericaidSerie_serieGenericaidSerie());
+			ORM.SerieGenerica _serieGenericaidSerie = ORM.SerieGenericaDAO.loadSerieGenericaByORMID(getSerieGenericaidSerie_serieGenericaidSerie());
 			_entradaLista.setSerieGenericaidSerie(_serieGenericaidSerie);
 		}
 		catch (PersistentException e) {

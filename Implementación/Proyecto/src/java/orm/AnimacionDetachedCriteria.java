@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -38,7 +38,7 @@ public class AnimacionDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression entradaLista;
 	
 	public AnimacionDetachedCriteria() {
-		super(orm.Animacion.class, orm.AnimacionCriteria.class);
+		super(ORM.Animacion.class, ORM.AnimacionCriteria.class);
 		idAnimacion = new IntegerExpression("idAnimacion", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		nombreAlternativo = new StringExpression("nombreAlternativo", this.getDetachedCriteria());
@@ -59,7 +59,7 @@ public class AnimacionDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public AnimacionDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.AnimacionCriteria.class);
+		super(aDetachedCriteria, ORM.AnimacionCriteria.class);
 		idAnimacion = new IntegerExpression("idAnimacion", this.getDetachedCriteria());
 		nombre = new StringExpression("nombre", this.getDetachedCriteria());
 		nombreAlternativo = new StringExpression("nombreAlternativo", this.getDetachedCriteria());
@@ -91,16 +91,16 @@ public class AnimacionDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new RatingDetachedCriteria(createCriteria("ratingidRating"));
 	}
 	
-	public orm.EstudioDetachedCriteria createEstudioidEstudioCriteria() {
-		return new orm.EstudioDetachedCriteria(createCriteria("ORM_EstudioidEstudio"));
+	public ORM.EstudioDetachedCriteria createEstudioidEstudioCriteria() {
+		return new ORM.EstudioDetachedCriteria(createCriteria("ORM_EstudioidEstudio"));
 	}
 	
-	public orm.GeneroDetachedCriteria createGeneroidGeneroCriteria() {
-		return new orm.GeneroDetachedCriteria(createCriteria("ORM_GeneroidGenero"));
+	public ORM.GeneroDetachedCriteria createGeneroidGeneroCriteria() {
+		return new ORM.GeneroDetachedCriteria(createCriteria("ORM_GeneroidGenero"));
 	}
 	
-	public orm.EntradaListaDetachedCriteria createEntradaListaCriteria() {
-		return new orm.EntradaListaDetachedCriteria(createCriteria("ORM_EntradaLista"));
+	public ORM.EntradaListaDetachedCriteria createEntradaListaCriteria() {
+		return new ORM.EntradaListaDetachedCriteria(createCriteria("ORM_EntradaLista"));
 	}
 	
 	public Animacion uniqueAnimacion(PersistentSession session) {

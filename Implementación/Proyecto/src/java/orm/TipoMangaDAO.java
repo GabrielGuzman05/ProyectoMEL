@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class TipoMangaDAO {
 	public static TipoManga loadTipoMangaByORMID(int idTipoManga) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoMangaByORMID(session, idTipoManga);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class TipoMangaDAO {
 	
 	public static TipoManga getTipoMangaByORMID(int idTipoManga) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTipoMangaByORMID(session, idTipoManga);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class TipoMangaDAO {
 	
 	public static TipoManga loadTipoMangaByORMID(int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoMangaByORMID(session, idTipoManga, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class TipoMangaDAO {
 	
 	public static TipoManga getTipoMangaByORMID(int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTipoMangaByORMID(session, idTipoManga, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class TipoMangaDAO {
 	
 	public static TipoManga loadTipoMangaByORMID(PersistentSession session, int idTipoManga) throws PersistentException {
 		try {
-			return (TipoManga) session.load(orm.TipoManga.class, new Integer(idTipoManga));
+			return (TipoManga) session.load(ORM.TipoManga.class, new Integer(idTipoManga));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class TipoMangaDAO {
 	
 	public static TipoManga getTipoMangaByORMID(PersistentSession session, int idTipoManga) throws PersistentException {
 		try {
-			return (TipoManga) session.get(orm.TipoManga.class, new Integer(idTipoManga));
+			return (TipoManga) session.get(ORM.TipoManga.class, new Integer(idTipoManga));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class TipoMangaDAO {
 	
 	public static TipoManga loadTipoMangaByORMID(PersistentSession session, int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (TipoManga) session.load(orm.TipoManga.class, new Integer(idTipoManga), lockMode);
+			return (TipoManga) session.load(ORM.TipoManga.class, new Integer(idTipoManga), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class TipoMangaDAO {
 	
 	public static TipoManga getTipoMangaByORMID(PersistentSession session, int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (TipoManga) session.get(orm.TipoManga.class, new Integer(idTipoManga), lockMode);
+			return (TipoManga) session.get(ORM.TipoManga.class, new Integer(idTipoManga), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class TipoMangaDAO {
 	
 	public static List queryTipoManga(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTipoManga(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class TipoMangaDAO {
 	
 	public static List queryTipoManga(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTipoManga(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class TipoMangaDAO {
 	
 	public static TipoManga[] listTipoMangaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTipoMangaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class TipoMangaDAO {
 	
 	public static TipoManga[] listTipoMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTipoMangaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class TipoMangaDAO {
 	
 	public static TipoManga loadTipoMangaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoMangaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class TipoMangaDAO {
 	
 	public static TipoManga loadTipoMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoMangaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class TipoMangaDAO {
 	
 	public static java.util.Iterator iterateTipoMangaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTipoMangaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class TipoMangaDAO {
 	
 	public static java.util.Iterator iterateTipoMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTipoMangaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -296,12 +296,12 @@ public class TipoMangaDAO {
 	}
 	
 	public static TipoManga createTipoManga() {
-		return new orm.TipoManga();
+		return new ORM.TipoManga();
 	}
 	
-	public static boolean save(orm.TipoManga tipoManga) throws PersistentException {
+	public static boolean save(ORM.TipoManga tipoManga) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(tipoManga);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(tipoManga);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +310,9 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static boolean delete(orm.TipoManga tipoManga) throws PersistentException {
+	public static boolean delete(ORM.TipoManga tipoManga) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(tipoManga);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(tipoManga);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,9 +321,9 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.TipoManga tipoManga)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.TipoManga tipoManga)throws PersistentException {
 		try {
-			orm.Manga[] lMangas = tipoManga.manga.toArray();
+			ORM.Manga[] lMangas = tipoManga.manga.toArray();
 			for(int i = 0; i < lMangas.length; i++) {
 				lMangas[i].setTipoMangaidTipoManga(null);
 			}
@@ -335,9 +335,9 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.TipoManga tipoManga, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.TipoManga tipoManga, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			orm.Manga[] lMangas = tipoManga.manga.toArray();
+			ORM.Manga[] lMangas = tipoManga.manga.toArray();
 			for(int i = 0; i < lMangas.length; i++) {
 				lMangas[i].setTipoMangaidTipoManga(null);
 			}
@@ -354,9 +354,9 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.TipoManga tipoManga) throws PersistentException {
+	public static boolean refresh(ORM.TipoManga tipoManga) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(tipoManga);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(tipoManga);
 			return true;
 		}
 		catch (Exception e) {
@@ -365,9 +365,9 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static boolean evict(orm.TipoManga tipoManga) throws PersistentException {
+	public static boolean evict(ORM.TipoManga tipoManga) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(tipoManga);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(tipoManga);
 			return true;
 		}
 		catch (Exception e) {

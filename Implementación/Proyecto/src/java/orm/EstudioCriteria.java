@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -35,11 +35,11 @@ public class EstudioCriteria extends AbstractORMCriteria {
 	}
 	
 	public EstudioCriteria() throws PersistentException {
-		this(orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession());
+		this(ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession());
 	}
 	
-	public orm.AnimacionCriteria createAnimacionidAnimacionCriteria() {
-		return new orm.AnimacionCriteria(createCriteria("ORM_AnimacionidAnimacion"));
+	public ORM.AnimacionCriteria createAnimacionidAnimacionCriteria() {
+		return new ORM.AnimacionCriteria(createCriteria("ORM_AnimacionidAnimacion"));
 	}
 	
 	public Estudio uniqueEstudio() {

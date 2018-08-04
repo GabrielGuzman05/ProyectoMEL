@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -36,7 +36,7 @@ public class EntradaListaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final AssociationExpression serieGenericaidSerie;
 	
 	public EntradaListaDetachedCriteria() {
-		super(orm.EntradaLista.class, orm.EntradaListaCriteria.class);
+		super(ORM.EntradaLista.class, ORM.EntradaListaCriteria.class);
 		idEntrada = new IntegerExpression("idEntrada", this.getDetachedCriteria());
 		alDia = new BooleanExpression("alDia", this.getDetachedCriteria());
 		ultimoCapitulo = new IntegerExpression("ultimoCapitulo", this.getDetachedCriteria());
@@ -55,7 +55,7 @@ public class EntradaListaDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public EntradaListaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.EntradaListaCriteria.class);
+		super(aDetachedCriteria, ORM.EntradaListaCriteria.class);
 		idEntrada = new IntegerExpression("idEntrada", this.getDetachedCriteria());
 		alDia = new BooleanExpression("alDia", this.getDetachedCriteria());
 		ultimoCapitulo = new IntegerExpression("ultimoCapitulo", this.getDetachedCriteria());

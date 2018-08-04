@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class LenguajeOriginalProcessor {
@@ -49,7 +49,7 @@ public class LenguajeOriginalProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.LenguajeOriginal _lenguajeOriginal = orm.LenguajeOriginalDAO.loadLenguajeOriginalByORMID(getIdLenguaje());
+				ORM.LenguajeOriginal _lenguajeOriginal = ORM.LenguajeOriginalDAO.loadLenguajeOriginalByORMID(getIdLenguaje());
 				if (_lenguajeOriginal!= null) {
 					copyFromBean(_lenguajeOriginal);
 					result = "Search success";
@@ -64,7 +64,7 @@ public class LenguajeOriginalProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.LenguajeOriginal _lenguajeOriginal = orm.LenguajeOriginalDAO.createLenguajeOriginal();
+				ORM.LenguajeOriginal _lenguajeOriginal = ORM.LenguajeOriginalDAO.createLenguajeOriginal();
 				copyToBean(_lenguajeOriginal);
 				if (ORM.LenguajeOriginalDAO.save(_lenguajeOriginal)) {
 					result = "Insert success";
@@ -79,7 +79,7 @@ public class LenguajeOriginalProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.LenguajeOriginal _lenguajeOriginal= orm.LenguajeOriginalDAO.loadLenguajeOriginalByORMID(getIdLenguaje());
+				ORM.LenguajeOriginal _lenguajeOriginal= ORM.LenguajeOriginalDAO.loadLenguajeOriginalByORMID(getIdLenguaje());
 				if (_lenguajeOriginal != null) {
 					copyToBean(_lenguajeOriginal);
 					if (ORM.LenguajeOriginalDAO.save(_lenguajeOriginal)) {
@@ -100,7 +100,7 @@ public class LenguajeOriginalProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.LenguajeOriginal _lenguajeOriginal = orm.LenguajeOriginalDAO.loadLenguajeOriginalByORMID(getIdLenguaje());
+				ORM.LenguajeOriginal _lenguajeOriginal = ORM.LenguajeOriginalDAO.loadLenguajeOriginalByORMID(getIdLenguaje());
 				if (_lenguajeOriginal != null && ORM.LenguajeOriginalDAO.deleteAndDissociate(_lenguajeOriginal)) {
 					result = "Delete success";
 				}
@@ -119,12 +119,12 @@ public class LenguajeOriginalProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.LenguajeOriginal _lenguajeOriginal) {
+	private void copyFromBean(ORM.LenguajeOriginal _lenguajeOriginal) {
 		setNombre(_lenguajeOriginal.getNombre());
 		setIdLenguaje(_lenguajeOriginal.getORMID());
 	}
 	
-	private void copyToBean(orm.LenguajeOriginal _lenguajeOriginal) {
+	private void copyToBean(ORM.LenguajeOriginal _lenguajeOriginal) {
 		_lenguajeOriginal.setNombre(getNombre());
 	}
 	

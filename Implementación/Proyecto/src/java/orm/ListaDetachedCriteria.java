@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
@@ -26,7 +26,7 @@ public class ListaDetachedCriteria extends AbstractORMDetachedCriteria {
 	public final CollectionExpression entradaLista;
 	
 	public ListaDetachedCriteria() {
-		super(orm.Lista.class, orm.ListaCriteria.class);
+		super(ORM.Lista.class, ORM.ListaCriteria.class);
 		idLista = new IntegerExpression("idLista", this.getDetachedCriteria());
 		nombreLista = new StringExpression("nombreLista", this.getDetachedCriteria());
 		usuarioidUsuarioId = new IntegerExpression("usuarioidUsuario.idUsuario", this.getDetachedCriteria());
@@ -35,7 +35,7 @@ public class ListaDetachedCriteria extends AbstractORMDetachedCriteria {
 	}
 	
 	public ListaDetachedCriteria(DetachedCriteria aDetachedCriteria) {
-		super(aDetachedCriteria, orm.ListaCriteria.class);
+		super(aDetachedCriteria, ORM.ListaCriteria.class);
 		idLista = new IntegerExpression("idLista", this.getDetachedCriteria());
 		nombreLista = new StringExpression("nombreLista", this.getDetachedCriteria());
 		usuarioidUsuarioId = new IntegerExpression("usuarioidUsuario.idUsuario", this.getDetachedCriteria());
@@ -47,8 +47,8 @@ public class ListaDetachedCriteria extends AbstractORMDetachedCriteria {
 		return new UsuarioDetachedCriteria(createCriteria("usuarioidUsuario"));
 	}
 	
-	public orm.EntradaListaDetachedCriteria createEntradaListaCriteria() {
-		return new orm.EntradaListaDetachedCriteria(createCriteria("ORM_EntradaLista"));
+	public ORM.EntradaListaDetachedCriteria createEntradaListaCriteria() {
+		return new ORM.EntradaListaDetachedCriteria(createCriteria("ORM_EntradaLista"));
 	}
 	
 	public Lista uniqueLista(PersistentSession session) {

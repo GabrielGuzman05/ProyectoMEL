@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.*;
 import org.hibernate.Query;
@@ -21,7 +21,7 @@ import java.util.List;
 public class AnimacionDAO {
 	public static Animacion loadAnimacionByORMID(int idAnimacion) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadAnimacionByORMID(session, idAnimacion);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class AnimacionDAO {
 	
 	public static Animacion getAnimacionByORMID(int idAnimacion) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getAnimacionByORMID(session, idAnimacion);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class AnimacionDAO {
 	
 	public static Animacion loadAnimacionByORMID(int idAnimacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadAnimacionByORMID(session, idAnimacion, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class AnimacionDAO {
 	
 	public static Animacion getAnimacionByORMID(int idAnimacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getAnimacionByORMID(session, idAnimacion, lockMode);
 		}
 		catch (Exception e) {
@@ -65,7 +65,7 @@ public class AnimacionDAO {
 	
 	public static Animacion loadAnimacionByORMID(PersistentSession session, int idAnimacion) throws PersistentException {
 		try {
-			return (Animacion) session.load(orm.Animacion.class, new Integer(idAnimacion));
+			return (Animacion) session.load(ORM.Animacion.class, new Integer(idAnimacion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -75,7 +75,7 @@ public class AnimacionDAO {
 	
 	public static Animacion getAnimacionByORMID(PersistentSession session, int idAnimacion) throws PersistentException {
 		try {
-			return (Animacion) session.get(orm.Animacion.class, new Integer(idAnimacion));
+			return (Animacion) session.get(ORM.Animacion.class, new Integer(idAnimacion));
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class AnimacionDAO {
 	
 	public static Animacion loadAnimacionByORMID(PersistentSession session, int idAnimacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Animacion) session.load(orm.Animacion.class, new Integer(idAnimacion), lockMode);
+			return (Animacion) session.load(ORM.Animacion.class, new Integer(idAnimacion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class AnimacionDAO {
 	
 	public static Animacion getAnimacionByORMID(PersistentSession session, int idAnimacion, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			return (Animacion) session.get(orm.Animacion.class, new Integer(idAnimacion), lockMode);
+			return (Animacion) session.get(ORM.Animacion.class, new Integer(idAnimacion), lockMode);
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -105,7 +105,7 @@ public class AnimacionDAO {
 	
 	public static List queryAnimacion(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryAnimacion(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class AnimacionDAO {
 	
 	public static List queryAnimacion(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryAnimacion(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class AnimacionDAO {
 	
 	public static Animacion[] listAnimacionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listAnimacionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class AnimacionDAO {
 	
 	public static Animacion[] listAnimacionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listAnimacionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class AnimacionDAO {
 	
 	public static Animacion loadAnimacionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadAnimacionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class AnimacionDAO {
 	
 	public static Animacion loadAnimacionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadAnimacionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class AnimacionDAO {
 	
 	public static java.util.Iterator iterateAnimacionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateAnimacionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class AnimacionDAO {
 	
 	public static java.util.Iterator iterateAnimacionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateAnimacionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -293,15 +293,16 @@ public class AnimacionDAO {
 			e.printStackTrace();
 			throw new PersistentException(e);
 		}
+               
 	}
 	
 	public static Animacion createAnimacion() {
-		return new orm.Animacion();
+		return new ORM.Animacion();
 	}
 	
-	public static boolean save(orm.Animacion animacion) throws PersistentException {
+	public static boolean save(ORM.Animacion animacion) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(animacion);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(animacion);
 			return true;
 		}
 		catch (Exception e) {
@@ -310,9 +311,9 @@ public class AnimacionDAO {
 		}
 	}
 	
-	public static boolean delete(orm.Animacion animacion) throws PersistentException {
+	public static boolean delete(ORM.Animacion animacion) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(animacion);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(animacion);
 			return true;
 		}
 		catch (Exception e) {
@@ -321,7 +322,7 @@ public class AnimacionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Animacion animacion)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.Animacion animacion)throws PersistentException {
 		try {
 			if (animacion.getTemporadaidTemporada() != null) {
 				animacion.getTemporadaidTemporada().animacion.remove(animacion);
@@ -335,15 +336,15 @@ public class AnimacionDAO {
 				animacion.getRatingidRating().animacion.remove(animacion);
 			}
 			
-			orm.Estudio[] lEstudioidEstudios = animacion.estudioidEstudio.toArray();
+			ORM.Estudio[] lEstudioidEstudios = animacion.estudioidEstudio.toArray();
 			for(int i = 0; i < lEstudioidEstudios.length; i++) {
 				lEstudioidEstudios[i].animacionidAnimacion.remove(animacion);
 			}
-			orm.Genero[] lGeneroidGeneros = animacion.generoidGenero.toArray();
+			ORM.Genero[] lGeneroidGeneros = animacion.generoidGenero.toArray();
 			for(int i = 0; i < lGeneroidGeneros.length; i++) {
 				lGeneroidGeneros[i].animacionidAnimacion.remove(animacion);
 			}
-			orm.EntradaLista[] lEntradaListas = animacion.entradaLista.toArray();
+			ORM.EntradaLista[] lEntradaListas = animacion.entradaLista.toArray();
 			for(int i = 0; i < lEntradaListas.length; i++) {
 				lEntradaListas[i].setAnimacionidAnimacion(null);
 			}
@@ -355,7 +356,7 @@ public class AnimacionDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Animacion animacion, org.orm.PersistentSession session)throws PersistentException {
+	public static boolean deleteAndDissociate(ORM.Animacion animacion, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			if (animacion.getTemporadaidTemporada() != null) {
 				animacion.getTemporadaidTemporada().animacion.remove(animacion);
@@ -369,15 +370,15 @@ public class AnimacionDAO {
 				animacion.getRatingidRating().animacion.remove(animacion);
 			}
 			
-			orm.Estudio[] lEstudioidEstudios = animacion.estudioidEstudio.toArray();
+			ORM.Estudio[] lEstudioidEstudios = animacion.estudioidEstudio.toArray();
 			for(int i = 0; i < lEstudioidEstudios.length; i++) {
 				lEstudioidEstudios[i].animacionidAnimacion.remove(animacion);
 			}
-			orm.Genero[] lGeneroidGeneros = animacion.generoidGenero.toArray();
+			ORM.Genero[] lGeneroidGeneros = animacion.generoidGenero.toArray();
 			for(int i = 0; i < lGeneroidGeneros.length; i++) {
 				lGeneroidGeneros[i].animacionidAnimacion.remove(animacion);
 			}
-			orm.EntradaLista[] lEntradaListas = animacion.entradaLista.toArray();
+			ORM.EntradaLista[] lEntradaListas = animacion.entradaLista.toArray();
 			for(int i = 0; i < lEntradaListas.length; i++) {
 				lEntradaListas[i].setAnimacionidAnimacion(null);
 			}
@@ -394,9 +395,9 @@ public class AnimacionDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.Animacion animacion) throws PersistentException {
+	public static boolean refresh(ORM.Animacion animacion) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(animacion);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(animacion);
 			return true;
 		}
 		catch (Exception e) {
@@ -405,9 +406,9 @@ public class AnimacionDAO {
 		}
 	}
 	
-	public static boolean evict(orm.Animacion animacion) throws PersistentException {
+	public static boolean evict(ORM.Animacion animacion) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(animacion);
+			ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(animacion);
 			return true;
 		}
 		catch (Exception e) {

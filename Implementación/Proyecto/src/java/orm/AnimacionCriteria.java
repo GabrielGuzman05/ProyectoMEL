@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -63,7 +63,7 @@ public class AnimacionCriteria extends AbstractORMCriteria {
 	}
 	
 	public AnimacionCriteria() throws PersistentException {
-		this(orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession());
+		this(ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession());
 	}
 	
 	public TemporadaCriteria createTemporadaidTemporadaCriteria() {
@@ -78,16 +78,16 @@ public class AnimacionCriteria extends AbstractORMCriteria {
 		return new RatingCriteria(createCriteria("ratingidRating"));
 	}
 	
-	public orm.EstudioCriteria createEstudioidEstudioCriteria() {
-		return new orm.EstudioCriteria(createCriteria("ORM_EstudioidEstudio"));
+	public ORM.EstudioCriteria createEstudioidEstudioCriteria() {
+		return new ORM.EstudioCriteria(createCriteria("ORM_EstudioidEstudio"));
 	}
 	
-	public orm.GeneroCriteria createGeneroidGeneroCriteria() {
-		return new orm.GeneroCriteria(createCriteria("ORM_GeneroidGenero"));
+	public ORM.GeneroCriteria createGeneroidGeneroCriteria() {
+		return new ORM.GeneroCriteria(createCriteria("ORM_GeneroidGenero"));
 	}
 	
-	public orm.EntradaListaCriteria createEntradaListaCriteria() {
-		return new orm.EntradaListaCriteria(createCriteria("ORM_EntradaLista"));
+	public ORM.EntradaListaCriteria createEntradaListaCriteria() {
+		return new ORM.EntradaListaCriteria(createCriteria("ORM_EntradaLista"));
 	}
 	
 	public Animacion uniqueAnimacion() {

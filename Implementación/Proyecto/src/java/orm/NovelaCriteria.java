@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.hibernate.Criteria;
 import org.orm.PersistentException;
@@ -77,7 +77,7 @@ public class NovelaCriteria extends AbstractORMCriteria {
 	}
 	
 	public NovelaCriteria() throws PersistentException {
-		this(orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession());
+		this(ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession());
 	}
 	
 	public PublicadorOriginalCriteria createPublicadorOriginalidPublicadorOriginalCriteria() {
@@ -104,16 +104,16 @@ public class NovelaCriteria extends AbstractORMCriteria {
 		return new ArtistaCriteria(createCriteria("artistaidArtista"));
 	}
 	
-	public orm.GeneroCriteria createGeneroidGeneroCriteria() {
-		return new orm.GeneroCriteria(createCriteria("ORM_GeneroidGenero"));
+	public ORM.GeneroCriteria createGeneroidGeneroCriteria() {
+		return new ORM.GeneroCriteria(createCriteria("ORM_GeneroidGenero"));
 	}
 	
-	public orm.TagCriteria createTagidTagCriteria() {
-		return new orm.TagCriteria(createCriteria("ORM_TagidTag"));
+	public ORM.TagCriteria createTagidTagCriteria() {
+		return new ORM.TagCriteria(createCriteria("ORM_TagidTag"));
 	}
 	
-	public orm.EntradaListaCriteria createEntradaListaCriteria() {
-		return new orm.EntradaListaCriteria(createCriteria("ORM_EntradaLista"));
+	public ORM.EntradaListaCriteria createEntradaListaCriteria() {
+		return new ORM.EntradaListaCriteria(createCriteria("ORM_EntradaLista"));
 	}
 	
 	public Novela uniqueNovela() {

@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class TagProcessor {
@@ -59,7 +59,7 @@ public class TagProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Tag _tag = orm.TagDAO.loadTagByORMID(getIdTag());
+				ORM.Tag _tag = ORM.TagDAO.loadTagByORMID(getIdTag());
 				if (_tag!= null) {
 					copyFromBean(_tag);
 					result = "Search success";
@@ -74,7 +74,7 @@ public class TagProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Tag _tag = orm.TagDAO.createTag();
+				ORM.Tag _tag = ORM.TagDAO.createTag();
 				copyToBean(_tag);
 				if (ORM.TagDAO.save(_tag)) {
 					result = "Insert success";
@@ -89,7 +89,7 @@ public class TagProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Tag _tag= orm.TagDAO.loadTagByORMID(getIdTag());
+				ORM.Tag _tag= ORM.TagDAO.loadTagByORMID(getIdTag());
 				if (_tag != null) {
 					copyToBean(_tag);
 					if (ORM.TagDAO.save(_tag)) {
@@ -110,7 +110,7 @@ public class TagProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Tag _tag = orm.TagDAO.loadTagByORMID(getIdTag());
+				ORM.Tag _tag = ORM.TagDAO.loadTagByORMID(getIdTag());
 				if (_tag != null && ORM.TagDAO.deleteAndDissociate(_tag)) {
 					result = "Delete success";
 				}
@@ -129,13 +129,13 @@ public class TagProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Tag _tag) {
+	private void copyFromBean(ORM.Tag _tag) {
 		setNombre(_tag.getNombre());
 		setDescripcion(_tag.getDescripcion());
 		setIdTag(_tag.getORMID());
 	}
 	
-	private void copyToBean(orm.Tag _tag) {
+	private void copyToBean(ORM.Tag _tag) {
 		_tag.setNombre(getNombre());
 		_tag.setDescripcion(getDescripcion());
 	}

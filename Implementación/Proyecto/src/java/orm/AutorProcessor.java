@@ -11,7 +11,7 @@
  * Licensee: Universidad de La Frontera
  * License Type: Academic
  */
-package orm;
+package ORM;
 
 import org.orm.PersistentException;
 public class AutorProcessor {
@@ -49,7 +49,7 @@ public class AutorProcessor {
 		String result = "Unexcepted result";
 		if (action.equals("search")) {
 			try {
-				orm.Autor _autor = orm.AutorDAO.loadAutorByORMID(getIdAutor());
+				ORM.Autor _autor = ORM.AutorDAO.loadAutorByORMID(getIdAutor());
 				if (_autor!= null) {
 					copyFromBean(_autor);
 					result = "Search success";
@@ -64,7 +64,7 @@ public class AutorProcessor {
 		}
 		else if(action.equals("insert"))  {
 			try {
-				orm.Autor _autor = orm.AutorDAO.createAutor();
+				ORM.Autor _autor = ORM.AutorDAO.createAutor();
 				copyToBean(_autor);
 				if (ORM.AutorDAO.save(_autor)) {
 					result = "Insert success";
@@ -79,7 +79,7 @@ public class AutorProcessor {
 		}
 		else if (action.equals("update")) {
 			try {
-				orm.Autor _autor= orm.AutorDAO.loadAutorByORMID(getIdAutor());
+				ORM.Autor _autor= ORM.AutorDAO.loadAutorByORMID(getIdAutor());
 				if (_autor != null) {
 					copyToBean(_autor);
 					if (ORM.AutorDAO.save(_autor)) {
@@ -100,7 +100,7 @@ public class AutorProcessor {
 		}
 		else if (action.equals("delete")) {
 			try {
-				orm.Autor _autor = orm.AutorDAO.loadAutorByORMID(getIdAutor());
+				ORM.Autor _autor = ORM.AutorDAO.loadAutorByORMID(getIdAutor());
 				if (_autor != null && ORM.AutorDAO.deleteAndDissociate(_autor)) {
 					result = "Delete success";
 				}
@@ -119,12 +119,12 @@ public class AutorProcessor {
 		return result;
 	}
 	
-	private void copyFromBean(orm.Autor _autor) {
+	private void copyFromBean(ORM.Autor _autor) {
 		setNombre(_autor.getNombre());
 		setIdAutor(_autor.getORMID());
 	}
 	
-	private void copyToBean(orm.Autor _autor) {
+	private void copyToBean(ORM.Autor _autor) {
 		_autor.setNombre(getNombre());
 	}
 	
