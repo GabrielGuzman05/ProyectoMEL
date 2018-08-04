@@ -416,15 +416,4 @@ public class AnimacionDAO {
 		}
 	}
 	
-	public static Animacion loadAnimacionByCriteria(AnimacionCriteria animacionCriteria) {
-		Animacion[] animacions = listAnimacionByCriteria(animacionCriteria);
-		if(animacions == null || animacions.length == 0) {
-			return null;
-		}
-		return animacions[0];
-	}
-	
-	public static Animacion[] listAnimacionByCriteria(AnimacionCriteria animacionCriteria) {
-		return animacionCriteria.listAnimacion();
-	}
 }

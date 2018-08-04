@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class Novela implements Serializable {
+public class Novela {
 	public Novela() {
 	}
 	
@@ -92,8 +91,6 @@ public class Novela implements Serializable {
 	private orm.PublicadorIngles publicadorInglesidPublicadorIngles;
 	
 	private orm.Tipo tipoidTipo;
-	
-	private int estadoUsuarioidEstadoUsuario;
 	
 	private orm.LenguajeOriginal lenguajeOriginalidLenguaje;
 	
@@ -183,14 +180,6 @@ public class Novela implements Serializable {
 	
 	public Integer getEstrellas() {
 		return estrellas;
-	}
-	
-	public void setEstadoUsuarioidEstadoUsuario(int value) {
-		this.estadoUsuarioidEstadoUsuario = value;
-	}
-	
-	public int getEstadoUsuarioidEstadoUsuario() {
-		return estadoUsuarioidEstadoUsuario;
 	}
 	
 	private void setORM_GeneroidGenero(java.util.Set value) {

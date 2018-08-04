@@ -12,7 +12,6 @@ License Type: Academic
 		</id>
 		<property name="nombre" column="`nombre`" type="string" length="255" not-null="false" lazy="false"/>
 		<property name="nombreAlternativo" column="`nombreAlternativo`" type="string" length="255" not-null="false" lazy="false"/>
-		<property name="estadoUsuarioidEstadoUsuario" column="`EstadoUsuarioidEstadoUsuario`" type="integer" length="10" not-null="true" lazy="false"/>
 		<property name="cadena" column="`cadena`" type="string" length="255" not-null="false" lazy="false"/>
 		<property name="episodios" column="`episodios`" type="integer" length="10" not-null="false" lazy="false"/>
 		<set name="ORM_GeneroidGenero" table="`Genero_SerieGenerica`" lazy="true" cascade="save-update,lock" inverse="true">

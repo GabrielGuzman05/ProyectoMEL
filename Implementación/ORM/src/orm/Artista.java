@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class Artista implements Serializable {
+public class Artista {
 	public Artista() {
 	}
 	

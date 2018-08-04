@@ -73,7 +73,6 @@ public class SerieGenericaSetCollection extends org.orm.util.ORMSet {
 	 * <li>idSerie</li>
 	 * <li>nombre</li>
 	 * <li>nombreAlternativo</li>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * <li>cadena</li>
 	 * <li>episodios</li>
 	 * </ul>
@@ -89,7 +88,6 @@ public class SerieGenericaSetCollection extends org.orm.util.ORMSet {
 	 * <li>idSerie</li>
 	 * <li>nombre</li>
 	 * <li>nombreAlternativo</li>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * <li>cadena</li>
 	 * <li>episodios</li>
 	 * </ul>

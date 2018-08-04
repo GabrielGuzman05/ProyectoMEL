@@ -384,15 +384,4 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista loadArtistaByCriteria(ArtistaCriteria artistaCriteria) {
-		Artista[] artistas = listArtistaByCriteria(artistaCriteria);
-		if(artistas == null || artistas.length == 0) {
-			return null;
-		}
-		return artistas[0];
-	}
-	
-	public static Artista[] listArtistaByCriteria(ArtistaCriteria artistaCriteria) {
-		return artistaCriteria.listArtista();
-	}
 }

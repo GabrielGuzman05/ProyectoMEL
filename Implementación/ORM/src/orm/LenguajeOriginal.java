@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class LenguajeOriginal implements Serializable {
+public class LenguajeOriginal {
 	public LenguajeOriginal() {
 	}
 	

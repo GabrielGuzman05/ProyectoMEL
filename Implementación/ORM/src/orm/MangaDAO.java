@@ -416,15 +416,4 @@ public class MangaDAO {
 		}
 	}
 	
-	public static Manga loadMangaByCriteria(MangaCriteria mangaCriteria) {
-		Manga[] mangas = listMangaByCriteria(mangaCriteria);
-		if(mangas == null || mangas.length == 0) {
-			return null;
-		}
-		return mangas[0];
-	}
-	
-	public static Manga[] listMangaByCriteria(MangaCriteria mangaCriteria) {
-		return mangaCriteria.listManga();
-	}
 }

@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class TipoManga implements Serializable {
+public class TipoManga {
 	public TipoManga() {
 	}
 	

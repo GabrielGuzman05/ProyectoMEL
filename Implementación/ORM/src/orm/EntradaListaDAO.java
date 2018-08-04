@@ -408,15 +408,4 @@ public class EntradaListaDAO {
 		}
 	}
 	
-	public static EntradaLista loadEntradaListaByCriteria(EntradaListaCriteria entradaListaCriteria) {
-		EntradaLista[] entradaListas = listEntradaListaByCriteria(entradaListaCriteria);
-		if(entradaListas == null || entradaListas.length == 0) {
-			return null;
-		}
-		return entradaListas[0];
-	}
-	
-	public static EntradaLista[] listEntradaListaByCriteria(EntradaListaCriteria entradaListaCriteria) {
-		return entradaListaCriteria.listEntradaLista();
-	}
 }

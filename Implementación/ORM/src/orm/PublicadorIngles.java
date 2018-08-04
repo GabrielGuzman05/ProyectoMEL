@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class PublicadorIngles implements Serializable {
+public class PublicadorIngles {
 	public PublicadorIngles() {
 	}
 	

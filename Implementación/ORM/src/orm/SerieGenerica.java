@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class SerieGenerica implements Serializable {
+public class SerieGenerica {
 	public SerieGenerica() {
 	}
 	
@@ -41,8 +40,6 @@ public class SerieGenerica implements Serializable {
 	private String nombre;
 	
 	private String nombreAlternativo;
-	
-	private int estadoUsuarioidEstadoUsuario;
 	
 	private String cadena;
 	
@@ -78,14 +75,6 @@ public class SerieGenerica implements Serializable {
 	
 	public String getNombreAlternativo() {
 		return nombreAlternativo;
-	}
-	
-	public void setEstadoUsuarioidEstadoUsuario(int value) {
-		this.estadoUsuarioidEstadoUsuario = value;
-	}
-	
-	public int getEstadoUsuarioidEstadoUsuario() {
-		return estadoUsuarioidEstadoUsuario;
 	}
 	
 	public void setCadena(String value) {

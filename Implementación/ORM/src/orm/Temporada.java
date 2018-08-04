@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class Temporada implements Serializable {
+public class Temporada {
 	public Temporada() {
 	}
 	

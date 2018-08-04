@@ -384,15 +384,4 @@ public class SerieGenericaDAO {
 		}
 	}
 	
-	public static SerieGenerica loadSerieGenericaByCriteria(SerieGenericaCriteria serieGenericaCriteria) {
-		SerieGenerica[] serieGenericas = listSerieGenericaByCriteria(serieGenericaCriteria);
-		if(serieGenericas == null || serieGenericas.length == 0) {
-			return null;
-		}
-		return serieGenericas[0];
-	}
-	
-	public static SerieGenerica[] listSerieGenericaByCriteria(SerieGenericaCriteria serieGenericaCriteria) {
-		return serieGenericaCriteria.listSerieGenerica();
-	}
 }

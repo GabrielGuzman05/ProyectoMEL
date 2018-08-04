@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class Tag implements Serializable {
+public class Tag {
 	public Tag() {
 	}
 	

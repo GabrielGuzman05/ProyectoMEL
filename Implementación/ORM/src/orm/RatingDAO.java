@@ -376,15 +376,4 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating loadRatingByCriteria(RatingCriteria ratingCriteria) {
-		Rating[] ratings = listRatingByCriteria(ratingCriteria);
-		if(ratings == null || ratings.length == 0) {
-			return null;
-		}
-		return ratings[0];
-	}
-	
-	public static Rating[] listRatingByCriteria(RatingCriteria ratingCriteria) {
-		return ratingCriteria.listRating();
-	}
 }

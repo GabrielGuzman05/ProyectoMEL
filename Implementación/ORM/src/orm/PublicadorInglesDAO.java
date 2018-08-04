@@ -376,15 +376,4 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles loadPublicadorInglesByCriteria(PublicadorInglesCriteria publicadorInglesCriteria) {
-		PublicadorIngles[] publicadorIngleses = listPublicadorInglesByCriteria(publicadorInglesCriteria);
-		if(publicadorIngleses == null || publicadorIngleses.length == 0) {
-			return null;
-		}
-		return publicadorIngleses[0];
-	}
-	
-	public static PublicadorIngles[] listPublicadorInglesByCriteria(PublicadorInglesCriteria publicadorInglesCriteria) {
-		return publicadorInglesCriteria.listPublicadorIngles();
-	}
 }

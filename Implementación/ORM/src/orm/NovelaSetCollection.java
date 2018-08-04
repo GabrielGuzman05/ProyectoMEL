@@ -78,7 +78,6 @@ public class NovelaSetCollection extends org.orm.util.ORMSet {
 	 * <li>completamenteTraducido</li>
 	 * <li>novelUpdateUrl</li>
 	 * <li>estrellas</li>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -97,7 +96,6 @@ public class NovelaSetCollection extends org.orm.util.ORMSet {
 	 * <li>completamenteTraducido</li>
 	 * <li>novelUpdateUrl</li>
 	 * <li>estrellas</li>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array

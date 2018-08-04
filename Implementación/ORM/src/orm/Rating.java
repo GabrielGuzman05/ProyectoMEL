@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class Rating implements Serializable {
+public class Rating {
 	public Rating() {
 	}
 	

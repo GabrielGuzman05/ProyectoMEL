@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class Animacion implements Serializable {
+public class Animacion {
 	public Animacion() {
 	}
 	
@@ -70,8 +69,6 @@ public class Animacion implements Serializable {
 	private Integer episodios;
 	
 	private String MALCode;
-	
-	private int estadoUsuarioidEstadoUsuario;
 	
 	private orm.Temporada temporadaidTemporada;
 	
@@ -151,14 +148,6 @@ public class Animacion implements Serializable {
 	
 	public String getMALCode() {
 		return MALCode;
-	}
-	
-	public void setEstadoUsuarioidEstadoUsuario(int value) {
-		this.estadoUsuarioidEstadoUsuario = value;
-	}
-	
-	public int getEstadoUsuarioidEstadoUsuario() {
-		return estadoUsuarioidEstadoUsuario;
 	}
 	
 	private void setORM_EstudioidEstudio(java.util.Set value) {

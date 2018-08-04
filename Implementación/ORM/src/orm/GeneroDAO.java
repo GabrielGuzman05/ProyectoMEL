@@ -400,15 +400,4 @@ public class GeneroDAO {
 		}
 	}
 	
-	public static Genero loadGeneroByCriteria(GeneroCriteria generoCriteria) {
-		Genero[] generos = listGeneroByCriteria(generoCriteria);
-		if(generos == null || generos.length == 0) {
-			return null;
-		}
-		return generos[0];
-	}
-	
-	public static Genero[] listGeneroByCriteria(GeneroCriteria generoCriteria) {
-		return generoCriteria.listGenero();
-	}
 }

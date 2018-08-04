@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class Lista implements Serializable {
+public class Lista {
 	public Lista() {
 	}
 	

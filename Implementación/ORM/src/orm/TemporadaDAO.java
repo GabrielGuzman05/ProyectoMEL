@@ -376,15 +376,4 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada loadTemporadaByCriteria(TemporadaCriteria temporadaCriteria) {
-		Temporada[] temporadas = listTemporadaByCriteria(temporadaCriteria);
-		if(temporadas == null || temporadas.length == 0) {
-			return null;
-		}
-		return temporadas[0];
-	}
-	
-	public static Temporada[] listTemporadaByCriteria(TemporadaCriteria temporadaCriteria) {
-		return temporadaCriteria.listTemporada();
-	}
 }

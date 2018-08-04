@@ -384,15 +384,4 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag loadTagByCriteria(TagCriteria tagCriteria) {
-		Tag[] tags = listTagByCriteria(tagCriteria);
-		if(tags == null || tags.length == 0) {
-			return null;
-		}
-		return tags[0];
-	}
-	
-	public static Tag[] listTagByCriteria(TagCriteria tagCriteria) {
-		return tagCriteria.listTag();
-	}
 }

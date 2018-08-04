@@ -384,15 +384,4 @@ public class ListaDAO {
 		}
 	}
 	
-	public static Lista loadListaByCriteria(ListaCriteria listaCriteria) {
-		Lista[] listas = listListaByCriteria(listaCriteria);
-		if(listas == null || listas.length == 0) {
-			return null;
-		}
-		return listas[0];
-	}
-	
-	public static Lista[] listListaByCriteria(ListaCriteria listaCriteria) {
-		return listaCriteria.listLista();
-	}
 }

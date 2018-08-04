@@ -376,15 +376,4 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga loadTipoMangaByCriteria(TipoMangaCriteria tipoMangaCriteria) {
-		TipoManga[] tipoMangas = listTipoMangaByCriteria(tipoMangaCriteria);
-		if(tipoMangas == null || tipoMangas.length == 0) {
-			return null;
-		}
-		return tipoMangas[0];
-	}
-	
-	public static TipoManga[] listTipoMangaByCriteria(TipoMangaCriteria tipoMangaCriteria) {
-		return tipoMangaCriteria.listTipoManga();
-	}
 }

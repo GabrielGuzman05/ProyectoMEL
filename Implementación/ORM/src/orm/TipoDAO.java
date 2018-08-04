@@ -376,15 +376,4 @@ public class TipoDAO {
 		}
 	}
 	
-	public static Tipo loadTipoByCriteria(TipoCriteria tipoCriteria) {
-		Tipo[] tipos = listTipoByCriteria(tipoCriteria);
-		if(tipos == null || tipos.length == 0) {
-			return null;
-		}
-		return tipos[0];
-	}
-	
-	public static Tipo[] listTipoByCriteria(TipoCriteria tipoCriteria) {
-		return tipoCriteria.listTipo();
-	}
 }

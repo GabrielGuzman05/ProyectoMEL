@@ -25,7 +25,6 @@ License Type: Academic
 		</many-to-one>
 		<many-to-one name="tipoidTipo" cascade="lock" column="`TipoidTipo`" class="orm.Tipo" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-		<property name="estadoUsuarioidEstadoUsuario" column="`EstadoUsuarioidEstadoUsuario`" type="integer" length="10" not-null="true" lazy="false"/>
 		<many-to-one name="lenguajeOriginalidLenguaje" cascade="lock" column="`LenguajeOriginalidLenguaje`" class="orm.LenguajeOriginal" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
 		<many-to-one name="artistaidArtista" cascade="lock" column="`ArtistaidArtista`" class="orm.Artista" not-null="true" lazy="proxy" access="field">

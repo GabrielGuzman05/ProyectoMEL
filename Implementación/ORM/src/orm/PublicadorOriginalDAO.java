@@ -376,15 +376,4 @@ public class PublicadorOriginalDAO {
 		}
 	}
 	
-	public static PublicadorOriginal loadPublicadorOriginalByCriteria(PublicadorOriginalCriteria publicadorOriginalCriteria) {
-		PublicadorOriginal[] publicadorOriginals = listPublicadorOriginalByCriteria(publicadorOriginalCriteria);
-		if(publicadorOriginals == null || publicadorOriginals.length == 0) {
-			return null;
-		}
-		return publicadorOriginals[0];
-	}
-	
-	public static PublicadorOriginal[] listPublicadorOriginalByCriteria(PublicadorOriginalCriteria publicadorOriginalCriteria) {
-		return publicadorOriginalCriteria.listPublicadorOriginal();
-	}
 }

@@ -440,15 +440,4 @@ public class NovelaDAO {
 		}
 	}
 	
-	public static Novela loadNovelaByCriteria(NovelaCriteria novelaCriteria) {
-		Novela[] novelas = listNovelaByCriteria(novelaCriteria);
-		if(novelas == null || novelas.length == 0) {
-			return null;
-		}
-		return novelas[0];
-	}
-	
-	public static Novela[] listNovelaByCriteria(NovelaCriteria novelaCriteria) {
-		return novelaCriteria.listNovela();
-	}
 }

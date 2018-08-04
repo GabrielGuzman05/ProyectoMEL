@@ -77,7 +77,6 @@ public class AnimacionSetCollection extends org.orm.util.ORMSet {
 	 * <li>enEmision</li>
 	 * <li>episodios</li>
 	 * <li>MALCode</li>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * </ul>
 	 * @return The persistent objects sorted array
 	 */
@@ -95,7 +94,6 @@ public class AnimacionSetCollection extends org.orm.util.ORMSet {
 	 * <li>enEmision</li>
 	 * <li>episodios</li>
 	 * <li>MALCode</li>
-	 * <li>estadoUsuarioidEstadoUsuario</li>
 	 * </ul>
 	 * @param ascending true for ascending, false for descending
 	 * @return The persistent objects sorted array

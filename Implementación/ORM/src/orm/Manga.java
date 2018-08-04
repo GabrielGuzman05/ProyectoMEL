@@ -13,8 +13,7 @@
  */
 package orm;
 
-import java.io.Serializable;
-public class Manga implements Serializable {
+public class Manga {
 	public Manga() {
 	}
 	
@@ -55,8 +54,6 @@ public class Manga implements Serializable {
 		
 	};
 	
-	private int estadoUsuarioidEstadoUsuario;
-	
 	private int idManga;
 	
 	private String nombreManga;
@@ -88,14 +85,6 @@ public class Manga implements Serializable {
 	private java.util.Set ORM_aristaidArtista = new java.util.HashSet();
 	
 	private java.util.Set ORM_entradaLista = new java.util.HashSet();
-	
-	public void setEstadoUsuarioidEstadoUsuario(int value) {
-		this.estadoUsuarioidEstadoUsuario = value;
-	}
-	
-	public int getEstadoUsuarioidEstadoUsuario() {
-		return estadoUsuarioidEstadoUsuario;
-	}
 	
 	private void setIdManga(int value) {
 		this.idManga = value;

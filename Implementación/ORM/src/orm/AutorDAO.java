@@ -384,15 +384,4 @@ public class AutorDAO {
 		}
 	}
 	
-	public static Autor loadAutorByCriteria(AutorCriteria autorCriteria) {
-		Autor[] autors = listAutorByCriteria(autorCriteria);
-		if(autors == null || autors.length == 0) {
-			return null;
-		}
-		return autors[0];
-	}
-	
-	public static Autor[] listAutorByCriteria(AutorCriteria autorCriteria) {
-		return autorCriteria.listAutor();
-	}
 }

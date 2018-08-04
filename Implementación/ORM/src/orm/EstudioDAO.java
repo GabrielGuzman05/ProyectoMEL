@@ -376,15 +376,4 @@ public class EstudioDAO {
 		}
 	}
 	
-	public static Estudio loadEstudioByCriteria(EstudioCriteria estudioCriteria) {
-		Estudio[] estudios = listEstudioByCriteria(estudioCriteria);
-		if(estudios == null || estudios.length == 0) {
-			return null;
-		}
-		return estudios[0];
-	}
-	
-	public static Estudio[] listEstudioByCriteria(EstudioCriteria estudioCriteria) {
-		return estudioCriteria.listEstudio();
-	}
 }

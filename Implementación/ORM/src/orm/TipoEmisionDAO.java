@@ -376,15 +376,4 @@ public class TipoEmisionDAO {
 		}
 	}
 	
-	public static TipoEmision loadTipoEmisionByCriteria(TipoEmisionCriteria tipoEmisionCriteria) {
-		TipoEmision[] tipoEmisions = listTipoEmisionByCriteria(tipoEmisionCriteria);
-		if(tipoEmisions == null || tipoEmisions.length == 0) {
-			return null;
-		}
-		return tipoEmisions[0];
-	}
-	
-	public static TipoEmision[] listTipoEmisionByCriteria(TipoEmisionCriteria tipoEmisionCriteria) {
-		return tipoEmisionCriteria.listTipoEmision();
-	}
 }

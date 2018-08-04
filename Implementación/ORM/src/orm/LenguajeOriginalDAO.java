@@ -376,15 +376,4 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal loadLenguajeOriginalByCriteria(LenguajeOriginalCriteria lenguajeOriginalCriteria) {
-		LenguajeOriginal[] lenguajeOriginals = listLenguajeOriginalByCriteria(lenguajeOriginalCriteria);
-		if(lenguajeOriginals == null || lenguajeOriginals.length == 0) {
-			return null;
-		}
-		return lenguajeOriginals[0];
-	}
-	
-	public static LenguajeOriginal[] listLenguajeOriginalByCriteria(LenguajeOriginalCriteria lenguajeOriginalCriteria) {
-		return lenguajeOriginalCriteria.listLenguajeOriginal();
-	}
 }
