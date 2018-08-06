@@ -3,11 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Gabriel/Documents/Java%20Ejercicios%20y%20Talleres/Programacion%20Avanzada/ProyectoMel/ProyectoMEL/Implementación/Proyecto/web/loginSucces.jsp</file>
             <file>file:/C:/Users/Gabriel/Documents/Java%20Ejercicios%20y%20Talleres/Programacion%20Avanzada/ProyectoMel/ProyectoMEL/Implementación/Proyecto/web/WEB-INF/jspf/header.jspf</file>
             <file>file:/C:/Users/Gabriel/Documents/Java%20Ejercicios%20y%20Talleres/Programacion%20Avanzada/ProyectoMel/ProyectoMEL/Implementación/Proyecto/src/java/orm/Usuario.java</file>
             <file>file:/C:/Users/Gabriel/Documents/Java%20Ejercicios%20y%20Talleres/Programacion%20Avanzada/ProyectoMel/ProyectoMEL/Implementación/Proyecto/src/java/Servlets/Series.java</file>
             <file>file:/C:/Users/Gabriel/Documents/Java%20Ejercicios%20y%20Talleres/Programacion%20Avanzada/ProyectoMel/ProyectoMEL/Implementación/Proyecto/src/java/Servlets/loginUsuario.java</file>
+=======
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/src/java/orm/Novela.java</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/src/java/Servlets/ControladorListas.java</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/vistaLista.html</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/Novelas.jsp</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/src/java/Servlets/CreadorPagina.java</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/src/java/orm/Lista.java</file>
+            <file>file:/C:/Users/Pablo/Documents/NetBeansProjects/ProyectoMEL/Implementación/Proyecto/web/NovelaTemplate.jsp</file>
+>>>>>>> 16a4331de85207f3181e42ea6eaa90c88139bdd7
         </group>
     </open-files>
 </project-private>
