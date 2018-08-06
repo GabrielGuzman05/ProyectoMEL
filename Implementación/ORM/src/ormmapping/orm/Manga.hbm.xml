@@ -13,10 +13,8 @@ License Type: Academic
 		<property name="nombreManga" column="`nombreManga`" type="string" length="255" not-null="false" lazy="false"/>
 		<property name="nombreAlternativo" column="`nombreAlternativo`" type="string" length="255" not-null="false" lazy="false"/>
 		<property name="completamenteScanlated" column="`completamenteScanlated`" type="byte" length="1" not-null="false" lazy="false"/>
-		<property name="tieneAnimacion" column="`tieneAnimacion`" type="byte" length="1" not-null="false" lazy="false"/>
 		<property name="año" column="`año`" type="string" length="4" not-null="false" lazy="false"/>
 		<property name="licenciado" column="`licenciado`" type="byte" length="1" not-null="true" lazy="false"/>
-		<property name="bakaUpdatesCode" column="`bakaUpdatesCode`" type="string" length="255" not-null="false" lazy="false"/>
 		<property name="estadoEnPaisDeOrigen" column="`estadoEnPaisDeOrigen`" type="string" length="255" not-null="false" lazy="false"/>
 		<property name="animeStartEnd" column="`animeStartEnd`" type="string" length="255" not-null="false" lazy="false"/>
 		<many-to-one name="tipoMangaidTipoManga" cascade="lock" column="`TipoMangaidTipoManga`" class="orm.TipoManga" not-null="false" lazy="proxy" access="field">
@@ -26,19 +24,19 @@ License Type: Academic
 			<many-to-many column="`GeneroidGenero`" class="orm.Genero">
 			</many-to-many>
 		</set>
-		<set name="ORM_AutoridAutor" table="`Autor_Manga`" lazy="true" cascade="save-update,lock" inverse="true">
-			<key column="`MangaidManga`" not-null="true"/>
-			<many-to-many column="`AutoridAutor`" class="orm.Autor">
+		<set name="ORM_MangakaidArtista" table="`Mangaka_Artista`" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`MangaidMangaArtista`" not-null="true"/>
+			<many-to-many column="`MangakaidArtista`" class="orm.Mangaka">
+			</many-to-many>
+		</set>
+		<set name="ORM_MangakaidAutor" table="`Mangaka_Autor`" lazy="true" cascade="save-update,lock" inverse="true">
+			<key column="`MangaidMangaAutor`" not-null="true"/>
+			<many-to-many column="`MangakaidAutor`" class="orm.Mangaka">
 			</many-to-many>
 		</set>
 		<set name="ORM_TagidTag" table="`Tag_Manga`" lazy="true" cascade="save-update,lock" inverse="true">
 			<key column="`MangaidManga`" not-null="true"/>
 			<many-to-many column="`TagidTag`" class="orm.Tag">
-			</many-to-many>
-		</set>
-		<set name="ORM_AristaidArtista" table="`Arista_Manga`" lazy="true" cascade="save-update,lock" inverse="true">
-			<key column="`MangaidManga`" not-null="true"/>
-			<many-to-many column="`AristaidArtista`" class="orm.Artista">
 			</many-to-many>
 		</set>
 		<set name="ORM_EntradaLista" lazy="true" cascade="save-update,lock" inverse="true">

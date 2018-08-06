@@ -18,7 +18,7 @@ public class Usuario {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_USUARIO_LISTA) {
+		if (key == ORMConstants.KEY_USUARIO_LISTA) {
 			return ORM_lista;
 		}
 		
@@ -76,7 +76,7 @@ public class Usuario {
 		return ORM_lista;
 	}
 	
-	public final orm.ListaSetCollection lista = new orm.ListaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_USUARIO_LISTA, orm.ORMConstants.KEY_LISTA_USUARIOIDUSUARIO, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.ListaSetCollection lista = new orm.ListaSetCollection(this, _ormAdapter, ORMConstants.KEY_USUARIO_LISTA, ORMConstants.KEY_LISTA_USUARIOIDUSUARIO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdUsuario());

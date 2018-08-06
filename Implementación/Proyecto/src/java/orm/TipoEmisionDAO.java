@@ -21,7 +21,7 @@ import java.util.List;
 public class TipoEmisionDAO {
 	public static TipoEmision loadTipoEmisionByORMID(int idTipoEmision) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoEmisionByORMID(session, idTipoEmision);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class TipoEmisionDAO {
 	
 	public static TipoEmision getTipoEmisionByORMID(int idTipoEmision) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTipoEmisionByORMID(session, idTipoEmision);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class TipoEmisionDAO {
 	
 	public static TipoEmision loadTipoEmisionByORMID(int idTipoEmision, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoEmisionByORMID(session, idTipoEmision, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class TipoEmisionDAO {
 	
 	public static TipoEmision getTipoEmisionByORMID(int idTipoEmision, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTipoEmisionByORMID(session, idTipoEmision, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class TipoEmisionDAO {
 	
 	public static List queryTipoEmision(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTipoEmision(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class TipoEmisionDAO {
 	
 	public static List queryTipoEmision(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTipoEmision(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class TipoEmisionDAO {
 	
 	public static TipoEmision[] listTipoEmisionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTipoEmisionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class TipoEmisionDAO {
 	
 	public static TipoEmision[] listTipoEmisionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTipoEmisionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class TipoEmisionDAO {
 	
 	public static TipoEmision loadTipoEmisionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoEmisionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class TipoEmisionDAO {
 	
 	public static TipoEmision loadTipoEmisionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoEmisionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class TipoEmisionDAO {
 	
 	public static java.util.Iterator iterateTipoEmisionByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTipoEmisionByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class TipoEmisionDAO {
 	
 	public static java.util.Iterator iterateTipoEmisionByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTipoEmisionByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class TipoEmisionDAO {
 	
 	public static boolean save(orm.TipoEmision tipoEmision) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(tipoEmision);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(tipoEmision);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class TipoEmisionDAO {
 	
 	public static boolean delete(orm.TipoEmision tipoEmision) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(tipoEmision);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(tipoEmision);
 			return true;
 		}
 		catch (Exception e) {
@@ -356,7 +356,7 @@ public class TipoEmisionDAO {
 	
 	public static boolean refresh(orm.TipoEmision tipoEmision) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(tipoEmision);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(tipoEmision);
 			return true;
 		}
 		catch (Exception e) {
@@ -367,7 +367,7 @@ public class TipoEmisionDAO {
 	
 	public static boolean evict(orm.TipoEmision tipoEmision) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(tipoEmision);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(tipoEmision);
 			return true;
 		}
 		catch (Exception e) {

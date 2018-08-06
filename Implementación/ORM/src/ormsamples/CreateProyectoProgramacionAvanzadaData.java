@@ -9,66 +9,69 @@ public class CreateProyectoProgramacionAvanzadaData {
 	public void createTestData() throws PersistentException {
 		PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
 		try {
-			orm.Novela oRMNovela = orm.NovelaDAO.createNovela();
+			orm.Novela lormNovela = orm.NovelaDAO.createNovela();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : tagidTag, generoidGenero, artistaidArtista, lenguajeOriginalidLenguaje, tipoidTipo, publicadorInglesidPublicadorIngles, autoridAutor, publicadorOriginalidPublicadorOriginal
-			orm.NovelaDAO.save(oRMNovela);
-			orm.LenguajeOriginal oRMLenguajeOriginal = orm.LenguajeOriginalDAO.createLenguajeOriginal();
+			orm.NovelaDAO.save(lormNovela);
+			orm.LenguajeOriginal lormLenguajeOriginal = orm.LenguajeOriginalDAO.createLenguajeOriginal();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : novela, nombre
-			orm.LenguajeOriginalDAO.save(oRMLenguajeOriginal);
-			orm.PublicadorOriginal oRMPublicadorOriginal = orm.PublicadorOriginalDAO.createPublicadorOriginal();
+			orm.LenguajeOriginalDAO.save(lormLenguajeOriginal);
+			orm.PublicadorOriginal lormPublicadorOriginal = orm.PublicadorOriginalDAO.createPublicadorOriginal();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : novela, nombre
-			orm.PublicadorOriginalDAO.save(oRMPublicadorOriginal);
-			orm.PublicadorIngles oRMPublicadorIngles = orm.PublicadorInglesDAO.createPublicadorIngles();
+			orm.PublicadorOriginalDAO.save(lormPublicadorOriginal);
+			orm.PublicadorIngles lormPublicadorIngles = orm.PublicadorInglesDAO.createPublicadorIngles();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : novela, nombre
-			orm.PublicadorInglesDAO.save(oRMPublicadorIngles);
-			orm.Tag oRMTag = orm.TagDAO.createTag();
+			orm.PublicadorInglesDAO.save(lormPublicadorIngles);
+			orm.Tag lormTag = orm.TagDAO.createTag();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : mangaidManga, novelaidNovela, nombre
-			orm.TagDAO.save(oRMTag);
-			orm.Tipo oRMTipo = orm.TipoDAO.createTipo();
+			orm.TagDAO.save(lormTag);
+			orm.Tipo lormTipo = orm.TipoDAO.createTipo();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : novela, nombre
-			orm.TipoDAO.save(oRMTipo);
-			orm.Genero oRMGenero = orm.GeneroDAO.createGenero();
+			orm.TipoDAO.save(lormTipo);
+			orm.Genero lormGenero = orm.GeneroDAO.createGenero();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : serieGenericaidSerie, mangaidManga, animacionidAnimacion, novelaidNovela, nombre
-			orm.GeneroDAO.save(oRMGenero);
-			orm.Autor oRMAutor = orm.AutorDAO.createAutor();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : novela, mangaidManga
-			orm.AutorDAO.save(oRMAutor);
-			orm.Animacion oRMAnimacion = orm.AnimacionDAO.createAnimacion();
+			orm.GeneroDAO.save(lormGenero);
+			orm.Autor lormAutor = orm.AutorDAO.createAutor();
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : novela
+			orm.AutorDAO.save(lormAutor);
+			orm.Animacion lormAnimacion = orm.AnimacionDAO.createAnimacion();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : generoidGenero, estudioidEstudio, ratingidRating, tipoEmisionidTipoEmision, temporadaidTemporada
-			orm.AnimacionDAO.save(oRMAnimacion);
-			orm.Estudio oRMEstudio = orm.EstudioDAO.createEstudio();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : animacionidAnimacion
-			orm.EstudioDAO.save(oRMEstudio);
-			orm.Temporada oRMTemporada = orm.TemporadaDAO.createTemporada();
+			orm.AnimacionDAO.save(lormAnimacion);
+			orm.Estudio lormEstudio = orm.EstudioDAO.createEstudio();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : animacion
-			orm.TemporadaDAO.save(oRMTemporada);
-			orm.TipoEmision oRMTipoEmision = orm.TipoEmisionDAO.createTipoEmision();
+			orm.EstudioDAO.save(lormEstudio);
+			orm.Temporada lormTemporada = orm.TemporadaDAO.createTemporada();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : animacion
-			orm.TipoEmisionDAO.save(oRMTipoEmision);
-			orm.Manga oRMManga = orm.MangaDAO.createManga();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : aristaidArtista, tagidTag, autoridAutor, generoidGenero, licenciado
-			orm.MangaDAO.save(oRMManga);
-			orm.Artista oRMArtista = orm.ArtistaDAO.createArtista();
-			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : novela, mangaidManga
-			orm.ArtistaDAO.save(oRMArtista);
-			orm.TipoManga oRMTipoManga = orm.TipoMangaDAO.createTipoManga();
+			orm.TemporadaDAO.save(lormTemporada);
+			orm.TipoEmision lormTipoEmision = orm.TipoEmisionDAO.createTipoEmision();
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : animacion
+			orm.TipoEmisionDAO.save(lormTipoEmision);
+			orm.Manga lormManga = orm.MangaDAO.createManga();
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : tagidTag, mangakaidAutor, mangakaidArtista, generoidGenero, licenciado
+			orm.MangaDAO.save(lormManga);
+			orm.Artista lormArtista = orm.ArtistaDAO.createArtista();
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : novela
+			orm.ArtistaDAO.save(lormArtista);
+			orm.TipoManga lormTipoManga = orm.TipoMangaDAO.createTipoManga();
 			// Initialize the properties of the persistent object here
-			orm.TipoMangaDAO.save(oRMTipoManga);
-			orm.SerieGenerica oRMSerieGenerica = orm.SerieGenericaDAO.createSerieGenerica();
+			orm.TipoMangaDAO.save(lormTipoManga);
+			orm.SerieGenerica lormSerieGenerica = orm.SerieGenericaDAO.createSerieGenerica();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : generoidGenero
-			orm.SerieGenericaDAO.save(oRMSerieGenerica);
-			orm.Rating oRMRating = orm.RatingDAO.createRating();
+			orm.SerieGenericaDAO.save(lormSerieGenerica);
+			orm.Rating lormRating = orm.RatingDAO.createRating();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : animacion
-			orm.RatingDAO.save(oRMRating);
-			orm.Usuario oRMUsuario = orm.UsuarioDAO.createUsuario();
+			orm.RatingDAO.save(lormRating);
+			orm.Usuario lormUsuario = orm.UsuarioDAO.createUsuario();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : lista, contraseñaUsuario, nombreUsuario
-			orm.UsuarioDAO.save(oRMUsuario);
-			orm.Lista oRMLista = orm.ListaDAO.createLista();
+			orm.UsuarioDAO.save(lormUsuario);
+			orm.Lista lormLista = orm.ListaDAO.createLista();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : entradaLista, usuarioidUsuario, nombreLista
-			orm.ListaDAO.save(oRMLista);
-			orm.EntradaLista oRMEntradaLista = orm.EntradaListaDAO.createEntradaLista();
+			orm.ListaDAO.save(lormLista);
+			orm.EntradaLista lormEntradaLista = orm.EntradaListaDAO.createEntradaLista();
 			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : listaidLista, tipo, terminado, ultimoCapitulo, alDia
-			orm.EntradaListaDAO.save(oRMEntradaLista);
+			orm.EntradaListaDAO.save(lormEntradaLista);
+			orm.Mangaka lormMangaka = orm.MangakaDAO.createMangaka();
+			// TODO Initialize the properties of the persistent object here, the following properties must be initialized before saving : mangaidMangaAutor, mangaidMangaArtista, nombre
+			orm.MangakaDAO.save(lormMangaka);
 			t.commit();
 		}
 		catch (Exception e) {

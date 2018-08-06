@@ -21,7 +21,7 @@ import java.util.List;
 public class EstudioDAO {
 	public static Estudio loadEstudioByORMID(int idEstudio) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEstudioByORMID(session, idEstudio);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class EstudioDAO {
 	
 	public static Estudio getEstudioByORMID(int idEstudio) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getEstudioByORMID(session, idEstudio);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class EstudioDAO {
 	
 	public static Estudio loadEstudioByORMID(int idEstudio, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEstudioByORMID(session, idEstudio, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class EstudioDAO {
 	
 	public static Estudio getEstudioByORMID(int idEstudio, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getEstudioByORMID(session, idEstudio, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class EstudioDAO {
 	
 	public static List queryEstudio(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryEstudio(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class EstudioDAO {
 	
 	public static List queryEstudio(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryEstudio(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class EstudioDAO {
 	
 	public static Estudio[] listEstudioByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listEstudioByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class EstudioDAO {
 	
 	public static Estudio[] listEstudioByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listEstudioByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class EstudioDAO {
 	
 	public static Estudio loadEstudioByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEstudioByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class EstudioDAO {
 	
 	public static Estudio loadEstudioByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEstudioByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class EstudioDAO {
 	
 	public static java.util.Iterator iterateEstudioByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateEstudioByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class EstudioDAO {
 	
 	public static java.util.Iterator iterateEstudioByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateEstudioByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class EstudioDAO {
 	
 	public static boolean save(orm.Estudio estudio) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(estudio);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(estudio);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class EstudioDAO {
 	
 	public static boolean delete(orm.Estudio estudio) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(estudio);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(estudio);
 			return true;
 		}
 		catch (Exception e) {
@@ -323,9 +323,9 @@ public class EstudioDAO {
 	
 	public static boolean deleteAndDissociate(orm.Estudio estudio)throws PersistentException {
 		try {
-			orm.Animacion[] lAnimacionidAnimacions = estudio.animacionidAnimacion.toArray();
-			for(int i = 0; i < lAnimacionidAnimacions.length; i++) {
-				lAnimacionidAnimacions[i].estudioidEstudio.remove(estudio);
+			orm.Animacion[] lAnimacions = estudio.animacion.toArray();
+			for(int i = 0; i < lAnimacions.length; i++) {
+				lAnimacions[i].setEstudioidEstudio(null);
 			}
 			return delete(estudio);
 		}
@@ -337,9 +337,9 @@ public class EstudioDAO {
 	
 	public static boolean deleteAndDissociate(orm.Estudio estudio, org.orm.PersistentSession session)throws PersistentException {
 		try {
-			orm.Animacion[] lAnimacionidAnimacions = estudio.animacionidAnimacion.toArray();
-			for(int i = 0; i < lAnimacionidAnimacions.length; i++) {
-				lAnimacionidAnimacions[i].estudioidEstudio.remove(estudio);
+			orm.Animacion[] lAnimacions = estudio.animacion.toArray();
+			for(int i = 0; i < lAnimacions.length; i++) {
+				lAnimacions[i].setEstudioidEstudio(null);
 			}
 			try {
 				session.delete(estudio);
@@ -356,7 +356,7 @@ public class EstudioDAO {
 	
 	public static boolean refresh(orm.Estudio estudio) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(estudio);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(estudio);
 			return true;
 		}
 		catch (Exception e) {
@@ -367,7 +367,7 @@ public class EstudioDAO {
 	
 	public static boolean evict(orm.Estudio estudio) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(estudio);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(estudio);
 			return true;
 		}
 		catch (Exception e) {

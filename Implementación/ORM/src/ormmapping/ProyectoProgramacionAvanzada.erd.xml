@@ -472,17 +472,6 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="MALCode">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
     <Column name="TemporadaidTemporada">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
@@ -511,6 +500,18 @@
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>true</ForeignKey>
       <ReferencedColumn>Rating.idRating</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="EstudioidEstudio">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Estudio.idEstudio</ReferencedColumn>
       <Type>9</Type>
       <Length>10</Length>
       <Nullable>false</Nullable>
@@ -594,36 +595,10 @@
     <Column name="nombre">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>false</ForeignKey>
-      <Type>9</Type>
-      <Length>10</Length>
+      <Type>27</Type>
+      <Length>15</Length>
       <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-  </Entity>
-  <Entity name="Estudio_Animacion" Unlogged="false" PKClustered="0">
-    <Column name="EstudioidEstudio">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Estudio.idEstudio</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="AnimacionidAnimacion">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Animacion.idAnimacion</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
       <UserTypes/>
@@ -700,17 +675,6 @@
       <Index>false</Index>
       <UserTypes/>
     </Column>
-    <Column name="tieneAnimacion">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>7</Type>
-      <Length>1</Length>
-      <Nullable>true</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
     <Column name="año">
       <PrimaryKey>false</PrimaryKey>
       <ForeignKey>false</ForeignKey>
@@ -728,17 +692,6 @@
       <Type>7</Type>
       <Length>1</Length>
       <Nullable>false</Nullable>
-      <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="bakaUpdatesCode">
-      <PrimaryKey>false</PrimaryKey>
-      <ForeignKey>false</ForeignKey>
-      <Type>27</Type>
-      <Length>255</Length>
-      <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
@@ -805,58 +758,6 @@
       <UserTypes/>
     </Column>
   </Entity>
-  <Entity name="Autor_Manga" Unlogged="false" PKClustered="0">
-    <Column name="AutoridAutor">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Autor.idAutor</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="MangaidManga">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Manga.idManga</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-  </Entity>
-  <Entity name="Tag_Manga" Unlogged="false" PKClustered="0">
-    <Column name="TagidTag">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Tag.idTag</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="MangaidManga">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Manga.idManga</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-  </Entity>
   <Entity name="Artista" Unlogged="false" PKClustered="0">
     <Column name="idArtista">
       <PrimaryKey>true</PrimaryKey>
@@ -876,32 +777,6 @@
       <Length>255</Length>
       <Nullable>true</Nullable>
       <IDGenerator>native</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-  </Entity>
-  <Entity name="Arista_Manga" Unlogged="false" PKClustered="0">
-    <Column name="AristaidArtista">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Artista.idArtista</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
-      <Unique>false</Unique>
-      <Index>false</Index>
-      <UserTypes/>
-    </Column>
-    <Column name="MangaidManga">
-      <PrimaryKey>true</PrimaryKey>
-      <ForeignKey>true</ForeignKey>
-      <ReferencedColumn>Manga.idManga</ReferencedColumn>
-      <Type>9</Type>
-      <Length>10</Length>
-      <Nullable>false</Nullable>
-      <IDGenerator>assigned</IDGenerator>
       <Unique>false</Unique>
       <Index>false</Index>
       <UserTypes/>
@@ -1226,6 +1101,108 @@
       <UserTypes/>
     </Column>
   </Entity>
+  <Entity name="Mangaka" Unlogged="false" PKClustered="0">
+    <Column name="idMangaka">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>increment</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="nombre">
+      <PrimaryKey>false</PrimaryKey>
+      <ForeignKey>false</ForeignKey>
+      <Type>27</Type>
+      <Length>100</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>native</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Mangaka_Artista" Unlogged="false" PKClustered="0">
+    <Column name="MangakaidArtista">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Mangaka.idMangaka</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="MangaidMangaArtista">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Manga.idManga</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Mangaka_Autor" Unlogged="false" PKClustered="0">
+    <Column name="MangakaidAutor">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Mangaka.idMangaka</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="MangaidMangaAutor">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Manga.idManga</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
+  <Entity name="Tag_Manga" Unlogged="false" PKClustered="0">
+    <Column name="TagidTag">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Tag.idTag</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+    <Column name="MangaidManga">
+      <PrimaryKey>true</PrimaryKey>
+      <ForeignKey>true</ForeignKey>
+      <ReferencedColumn>Manga.idManga</ReferencedColumn>
+      <Type>9</Type>
+      <Length>10</Length>
+      <Nullable>false</Nullable>
+      <IDGenerator>assigned</IDGenerator>
+      <Unique>false</Unique>
+      <Index>false</Index>
+      <UserTypes/>
+    </Column>
+  </Entity>
   <ForeignKey name="FKNovela170901">
     <ReferenceTable>Novela</ReferenceTable>
     <ReferencedTable>PublicadorOriginal</ReferencedTable>
@@ -1316,26 +1293,6 @@
       <Column>idTemporada</Column>
     </RefColumns>
   </ForeignKey>
-  <ForeignKey name="FKEstudio_An845706">
-    <ReferenceTable>Estudio_Animacion</ReferenceTable>
-    <ReferencedTable>Estudio</ReferencedTable>
-    <Columns>
-      <Column>EstudioidEstudio</Column>
-    </Columns>
-    <RefColumns>
-      <Column>idEstudio</Column>
-    </RefColumns>
-  </ForeignKey>
-  <ForeignKey name="FKEstudio_An105827">
-    <ReferenceTable>Estudio_Animacion</ReferenceTable>
-    <ReferencedTable>Animacion</ReferencedTable>
-    <Columns>
-      <Column>AnimacionidAnimacion</Column>
-    </Columns>
-    <RefColumns>
-      <Column>idAnimacion</Column>
-    </RefColumns>
-  </ForeignKey>
   <ForeignKey name="FKAnimacion203387">
     <ReferenceTable>Animacion</ReferenceTable>
     <ReferencedTable>TipoEmision</ReferencedTable>
@@ -1378,66 +1335,6 @@
   </ForeignKey>
   <ForeignKey name="FKGenero_Man762477">
     <ReferenceTable>Genero_Manga</ReferenceTable>
-    <ReferencedTable>Manga</ReferencedTable>
-    <Columns>
-      <Column>MangaidManga</Column>
-    </Columns>
-    <RefColumns>
-      <Column>idManga</Column>
-    </RefColumns>
-  </ForeignKey>
-  <ForeignKey name="FKAutor_Mang119153">
-    <ReferenceTable>Autor_Manga</ReferenceTable>
-    <ReferencedTable>Autor</ReferencedTable>
-    <Columns>
-      <Column>AutoridAutor</Column>
-    </Columns>
-    <RefColumns>
-      <Column>idAutor</Column>
-    </RefColumns>
-  </ForeignKey>
-  <ForeignKey name="FKAutor_Mang448472">
-    <ReferenceTable>Autor_Manga</ReferenceTable>
-    <ReferencedTable>Manga</ReferencedTable>
-    <Columns>
-      <Column>MangaidManga</Column>
-    </Columns>
-    <RefColumns>
-      <Column>idManga</Column>
-    </RefColumns>
-  </ForeignKey>
-  <ForeignKey name="FKTag_Manga289005">
-    <ReferenceTable>Tag_Manga</ReferenceTable>
-    <ReferencedTable>Tag</ReferencedTable>
-    <Columns>
-      <Column>TagidTag</Column>
-    </Columns>
-    <RefColumns>
-      <Column>idTag</Column>
-    </RefColumns>
-  </ForeignKey>
-  <ForeignKey name="FKTag_Manga267541">
-    <ReferenceTable>Tag_Manga</ReferenceTable>
-    <ReferencedTable>Manga</ReferencedTable>
-    <Columns>
-      <Column>MangaidManga</Column>
-    </Columns>
-    <RefColumns>
-      <Column>idManga</Column>
-    </RefColumns>
-  </ForeignKey>
-  <ForeignKey name="FKArista_Man587820">
-    <ReferenceTable>Arista_Manga</ReferenceTable>
-    <ReferencedTable>Artista</ReferencedTable>
-    <Columns>
-      <Column>AristaidArtista</Column>
-    </Columns>
-    <RefColumns>
-      <Column>idArtista</Column>
-    </RefColumns>
-  </ForeignKey>
-  <ForeignKey name="FKArista_Man692597">
-    <ReferenceTable>Arista_Manga</ReferenceTable>
     <ReferencedTable>Manga</ReferencedTable>
     <Columns>
       <Column>MangaidManga</Column>
@@ -1564,6 +1461,76 @@
     </Columns>
     <RefColumns>
       <Column>idSerie</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKMangaka_Ar657844">
+    <ReferenceTable>Mangaka_Artista</ReferenceTable>
+    <ReferencedTable>Mangaka</ReferencedTable>
+    <Columns>
+      <Column>MangakaidArtista</Column>
+    </Columns>
+    <RefColumns>
+      <Column>idMangaka</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKMangaka_Ar571213">
+    <ReferenceTable>Mangaka_Artista</ReferenceTable>
+    <ReferencedTable>Manga</ReferencedTable>
+    <Columns>
+      <Column>MangaidMangaArtista</Column>
+    </Columns>
+    <RefColumns>
+      <Column>idManga</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKMangaka_Au36481">
+    <ReferenceTable>Mangaka_Autor</ReferenceTable>
+    <ReferencedTable>Mangaka</ReferencedTable>
+    <Columns>
+      <Column>MangakaidAutor</Column>
+    </Columns>
+    <RefColumns>
+      <Column>idMangaka</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKMangaka_Au654630">
+    <ReferenceTable>Mangaka_Autor</ReferenceTable>
+    <ReferencedTable>Manga</ReferencedTable>
+    <Columns>
+      <Column>MangaidMangaAutor</Column>
+    </Columns>
+    <RefColumns>
+      <Column>idManga</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKTag_Manga289005">
+    <ReferenceTable>Tag_Manga</ReferenceTable>
+    <ReferencedTable>Tag</ReferencedTable>
+    <Columns>
+      <Column>TagidTag</Column>
+    </Columns>
+    <RefColumns>
+      <Column>idTag</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKTag_Manga267541">
+    <ReferenceTable>Tag_Manga</ReferenceTable>
+    <ReferencedTable>Manga</ReferencedTable>
+    <Columns>
+      <Column>MangaidManga</Column>
+    </Columns>
+    <RefColumns>
+      <Column>idManga</Column>
+    </RefColumns>
+  </ForeignKey>
+  <ForeignKey name="FKAnimacion187161">
+    <ReferenceTable>Animacion</ReferenceTable>
+    <ReferencedTable>Estudio</ReferencedTable>
+    <Columns>
+      <Column>EstudioidEstudio</Column>
+    </Columns>
+    <RefColumns>
+      <Column>idEstudio</Column>
     </RefColumns>
   </ForeignKey>
 </Model>

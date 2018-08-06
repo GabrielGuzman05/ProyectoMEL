@@ -18,8 +18,8 @@ public class Estudio {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_ESTUDIO_ANIMACIONIDANIMACION) {
-			return ORM_animacionidAnimacion;
+		if (key == ORMConstants.KEY_ESTUDIO_ANIMACION) {
+			return ORM_animacion;
 		}
 		
 		return null;
@@ -36,7 +36,7 @@ public class Estudio {
 	
 	private String nombre;
 	
-	private java.util.Set ORM_animacionidAnimacion = new java.util.HashSet();
+	private java.util.Set ORM_animacion = new java.util.HashSet();
 	
 	private void setIdEstudio(int value) {
 		this.idEstudio = value;
@@ -58,15 +58,15 @@ public class Estudio {
 		return nombre;
 	}
 	
-	private void setORM_AnimacionidAnimacion(java.util.Set value) {
-		this.ORM_animacionidAnimacion = value;
+	private void setORM_Animacion(java.util.Set value) {
+		this.ORM_animacion = value;
 	}
 	
-	private java.util.Set getORM_AnimacionidAnimacion() {
-		return ORM_animacionidAnimacion;
+	private java.util.Set getORM_Animacion() {
+		return ORM_animacion;
 	}
 	
-	public final orm.AnimacionSetCollection animacionidAnimacion = new orm.AnimacionSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_ESTUDIO_ANIMACIONIDANIMACION, orm.ORMConstants.KEY_ANIMACION_ESTUDIOIDESTUDIO, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTUDIO_ANIMACION, ORMConstants.KEY_ANIMACION_ESTUDIOIDESTUDIO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdEstudio());

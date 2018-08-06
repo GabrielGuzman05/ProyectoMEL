@@ -18,7 +18,7 @@ public class TipoManga {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_TIPOMANGA_MANGA) {
+		if (key == ORMConstants.KEY_TIPOMANGA_MANGA) {
 			return ORM_manga;
 		}
 		
@@ -66,7 +66,7 @@ public class TipoManga {
 		return ORM_manga;
 	}
 	
-	public final orm.MangaSetCollection manga = new orm.MangaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_TIPOMANGA_MANGA, orm.ORMConstants.KEY_MANGA_TIPOMANGAIDTIPOMANGA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.MangaSetCollection manga = new orm.MangaSetCollection(this, _ormAdapter, ORMConstants.KEY_TIPOMANGA_MANGA, ORMConstants.KEY_MANGA_TIPOMANGAIDTIPOMANGA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTipoManga());

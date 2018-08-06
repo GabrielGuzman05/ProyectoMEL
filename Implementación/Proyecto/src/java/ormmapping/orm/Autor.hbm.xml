@@ -11,11 +11,6 @@ License Type: Academic
 			</generator>
 		</id>
 		<property name="nombre" column="`nombre`" type="string" length="255" not-null="false" lazy="false"/>
-		<set name="ORM_MangaidManga" table="`Autor_Manga`" lazy="true" cascade="save-update,lock">
-			<key column="`AutoridAutor`" not-null="true"/>
-			<many-to-many column="`MangaidManga`" class="orm.Manga">
-			</many-to-many>
-		</set>
 		<set name="ORM_Novela" lazy="true" cascade="save-update,lock" inverse="true">
 			<key column="`AutoridAutor`" not-null="true"/>
 			<one-to-many class="orm.Novela"/>

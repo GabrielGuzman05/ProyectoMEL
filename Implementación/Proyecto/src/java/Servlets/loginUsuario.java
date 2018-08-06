@@ -46,8 +46,8 @@ public class loginUsuario extends HttpServlet {
         Boolean login = false;
 
         try {
-            PersistentTransaction t = ORM.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
-            ORM.Usuario oRMUsuario = ORM.UsuarioDAO.loadUsuarioByQuery("nombre"
+            PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
+            orm.Usuario oRMUsuario = orm.UsuarioDAO.loadUsuarioByQuery("nombre"
                     + "Usuario='" + user + "' and contraseñaUsuario='" + pass + "'", null);
             // Update the properties of the persistent object
             if (oRMUsuario != null) {
@@ -55,9 +55,9 @@ public class loginUsuario extends HttpServlet {
                 System.out.println("Found");
                 login = true;
             } else {
-
+                
             }
-            ORM.UsuarioDAO.save(oRMUsuario);
+            orm.UsuarioDAO.save(oRMUsuario);
         } catch (PersistentException ex) {
             Logger.getLogger(loginUsuario.class.getName()).log(Level.SEVERE, null, ex);
         }

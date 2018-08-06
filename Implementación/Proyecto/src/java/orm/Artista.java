@@ -18,10 +18,7 @@ public class Artista {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_ARTISTA_MANGAIDMANGA) {
-			return ORM_mangaidManga;
-		}
-		else if (key == orm.ORMConstants.KEY_ARTISTA_NOVELA) {
+		if (key == ORMConstants.KEY_ARTISTA_NOVELA) {
 			return ORM_novela;
 		}
 		
@@ -38,8 +35,6 @@ public class Artista {
 	private int idArtista;
 	
 	private String nombre;
-	
-	private java.util.Set ORM_mangaidManga = new java.util.HashSet();
 	
 	private java.util.Set ORM_novela = new java.util.HashSet();
 	
@@ -63,16 +58,6 @@ public class Artista {
 		return nombre;
 	}
 	
-	private void setORM_MangaidManga(java.util.Set value) {
-		this.ORM_mangaidManga = value;
-	}
-	
-	private java.util.Set getORM_MangaidManga() {
-		return ORM_mangaidManga;
-	}
-	
-	public final orm.MangaSetCollection mangaidManga = new orm.MangaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_ARTISTA_MANGAIDMANGA, orm.ORMConstants.KEY_MANGA_ARISTAIDARTISTA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
-	
 	private void setORM_Novela(java.util.Set value) {
 		this.ORM_novela = value;
 	}
@@ -81,7 +66,7 @@ public class Artista {
 		return ORM_novela;
 	}
 	
-	public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_ARTISTA_NOVELA, orm.ORMConstants.KEY_NOVELA_ARTISTAIDARTISTA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_ARTISTA_NOVELA, ORMConstants.KEY_NOVELA_ARTISTAIDARTISTA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdArtista());

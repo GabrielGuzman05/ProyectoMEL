@@ -10,7 +10,7 @@ License Type: Academic
 			<generator class="native">
 			</generator>
 		</id>
-		<property name="nombre" column="`nombre`" type="integer" length="10" not-null="false" lazy="false"/>
+		<property name="nombre" column="`nombre`" type="string" length="15" not-null="false" lazy="false"/>
 		<set name="ORM_Animacion" lazy="true" cascade="save-update,lock" inverse="true">
 			<key column="`TipoEmisionidTipoEmision`" not-null="true"/>
 			<one-to-many class="orm.Animacion"/>

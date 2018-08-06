@@ -5,12 +5,7 @@
  */
 package Servlets;
 
-import ORM.SerieGenerica;
-import ORM.SerieGenericaDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
-import static java.lang.System.out;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -20,6 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.orm.PersistentException;
+import orm.SerieGenerica;
+import orm.SerieGenericaDAO;
 
 /**
  *
@@ -40,7 +37,7 @@ public class Series extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
 
-        ORM.SerieGenerica[] serieGenericas = ORM.SerieGenericaDAO.listSerieGenericaByQuery(null, null);
+        SerieGenerica[] serieGenericas = SerieGenericaDAO.listSerieGenericaByQuery(null, null);
         request.setAttribute("series", serieGenericas);
         RequestDispatcher rd = request.getRequestDispatcher("/Series.jsp");
         rd.forward(request, response);

@@ -18,19 +18,19 @@ public class Manga {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_MANGA_GENEROIDGENERO) {
+		if (key == ORMConstants.KEY_MANGA_GENEROIDGENERO) {
 			return ORM_generoidGenero;
 		}
-		else if (key == orm.ORMConstants.KEY_MANGA_AUTORIDAUTOR) {
-			return ORM_autoridAutor;
+		else if (key == ORMConstants.KEY_MANGA_MANGAKAIDARTISTA) {
+			return ORM_mangakaidArtista;
 		}
-		else if (key == orm.ORMConstants.KEY_MANGA_TAGIDTAG) {
+		else if (key == ORMConstants.KEY_MANGA_MANGAKAIDAUTOR) {
+			return ORM_mangakaidAutor;
+		}
+		else if (key == ORMConstants.KEY_MANGA_TAGIDTAG) {
 			return ORM_tagidTag;
 		}
-		else if (key == orm.ORMConstants.KEY_MANGA_ARISTAIDARTISTA) {
-			return ORM_aristaidArtista;
-		}
-		else if (key == orm.ORMConstants.KEY_MANGA_ENTRADALISTA) {
+		else if (key == ORMConstants.KEY_MANGA_ENTRADALISTA) {
 			return ORM_entradaLista;
 		}
 		
@@ -38,7 +38,7 @@ public class Manga {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == orm.ORMConstants.KEY_MANGA_TIPOMANGAIDTIPOMANGA) {
+		if (key == ORMConstants.KEY_MANGA_TIPOMANGAIDTIPOMANGA) {
 			this.tipoMangaidTipoManga = (orm.TipoManga) owner;
 		}
 	}
@@ -62,13 +62,9 @@ public class Manga {
 	
 	private Byte completamenteScanlated;
 	
-	private Byte tieneAnimacion;
-	
 	private String año;
 	
 	private byte licenciado;
-	
-	private String bakaUpdatesCode;
 	
 	private String estadoEnPaisDeOrigen;
 	
@@ -78,11 +74,11 @@ public class Manga {
 	
 	private java.util.Set ORM_generoidGenero = new java.util.HashSet();
 	
-	private java.util.Set ORM_autoridAutor = new java.util.HashSet();
+	private java.util.Set ORM_mangakaidArtista = new java.util.HashSet();
+	
+	private java.util.Set ORM_mangakaidAutor = new java.util.HashSet();
 	
 	private java.util.Set ORM_tagidTag = new java.util.HashSet();
-	
-	private java.util.Set ORM_aristaidArtista = new java.util.HashSet();
 	
 	private java.util.Set ORM_entradaLista = new java.util.HashSet();
 	
@@ -126,18 +122,6 @@ public class Manga {
 		return completamenteScanlated;
 	}
 	
-	public void setTieneAnimacion(byte value) {
-		setTieneAnimacion(new Byte(value));
-	}
-	
-	public void setTieneAnimacion(Byte value) {
-		this.tieneAnimacion = value;
-	}
-	
-	public Byte getTieneAnimacion() {
-		return tieneAnimacion;
-	}
-	
 	public void setAño(String value) {
 		this.año = value;
 	}
@@ -152,14 +136,6 @@ public class Manga {
 	
 	public byte getLicenciado() {
 		return licenciado;
-	}
-	
-	public void setBakaUpdatesCode(String value) {
-		this.bakaUpdatesCode = value;
-	}
-	
-	public String getBakaUpdatesCode() {
-		return bakaUpdatesCode;
 	}
 	
 	public void setEstadoEnPaisDeOrigen(String value) {
@@ -186,17 +162,27 @@ public class Manga {
 		return ORM_generoidGenero;
 	}
 	
-	public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_MANGA_GENEROIDGENERO, orm.ORMConstants.KEY_GENERO_MANGAIDMANGA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, ORMConstants.KEY_MANGA_GENEROIDGENERO, ORMConstants.KEY_GENERO_MANGAIDMANGA, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
-	private void setORM_AutoridAutor(java.util.Set value) {
-		this.ORM_autoridAutor = value;
+	private void setORM_MangakaidArtista(java.util.Set value) {
+		this.ORM_mangakaidArtista = value;
 	}
 	
-	private java.util.Set getORM_AutoridAutor() {
-		return ORM_autoridAutor;
+	private java.util.Set getORM_MangakaidArtista() {
+		return ORM_mangakaidArtista;
 	}
 	
-	public final orm.AutorSetCollection autoridAutor = new orm.AutorSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_MANGA_AUTORIDAUTOR, orm.ORMConstants.KEY_AUTOR_MANGAIDMANGA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.MangakaSetCollection mangakaidArtista = new orm.MangakaSetCollection(this, _ormAdapter, ORMConstants.KEY_MANGA_MANGAKAIDARTISTA, ORMConstants.KEY_MANGAKA_MANGAIDMANGAARTISTA, ORMConstants.KEY_MUL_MANY_TO_MANY);
+	
+	private void setORM_MangakaidAutor(java.util.Set value) {
+		this.ORM_mangakaidAutor = value;
+	}
+	
+	private java.util.Set getORM_MangakaidAutor() {
+		return ORM_mangakaidAutor;
+	}
+	
+	public final orm.MangakaSetCollection mangakaidAutor = new orm.MangakaSetCollection(this, _ormAdapter, ORMConstants.KEY_MANGA_MANGAKAIDAUTOR, ORMConstants.KEY_MANGAKA_MANGAIDMANGAAUTOR, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_TagidTag(java.util.Set value) {
 		this.ORM_tagidTag = value;
@@ -206,17 +192,7 @@ public class Manga {
 		return ORM_tagidTag;
 	}
 	
-	public final orm.TagSetCollection tagidTag = new orm.TagSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_MANGA_TAGIDTAG, orm.ORMConstants.KEY_TAG_MANGAIDMANGA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
-	
-	private void setORM_AristaidArtista(java.util.Set value) {
-		this.ORM_aristaidArtista = value;
-	}
-	
-	private java.util.Set getORM_AristaidArtista() {
-		return ORM_aristaidArtista;
-	}
-	
-	public final orm.ArtistaSetCollection aristaidArtista = new orm.ArtistaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_MANGA_ARISTAIDARTISTA, orm.ORMConstants.KEY_ARTISTA_MANGAIDMANGA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.TagSetCollection tagidTag = new orm.TagSetCollection(this, _ormAdapter, ORMConstants.KEY_MANGA_TAGIDTAG, ORMConstants.KEY_TAG_MANGAIDMANGA, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public void setTipoMangaidTipoManga(orm.TipoManga value) {
 		if (tipoMangaidTipoManga != null) {
@@ -250,7 +226,7 @@ public class Manga {
 		return ORM_entradaLista;
 	}
 	
-	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_MANGA_ENTRADALISTA, orm.ORMConstants.KEY_ENTRADALISTA_MANGAIDMANGA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, ORMConstants.KEY_MANGA_ENTRADALISTA, ORMConstants.KEY_ENTRADALISTA_MANGAIDMANGA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdManga());

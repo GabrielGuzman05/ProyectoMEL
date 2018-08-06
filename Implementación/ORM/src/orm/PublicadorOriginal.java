@@ -18,7 +18,7 @@ public class PublicadorOriginal {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_PUBLICADORORIGINAL_NOVELA) {
+		if (key == ORMConstants.KEY_PUBLICADORORIGINAL_NOVELA) {
 			return ORM_novela;
 		}
 		
@@ -66,7 +66,7 @@ public class PublicadorOriginal {
 		return ORM_novela;
 	}
 	
-	public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_PUBLICADORORIGINAL_NOVELA, orm.ORMConstants.KEY_NOVELA_PUBLICADORORIGINALIDPUBLICADORORIGINAL, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_PUBLICADORORIGINAL_NOVELA, ORMConstants.KEY_NOVELA_PUBLICADORORIGINALIDPUBLICADORORIGINAL, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdPublicadorOriginal());

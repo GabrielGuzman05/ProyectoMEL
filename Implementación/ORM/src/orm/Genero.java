@@ -18,16 +18,16 @@ public class Genero {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_GENERO_NOVELAIDNOVELA) {
+		if (key == ORMConstants.KEY_GENERO_NOVELAIDNOVELA) {
 			return ORM_novelaidNovela;
 		}
-		else if (key == orm.ORMConstants.KEY_GENERO_ANIMACIONIDANIMACION) {
+		else if (key == ORMConstants.KEY_GENERO_ANIMACIONIDANIMACION) {
 			return ORM_animacionidAnimacion;
 		}
-		else if (key == orm.ORMConstants.KEY_GENERO_MANGAIDMANGA) {
+		else if (key == ORMConstants.KEY_GENERO_MANGAIDMANGA) {
 			return ORM_mangaidManga;
 		}
-		else if (key == orm.ORMConstants.KEY_GENERO_SERIEGENERICAIDSERIE) {
+		else if (key == ORMConstants.KEY_GENERO_SERIEGENERICAIDSERIE) {
 			return ORM_serieGenericaidSerie;
 		}
 		
@@ -91,7 +91,7 @@ public class Genero {
 		return ORM_novelaidNovela;
 	}
 	
-	public final orm.NovelaSetCollection novelaidNovela = new orm.NovelaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_GENERO_NOVELAIDNOVELA, orm.ORMConstants.KEY_NOVELA_GENEROIDGENERO, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.NovelaSetCollection novelaidNovela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_GENERO_NOVELAIDNOVELA, ORMConstants.KEY_NOVELA_GENEROIDGENERO, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_AnimacionidAnimacion(java.util.Set value) {
 		this.ORM_animacionidAnimacion = value;
@@ -101,7 +101,7 @@ public class Genero {
 		return ORM_animacionidAnimacion;
 	}
 	
-	public final orm.AnimacionSetCollection animacionidAnimacion = new orm.AnimacionSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_GENERO_ANIMACIONIDANIMACION, orm.ORMConstants.KEY_ANIMACION_GENEROIDGENERO, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.AnimacionSetCollection animacionidAnimacion = new orm.AnimacionSetCollection(this, _ormAdapter, ORMConstants.KEY_GENERO_ANIMACIONIDANIMACION, ORMConstants.KEY_ANIMACION_GENEROIDGENERO, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_MangaidManga(java.util.Set value) {
 		this.ORM_mangaidManga = value;
@@ -111,7 +111,7 @@ public class Genero {
 		return ORM_mangaidManga;
 	}
 	
-	public final orm.MangaSetCollection mangaidManga = new orm.MangaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_GENERO_MANGAIDMANGA, orm.ORMConstants.KEY_MANGA_GENEROIDGENERO, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.MangaSetCollection mangaidManga = new orm.MangaSetCollection(this, _ormAdapter, ORMConstants.KEY_GENERO_MANGAIDMANGA, ORMConstants.KEY_MANGA_GENEROIDGENERO, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_SerieGenericaidSerie(java.util.Set value) {
 		this.ORM_serieGenericaidSerie = value;
@@ -121,7 +121,7 @@ public class Genero {
 		return ORM_serieGenericaidSerie;
 	}
 	
-	public final orm.SerieGenericaSetCollection serieGenericaidSerie = new orm.SerieGenericaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_GENERO_SERIEGENERICAIDSERIE, orm.ORMConstants.KEY_SERIEGENERICA_GENEROIDGENERO, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.SerieGenericaSetCollection serieGenericaidSerie = new orm.SerieGenericaSetCollection(this, _ormAdapter, ORMConstants.KEY_GENERO_SERIEGENERICAIDSERIE, ORMConstants.KEY_SERIEGENERICA_GENEROIDGENERO, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdGenero());

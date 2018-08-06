@@ -18,7 +18,7 @@ public class Temporada {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_TEMPORADA_ANIMACION) {
+		if (key == ORMConstants.KEY_TEMPORADA_ANIMACION) {
 			return ORM_animacion;
 		}
 		
@@ -80,7 +80,7 @@ public class Temporada {
 		return ORM_animacion;
 	}
 	
-	public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_TEMPORADA_ANIMACION, orm.ORMConstants.KEY_ANIMACION_TEMPORADAIDTEMPORADA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, ORMConstants.KEY_TEMPORADA_ANIMACION, ORMConstants.KEY_ANIMACION_TEMPORADAIDTEMPORADA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTemporada());

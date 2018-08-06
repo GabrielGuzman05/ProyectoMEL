@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Licensee: Universidad de La Frontera
+License Type: Academic
+-->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="orm.Mangaka" table="`Mangaka`" lazy="false">
+		<id name="idMangaka" column="`idMangaka`" type="integer" unsaved-value="0">
+			<generator class="increment">
+			</generator>
+		</id>
+		<property name="nombre" column="`nombre`" type="string" length="100" not-null="true" lazy="false"/>
+		<set name="ORM_MangaidMangaArtista" table="`Mangaka_Artista`" lazy="true" cascade="save-update,lock">
+			<key column="`MangakaidArtista`" not-null="true"/>
+			<many-to-many column="`MangaidMangaArtista`" class="orm.Manga">
+			</many-to-many>
+		</set>
+		<set name="ORM_MangaidMangaAutor" table="`Mangaka_Autor`" lazy="true" cascade="save-update,lock">
+			<key column="`MangakaidAutor`" not-null="true"/>
+			<many-to-many column="`MangaidMangaAutor`" class="orm.Manga">
+			</many-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

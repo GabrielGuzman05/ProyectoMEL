@@ -18,7 +18,7 @@ public class Lista {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_LISTA_ENTRADALISTA) {
+		if (key == ORMConstants.KEY_LISTA_ENTRADALISTA) {
 			return ORM_entradaLista;
 		}
 		
@@ -26,7 +26,7 @@ public class Lista {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == orm.ORMConstants.KEY_LISTA_USUARIOIDUSUARIO) {
+		if (key == ORMConstants.KEY_LISTA_USUARIOIDUSUARIO) {
 			this.usuarioidUsuario = (orm.Usuario) owner;
 		}
 	}
@@ -102,7 +102,7 @@ public class Lista {
 		return ORM_entradaLista;
 	}
 	
-	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_LISTA_ENTRADALISTA, orm.ORMConstants.KEY_ENTRADALISTA_LISTAIDLISTA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, ORMConstants.KEY_LISTA_ENTRADALISTA, ORMConstants.KEY_ENTRADALISTA_LISTAIDLISTA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdLista());

@@ -18,7 +18,7 @@ public class Tipo {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_TIPO_NOVELA) {
+		if (key == ORMConstants.KEY_TIPO_NOVELA) {
 			return ORM_novela;
 		}
 		
@@ -66,7 +66,7 @@ public class Tipo {
 		return ORM_novela;
 	}
 	
-	public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_TIPO_NOVELA, orm.ORMConstants.KEY_NOVELA_TIPOIDTIPO, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_TIPO_NOVELA, ORMConstants.KEY_NOVELA_TIPOIDTIPO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTipo());

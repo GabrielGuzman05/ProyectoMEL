@@ -18,23 +18,23 @@ public class EntradaLista {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == orm.ORMConstants.KEY_ENTRADALISTA_LISTAIDLISTA) {
+		if (key == ORMConstants.KEY_ENTRADALISTA_LISTAIDLISTA) {
 			this.listaidLista = (orm.Lista) owner;
 		}
 		
-		else if (key == orm.ORMConstants.KEY_ENTRADALISTA_NOVELAIDNOVELA) {
+		else if (key == ORMConstants.KEY_ENTRADALISTA_NOVELAIDNOVELA) {
 			this.novelaidNovela = (orm.Novela) owner;
 		}
 		
-		else if (key == orm.ORMConstants.KEY_ENTRADALISTA_MANGAIDMANGA) {
+		else if (key == ORMConstants.KEY_ENTRADALISTA_MANGAIDMANGA) {
 			this.mangaidManga = (orm.Manga) owner;
 		}
 		
-		else if (key == orm.ORMConstants.KEY_ENTRADALISTA_ANIMACIONIDANIMACION) {
+		else if (key == ORMConstants.KEY_ENTRADALISTA_ANIMACIONIDANIMACION) {
 			this.animacionidAnimacion = (orm.Animacion) owner;
 		}
 		
-		else if (key == orm.ORMConstants.KEY_ENTRADALISTA_SERIEGENERICAIDSERIE) {
+		else if (key == ORMConstants.KEY_ENTRADALISTA_SERIEGENERICAIDSERIE) {
 			this.serieGenericaidSerie = (orm.SerieGenerica) owner;
 		}
 	}

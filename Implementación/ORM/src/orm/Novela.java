@@ -18,13 +18,13 @@ public class Novela {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_NOVELA_GENEROIDGENERO) {
+		if (key == ORMConstants.KEY_NOVELA_GENEROIDGENERO) {
 			return ORM_generoidGenero;
 		}
-		else if (key == orm.ORMConstants.KEY_NOVELA_TAGIDTAG) {
+		else if (key == ORMConstants.KEY_NOVELA_TAGIDTAG) {
 			return ORM_tagidTag;
 		}
-		else if (key == orm.ORMConstants.KEY_NOVELA_ENTRADALISTA) {
+		else if (key == ORMConstants.KEY_NOVELA_ENTRADALISTA) {
 			return ORM_entradaLista;
 		}
 		
@@ -32,27 +32,27 @@ public class Novela {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
-		if (key == orm.ORMConstants.KEY_NOVELA_PUBLICADORORIGINALIDPUBLICADORORIGINAL) {
+		if (key == ORMConstants.KEY_NOVELA_PUBLICADORORIGINALIDPUBLICADORORIGINAL) {
 			this.publicadorOriginalidPublicadorOriginal = (orm.PublicadorOriginal) owner;
 		}
 		
-		else if (key == orm.ORMConstants.KEY_NOVELA_AUTORIDAUTOR) {
+		else if (key == ORMConstants.KEY_NOVELA_AUTORIDAUTOR) {
 			this.autoridAutor = (orm.Autor) owner;
 		}
 		
-		else if (key == orm.ORMConstants.KEY_NOVELA_PUBLICADORINGLESIDPUBLICADORINGLES) {
+		else if (key == ORMConstants.KEY_NOVELA_PUBLICADORINGLESIDPUBLICADORINGLES) {
 			this.publicadorInglesidPublicadorIngles = (orm.PublicadorIngles) owner;
 		}
 		
-		else if (key == orm.ORMConstants.KEY_NOVELA_TIPOIDTIPO) {
+		else if (key == ORMConstants.KEY_NOVELA_TIPOIDTIPO) {
 			this.tipoidTipo = (orm.Tipo) owner;
 		}
 		
-		else if (key == orm.ORMConstants.KEY_NOVELA_LENGUAJEORIGINALIDLENGUAJE) {
+		else if (key == ORMConstants.KEY_NOVELA_LENGUAJEORIGINALIDLENGUAJE) {
 			this.lenguajeOriginalidLenguaje = (orm.LenguajeOriginal) owner;
 		}
 		
-		else if (key == orm.ORMConstants.KEY_NOVELA_ARTISTAIDARTISTA) {
+		else if (key == ORMConstants.KEY_NOVELA_ARTISTAIDARTISTA) {
 			this.artistaidArtista = (orm.Artista) owner;
 		}
 	}
@@ -190,7 +190,7 @@ public class Novela {
 		return ORM_generoidGenero;
 	}
 	
-	public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_NOVELA_GENEROIDGENERO, orm.ORMConstants.KEY_GENERO_NOVELAIDNOVELA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, ORMConstants.KEY_NOVELA_GENEROIDGENERO, ORMConstants.KEY_GENERO_NOVELAIDNOVELA, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public void setPublicadorOriginalidPublicadorOriginal(orm.PublicadorOriginal value) {
 		if (publicadorOriginalidPublicadorOriginal != null) {
@@ -344,7 +344,7 @@ public class Novela {
 		return ORM_tagidTag;
 	}
 	
-	public final orm.TagSetCollection tagidTag = new orm.TagSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_NOVELA_TAGIDTAG, orm.ORMConstants.KEY_TAG_NOVELAIDNOVELA, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.TagSetCollection tagidTag = new orm.TagSetCollection(this, _ormAdapter, ORMConstants.KEY_NOVELA_TAGIDTAG, ORMConstants.KEY_TAG_NOVELAIDNOVELA, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_EntradaLista(java.util.Set value) {
 		this.ORM_entradaLista = value;
@@ -354,7 +354,7 @@ public class Novela {
 		return ORM_entradaLista;
 	}
 	
-	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_NOVELA_ENTRADALISTA, orm.ORMConstants.KEY_ENTRADALISTA_NOVELAIDNOVELA, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, ORMConstants.KEY_NOVELA_ENTRADALISTA, ORMConstants.KEY_ENTRADALISTA_NOVELAIDNOVELA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdNovela());

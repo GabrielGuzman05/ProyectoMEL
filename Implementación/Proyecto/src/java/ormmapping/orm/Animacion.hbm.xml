@@ -15,18 +15,14 @@ License Type: Academic
 		<property name="fuente" column="`fuente`" type="string" length="10" not-null="false" lazy="false"/>
 		<property name="enEmision" column="`enEmision`" type="byte" length="1" not-null="false" lazy="false"/>
 		<property name="episodios" column="`episodios`" type="integer" length="10" not-null="false" lazy="false"/>
-		<property name="MALCode" column="`MALCode`" type="string" length="255" not-null="false" lazy="false"/>
 		<many-to-one name="temporadaidTemporada" cascade="lock" column="`TemporadaidTemporada`" class="orm.Temporada" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
 		<many-to-one name="tipoEmisionidTipoEmision" cascade="lock" column="`TipoEmisionidTipoEmision`" class="orm.TipoEmision" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
 		<many-to-one name="ratingidRating" cascade="lock" column="`RatingidRating`" class="orm.Rating" not-null="true" lazy="proxy" access="field">
 		</many-to-one>
-		<set name="ORM_EstudioidEstudio" table="`Estudio_Animacion`" lazy="true" cascade="save-update,lock" inverse="true">
-			<key column="`AnimacionidAnimacion`" not-null="true"/>
-			<many-to-many column="`EstudioidEstudio`" class="orm.Estudio">
-			</many-to-many>
-		</set>
+		<many-to-one name="estudioidEstudio" cascade="lock" column="`EstudioidEstudio`" class="orm.Estudio" not-null="true" lazy="proxy" access="field">
+		</many-to-one>
 		<set name="ORM_GeneroidGenero" table="`Genero_Animacion`" lazy="true" cascade="save-update,lock" inverse="true">
 			<key column="`AnimacionidAnimacion`" not-null="true"/>
 			<many-to-many column="`GeneroidGenero`" class="orm.Genero">

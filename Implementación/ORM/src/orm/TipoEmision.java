@@ -18,7 +18,7 @@ public class TipoEmision {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_TIPOEMISION_ANIMACION) {
+		if (key == ORMConstants.KEY_TIPOEMISION_ANIMACION) {
 			return ORM_animacion;
 		}
 		
@@ -34,7 +34,7 @@ public class TipoEmision {
 	
 	private int idTipoEmision;
 	
-	private Integer nombre;
+	private String nombre;
 	
 	private java.util.Set ORM_animacion = new java.util.HashSet();
 	
@@ -50,15 +50,11 @@ public class TipoEmision {
 		return getIdTipoEmision();
 	}
 	
-	public void setNombre(int value) {
-		setNombre(new Integer(value));
-	}
-	
-	public void setNombre(Integer value) {
+	public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public Integer getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 	
@@ -70,7 +66,7 @@ public class TipoEmision {
 		return ORM_animacion;
 	}
 	
-	public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_TIPOEMISION_ANIMACION, orm.ORMConstants.KEY_ANIMACION_TIPOEMISIONIDTIPOEMISION, orm.ORMConstants.KEY_MUL_ONE_TO_MANY);
+	public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, ORMConstants.KEY_TIPOEMISION_ANIMACION, ORMConstants.KEY_ANIMACION_TIPOEMISIONIDTIPOEMISION, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTipoEmision());

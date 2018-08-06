@@ -93,7 +93,7 @@ public class ListaSetCollection extends org.orm.util.ORMSet {
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return orm.ProyectoProgramacionAvanzadaPersistentManager.instance();
+		return ProyectoProgramacionAvanzadaPersistentManager.instance();
 	}
 	
 }

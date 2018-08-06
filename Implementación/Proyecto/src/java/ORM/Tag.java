@@ -18,10 +18,10 @@ public class Tag {
 	}
 	
 	private java.util.Set this_getSet (int key) {
-		if (key == orm.ORMConstants.KEY_TAG_NOVELAIDNOVELA) {
+		if (key == ORMConstants.KEY_TAG_NOVELAIDNOVELA) {
 			return ORM_novelaidNovela;
 		}
-		else if (key == orm.ORMConstants.KEY_TAG_MANGAIDMANGA) {
+		else if (key == ORMConstants.KEY_TAG_MANGAIDMANGA) {
 			return ORM_mangaidManga;
 		}
 		
@@ -81,7 +81,7 @@ public class Tag {
 		return ORM_novelaidNovela;
 	}
 	
-	public final orm.NovelaSetCollection novelaidNovela = new orm.NovelaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_TAG_NOVELAIDNOVELA, orm.ORMConstants.KEY_NOVELA_TAGIDTAG, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.NovelaSetCollection novelaidNovela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_TAG_NOVELAIDNOVELA, ORMConstants.KEY_NOVELA_TAGIDTAG, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_MangaidManga(java.util.Set value) {
 		this.ORM_mangaidManga = value;
@@ -91,7 +91,7 @@ public class Tag {
 		return ORM_mangaidManga;
 	}
 	
-	public final orm.MangaSetCollection mangaidManga = new orm.MangaSetCollection(this, _ormAdapter, orm.ORMConstants.KEY_TAG_MANGAIDMANGA, orm.ORMConstants.KEY_MANGA_TAGIDTAG, orm.ORMConstants.KEY_MUL_MANY_TO_MANY);
+	public final orm.MangaSetCollection mangaidManga = new orm.MangaSetCollection(this, _ormAdapter, ORMConstants.KEY_TAG_MANGAIDMANGA, ORMConstants.KEY_MANGA_TAGIDTAG, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTag());

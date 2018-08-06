@@ -21,7 +21,7 @@ import java.util.List;
 public class EntradaListaDAO {
 	public static EntradaLista loadEntradaListaByORMID(int idEntrada) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEntradaListaByORMID(session, idEntrada);
 		}
 		catch (Exception e) {
@@ -32,7 +32,7 @@ public class EntradaListaDAO {
 	
 	public static EntradaLista getEntradaListaByORMID(int idEntrada) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getEntradaListaByORMID(session, idEntrada);
 		}
 		catch (Exception e) {
@@ -43,7 +43,7 @@ public class EntradaListaDAO {
 	
 	public static EntradaLista loadEntradaListaByORMID(int idEntrada, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEntradaListaByORMID(session, idEntrada, lockMode);
 		}
 		catch (Exception e) {
@@ -54,7 +54,7 @@ public class EntradaListaDAO {
 	
 	public static EntradaLista getEntradaListaByORMID(int idEntrada, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getEntradaListaByORMID(session, idEntrada, lockMode);
 		}
 		catch (Exception e) {
@@ -105,7 +105,7 @@ public class EntradaListaDAO {
 	
 	public static List queryEntradaLista(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryEntradaLista(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -116,7 +116,7 @@ public class EntradaListaDAO {
 	
 	public static List queryEntradaLista(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryEntradaLista(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -127,7 +127,7 @@ public class EntradaListaDAO {
 	
 	public static EntradaLista[] listEntradaListaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listEntradaListaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -138,7 +138,7 @@ public class EntradaListaDAO {
 	
 	public static EntradaLista[] listEntradaListaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listEntradaListaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -204,7 +204,7 @@ public class EntradaListaDAO {
 	
 	public static EntradaLista loadEntradaListaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEntradaListaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -215,7 +215,7 @@ public class EntradaListaDAO {
 	
 	public static EntradaLista loadEntradaListaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadEntradaListaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -242,7 +242,7 @@ public class EntradaListaDAO {
 	
 	public static java.util.Iterator iterateEntradaListaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateEntradaListaByQuery(session, condition, orderBy);
 		}
 		catch (Exception e) {
@@ -253,7 +253,7 @@ public class EntradaListaDAO {
 	
 	public static java.util.Iterator iterateEntradaListaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
-			PersistentSession session = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
+			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateEntradaListaByQuery(session, condition, orderBy, lockMode);
 		}
 		catch (Exception e) {
@@ -301,7 +301,7 @@ public class EntradaListaDAO {
 	
 	public static boolean save(orm.EntradaLista entradaLista) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(entradaLista);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(entradaLista);
 			return true;
 		}
 		catch (Exception e) {
@@ -312,7 +312,7 @@ public class EntradaListaDAO {
 	
 	public static boolean delete(orm.EntradaLista entradaLista) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(entradaLista);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(entradaLista);
 			return true;
 		}
 		catch (Exception e) {
@@ -388,7 +388,7 @@ public class EntradaListaDAO {
 	
 	public static boolean refresh(orm.EntradaLista entradaLista) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(entradaLista);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(entradaLista);
 			return true;
 		}
 		catch (Exception e) {
@@ -399,7 +399,7 @@ public class EntradaListaDAO {
 	
 	public static boolean evict(orm.EntradaLista entradaLista) throws PersistentException {
 		try {
-			orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(entradaLista);
+			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(entradaLista);
 			return true;
 		}
 		catch (Exception e) {

@@ -74,10 +74,8 @@ public class MangaSetCollection extends org.orm.util.ORMSet {
 	 * <li>nombreManga</li>
 	 * <li>nombreAlternativo</li>
 	 * <li>completamenteScanlated</li>
-	 * <li>tieneAnimacion</li>
 	 * <li>año</li>
 	 * <li>licenciado</li>
-	 * <li>bakaUpdatesCode</li>
 	 * <li>estadoEnPaisDeOrigen</li>
 	 * <li>animeStartEnd</li>
 	 * </ul>
@@ -94,10 +92,8 @@ public class MangaSetCollection extends org.orm.util.ORMSet {
 	 * <li>nombreManga</li>
 	 * <li>nombreAlternativo</li>
 	 * <li>completamenteScanlated</li>
-	 * <li>tieneAnimacion</li>
 	 * <li>año</li>
 	 * <li>licenciado</li>
-	 * <li>bakaUpdatesCode</li>
 	 * <li>estadoEnPaisDeOrigen</li>
 	 * <li>animeStartEnd</li>
 	 * </ul>
@@ -109,7 +105,7 @@ public class MangaSetCollection extends org.orm.util.ORMSet {
 	}
 	
 	protected PersistentManager getPersistentManager() throws PersistentException {
-		return orm.ProyectoProgramacionAvanzadaPersistentManager.instance();
+		return ProyectoProgramacionAvanzadaPersistentManager.instance();
 	}
 	
 }
