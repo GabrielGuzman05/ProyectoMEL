@@ -41,7 +41,7 @@
             <li><a href="Series">Series</a></li>
             <li><a href="Anime.html">Anime</a></li>
             <li><a href="Manga.html">Manga</a></li>
-            <li><a href="NovelasLigeras.html">Novelas ligeras</a></li>
+            <li><a href="Novelas">Novelas ligeras</a></li>
             <li style="float:right"><a href="login.html">Login</a></li>
             <li style="float:right"><a href="register.jsp">Registrarse</a></li>
         </ul>

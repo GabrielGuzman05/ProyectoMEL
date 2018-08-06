@@ -115,8 +115,8 @@
             <c:forEach var="serie" items="${series}" >
                 <tr>
                     <td><img class="float-none" src="images/250px-Game_of_Thrones_title_card.jpg" ></td>
-                    <td><a href="SerieTemplate.html">${serie.getNombre()}</td>
-                    <td>${serie.getEpisodios()}</td>
+                    <td><a href="SerieTemplate.html">${serie.nombre}</td>
+                    <td>${serie.episodios}</td>
                 </tr>
             </c:forEach>
         </table>

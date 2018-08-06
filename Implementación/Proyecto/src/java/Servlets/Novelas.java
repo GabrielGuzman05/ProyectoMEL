@@ -5,9 +5,8 @@
  */
 package Servlets;
 
-import orm.SerieGenerica;
-import orm.SerieGenericaDAO;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -22,8 +21,8 @@ import org.orm.PersistentException;
  *
  * @author Pablo
  */
-@WebServlet(name = "Series", urlPatterns = {"/series"})
-public class Series extends HttpServlet {
+@WebServlet(name = "Novelas", urlPatterns = {"/novelas"})
+public class Novelas extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,13 +35,17 @@ public class Series extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
-
-        orm.SerieGenerica[] serieGenericas;
-        serieGenericas = orm.SerieGenericaDAO.listSerieGenericaByQuery(null, null);
-        request.setAttribute("series", serieGenericas);
-        RequestDispatcher rd = request.getRequestDispatcher("/Series.jsp");
+       
+        //orm.Novela novela = orm.NovelaDAO.getNovelaByORMID(55);
+        //System.out.println("sadasd"+ novela.getNombre());
+        
+        orm.Novela[] novelas = orm.NovelaDAO.listNovelaByQuery(null, null);
+        request.setAttribute("novelas", novelas);
+        System.out.println("Novelas aqui "+novelas);
+        RequestDispatcher rd = request.getRequestDispatcher("/Novelas.jsp");
         rd.forward(request, response);
-    }
+        }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -59,7 +62,7 @@ public class Series extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(Series.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Novelas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -77,7 +80,7 @@ public class Series extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(Series.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Novelas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
