@@ -42,7 +42,6 @@
             <li><a href="Series">Series</a></li>
             <li><a href="Anime.html">Anime</a></li>
             <li><a href="Manga.html">Manga</a></li>
-<<<<<<< HEAD
             <li><a href="NovelasLigeras.html">Novelas ligeras</a></li>
             <c:choose>
                 <c:when test="${sessionScope.usuario.getIdUsuario()>0}">
@@ -53,9 +52,7 @@
                     <li style="float:right"><a href="register.jsp">Registrarse</a></li>
                 </c:otherwise>
             </c:choose>          
-=======
             <li><a href="Novelas">Novelas ligeras</a></li>
             <li style="float:right"><a href="login.html">Login</a></li>
             <li style="float:right"><a href="register.jsp">Registrarse</a></li>
->>>>>>> 16a4331de85207f3181e42ea6eaa90c88139bdd7
         </ul>

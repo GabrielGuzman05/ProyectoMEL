@@ -5,11 +5,9 @@
  */
 package Servlets;
 
-<<<<<<< HEAD
-=======
 import orm.SerieGenerica;
 import orm.SerieGenericaDAO;
->>>>>>> 16a4331de85207f3181e42ea6eaa90c88139bdd7
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -42,12 +40,9 @@ public class Series extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
 
-<<<<<<< HEAD
-        SerieGenerica[] serieGenericas = SerieGenericaDAO.listSerieGenericaByQuery(null, null);
-=======
         orm.SerieGenerica[] serieGenericas;
         serieGenericas = orm.SerieGenericaDAO.listSerieGenericaByQuery(null, null);
->>>>>>> 16a4331de85207f3181e42ea6eaa90c88139bdd7
+
         request.setAttribute("series", serieGenericas);
         RequestDispatcher rd = request.getRequestDispatcher("/Series.jsp");
         rd.forward(request, response);
