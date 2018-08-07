@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Novelas
-    Created on : 04-08-2018, 22:17:21
+    Document   : Mangas
+    Created on : 06-08-2018, 22:25:14
     Author     : Pablo
 --%>
 
@@ -28,7 +28,7 @@
     </head>
     <body>
         <div>
-            <h1 style="text-align: center">Novelas ligeras</h1>
+            <h1 style="text-align: center">Mangas</h1>
         </div>
         <br>
         <table class="display" cellspacing="0" width="100%" id="tabla">
@@ -41,11 +41,11 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="novela" items="${novelas}" >
+                <c:forEach var="manga" items="${mangas}" >
                     <tr>
                         <td><img class="float-none" src="images/250px-Game_of_Thrones_title_card.jpg" ></td>
-                        <td><a href="CreadorPagina?id=${novela.idNovela}">${novela.nombre}</td>
-                        <td>${novela.año}</td>
+                        <td><a href="CreadorPagina?id=${manga.idManga}">${manga.nombreManga}</td>
+                        <td>${manga.año}</td>
                         <td>
                             <a href="">Agregar a una lista <br>
                                 <a href="">Agregar a una nueva lista <br>

@@ -11,18 +11,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.orm.PersistentException;
+import orm.AnimacionDAO;
+import orm.NovelaDAO;
 
 /**
  *
  * @author Pablo
  */
-@WebServlet(name = "Novelas", urlPatterns = {"/novelas"})
-public class Novelas extends HttpServlet {
+public class CreadorPaginaAnimes extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,13 +35,10 @@ public class Novelas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
-       
-        //orm.Novela novela = orm.NovelaDAO.getNovelaByORMID(55);
-        //System.out.println("sadasd"+ novela.getNombre());
-        
-        orm.Novela[] novelas = orm.NovelaDAO.listNovelaByQuery(null, null);
-        request.setAttribute("novelas", novelas);
-        RequestDispatcher rd = request.getRequestDispatcher("/Novelas.jsp");
+        String id = request.getParameter("id");
+        orm.Animacion anime = AnimacionDAO.getAnimacionByORMID(Integer.parseInt(id));
+        request.setAttribute("animes", anime);
+        RequestDispatcher rd = request.getRequestDispatcher("/AnimeTemplate.jsp");
         rd.forward(request, response);
         }
     
@@ -61,7 +58,7 @@ public class Novelas extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(Novelas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CreadorPaginaAnimes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -79,7 +76,7 @@ public class Novelas extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(Novelas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CreadorPaginaAnimes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

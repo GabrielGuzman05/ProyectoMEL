@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Novelas
-    Created on : 04-08-2018, 22:17:21
+    Document   : Anime
+    Created on : 06-08-2018, 20:41:29
     Author     : Pablo
 --%>
 
@@ -28,24 +28,24 @@
     </head>
     <body>
         <div>
-            <h1 style="text-align: center">Novelas ligeras</h1>
+            <h1 style="text-align: center">Anime</h1>
         </div>
         <br>
         <table class="display" cellspacing="0" width="100%" id="tabla">
             <thead>
                 <tr>
                     <th>Thumbnail</th>
-                    <th>Nombre de la novela</th> 
-                    <th>Año</th> 
+                    <th>Nombre de la serie</th> 
+                    <th>Episodios</th> 
                     <th>Accion</th>
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="novela" items="${novelas}" >
+                <c:forEach var="anime" items="${animes}" >
                     <tr>
                         <td><img class="float-none" src="images/250px-Game_of_Thrones_title_card.jpg" ></td>
-                        <td><a href="CreadorPagina?id=${novela.idNovela}">${novela.nombre}</td>
-                        <td>${novela.año}</td>
+                        <td><a href="CreadorPaginaAnimes?id=${anime.idAnimacion}">${anime.nombre}</td>
+                        <td>${anime.episodios}</td>
                         <td>
                             <a href="">Agregar a una lista <br>
                                 <a href="">Agregar a una nueva lista <br>

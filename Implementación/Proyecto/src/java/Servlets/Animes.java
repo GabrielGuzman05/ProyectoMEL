@@ -11,19 +11,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.orm.PersistentException;
-import orm.NovelaDAO;
 
 /**
  *
  * @author Pablo
  */
-@WebServlet(name = "creadorPagina", urlPatterns = {"/paginanovela"})
-public class CreadorPagina extends HttpServlet {
+public class Animes extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,16 +33,13 @@ public class CreadorPagina extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
-
-        //String nombre = request.getAttribute("nombre");
-        String nombre = request.getParameter("id");
-        orm.Novela novela = NovelaDAO.getNovelaByORMID(Integer.parseInt(nombre));
-        request.setAttribute("novela", novela);
-        RequestDispatcher rd = request.getRequestDispatcher("/NovelaTemplate.jsp");
+        orm.Animacion[] animes = orm.AnimacionDAO.listAnimacionByQuery(null, null);
+        request.setAttribute("animes", animes);
+        RequestDispatcher rd = request.getRequestDispatcher("/Anime.jsp");
         rd.forward(request, response);
-    }
-
-// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+        }
+    
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -60,7 +54,7 @@ public class CreadorPagina extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(CreadorPagina.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Animes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -78,7 +72,7 @@ public class CreadorPagina extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(CreadorPagina.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Animes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
