@@ -25,6 +25,10 @@
         <servlet-name>ControladorListas</servlet-name>
         <servlet-class>Servlets.ControladorListas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>Servlets.Home</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Series</servlet-name>
         <url-pattern>/Series</url-pattern>
@@ -40,6 +44,10 @@
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
