@@ -12,38 +12,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>User's home</title>
-        
-        
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/styles.css">
         <link rel="stylesheet" href="assets/css/User-Activity-Panel.css">
     </head>
 
-    <body style="color:rgb(5,74,113);background-color:rgb(35,154,191);">
-        <div style="width:auto;">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6" style="width:auto;">
-                        <nav class="navbar navbar-light navbar-expand-md">
-                            <div class="container-fluid"><a class="navbar-brand sr-only invisible" href="#">Brand</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                                <div
-                                    class="collapse navbar-collapse" id="navcol-1">
-                                    <ul class="nav navbar-nav">
-                                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Series</a></li>
-                                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#" style="color:rgba(0,0,0,0.5);">Anime</a></li>
-                                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Manga</a></li>
-                                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Novela Ligera</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                    <div class="col-md-6" style="height:56px;width:auto;"></div>
-                </div>
-            </div>
-        </div>
-        <div><div><br></div></div>
         <div class="card" style="margin:0px;padding:49px;">
             <div class="card-body">
                 <div class="media">

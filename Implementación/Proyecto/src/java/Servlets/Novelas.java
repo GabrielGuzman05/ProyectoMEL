@@ -41,7 +41,6 @@ public class Novelas extends HttpServlet {
         
         orm.Novela[] novelas = orm.NovelaDAO.listNovelaByQuery(null, null);
         request.setAttribute("novelas", novelas);
-        System.out.println("Novelas aqui "+novelas);
         RequestDispatcher rd = request.getRequestDispatcher("/Novelas.jsp");
         rd.forward(request, response);
         }

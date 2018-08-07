@@ -23,7 +23,7 @@ import orm.NovelaDAO;
  * @author Pablo
  */
 @WebServlet(name = "creadorPagina", urlPatterns = {"/paginanovela"})
-public class CreadorPagina extends HttpServlet {
+public class CreadorPaginaNovelas extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -60,7 +60,7 @@ public class CreadorPagina extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(CreadorPagina.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CreadorPaginaNovelas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -78,7 +78,7 @@ public class CreadorPagina extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(CreadorPagina.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CreadorPaginaNovelas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -19,7 +19,7 @@
     </servlet>
     <servlet>
         <servlet-name>CreadorPagina</servlet-name>
-        <servlet-class>Servlets.CreadorPagina</servlet-class>
+        <servlet-class>Servlets.CreadorPaginaNovelas</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ControladorListas</servlet-name>
@@ -28,6 +28,22 @@
     <servlet>
         <servlet-name>Home</servlet-name>
         <servlet-class>Servlets.Home</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Anime</servlet-name>
+        <servlet-class>Servlets.Animes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreadorPaginaAnimes</servlet-name>
+        <servlet-class>Servlets.CreadorPaginaAnimes</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Mangas</servlet-name>
+        <servlet-class>Servlets.Mangas</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreadorPaginaMangas</servlet-name>
+        <servlet-class>Servlets.CreadorPaginaMangas</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Series</servlet-name>
@@ -49,6 +65,22 @@
         <servlet-name>Home</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Anime</servlet-name>
+        <url-pattern>/Anime</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreadorPaginaAnimes</servlet-name>
+        <url-pattern>/CreadorPaginaAnimes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Mangas</servlet-name>
+        <url-pattern>/Mangas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CreadorPaginaMangas</servlet-name>
+        <url-pattern>/CreadorPaginaMangas</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -60,12 +92,14 @@
     <jsp-config>
         <jsp-property-group>
             <description>header n footer</description>
-            <url-pattern>/Manga.html</url-pattern>
+            <url-pattern>/Mangas.jsp</url-pattern>
             <url-pattern>/NovelaTemplate.jsp</url-pattern>
+            <url-pattern>/loginSucces.jsp</url-pattern>
             <url-pattern>/vistaLista.html</url-pattern>
             <url-pattern>/Series.jsp</url-pattern>
             <url-pattern>/index.html</url-pattern>
-            <url-pattern>/Anime.html</url-pattern>
+            <url-pattern>/AnimeTemplate.jsp</url-pattern>
+            <url-pattern>/Anime.jsp</url-pattern>
             <url-pattern>/Novelas.jsp</url-pattern>
             <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
         </jsp-property-group>
