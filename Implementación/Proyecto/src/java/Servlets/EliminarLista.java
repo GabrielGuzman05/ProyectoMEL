@@ -16,16 +16,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import jdk.nashorn.internal.ir.RuntimeNode;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
-import orm.Usuario;
 
 /**
  *
  * @author Gabriel
  */
-@WebServlet(name = "home", urlPatterns = {"/home"})
-public class Home extends HttpServlet {
+@WebServlet(name = "EliminarLista", urlPatterns = {"/EliminarLista"})
+public class EliminarLista extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,21 +37,23 @@ public class Home extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, PersistentException {
         HttpSession sesion = request.getSession();
         if ("true".equals(sesion.getAttribute("loged").toString())) {
+            PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
             try {
-                PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
-                Usuario usuarioByORMID = orm.UsuarioDAO.getUsuarioByORMID(Integer.
-                        parseInt(sesion.getAttribute("idUsuario").toString()));
-                request.setAttribute("lista", usuarioByORMID.lista.toArray());
-                RequestDispatcher disp = request.getRequestDispatcher("/loginSucces.jsp");
-                disp.forward(request, response);
-            } catch (PersistentException ex) {
-                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+                orm.Lista auxLista = orm.ListaDAO.getListaByORMID(Integer.parseInt(request.getParameter("id")));
+                if (auxLista!=null) {
+                    orm.ListaDAO.delete(auxLista);
+                }
+                t.commit();
+            } catch (Exception e) {
+                t.rollback();
             }
+            RequestDispatcher disp = request.getRequestDispatcher("/Proyecto");
+            disp.forward(request, response);
         } else {
-            RequestDispatcher disp = request.getRequestDispatcher("/login.html");
+            RequestDispatcher disp = request.getRequestDispatcher("/Proyecto");
             disp.forward(request, response);
         }
     }
@@ -68,7 +70,11 @@ public class Home extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (PersistentException ex) {
+            Logger.getLogger(EliminarLista.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -82,7 +88,11 @@ public class Home extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (PersistentException ex) {
+            Logger.getLogger(EliminarLista.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

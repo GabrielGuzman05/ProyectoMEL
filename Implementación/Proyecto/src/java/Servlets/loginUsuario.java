@@ -52,25 +52,24 @@ public class loginUsuario extends HttpServlet {
             // Update the properties of the persistent object
             if (oRMUsuario != null) {
                 sesion.setAttribute("usuario", oRMUsuario);
+                sesion.setAttribute("idUsuario", oRMUsuario.getIdUsuario());
                 System.out.println("Found");
                 login = true;
                 sesion.setAttribute("loged", login);
-            } else {
-                
             }
-            orm.UsuarioDAO.save(oRMUsuario);
+            if (login) {
+                RequestDispatcher disp = request.getRequestDispatcher("/loginSucces.jsp");
+                request.setAttribute("lista", oRMUsuario.lista.toArray());
+                disp.forward(request, response);
+                System.out.println("Login Correcto");
+                orm.UsuarioDAO.save(oRMUsuario);
+            } else {
+                RequestDispatcher disp = request.getRequestDispatcher("login.html");
+                disp.forward(request, response);
+                System.out.println("Login Incorrecto");
+            }
         } catch (PersistentException ex) {
             Logger.getLogger(loginUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        if (login) {
-            RequestDispatcher disp = request.getRequestDispatcher("/loginSucces.jsp");
-            disp.forward(request, response);
-            System.out.println("Login Correcto");
-        } else {
-            RequestDispatcher disp = request.getRequestDispatcher("login.html");
-            disp.forward(request, response);
-            System.out.println("Login Incorrecto");
         }
     }
 

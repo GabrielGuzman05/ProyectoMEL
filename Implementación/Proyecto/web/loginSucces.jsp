@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 
@@ -12,8 +13,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>User's home</title>
-        
-        
+
+
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/styles.css">
@@ -59,21 +60,28 @@
                 <div class="flex-column justify-content-center align-items-center align-content-center">
                     <p class="align-items-center align-content-center" style="font-size:20px;text-align:center;/*line-height:50px;*/background-color:#068fba;color:rgb(233,233,233);">Listas creadas</p>
                 </div>
-                <div class="media" style="margin:0px;">
-                    <div><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary" style="color:rgb(0,224,63);"></i><i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i></span></div>
-                    <div class="media-body">
-                        <div class="row">
-                            <div class="col">
-                                <p class="text-left"><a href="#" style="margin:12px;width:auto;padding:-2px;font-size:21px;"><strong>Lista 1</strong><br>
-                                    </a> </p>
+
+                <c:forEach items="${lista}" var="item">
+                    <div class="media" style="margin:0px;">
+                        <div><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x text-primary" style="color:rgb(0,224,63);"></i><i class="fa fa-file-text-o fa-stack-1x fa-inverse"></i></span></div>
+                        <div class="media-body">
+
+                            <div class="row">
+
+                                <div class="col">
+                                    <p class="text-left"><a href="#" style="margin:12px;width:auto;padding:-2px;font-size:21px;"><strong>${item.getNombreLista()}</strong><br>
+                                        </a> </p>
+                                </div>
+
+                                <div class="col">
+                                    <p class="text-left"><a href="JavaScipt:show_prompt('ModificarLista?id=${item.getIdLista()}')"><strong>Modificar</strong></a> <a href="JavaScript:confirma('EliminarLista?id=${item.getIdLista()}')"><strong>Eliminar</strong><br>
+                                        </a></p>
+                                </div>
                             </div>
-                            <div class="col">
-                                <p class="text-left"><a href="#"><strong>Modificar</strong></a> <a href="#"><strong>Eliminar</strong><br>
-                                    </a></p>
-                            </div>
+
                         </div>
                     </div>
-                </div>
+                </c:forEach>
                 <div class="media"></div>
                 <hr>
                 <div class="col-md-4 align-self-center mx-auto text-center" style="width:360px;margin:-5px;padding:-26px;">
@@ -89,6 +97,17 @@
         </div>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script language="JavaScript">
+            function confirma(url) {
+                if (confirm("¿Está seguro que desea eliminar este elemento?"))
+                    location.replace(url);
+            }
+            function show_prompt(url) {
+                var name = prompt('¿Ingrese un nuevo nombre?', 'Poppy');
+                if (name != null && name != "") {
+                    location.replace(url+"&name="+name);
+                }
+            }
+        </script>
     </body>
-
 </html>
