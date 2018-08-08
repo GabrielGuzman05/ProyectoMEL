@@ -43,7 +43,7 @@
             <tbody>
                 <c:forEach var="anime" items="${animes}" >
                     <tr>
-                        <td><img class="float-none" src="images/250px-Game_of_Thrones_title_card.jpg" ></td>
+                        <td><img class="float-none" src="images/animes/${anime.idAnimacion}.jpg" ></td>
                         <td><a href="CreadorPaginaAnimes?id=${anime.idAnimacion}">${anime.nombre}</td>
                         <td>${anime.episodios}</td>
                         <td>

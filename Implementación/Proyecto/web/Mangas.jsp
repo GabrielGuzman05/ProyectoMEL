@@ -35,7 +35,7 @@
             <thead>
                 <tr>
                     <th>Thumbnail</th>
-                    <th>Nombre de la novela</th> 
+                    <th>Nombre del manga</th> 
                     <th>Año</th> 
                     <th>Accion</th>
                 </tr>
@@ -43,7 +43,7 @@
             <tbody>
                 <c:forEach var="manga" items="${mangas}" >
                     <tr>
-                        <td><img class="float-none" src="images/250px-Game_of_Thrones_title_card.jpg" ></td>
+                        <td><img class="float-none" src="images/mangas/${manga.idManga}.jpg" ></td>
                         <td><a href="CreadorPagina?id=${manga.idManga}">${manga.nombreManga}</td>
                         <td>${manga.año}</td>
                         <td>

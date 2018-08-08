@@ -43,7 +43,7 @@
             <tbody>
                 <c:forEach var="novela" items="${novelas}" >
                     <tr>
-                        <td><img class="float-none" src="images/250px-Game_of_Thrones_title_card.jpg" ></td>
+                        <td><img class="float-none" src="images/novelas/${novela.idNovela}.jpg" height="200" width="140"></td>
                         <td><a href="CreadorPagina?id=${novela.idNovela}">${novela.nombre}</td>
                         <td>${novela.año}</td>
                         <td>
@@ -58,7 +58,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <span class="close">&times;</span>
-                                        
+
                                     </div>
                                     <div class="modal-body">
                                         <form method="post" action="AgregarEnCrearLista">
@@ -72,7 +72,7 @@
                                             <input type="hidden" id="custId" name="origen" value="Novelas">
                                             <input type="hidden" id="custId2" name="id" value=${novela.idNovela}>
                                             <input type="checkbox" name="alDia" id="aldia"/><br>
-                                            
+
                                             <input type="submit" value="Crear Lista"/>
                                         </form>
                                     </div>
