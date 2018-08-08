@@ -18,7 +18,7 @@
     </head>
 
     <body>
-        <p class="text-center" style="font-size:24px;">Nombre lista</p>
+        <p class="text-center" style="font-size:24px;">${nombre}</p>
         <div class="container">
             <div class="table-responsive">
                 <table class="table">
@@ -140,10 +140,16 @@
                 $(".modal-body #ulcap").prop("type", "number");
                 if (terminado) {
                     document.getElementById("terminado").checked = true;
+                } else {
+                    document.getElementById("terminado").checked = false;
                 }
+
                 if (alDia) {
                     document.getElementById("aldia").checked = true;
+                } else {
+                    document.getElementById("aldia").checked = false;
                 }
+
             });
         </script>
         <script language="JavaScript">
