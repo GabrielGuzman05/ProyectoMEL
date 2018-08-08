@@ -37,6 +37,10 @@
         <servlet-name>CreadorPaginaMangas</servlet-name>
         <servlet-class>Servlets.CreadorPaginaMangas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AgregarEnCrearLista</servlet-name>
+        <servlet-class>Servlets.AgregarEnCrearLista</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Series</servlet-name>
         <url-pattern>/Series</url-pattern>
@@ -68,6 +72,10 @@
     <servlet-mapping>
         <servlet-name>CreadorPaginaMangas</servlet-name>
         <url-pattern>/CreadorPaginaMangas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgregarEnCrearLista</servlet-name>
+        <url-pattern>/AgregarEnCrearLista</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
