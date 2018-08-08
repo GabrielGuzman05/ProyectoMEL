@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class EntradaLista {
-	public EntradaLista() {
+
+    /**
+     *
+     */
+    public EntradaLista() {
 	}
 	
 	private void this_setOwner(Object owner, int key) {
@@ -70,47 +78,91 @@ public class EntradaLista {
 		this.idEntrada = value;
 	}
 	
-	public int getIdEntrada() {
+    /**
+     *
+     * @return
+     */
+    public int getIdEntrada() {
 		return idEntrada;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdEntrada();
 	}
 	
-	public void setAlDia(boolean value) {
+    /**
+     *
+     * @param value
+     */
+    public void setAlDia(boolean value) {
 		this.alDia = value;
 	}
 	
-	public boolean getAlDia() {
+    /**
+     *
+     * @return
+     */
+    public boolean getAlDia() {
 		return alDia;
 	}
 	
-	public void setUltimoCapitulo(int value) {
+    /**
+     *
+     * @param value
+     */
+    public void setUltimoCapitulo(int value) {
 		this.ultimoCapitulo = value;
 	}
 	
-	public int getUltimoCapitulo() {
+    /**
+     *
+     * @return
+     */
+    public int getUltimoCapitulo() {
 		return ultimoCapitulo;
 	}
 	
-	public void setTerminado(boolean value) {
+    /**
+     *
+     * @param value
+     */
+    public void setTerminado(boolean value) {
 		this.terminado = value;
 	}
 	
-	public boolean getTerminado() {
+    /**
+     *
+     * @return
+     */
+    public boolean getTerminado() {
 		return terminado;
 	}
 	
-	public void setTipo(int value) {
+    /**
+     *
+     * @param value
+     */
+    public void setTipo(int value) {
 		this.tipo = value;
 	}
 	
-	public int getTipo() {
+    /**
+     *
+     * @return
+     */
+    public int getTipo() {
 		return tipo;
 	}
 	
-	public void setListaidLista(orm.Lista value) {
+    /**
+     *
+     * @param value
+     */
+    public void setListaidLista(orm.Lista value) {
 		if (listaidLista != null) {
 			listaidLista.entradaLista.remove(this);
 		}
@@ -119,12 +171,17 @@ public class EntradaLista {
 		}
 	}
 	
-	public orm.Lista getListaidLista() {
+    /**
+     *
+     * @return
+     */
+    public orm.Lista getListaidLista() {
 		return listaidLista;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_ListaidLista(orm.Lista value) {
 		this.listaidLista = value;
@@ -134,7 +191,11 @@ public class EntradaLista {
 		return listaidLista;
 	}
 	
-	public void setNovelaidNovela(orm.Novela value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNovelaidNovela(orm.Novela value) {
 		if (novelaidNovela != null) {
 			novelaidNovela.entradaLista.remove(this);
 		}
@@ -143,12 +204,17 @@ public class EntradaLista {
 		}
 	}
 	
-	public orm.Novela getNovelaidNovela() {
+    /**
+     *
+     * @return
+     */
+    public orm.Novela getNovelaidNovela() {
 		return novelaidNovela;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_NovelaidNovela(orm.Novela value) {
 		this.novelaidNovela = value;
@@ -158,7 +224,11 @@ public class EntradaLista {
 		return novelaidNovela;
 	}
 	
-	public void setMangaidManga(orm.Manga value) {
+    /**
+     *
+     * @param value
+     */
+    public void setMangaidManga(orm.Manga value) {
 		if (mangaidManga != null) {
 			mangaidManga.entradaLista.remove(this);
 		}
@@ -167,12 +237,17 @@ public class EntradaLista {
 		}
 	}
 	
-	public orm.Manga getMangaidManga() {
+    /**
+     *
+     * @return
+     */
+    public orm.Manga getMangaidManga() {
 		return mangaidManga;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_MangaidManga(orm.Manga value) {
 		this.mangaidManga = value;
@@ -182,7 +257,11 @@ public class EntradaLista {
 		return mangaidManga;
 	}
 	
-	public void setAnimacionidAnimacion(orm.Animacion value) {
+    /**
+     *
+     * @param value
+     */
+    public void setAnimacionidAnimacion(orm.Animacion value) {
 		if (animacionidAnimacion != null) {
 			animacionidAnimacion.entradaLista.remove(this);
 		}
@@ -191,12 +270,17 @@ public class EntradaLista {
 		}
 	}
 	
-	public orm.Animacion getAnimacionidAnimacion() {
+    /**
+     *
+     * @return
+     */
+    public orm.Animacion getAnimacionidAnimacion() {
 		return animacionidAnimacion;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_AnimacionidAnimacion(orm.Animacion value) {
 		this.animacionidAnimacion = value;
@@ -206,7 +290,11 @@ public class EntradaLista {
 		return animacionidAnimacion;
 	}
 	
-	public void setSerieGenericaidSerie(orm.SerieGenerica value) {
+    /**
+     *
+     * @param value
+     */
+    public void setSerieGenericaidSerie(orm.SerieGenerica value) {
 		if (serieGenericaidSerie != null) {
 			serieGenericaidSerie.entradaLista.remove(this);
 		}
@@ -215,12 +303,17 @@ public class EntradaLista {
 		}
 	}
 	
-	public orm.SerieGenerica getSerieGenericaidSerie() {
+    /**
+     *
+     * @return
+     */
+    public orm.SerieGenerica getSerieGenericaidSerie() {
 		return serieGenericaidSerie;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_SerieGenericaidSerie(orm.SerieGenerica value) {
 		this.serieGenericaidSerie = value;

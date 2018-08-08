@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class TipoManga {
-	public TipoManga() {
+
+    /**
+     *
+     */
+    public TipoManga() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -42,19 +50,35 @@ public class TipoManga {
 		this.idTipoManga = value;
 	}
 	
-	public int getIdTipoManga() {
+    /**
+     *
+     * @return
+     */
+    public int getIdTipoManga() {
 		return idTipoManga;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdTipoManga();
 	}
 	
-	public void setNombre(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public String getNombre() {
+    /**
+     *
+     * @return
+     */
+    public String getNombre() {
 		return nombre;
 	}
 	
@@ -66,7 +90,10 @@ public class TipoManga {
 		return ORM_manga;
 	}
 	
-	public final orm.MangaSetCollection manga = new orm.MangaSetCollection(this, _ormAdapter, ORMConstants.KEY_TIPOMANGA_MANGA, ORMConstants.KEY_MANGA_TIPOMANGAIDTIPOMANGA, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.MangaSetCollection manga = new orm.MangaSetCollection(this, _ormAdapter, ORMConstants.KEY_TIPOMANGA_MANGA, ORMConstants.KEY_MANGA_TIPOMANGAIDTIPOMANGA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTipoManga());

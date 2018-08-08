@@ -30,7 +30,11 @@ public class Home extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
-     *
+     * Envia al home del usuario, permite gestionar las listas del usuario.
+     * Solo funciona en caso de usuario logueado.
+     * Redirecciona al home del usuario en usuario logueado, redirecciona al login
+     * en caso de login falso.
+     * 
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs

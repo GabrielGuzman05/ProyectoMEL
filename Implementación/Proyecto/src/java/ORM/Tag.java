@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class Tag {
-	public Tag() {
+
+    /**
+     *
+     */
+    public Tag() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -49,27 +57,51 @@ public class Tag {
 		this.idTag = value;
 	}
 	
-	public int getIdTag() {
+    /**
+     *
+     * @return
+     */
+    public int getIdTag() {
 		return idTag;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdTag();
 	}
 	
-	public void setNombre(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public String getNombre() {
+    /**
+     *
+     * @return
+     */
+    public String getNombre() {
 		return nombre;
 	}
 	
-	public void setDescripcion(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setDescripcion(String value) {
 		this.descripcion = value;
 	}
 	
-	public String getDescripcion() {
+    /**
+     *
+     * @return
+     */
+    public String getDescripcion() {
 		return descripcion;
 	}
 	
@@ -81,7 +113,10 @@ public class Tag {
 		return ORM_novelaidNovela;
 	}
 	
-	public final orm.NovelaSetCollection novelaidNovela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_TAG_NOVELAIDNOVELA, ORMConstants.KEY_NOVELA_TAGIDTAG, ORMConstants.KEY_MUL_MANY_TO_MANY);
+    /**
+     *
+     */
+    public final orm.NovelaSetCollection novelaidNovela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_TAG_NOVELAIDNOVELA, ORMConstants.KEY_NOVELA_TAGIDTAG, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_MangaidManga(java.util.Set value) {
 		this.ORM_mangaidManga = value;
@@ -91,7 +126,10 @@ public class Tag {
 		return ORM_mangaidManga;
 	}
 	
-	public final orm.MangaSetCollection mangaidManga = new orm.MangaSetCollection(this, _ormAdapter, ORMConstants.KEY_TAG_MANGAIDMANGA, ORMConstants.KEY_MANGA_TAGIDTAG, ORMConstants.KEY_MUL_MANY_TO_MANY);
+    /**
+     *
+     */
+    public final orm.MangaSetCollection mangaidManga = new orm.MangaSetCollection(this, _ormAdapter, ORMConstants.KEY_TAG_MANGAIDMANGA, ORMConstants.KEY_MANGA_TAGIDTAG, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTag());

@@ -29,11 +29,16 @@ public class ModificarLista extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
+     * Modifica el nombre de una lista.
+     * Solo funciona en caso de usuario logueado.
+     * Redirecciona al home del usuario en usuario logueado, redirecciona al login
+     * en caso de login falso.
      *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws org.orm.PersistentException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
@@ -45,16 +50,15 @@ public class ModificarLista extends HttpServlet {
                 orm.Lista auxLista = orm.ListaDAO.getListaByORMID(Integer.parseInt(request.getParameter("id")));
                 if (auxLista != null) {
                     auxLista.setNombreLista(request.getParameter("name"));
-                    orm.ListaDAO.save(auxLista);
                 }
                 t.commit();
             } catch (Exception e) {
                 t.rollback();
             }
-            RequestDispatcher disp = request.getRequestDispatcher("/Proyecto");
+            RequestDispatcher disp = request.getRequestDispatcher("home");
             disp.forward(request, response);
         } else {
-            RequestDispatcher disp = request.getRequestDispatcher("/Proyecto");
+            RequestDispatcher disp = request.getRequestDispatcher("home");
             disp.forward(request, response);
         }
     }

@@ -29,6 +29,10 @@ public class loginUsuario extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
+     * Procesa la logica para ingresar a los datos de un usuario.
+     * Requiere el usuario y contraseña, si encuentra los datos, se redirecciona
+     * a la pagina del usuario home, en caso de que los datos no sean correctos
+     * se redirecciona a la pagina de login.
      *
      * @param request servlet request
      * @param response servlet response
@@ -58,7 +62,7 @@ public class loginUsuario extends HttpServlet {
                 sesion.setAttribute("loged", login);
             }
             if (login) {
-                RequestDispatcher disp = request.getRequestDispatcher("/loginSucces.jsp");
+                RequestDispatcher disp = request.getRequestDispatcher("home");
                 request.setAttribute("lista", oRMUsuario.lista.toArray());
                 disp.forward(request, response);
                 System.out.println("Login Correcto");

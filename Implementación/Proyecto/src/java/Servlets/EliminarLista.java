@@ -30,11 +30,16 @@ public class EliminarLista extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
+     * Permite eliminar alguna lista segun el id que sea entregado.
+     * Solo funciona en caso de usuario logueado.
+     * Redirecciona al home del usuario en usuario logueado, redirecciona al login
+     * en caso de login falso.
      *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws org.orm.PersistentException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
@@ -50,10 +55,10 @@ public class EliminarLista extends HttpServlet {
             } catch (Exception e) {
                 t.rollback();
             }
-            RequestDispatcher disp = request.getRequestDispatcher("/Proyecto");
+            RequestDispatcher disp = request.getRequestDispatcher("home");
             disp.forward(request, response);
         } else {
-            RequestDispatcher disp = request.getRequestDispatcher("/Proyecto");
+            RequestDispatcher disp = request.getRequestDispatcher("home");
             disp.forward(request, response);
         }
     }

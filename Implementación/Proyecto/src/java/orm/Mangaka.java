@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class Mangaka {
-	public Mangaka() {
+
+    /**
+     *
+     */
+    public Mangaka() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -47,19 +55,35 @@ public class Mangaka {
 		this.idMangaka = value;
 	}
 	
-	public int getIdMangaka() {
+    /**
+     *
+     * @return
+     */
+    public int getIdMangaka() {
 		return idMangaka;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdMangaka();
 	}
 	
-	public void setNombre(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public String getNombre() {
+    /**
+     *
+     * @return
+     */
+    public String getNombre() {
 		return nombre;
 	}
 	
@@ -71,7 +95,10 @@ public class Mangaka {
 		return ORM_mangaidMangaArtista;
 	}
 	
-	public final orm.MangaSetCollection mangaidMangaArtista = new orm.MangaSetCollection(this, _ormAdapter, ORMConstants.KEY_MANGAKA_MANGAIDMANGAARTISTA, ORMConstants.KEY_MANGA_MANGAKAIDARTISTA, ORMConstants.KEY_MUL_MANY_TO_MANY);
+    /**
+     *
+     */
+    public final orm.MangaSetCollection mangaidMangaArtista = new orm.MangaSetCollection(this, _ormAdapter, ORMConstants.KEY_MANGAKA_MANGAIDMANGAARTISTA, ORMConstants.KEY_MANGA_MANGAKAIDARTISTA, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_MangaidMangaAutor(java.util.Set value) {
 		this.ORM_mangaidMangaAutor = value;
@@ -81,7 +108,10 @@ public class Mangaka {
 		return ORM_mangaidMangaAutor;
 	}
 	
-	public final orm.MangaSetCollection mangaidMangaAutor = new orm.MangaSetCollection(this, _ormAdapter, ORMConstants.KEY_MANGAKA_MANGAIDMANGAAUTOR, ORMConstants.KEY_MANGA_MANGAKAIDAUTOR, ORMConstants.KEY_MUL_MANY_TO_MANY);
+    /**
+     *
+     */
+    public final orm.MangaSetCollection mangaidMangaAutor = new orm.MangaSetCollection(this, _ormAdapter, ORMConstants.KEY_MANGAKA_MANGAIDMANGAAUTOR, ORMConstants.KEY_MANGA_MANGAKAIDAUTOR, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdMangaka());

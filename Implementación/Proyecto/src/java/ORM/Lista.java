@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class Lista {
-	public Lista() {
+
+    /**
+     *
+     */
+    public Lista() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -54,23 +62,43 @@ public class Lista {
 		this.idLista = value;
 	}
 	
-	public int getIdLista() {
+    /**
+     *
+     * @return
+     */
+    public int getIdLista() {
 		return idLista;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdLista();
 	}
 	
-	public void setNombreLista(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombreLista(String value) {
 		this.nombreLista = value;
 	}
 	
-	public String getNombreLista() {
+    /**
+     *
+     * @return
+     */
+    public String getNombreLista() {
 		return nombreLista;
 	}
 	
-	public void setUsuarioidUsuario(orm.Usuario value) {
+    /**
+     *
+     * @param value
+     */
+    public void setUsuarioidUsuario(orm.Usuario value) {
 		if (usuarioidUsuario != null) {
 			usuarioidUsuario.lista.remove(this);
 		}
@@ -79,12 +107,17 @@ public class Lista {
 		}
 	}
 	
-	public orm.Usuario getUsuarioidUsuario() {
+    /**
+     *
+     * @return
+     */
+    public orm.Usuario getUsuarioidUsuario() {
 		return usuarioidUsuario;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_UsuarioidUsuario(orm.Usuario value) {
 		this.usuarioidUsuario = value;
@@ -102,7 +135,10 @@ public class Lista {
 		return ORM_entradaLista;
 	}
 	
-	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, ORMConstants.KEY_LISTA_ENTRADALISTA, ORMConstants.KEY_ENTRADALISTA_LISTAIDLISTA, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, ORMConstants.KEY_LISTA_ENTRADALISTA, ORMConstants.KEY_ENTRADALISTA_LISTAIDLISTA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdLista());

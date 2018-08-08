@@ -24,11 +24,14 @@ public class Mangas extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
-     *
+     * Entregando una lista con los mangas a la vista
+     * <code>Mangas.jsp</code> cuando es llamada, accesible a traves del
+     * navegador a traves del urlPath /Mangas
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws org.orm.PersistentException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {

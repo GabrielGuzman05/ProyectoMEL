@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class Estudio {
-	public Estudio() {
+
+    /**
+     *
+     */
+    public Estudio() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -42,19 +50,35 @@ public class Estudio {
 		this.idEstudio = value;
 	}
 	
-	public int getIdEstudio() {
+    /**
+     *
+     * @return
+     */
+    public int getIdEstudio() {
 		return idEstudio;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdEstudio();
 	}
 	
-	public void setNombre(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public String getNombre() {
+    /**
+     *
+     * @return
+     */
+    public String getNombre() {
 		return nombre;
 	}
 	
@@ -66,7 +90,10 @@ public class Estudio {
 		return ORM_animacion;
 	}
 	
-	public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTUDIO_ANIMACION, ORMConstants.KEY_ANIMACION_ESTUDIOIDESTUDIO, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, ORMConstants.KEY_ESTUDIO_ANIMACION, ORMConstants.KEY_ANIMACION_ESTUDIOIDESTUDIO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdEstudio());

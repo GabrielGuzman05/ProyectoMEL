@@ -18,6 +18,10 @@ import org.orm.cfg.JDBCConnectionSetting;
 import org.hibernate.*;
 import java.util.Properties;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class ProyectoProgramacionAvanzadaPersistentManager extends PersistentManager {
 	private static final String PROJECT_NAME = "ProyectoProgramacionAvanzada";
 	private static PersistentManager _instance = null;
@@ -32,11 +36,20 @@ public class ProyectoProgramacionAvanzadaPersistentManager extends PersistentMan
 		setFlushMode(FlushMode.AUTO);
 	}
 	
-	public String getProjectName() {
+    /**
+     *
+     * @return
+     */
+    public String getProjectName() {
 		return PROJECT_NAME;
 	}
 	
-	public static synchronized final PersistentManager instance() throws PersistentException {
+    /**
+     *
+     * @return
+     * @throws PersistentException
+     */
+    public static synchronized final PersistentManager instance() throws PersistentException {
 		if (_instance == null) {
 			_instance = new ProyectoProgramacionAvanzadaPersistentManager();
 		}
@@ -44,12 +57,21 @@ public class ProyectoProgramacionAvanzadaPersistentManager extends PersistentMan
 		return _instance;
 	}
 	
-	public void disposePersistentManager() throws PersistentException {
+    /**
+     *
+     * @throws PersistentException
+     */
+    public void disposePersistentManager() throws PersistentException {
 		_instance = null;
 		super.disposePersistentManager();
 	}
 	
-	public static void setSessionType(SessionType sessionType) throws PersistentException {
+    /**
+     *
+     * @param sessionType
+     * @throws PersistentException
+     */
+    public static void setSessionType(SessionType sessionType) throws PersistentException {
 		if (_instance != null) {
 			throw new PersistentException("Cannot set session type after create PersistentManager instance");
 		}
@@ -59,7 +81,12 @@ public class ProyectoProgramacionAvanzadaPersistentManager extends PersistentMan
 		
 	}
 	
-	public static void setAppBaseSessionTimeToAlive(int timeInMs) throws PersistentException {
+    /**
+     *
+     * @param timeInMs
+     * @throws PersistentException
+     */
+    public static void setAppBaseSessionTimeToAlive(int timeInMs) throws PersistentException {
 		if (_instance != null) {
 			throw new PersistentException("Cannot set session time to alive after create PersistentManager instance");
 		}
@@ -69,7 +96,12 @@ public class ProyectoProgramacionAvanzadaPersistentManager extends PersistentMan
 		
 	}
 	
-	public static void setJDBCConnectionSetting(JDBCConnectionSetting aConnectionSetting) throws PersistentException {
+    /**
+     *
+     * @param aConnectionSetting
+     * @throws PersistentException
+     */
+    public static void setJDBCConnectionSetting(JDBCConnectionSetting aConnectionSetting) throws PersistentException {
 		if (_instance != null) {
 			throw new PersistentException("Cannot set connection setting after create PersistentManager instance");
 		}
@@ -79,7 +111,12 @@ public class ProyectoProgramacionAvanzadaPersistentManager extends PersistentMan
 		
 	}
 	
-	public static void setHibernateProperties(Properties aProperties) throws PersistentException {
+    /**
+     *
+     * @param aProperties
+     * @throws PersistentException
+     */
+    public static void setHibernateProperties(Properties aProperties) throws PersistentException {
 		if (_instance != null) {
 			throw new PersistentException("Cannot set hibernate properties after create PersistentManager instance");
 		}
@@ -89,7 +126,12 @@ public class ProyectoProgramacionAvanzadaPersistentManager extends PersistentMan
 		
 	}
 	
-	public static void setConfigurationFile(String aConfigurationFile) throws PersistentException {
+    /**
+     *
+     * @param aConfigurationFile
+     * @throws PersistentException
+     */
+    public static void setConfigurationFile(String aConfigurationFile) throws PersistentException {
 		if (_instance != null) {
 			throw new PersistentException("Cannot set configuration file after create PersistentManager instance");
 		}
@@ -99,7 +141,10 @@ public class ProyectoProgramacionAvanzadaPersistentManager extends PersistentMan
 		
 	}
 	
-	public static void saveJDBCConnectionSetting() {
+    /**
+     *
+     */
+    public static void saveJDBCConnectionSetting() {
 		PersistentManager.saveJDBCConnectionSetting(PROJECT_NAME, _connectionSetting);
 	}
 }

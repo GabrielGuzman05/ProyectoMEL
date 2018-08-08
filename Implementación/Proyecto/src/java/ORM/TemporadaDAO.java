@@ -18,8 +18,19 @@ import org.hibernate.Query;
 import org.hibernate.LockMode;
 import java.util.List;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class TemporadaDAO {
-	public static Temporada loadTemporadaByORMID(int idTemporada) throws PersistentException {
+
+    /**
+     *
+     * @param idTemporada
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada loadTemporadaByORMID(int idTemporada) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTemporadaByORMID(session, idTemporada);
@@ -30,7 +41,13 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada getTemporadaByORMID(int idTemporada) throws PersistentException {
+    /**
+     *
+     * @param idTemporada
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada getTemporadaByORMID(int idTemporada) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTemporadaByORMID(session, idTemporada);
@@ -41,7 +58,14 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada loadTemporadaByORMID(int idTemporada, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idTemporada
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada loadTemporadaByORMID(int idTemporada, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTemporadaByORMID(session, idTemporada, lockMode);
@@ -52,7 +76,14 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada getTemporadaByORMID(int idTemporada, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idTemporada
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada getTemporadaByORMID(int idTemporada, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTemporadaByORMID(session, idTemporada, lockMode);
@@ -63,7 +94,14 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada loadTemporadaByORMID(PersistentSession session, int idTemporada) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTemporada
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada loadTemporadaByORMID(PersistentSession session, int idTemporada) throws PersistentException {
 		try {
 			return (Temporada) session.load(orm.Temporada.class, new Integer(idTemporada));
 		}
@@ -73,7 +111,14 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada getTemporadaByORMID(PersistentSession session, int idTemporada) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTemporada
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada getTemporadaByORMID(PersistentSession session, int idTemporada) throws PersistentException {
 		try {
 			return (Temporada) session.get(orm.Temporada.class, new Integer(idTemporada));
 		}
@@ -83,7 +128,15 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada loadTemporadaByORMID(PersistentSession session, int idTemporada, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTemporada
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada loadTemporadaByORMID(PersistentSession session, int idTemporada, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (Temporada) session.load(orm.Temporada.class, new Integer(idTemporada), lockMode);
 		}
@@ -93,7 +146,15 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada getTemporadaByORMID(PersistentSession session, int idTemporada, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTemporada
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada getTemporadaByORMID(PersistentSession session, int idTemporada, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (Temporada) session.get(orm.Temporada.class, new Integer(idTemporada), lockMode);
 		}
@@ -103,7 +164,14 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static List queryTemporada(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTemporada(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTemporada(session, condition, orderBy);
@@ -114,7 +182,15 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static List queryTemporada(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTemporada(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTemporada(session, condition, orderBy, lockMode);
@@ -125,7 +201,14 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada[] listTemporadaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada[] listTemporadaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTemporadaByQuery(session, condition, orderBy);
@@ -136,7 +219,15 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada[] listTemporadaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada[] listTemporadaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTemporadaByQuery(session, condition, orderBy, lockMode);
@@ -147,7 +238,15 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static List queryTemporada(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTemporada(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Temporada as Temporada");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -163,7 +262,16 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static List queryTemporada(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTemporada(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Temporada as Temporada");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -180,7 +288,15 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada[] listTemporadaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada[] listTemporadaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		try {
 			List list = queryTemporada(session, condition, orderBy);
 			return (Temporada[]) list.toArray(new Temporada[list.size()]);
@@ -191,7 +307,16 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada[] listTemporadaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada[] listTemporadaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			List list = queryTemporada(session, condition, orderBy, lockMode);
 			return (Temporada[]) list.toArray(new Temporada[list.size()]);
@@ -202,7 +327,14 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada loadTemporadaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada loadTemporadaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTemporadaByQuery(session, condition, orderBy);
@@ -213,7 +345,15 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada loadTemporadaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada loadTemporadaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTemporadaByQuery(session, condition, orderBy, lockMode);
@@ -224,7 +364,15 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada loadTemporadaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada loadTemporadaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		Temporada[] temporadas = listTemporadaByQuery(session, condition, orderBy);
 		if (temporadas != null && temporadas.length > 0)
 			return temporadas[0];
@@ -232,7 +380,16 @@ public class TemporadaDAO {
 			return null;
 	}
 	
-	public static Temporada loadTemporadaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Temporada loadTemporadaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		Temporada[] temporadas = listTemporadaByQuery(session, condition, orderBy, lockMode);
 		if (temporadas != null && temporadas.length > 0)
 			return temporadas[0];
@@ -240,7 +397,14 @@ public class TemporadaDAO {
 			return null;
 	}
 	
-	public static java.util.Iterator iterateTemporadaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTemporadaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTemporadaByQuery(session, condition, orderBy);
@@ -251,7 +415,15 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateTemporadaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTemporadaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTemporadaByQuery(session, condition, orderBy, lockMode);
@@ -262,7 +434,15 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateTemporadaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTemporadaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Temporada as Temporada");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -278,7 +458,16 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateTemporadaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTemporadaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Temporada as Temporada");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -295,11 +484,21 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static Temporada createTemporada() {
+    /**
+     *
+     * @return
+     */
+    public static Temporada createTemporada() {
 		return new orm.Temporada();
 	}
 	
-	public static boolean save(orm.Temporada temporada) throws PersistentException {
+    /**
+     *
+     * @param temporada
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean save(orm.Temporada temporada) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(temporada);
 			return true;
@@ -310,7 +509,13 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static boolean delete(orm.Temporada temporada) throws PersistentException {
+    /**
+     *
+     * @param temporada
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean delete(orm.Temporada temporada) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(temporada);
 			return true;
@@ -321,7 +526,13 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Temporada temporada)throws PersistentException {
+    /**
+     *
+     * @param temporada
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.Temporada temporada)throws PersistentException {
 		try {
 			orm.Animacion[] lAnimacions = temporada.animacion.toArray();
 			for(int i = 0; i < lAnimacions.length; i++) {
@@ -335,7 +546,14 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Temporada temporada, org.orm.PersistentSession session)throws PersistentException {
+    /**
+     *
+     * @param temporada
+     * @param session
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.Temporada temporada, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			orm.Animacion[] lAnimacions = temporada.animacion.toArray();
 			for(int i = 0; i < lAnimacions.length; i++) {
@@ -354,7 +572,13 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.Temporada temporada) throws PersistentException {
+    /**
+     *
+     * @param temporada
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean refresh(orm.Temporada temporada) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(temporada);
 			return true;
@@ -365,7 +589,13 @@ public class TemporadaDAO {
 		}
 	}
 	
-	public static boolean evict(orm.Temporada temporada) throws PersistentException {
+    /**
+     *
+     * @param temporada
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean evict(orm.Temporada temporada) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(temporada);
 			return true;

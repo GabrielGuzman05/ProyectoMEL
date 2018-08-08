@@ -19,10 +19,19 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import org.orm.http.ORMHttpServletRequest;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class ProyectoProgramacionAvanzadaFilter implements Filter {
 	private static ServletRequestFactory _servletRequestFactory;
 	
-	public void init(FilterConfig filterConfig) throws ServletException {
+    /**
+     *
+     * @param filterConfig
+     * @throws ServletException
+     */
+    public void init(FilterConfig filterConfig) throws ServletException {
 		String ormRequest = filterConfig.getInitParameter("WrapServletRequest");
 		if (ormRequest == null || ormRequest.equals("false")) {
 			_servletRequestFactory = new NormalServletRequestFactory();
@@ -44,7 +53,15 @@ public class ProyectoProgramacionAvanzadaFilter implements Filter {
 		}
 	}
 	
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
+    /**
+     *
+     * @param request
+     * @param response
+     * @param filterChain
+     * @throws IOException
+     * @throws ServletException
+     */
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
 		if(request instanceof HttpServletRequest) {
 			String url = ((HttpServletRequest) request).getRequestURL().toString();
 			if (url.endsWith(".html") || url.endsWith(".htm")) {
@@ -74,7 +91,10 @@ public class ProyectoProgramacionAvanzadaFilter implements Filter {
 		}
 	}
 	
-	public void destroy() {
+    /**
+     *
+     */
+    public void destroy() {
 	}
 	
 	static interface ServletRequestFactory  {

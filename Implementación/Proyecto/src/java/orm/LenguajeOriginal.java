@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class LenguajeOriginal {
-	public LenguajeOriginal() {
+
+    /**
+     *
+     */
+    public LenguajeOriginal() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -42,19 +50,35 @@ public class LenguajeOriginal {
 		this.idLenguaje = value;
 	}
 	
-	public int getIdLenguaje() {
+    /**
+     *
+     * @return
+     */
+    public int getIdLenguaje() {
 		return idLenguaje;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdLenguaje();
 	}
 	
-	public void setNombre(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public String getNombre() {
+    /**
+     *
+     * @return
+     */
+    public String getNombre() {
 		return nombre;
 	}
 	
@@ -66,7 +90,10 @@ public class LenguajeOriginal {
 		return ORM_novela;
 	}
 	
-	public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_LENGUAJEORIGINAL_NOVELA, ORMConstants.KEY_NOVELA_LENGUAJEORIGINALIDLENGUAJE, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_LENGUAJEORIGINAL_NOVELA, ORMConstants.KEY_NOVELA_LENGUAJEORIGINALIDLENGUAJE, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdLenguaje());

@@ -7,6 +7,7 @@ package Servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -15,21 +16,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 /**
  *
- * @author Pablo
+ * @author Gabriel
  */
-@WebServlet(name = "Novelas", urlPatterns = {"/novelas"})
-public class Novelas extends HttpServlet {
+@WebServlet(name = "CreadorPaginaLista", urlPatterns = {"/CreadorPaginaLista"})
+public class CreadorPaginaLista extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
-     * Entregando una lista con las novelas a la vista
-     * <code>Novelas.jsp</code> cuando es llamada, accesible a traves del
-     * navegador a traves del urlPath /Novelas
+     * Consigue las entradas de la lista de un usuario, es accesible solo en caso de usuario logeado,
+     * estas son entregadas a la vista Lista.jsp
      *
      * @param request servlet request
      * @param response servlet response
@@ -39,16 +41,30 @@ public class Novelas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
-       
-        //orm.Novela novela = orm.NovelaDAO.getNovelaByORMID(55);
-        //System.out.println("sadasd"+ novela.getNombre());
-        
-        orm.Novela[] novelas = orm.NovelaDAO.listNovelaByQuery(null, null);
-        request.setAttribute("novelas", novelas);
-        RequestDispatcher rd = request.getRequestDispatcher("/Novelas.jsp");
-        rd.forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        HttpSession sesion = request.getSession();
+        if ("true".equals(sesion.getAttribute("loged").toString())) {
+            try {
+                PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
+                orm.Lista auxLista = orm.ListaDAO.getListaByORMID(Integer.parseInt(request.getParameter("id")));
+                if (auxLista != null) {
+                    System.out.println(auxLista.getNombreLista());
+                    System.out.println(Arrays.toString(auxLista.entradaLista.toArray()));
+                    request.setAttribute("listas", auxLista.entradaLista.toArray());
+                    RequestDispatcher disp = request.getRequestDispatcher("/Lista.jsp");
+                    disp.forward(request, response);
+                } else {
+                    RequestDispatcher disp = request.getRequestDispatcher("home");
+                    disp.forward(request, response);
+                }
+            } catch (PersistentException ex) {
+                Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else {
+            RequestDispatcher disp = request.getRequestDispatcher("/login.html");
+            disp.forward(request, response);
         }
-    
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -65,7 +81,7 @@ public class Novelas extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(Novelas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CreadorPaginaLista.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -83,7 +99,7 @@ public class Novelas extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(Novelas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CreadorPaginaLista.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

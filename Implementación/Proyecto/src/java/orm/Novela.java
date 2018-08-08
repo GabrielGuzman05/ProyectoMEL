@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class Novela {
-	public Novela() {
+
+    /**
+     *
+     */
+    public Novela() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -106,79 +114,155 @@ public class Novela {
 		this.idNovela = value;
 	}
 	
-	public int getIdNovela() {
+    /**
+     *
+     * @return
+     */
+    public int getIdNovela() {
 		return idNovela;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdNovela();
 	}
 	
-	public void setNombre(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public String getNombre() {
+    /**
+     *
+     * @return
+     */
+    public String getNombre() {
 		return nombre;
 	}
 	
-	public void setNombreAlternativo(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombreAlternativo(String value) {
 		this.nombreAlternativo = value;
 	}
 	
-	public String getNombreAlternativo() {
+    /**
+     *
+     * @return
+     */
+    public String getNombreAlternativo() {
 		return nombreAlternativo;
 	}
 	
-	public void setAño(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setAño(String value) {
 		this.año = value;
 	}
 	
-	public String getAño() {
+    /**
+     *
+     * @return
+     */
+    public String getAño() {
 		return año;
 	}
 	
-	public void setLicenciado(byte value) {
+    /**
+     *
+     * @param value
+     */
+    public void setLicenciado(byte value) {
 		setLicenciado(new Byte(value));
 	}
 	
-	public void setLicenciado(Byte value) {
+    /**
+     *
+     * @param value
+     */
+    public void setLicenciado(Byte value) {
 		this.licenciado = value;
 	}
 	
-	public Byte getLicenciado() {
+    /**
+     *
+     * @return
+     */
+    public Byte getLicenciado() {
 		return licenciado;
 	}
 	
-	public void setCompletamenteTraducido(byte value) {
+    /**
+     *
+     * @param value
+     */
+    public void setCompletamenteTraducido(byte value) {
 		setCompletamenteTraducido(new Byte(value));
 	}
 	
-	public void setCompletamenteTraducido(Byte value) {
+    /**
+     *
+     * @param value
+     */
+    public void setCompletamenteTraducido(Byte value) {
 		this.completamenteTraducido = value;
 	}
 	
-	public Byte getCompletamenteTraducido() {
+    /**
+     *
+     * @return
+     */
+    public Byte getCompletamenteTraducido() {
 		return completamenteTraducido;
 	}
 	
-	public void setNovelUpdateUrl(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNovelUpdateUrl(String value) {
 		this.novelUpdateUrl = value;
 	}
 	
-	public String getNovelUpdateUrl() {
+    /**
+     *
+     * @return
+     */
+    public String getNovelUpdateUrl() {
 		return novelUpdateUrl;
 	}
 	
-	public void setEstrellas(int value) {
+    /**
+     *
+     * @param value
+     */
+    public void setEstrellas(int value) {
 		setEstrellas(new Integer(value));
 	}
 	
-	public void setEstrellas(Integer value) {
+    /**
+     *
+     * @param value
+     */
+    public void setEstrellas(Integer value) {
 		this.estrellas = value;
 	}
 	
-	public Integer getEstrellas() {
+    /**
+     *
+     * @return
+     */
+    public Integer getEstrellas() {
 		return estrellas;
 	}
 	
@@ -190,9 +274,16 @@ public class Novela {
 		return ORM_generoidGenero;
 	}
 	
-	public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, ORMConstants.KEY_NOVELA_GENEROIDGENERO, ORMConstants.KEY_GENERO_NOVELAIDNOVELA, ORMConstants.KEY_MUL_MANY_TO_MANY);
+    /**
+     *
+     */
+    public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, ORMConstants.KEY_NOVELA_GENEROIDGENERO, ORMConstants.KEY_GENERO_NOVELAIDNOVELA, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
-	public void setPublicadorOriginalidPublicadorOriginal(orm.PublicadorOriginal value) {
+    /**
+     *
+     * @param value
+     */
+    public void setPublicadorOriginalidPublicadorOriginal(orm.PublicadorOriginal value) {
 		if (publicadorOriginalidPublicadorOriginal != null) {
 			publicadorOriginalidPublicadorOriginal.novela.remove(this);
 		}
@@ -201,12 +292,17 @@ public class Novela {
 		}
 	}
 	
-	public orm.PublicadorOriginal getPublicadorOriginalidPublicadorOriginal() {
+    /**
+     *
+     * @return
+     */
+    public orm.PublicadorOriginal getPublicadorOriginalidPublicadorOriginal() {
 		return publicadorOriginalidPublicadorOriginal;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_PublicadorOriginalidPublicadorOriginal(orm.PublicadorOriginal value) {
 		this.publicadorOriginalidPublicadorOriginal = value;
@@ -216,7 +312,11 @@ public class Novela {
 		return publicadorOriginalidPublicadorOriginal;
 	}
 	
-	public void setAutoridAutor(orm.Autor value) {
+    /**
+     *
+     * @param value
+     */
+    public void setAutoridAutor(orm.Autor value) {
 		if (autoridAutor != null) {
 			autoridAutor.novela.remove(this);
 		}
@@ -225,12 +325,17 @@ public class Novela {
 		}
 	}
 	
-	public orm.Autor getAutoridAutor() {
+    /**
+     *
+     * @return
+     */
+    public orm.Autor getAutoridAutor() {
 		return autoridAutor;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_AutoridAutor(orm.Autor value) {
 		this.autoridAutor = value;
@@ -240,7 +345,11 @@ public class Novela {
 		return autoridAutor;
 	}
 	
-	public void setPublicadorInglesidPublicadorIngles(orm.PublicadorIngles value) {
+    /**
+     *
+     * @param value
+     */
+    public void setPublicadorInglesidPublicadorIngles(orm.PublicadorIngles value) {
 		if (publicadorInglesidPublicadorIngles != null) {
 			publicadorInglesidPublicadorIngles.novela.remove(this);
 		}
@@ -249,12 +358,17 @@ public class Novela {
 		}
 	}
 	
-	public orm.PublicadorIngles getPublicadorInglesidPublicadorIngles() {
+    /**
+     *
+     * @return
+     */
+    public orm.PublicadorIngles getPublicadorInglesidPublicadorIngles() {
 		return publicadorInglesidPublicadorIngles;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_PublicadorInglesidPublicadorIngles(orm.PublicadorIngles value) {
 		this.publicadorInglesidPublicadorIngles = value;
@@ -264,7 +378,11 @@ public class Novela {
 		return publicadorInglesidPublicadorIngles;
 	}
 	
-	public void setTipoidTipo(orm.Tipo value) {
+    /**
+     *
+     * @param value
+     */
+    public void setTipoidTipo(orm.Tipo value) {
 		if (tipoidTipo != null) {
 			tipoidTipo.novela.remove(this);
 		}
@@ -273,12 +391,17 @@ public class Novela {
 		}
 	}
 	
-	public orm.Tipo getTipoidTipo() {
+    /**
+     *
+     * @return
+     */
+    public orm.Tipo getTipoidTipo() {
 		return tipoidTipo;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_TipoidTipo(orm.Tipo value) {
 		this.tipoidTipo = value;
@@ -288,7 +411,11 @@ public class Novela {
 		return tipoidTipo;
 	}
 	
-	public void setLenguajeOriginalidLenguaje(orm.LenguajeOriginal value) {
+    /**
+     *
+     * @param value
+     */
+    public void setLenguajeOriginalidLenguaje(orm.LenguajeOriginal value) {
 		if (lenguajeOriginalidLenguaje != null) {
 			lenguajeOriginalidLenguaje.novela.remove(this);
 		}
@@ -297,12 +424,17 @@ public class Novela {
 		}
 	}
 	
-	public orm.LenguajeOriginal getLenguajeOriginalidLenguaje() {
+    /**
+     *
+     * @return
+     */
+    public orm.LenguajeOriginal getLenguajeOriginalidLenguaje() {
 		return lenguajeOriginalidLenguaje;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_LenguajeOriginalidLenguaje(orm.LenguajeOriginal value) {
 		this.lenguajeOriginalidLenguaje = value;
@@ -312,7 +444,11 @@ public class Novela {
 		return lenguajeOriginalidLenguaje;
 	}
 	
-	public void setArtistaidArtista(orm.Artista value) {
+    /**
+     *
+     * @param value
+     */
+    public void setArtistaidArtista(orm.Artista value) {
 		if (artistaidArtista != null) {
 			artistaidArtista.novela.remove(this);
 		}
@@ -321,12 +457,17 @@ public class Novela {
 		}
 	}
 	
-	public orm.Artista getArtistaidArtista() {
+    /**
+     *
+     * @return
+     */
+    public orm.Artista getArtistaidArtista() {
 		return artistaidArtista;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_ArtistaidArtista(orm.Artista value) {
 		this.artistaidArtista = value;
@@ -344,7 +485,10 @@ public class Novela {
 		return ORM_tagidTag;
 	}
 	
-	public final orm.TagSetCollection tagidTag = new orm.TagSetCollection(this, _ormAdapter, ORMConstants.KEY_NOVELA_TAGIDTAG, ORMConstants.KEY_TAG_NOVELAIDNOVELA, ORMConstants.KEY_MUL_MANY_TO_MANY);
+    /**
+     *
+     */
+    public final orm.TagSetCollection tagidTag = new orm.TagSetCollection(this, _ormAdapter, ORMConstants.KEY_NOVELA_TAGIDTAG, ORMConstants.KEY_TAG_NOVELAIDNOVELA, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_EntradaLista(java.util.Set value) {
 		this.ORM_entradaLista = value;
@@ -354,7 +498,10 @@ public class Novela {
 		return ORM_entradaLista;
 	}
 	
-	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, ORMConstants.KEY_NOVELA_ENTRADALISTA, ORMConstants.KEY_ENTRADALISTA_NOVELAIDNOVELA, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, ORMConstants.KEY_NOVELA_ENTRADALISTA, ORMConstants.KEY_ENTRADALISTA_NOVELAIDNOVELA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdNovela());

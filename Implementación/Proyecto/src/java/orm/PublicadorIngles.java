@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class PublicadorIngles {
-	public PublicadorIngles() {
+
+    /**
+     *
+     */
+    public PublicadorIngles() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -42,19 +50,35 @@ public class PublicadorIngles {
 		this.idPublicadorIngles = value;
 	}
 	
-	public int getIdPublicadorIngles() {
+    /**
+     *
+     * @return
+     */
+    public int getIdPublicadorIngles() {
 		return idPublicadorIngles;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdPublicadorIngles();
 	}
 	
-	public void setNombre(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public String getNombre() {
+    /**
+     *
+     * @return
+     */
+    public String getNombre() {
 		return nombre;
 	}
 	
@@ -66,7 +90,10 @@ public class PublicadorIngles {
 		return ORM_novela;
 	}
 	
-	public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_PUBLICADORINGLES_NOVELA, ORMConstants.KEY_NOVELA_PUBLICADORINGLESIDPUBLICADORINGLES, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_PUBLICADORINGLES_NOVELA, ORMConstants.KEY_NOVELA_PUBLICADORINGLESIDPUBLICADORINGLES, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdPublicadorIngles());

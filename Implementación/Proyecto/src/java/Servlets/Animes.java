@@ -24,12 +24,16 @@ public class Animes extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * methods. 
+     * Entregando una lista con las animaciones a la vista
+     * <code>Anime.jsp</code> cuando es llamada, accesible a traves del
+     * navegador a traves del urlPath /Animes
      *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws org.orm.PersistentException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
@@ -37,8 +41,8 @@ public class Animes extends HttpServlet {
         request.setAttribute("animes", animes);
         RequestDispatcher rd = request.getRequestDispatcher("/Anime.jsp");
         rd.forward(request, response);
-        }
-    
+    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

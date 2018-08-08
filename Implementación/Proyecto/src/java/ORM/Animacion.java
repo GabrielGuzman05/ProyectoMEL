@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class Animacion {
-	public Animacion() {
+
+    /**
+     *
+     */
+    public Animacion() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -85,59 +93,115 @@ public class Animacion {
 		this.idAnimacion = value;
 	}
 	
-	public int getIdAnimacion() {
+    /**
+     *
+     * @return
+     */
+    public int getIdAnimacion() {
 		return idAnimacion;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdAnimacion();
 	}
 	
-	public void setNombre(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public String getNombre() {
+    /**
+     *
+     * @return
+     */
+    public String getNombre() {
 		return nombre;
 	}
 	
-	public void setNombreAlternativo(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombreAlternativo(String value) {
 		this.nombreAlternativo = value;
 	}
 	
-	public String getNombreAlternativo() {
+    /**
+     *
+     * @return
+     */
+    public String getNombreAlternativo() {
 		return nombreAlternativo;
 	}
 	
-	public void setFuente(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setFuente(String value) {
 		this.fuente = value;
 	}
 	
-	public String getFuente() {
+    /**
+     *
+     * @return
+     */
+    public String getFuente() {
 		return fuente;
 	}
 	
-	public void setEnEmision(byte value) {
+    /**
+     *
+     * @param value
+     */
+    public void setEnEmision(byte value) {
 		setEnEmision(new Byte(value));
 	}
 	
-	public void setEnEmision(Byte value) {
+    /**
+     *
+     * @param value
+     */
+    public void setEnEmision(Byte value) {
 		this.enEmision = value;
 	}
 	
-	public Byte getEnEmision() {
+    /**
+     *
+     * @return
+     */
+    public Byte getEnEmision() {
 		return enEmision;
 	}
 	
-	public void setEpisodios(int value) {
+    /**
+     *
+     * @param value
+     */
+    public void setEpisodios(int value) {
 		setEpisodios(new Integer(value));
 	}
 	
-	public void setEpisodios(Integer value) {
+    /**
+     *
+     * @param value
+     */
+    public void setEpisodios(Integer value) {
 		this.episodios = value;
 	}
 	
-	public Integer getEpisodios() {
+    /**
+     *
+     * @return
+     */
+    public Integer getEpisodios() {
 		return episodios;
 	}
 	
@@ -149,9 +213,16 @@ public class Animacion {
 		return ORM_generoidGenero;
 	}
 	
-	public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, ORMConstants.KEY_ANIMACION_GENEROIDGENERO, ORMConstants.KEY_GENERO_ANIMACIONIDANIMACION, ORMConstants.KEY_MUL_MANY_TO_MANY);
+    /**
+     *
+     */
+    public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, ORMConstants.KEY_ANIMACION_GENEROIDGENERO, ORMConstants.KEY_GENERO_ANIMACIONIDANIMACION, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
-	public void setTemporadaidTemporada(orm.Temporada value) {
+    /**
+     *
+     * @param value
+     */
+    public void setTemporadaidTemporada(orm.Temporada value) {
 		if (temporadaidTemporada != null) {
 			temporadaidTemporada.animacion.remove(this);
 		}
@@ -160,12 +231,17 @@ public class Animacion {
 		}
 	}
 	
-	public orm.Temporada getTemporadaidTemporada() {
+    /**
+     *
+     * @return
+     */
+    public orm.Temporada getTemporadaidTemporada() {
 		return temporadaidTemporada;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_TemporadaidTemporada(orm.Temporada value) {
 		this.temporadaidTemporada = value;
@@ -175,7 +251,11 @@ public class Animacion {
 		return temporadaidTemporada;
 	}
 	
-	public void setTipoEmisionidTipoEmision(orm.TipoEmision value) {
+    /**
+     *
+     * @param value
+     */
+    public void setTipoEmisionidTipoEmision(orm.TipoEmision value) {
 		if (tipoEmisionidTipoEmision != null) {
 			tipoEmisionidTipoEmision.animacion.remove(this);
 		}
@@ -184,12 +264,17 @@ public class Animacion {
 		}
 	}
 	
-	public orm.TipoEmision getTipoEmisionidTipoEmision() {
+    /**
+     *
+     * @return
+     */
+    public orm.TipoEmision getTipoEmisionidTipoEmision() {
 		return tipoEmisionidTipoEmision;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_TipoEmisionidTipoEmision(orm.TipoEmision value) {
 		this.tipoEmisionidTipoEmision = value;
@@ -199,7 +284,11 @@ public class Animacion {
 		return tipoEmisionidTipoEmision;
 	}
 	
-	public void setRatingidRating(orm.Rating value) {
+    /**
+     *
+     * @param value
+     */
+    public void setRatingidRating(orm.Rating value) {
 		if (ratingidRating != null) {
 			ratingidRating.animacion.remove(this);
 		}
@@ -208,12 +297,17 @@ public class Animacion {
 		}
 	}
 	
-	public orm.Rating getRatingidRating() {
+    /**
+     *
+     * @return
+     */
+    public orm.Rating getRatingidRating() {
 		return ratingidRating;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_RatingidRating(orm.Rating value) {
 		this.ratingidRating = value;
@@ -223,7 +317,11 @@ public class Animacion {
 		return ratingidRating;
 	}
 	
-	public void setEstudioidEstudio(orm.Estudio value) {
+    /**
+     *
+     * @param value
+     */
+    public void setEstudioidEstudio(orm.Estudio value) {
 		if (estudioidEstudio != null) {
 			estudioidEstudio.animacion.remove(this);
 		}
@@ -232,12 +330,17 @@ public class Animacion {
 		}
 	}
 	
-	public orm.Estudio getEstudioidEstudio() {
+    /**
+     *
+     * @return
+     */
+    public orm.Estudio getEstudioidEstudio() {
 		return estudioidEstudio;
 	}
 	
 	/**
 	 * This method is for internal use only.
+     * @param value
 	 */
 	public void setORM_EstudioidEstudio(orm.Estudio value) {
 		this.estudioidEstudio = value;
@@ -255,7 +358,10 @@ public class Animacion {
 		return ORM_entradaLista;
 	}
 	
-	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, ORMConstants.KEY_ANIMACION_ENTRADALISTA, ORMConstants.KEY_ENTRADALISTA_ANIMACIONIDANIMACION, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, ORMConstants.KEY_ANIMACION_ENTRADALISTA, ORMConstants.KEY_ENTRADALISTA_ANIMACIONIDANIMACION, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdAnimacion());

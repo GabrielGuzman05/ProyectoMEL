@@ -18,8 +18,19 @@ import org.hibernate.Query;
 import org.hibernate.LockMode;
 import java.util.List;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class RatingDAO {
-	public static Rating loadRatingByORMID(int idRating) throws PersistentException {
+
+    /**
+     *
+     * @param idRating
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating loadRatingByORMID(int idRating) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadRatingByORMID(session, idRating);
@@ -30,7 +41,13 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating getRatingByORMID(int idRating) throws PersistentException {
+    /**
+     *
+     * @param idRating
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating getRatingByORMID(int idRating) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getRatingByORMID(session, idRating);
@@ -41,7 +58,14 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating loadRatingByORMID(int idRating, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idRating
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating loadRatingByORMID(int idRating, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadRatingByORMID(session, idRating, lockMode);
@@ -52,7 +76,14 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating getRatingByORMID(int idRating, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idRating
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating getRatingByORMID(int idRating, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getRatingByORMID(session, idRating, lockMode);
@@ -63,7 +94,14 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating loadRatingByORMID(PersistentSession session, int idRating) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idRating
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating loadRatingByORMID(PersistentSession session, int idRating) throws PersistentException {
 		try {
 			return (Rating) session.load(orm.Rating.class, new Integer(idRating));
 		}
@@ -73,7 +111,14 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating getRatingByORMID(PersistentSession session, int idRating) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idRating
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating getRatingByORMID(PersistentSession session, int idRating) throws PersistentException {
 		try {
 			return (Rating) session.get(orm.Rating.class, new Integer(idRating));
 		}
@@ -83,7 +128,15 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating loadRatingByORMID(PersistentSession session, int idRating, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idRating
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating loadRatingByORMID(PersistentSession session, int idRating, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (Rating) session.load(orm.Rating.class, new Integer(idRating), lockMode);
 		}
@@ -93,7 +146,15 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating getRatingByORMID(PersistentSession session, int idRating, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idRating
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating getRatingByORMID(PersistentSession session, int idRating, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (Rating) session.get(orm.Rating.class, new Integer(idRating), lockMode);
 		}
@@ -103,7 +164,14 @@ public class RatingDAO {
 		}
 	}
 	
-	public static List queryRating(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryRating(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryRating(session, condition, orderBy);
@@ -114,7 +182,15 @@ public class RatingDAO {
 		}
 	}
 	
-	public static List queryRating(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryRating(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryRating(session, condition, orderBy, lockMode);
@@ -125,7 +201,14 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating[] listRatingByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating[] listRatingByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listRatingByQuery(session, condition, orderBy);
@@ -136,7 +219,15 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating[] listRatingByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating[] listRatingByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listRatingByQuery(session, condition, orderBy, lockMode);
@@ -147,7 +238,15 @@ public class RatingDAO {
 		}
 	}
 	
-	public static List queryRating(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryRating(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Rating as Rating");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -163,7 +262,16 @@ public class RatingDAO {
 		}
 	}
 	
-	public static List queryRating(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryRating(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Rating as Rating");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -180,7 +288,15 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating[] listRatingByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating[] listRatingByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		try {
 			List list = queryRating(session, condition, orderBy);
 			return (Rating[]) list.toArray(new Rating[list.size()]);
@@ -191,7 +307,16 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating[] listRatingByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating[] listRatingByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			List list = queryRating(session, condition, orderBy, lockMode);
 			return (Rating[]) list.toArray(new Rating[list.size()]);
@@ -202,7 +327,14 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating loadRatingByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating loadRatingByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadRatingByQuery(session, condition, orderBy);
@@ -213,7 +345,15 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating loadRatingByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating loadRatingByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadRatingByQuery(session, condition, orderBy, lockMode);
@@ -224,7 +364,15 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating loadRatingByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating loadRatingByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		Rating[] ratings = listRatingByQuery(session, condition, orderBy);
 		if (ratings != null && ratings.length > 0)
 			return ratings[0];
@@ -232,7 +380,16 @@ public class RatingDAO {
 			return null;
 	}
 	
-	public static Rating loadRatingByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Rating loadRatingByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		Rating[] ratings = listRatingByQuery(session, condition, orderBy, lockMode);
 		if (ratings != null && ratings.length > 0)
 			return ratings[0];
@@ -240,7 +397,14 @@ public class RatingDAO {
 			return null;
 	}
 	
-	public static java.util.Iterator iterateRatingByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateRatingByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateRatingByQuery(session, condition, orderBy);
@@ -251,7 +415,15 @@ public class RatingDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateRatingByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateRatingByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateRatingByQuery(session, condition, orderBy, lockMode);
@@ -262,7 +434,15 @@ public class RatingDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateRatingByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateRatingByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Rating as Rating");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -278,7 +458,16 @@ public class RatingDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateRatingByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateRatingByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Rating as Rating");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -295,11 +484,21 @@ public class RatingDAO {
 		}
 	}
 	
-	public static Rating createRating() {
+    /**
+     *
+     * @return
+     */
+    public static Rating createRating() {
 		return new orm.Rating();
 	}
 	
-	public static boolean save(orm.Rating rating) throws PersistentException {
+    /**
+     *
+     * @param rating
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean save(orm.Rating rating) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(rating);
 			return true;
@@ -310,7 +509,13 @@ public class RatingDAO {
 		}
 	}
 	
-	public static boolean delete(orm.Rating rating) throws PersistentException {
+    /**
+     *
+     * @param rating
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean delete(orm.Rating rating) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(rating);
 			return true;
@@ -321,7 +526,13 @@ public class RatingDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Rating rating)throws PersistentException {
+    /**
+     *
+     * @param rating
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.Rating rating)throws PersistentException {
 		try {
 			orm.Animacion[] lAnimacions = rating.animacion.toArray();
 			for(int i = 0; i < lAnimacions.length; i++) {
@@ -335,7 +546,14 @@ public class RatingDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Rating rating, org.orm.PersistentSession session)throws PersistentException {
+    /**
+     *
+     * @param rating
+     * @param session
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.Rating rating, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			orm.Animacion[] lAnimacions = rating.animacion.toArray();
 			for(int i = 0; i < lAnimacions.length; i++) {
@@ -354,7 +572,13 @@ public class RatingDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.Rating rating) throws PersistentException {
+    /**
+     *
+     * @param rating
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean refresh(orm.Rating rating) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(rating);
 			return true;
@@ -365,7 +589,13 @@ public class RatingDAO {
 		}
 	}
 	
-	public static boolean evict(orm.Rating rating) throws PersistentException {
+    /**
+     *
+     * @param rating
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean evict(orm.Rating rating) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(rating);
 			return true;

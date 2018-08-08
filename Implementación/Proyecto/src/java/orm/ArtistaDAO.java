@@ -18,8 +18,19 @@ import org.hibernate.Query;
 import org.hibernate.LockMode;
 import java.util.List;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class ArtistaDAO {
-	public static Artista loadArtistaByORMID(int idArtista) throws PersistentException {
+
+    /**
+     *
+     * @param idArtista
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista loadArtistaByORMID(int idArtista) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadArtistaByORMID(session, idArtista);
@@ -30,7 +41,13 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista getArtistaByORMID(int idArtista) throws PersistentException {
+    /**
+     *
+     * @param idArtista
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista getArtistaByORMID(int idArtista) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getArtistaByORMID(session, idArtista);
@@ -41,7 +58,14 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista loadArtistaByORMID(int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idArtista
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista loadArtistaByORMID(int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadArtistaByORMID(session, idArtista, lockMode);
@@ -52,7 +76,14 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista getArtistaByORMID(int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idArtista
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista getArtistaByORMID(int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getArtistaByORMID(session, idArtista, lockMode);
@@ -63,7 +94,14 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista loadArtistaByORMID(PersistentSession session, int idArtista) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idArtista
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista loadArtistaByORMID(PersistentSession session, int idArtista) throws PersistentException {
 		try {
 			return (Artista) session.load(orm.Artista.class, new Integer(idArtista));
 		}
@@ -73,7 +111,14 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista getArtistaByORMID(PersistentSession session, int idArtista) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idArtista
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista getArtistaByORMID(PersistentSession session, int idArtista) throws PersistentException {
 		try {
 			return (Artista) session.get(orm.Artista.class, new Integer(idArtista));
 		}
@@ -83,7 +128,15 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista loadArtistaByORMID(PersistentSession session, int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idArtista
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista loadArtistaByORMID(PersistentSession session, int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (Artista) session.load(orm.Artista.class, new Integer(idArtista), lockMode);
 		}
@@ -93,7 +146,15 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista getArtistaByORMID(PersistentSession session, int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idArtista
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista getArtistaByORMID(PersistentSession session, int idArtista, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (Artista) session.get(orm.Artista.class, new Integer(idArtista), lockMode);
 		}
@@ -103,7 +164,14 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static List queryArtista(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryArtista(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryArtista(session, condition, orderBy);
@@ -114,7 +182,15 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static List queryArtista(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryArtista(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryArtista(session, condition, orderBy, lockMode);
@@ -125,7 +201,14 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista[] listArtistaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista[] listArtistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listArtistaByQuery(session, condition, orderBy);
@@ -136,7 +219,15 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista[] listArtistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista[] listArtistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listArtistaByQuery(session, condition, orderBy, lockMode);
@@ -147,7 +238,15 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static List queryArtista(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryArtista(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Artista as Artista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -163,7 +262,16 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static List queryArtista(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryArtista(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Artista as Artista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -180,7 +288,15 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista[] listArtistaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista[] listArtistaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		try {
 			List list = queryArtista(session, condition, orderBy);
 			return (Artista[]) list.toArray(new Artista[list.size()]);
@@ -191,7 +307,16 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista[] listArtistaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista[] listArtistaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			List list = queryArtista(session, condition, orderBy, lockMode);
 			return (Artista[]) list.toArray(new Artista[list.size()]);
@@ -202,7 +327,14 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista loadArtistaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista loadArtistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadArtistaByQuery(session, condition, orderBy);
@@ -213,7 +345,15 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista loadArtistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista loadArtistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadArtistaByQuery(session, condition, orderBy, lockMode);
@@ -224,7 +364,15 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista loadArtistaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista loadArtistaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		Artista[] artistas = listArtistaByQuery(session, condition, orderBy);
 		if (artistas != null && artistas.length > 0)
 			return artistas[0];
@@ -232,7 +380,16 @@ public class ArtistaDAO {
 			return null;
 	}
 	
-	public static Artista loadArtistaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Artista loadArtistaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		Artista[] artistas = listArtistaByQuery(session, condition, orderBy, lockMode);
 		if (artistas != null && artistas.length > 0)
 			return artistas[0];
@@ -240,7 +397,14 @@ public class ArtistaDAO {
 			return null;
 	}
 	
-	public static java.util.Iterator iterateArtistaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateArtistaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateArtistaByQuery(session, condition, orderBy);
@@ -251,7 +415,15 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateArtistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateArtistaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateArtistaByQuery(session, condition, orderBy, lockMode);
@@ -262,7 +434,15 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateArtistaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateArtistaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Artista as Artista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -278,7 +458,16 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateArtistaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateArtistaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Artista as Artista");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -295,11 +484,21 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static Artista createArtista() {
+    /**
+     *
+     * @return
+     */
+    public static Artista createArtista() {
 		return new orm.Artista();
 	}
 	
-	public static boolean save(orm.Artista artista) throws PersistentException {
+    /**
+     *
+     * @param artista
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean save(orm.Artista artista) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(artista);
 			return true;
@@ -310,7 +509,13 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean delete(orm.Artista artista) throws PersistentException {
+    /**
+     *
+     * @param artista
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean delete(orm.Artista artista) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(artista);
 			return true;
@@ -321,7 +526,13 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Artista artista)throws PersistentException {
+    /**
+     *
+     * @param artista
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.Artista artista)throws PersistentException {
 		try {
 			orm.Novela[] lNovelas = artista.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
@@ -335,7 +546,14 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Artista artista, org.orm.PersistentSession session)throws PersistentException {
+    /**
+     *
+     * @param artista
+     * @param session
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.Artista artista, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			orm.Novela[] lNovelas = artista.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
@@ -354,7 +572,13 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.Artista artista) throws PersistentException {
+    /**
+     *
+     * @param artista
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean refresh(orm.Artista artista) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(artista);
 			return true;
@@ -365,7 +589,13 @@ public class ArtistaDAO {
 		}
 	}
 	
-	public static boolean evict(orm.Artista artista) throws PersistentException {
+    /**
+     *
+     * @param artista
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean evict(orm.Artista artista) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(artista);
 			return true;

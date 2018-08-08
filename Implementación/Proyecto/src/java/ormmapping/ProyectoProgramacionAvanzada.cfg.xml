@@ -7,42 +7,42 @@ License Type: Academic
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
  "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory>
-        <!-- properties -->
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/proyectomel</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">1234</property>
-        <property name="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
-        <property name="hibernate.c3p0.acquire_increment">1</property>
-        <property name="hibernate.c3p0.idle_test_period">0</property>
-        <property name="hibernate.c3p0.min_size">1</property>
-        <property name="hibernate.c3p0.max_size">15</property>
-        <property name="hibernate.c3p0.timeout">0</property>
-        <property name="show_sql">false</property>
-        <property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>
-        <!-- mapping files -->
-        <mapping resource="ormmapping/orm/Animacion.hbm.xml" />
-        <mapping resource="ormmapping/orm/Artista.hbm.xml" />
-        <mapping resource="ormmapping/orm/Autor.hbm.xml" />
-        <mapping resource="ormmapping/orm/EntradaLista.hbm.xml" />
-        <mapping resource="ormmapping/orm/Estudio.hbm.xml" />
-        <mapping resource="ormmapping/orm/Genero.hbm.xml" />
-        <mapping resource="ormmapping/orm/LenguajeOriginal.hbm.xml" />
-        <mapping resource="ormmapping/orm/Lista.hbm.xml" />
-        <mapping resource="ormmapping/orm/Manga.hbm.xml" />
-        <mapping resource="ormmapping/orm/Mangaka.hbm.xml" />
-        <mapping resource="ormmapping/orm/Novela.hbm.xml" />
-        <mapping resource="ormmapping/orm/PublicadorIngles.hbm.xml" />
-        <mapping resource="ormmapping/orm/PublicadorOriginal.hbm.xml" />
-        <mapping resource="ormmapping/orm/Rating.hbm.xml" />
-        <mapping resource="ormmapping/orm/SerieGenerica.hbm.xml" />
-        <mapping resource="ormmapping/orm/Tag.hbm.xml" />
-        <mapping resource="ormmapping/orm/Temporada.hbm.xml" />
-        <mapping resource="ormmapping/orm/Tipo.hbm.xml" />
-        <mapping resource="ormmapping/orm/TipoEmision.hbm.xml" />
-        <mapping resource="ormmapping/orm/TipoManga.hbm.xml" />
-        <mapping resource="ormmapping/orm/Usuario.hbm.xml" />
-    </session-factory>
+	<session-factory>
+   	<!-- properties -->
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/proyectomel</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">1234</property>
+		<property name="hibernate.connection.provider_class">org.hibernate.service.jdbc.connections.internal.C3P0ConnectionProvider</property>
+		<property name="hibernate.c3p0.acquire_increment">1</property>
+		<property name="hibernate.c3p0.idle_test_period">0</property>
+		<property name="hibernate.c3p0.min_size">1</property>
+		<property name="hibernate.c3p0.max_size">15</property>
+		<property name="hibernate.c3p0.timeout">0</property>
+		<property name="show_sql">false</property>
+		<property name="query.substitutions">true 1, false 0, yes 'Y', no 'N'</property>
+		<!-- mapping files -->
+		<mapping resource="ormmapping/orm/Animacion.hbm.xml" />
+		<mapping resource="ormmapping/orm/Artista.hbm.xml" />
+		<mapping resource="ormmapping/orm/Autor.hbm.xml" />
+		<mapping resource="ormmapping/orm/EntradaLista.hbm.xml" />
+		<mapping resource="ormmapping/orm/Estudio.hbm.xml" />
+		<mapping resource="ormmapping/orm/Genero.hbm.xml" />
+		<mapping resource="ormmapping/orm/LenguajeOriginal.hbm.xml" />
+		<mapping resource="ormmapping/orm/Lista.hbm.xml" />
+		<mapping resource="ormmapping/orm/Manga.hbm.xml" />
+		<mapping resource="ormmapping/orm/Mangaka.hbm.xml" />
+		<mapping resource="ormmapping/orm/Novela.hbm.xml" />
+		<mapping resource="ormmapping/orm/PublicadorIngles.hbm.xml" />
+		<mapping resource="ormmapping/orm/PublicadorOriginal.hbm.xml" />
+		<mapping resource="ormmapping/orm/Rating.hbm.xml" />
+		<mapping resource="ormmapping/orm/SerieGenerica.hbm.xml" />
+		<mapping resource="ormmapping/orm/Tag.hbm.xml" />
+		<mapping resource="ormmapping/orm/Temporada.hbm.xml" />
+		<mapping resource="ormmapping/orm/Tipo.hbm.xml" />
+		<mapping resource="ormmapping/orm/TipoEmision.hbm.xml" />
+		<mapping resource="ormmapping/orm/TipoManga.hbm.xml" />
+		<mapping resource="ormmapping/orm/Usuario.hbm.xml" />
+	</session-factory>
 </hibernate-configuration>

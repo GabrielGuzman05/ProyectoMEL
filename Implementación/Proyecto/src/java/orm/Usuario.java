@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class Usuario {
-	public Usuario() {
+
+    /**
+     *
+     */
+    public Usuario() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -44,27 +52,51 @@ public class Usuario {
 		this.idUsuario = value;
 	}
 	
-	public int getIdUsuario() {
+    /**
+     *
+     * @return
+     */
+    public int getIdUsuario() {
 		return idUsuario;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdUsuario();
 	}
 	
-	public void setNombreUsuario(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombreUsuario(String value) {
 		this.nombreUsuario = value;
 	}
 	
-	public String getNombreUsuario() {
+    /**
+     *
+     * @return
+     */
+    public String getNombreUsuario() {
 		return nombreUsuario;
 	}
 	
-	public void setContraseñaUsuario(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setContraseñaUsuario(String value) {
 		this.contraseñaUsuario = value;
 	}
 	
-	public String getContraseñaUsuario() {
+    /**
+     *
+     * @return
+     */
+    public String getContraseñaUsuario() {
 		return contraseñaUsuario;
 	}
 	
@@ -76,7 +108,10 @@ public class Usuario {
 		return ORM_lista;
 	}
 	
-	public final orm.ListaSetCollection lista = new orm.ListaSetCollection(this, _ormAdapter, ORMConstants.KEY_USUARIO_LISTA, ORMConstants.KEY_LISTA_USUARIOIDUSUARIO, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.ListaSetCollection lista = new orm.ListaSetCollection(this, _ormAdapter, ORMConstants.KEY_USUARIO_LISTA, ORMConstants.KEY_LISTA_USUARIOIDUSUARIO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdUsuario());

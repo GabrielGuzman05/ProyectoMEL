@@ -18,8 +18,19 @@ import org.hibernate.Query;
 import org.hibernate.LockMode;
 import java.util.List;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class MangakaDAO {
-	public static Mangaka loadMangakaByORMID(int idMangaka) throws PersistentException {
+
+    /**
+     *
+     * @param idMangaka
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka loadMangakaByORMID(int idMangaka) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadMangakaByORMID(session, idMangaka);
@@ -30,7 +41,13 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka getMangakaByORMID(int idMangaka) throws PersistentException {
+    /**
+     *
+     * @param idMangaka
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka getMangakaByORMID(int idMangaka) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getMangakaByORMID(session, idMangaka);
@@ -41,7 +58,14 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka loadMangakaByORMID(int idMangaka, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idMangaka
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka loadMangakaByORMID(int idMangaka, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadMangakaByORMID(session, idMangaka, lockMode);
@@ -52,7 +76,14 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka getMangakaByORMID(int idMangaka, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idMangaka
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka getMangakaByORMID(int idMangaka, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getMangakaByORMID(session, idMangaka, lockMode);
@@ -63,7 +94,14 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka loadMangakaByORMID(PersistentSession session, int idMangaka) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idMangaka
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka loadMangakaByORMID(PersistentSession session, int idMangaka) throws PersistentException {
 		try {
 			return (Mangaka) session.load(orm.Mangaka.class, new Integer(idMangaka));
 		}
@@ -73,7 +111,14 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka getMangakaByORMID(PersistentSession session, int idMangaka) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idMangaka
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka getMangakaByORMID(PersistentSession session, int idMangaka) throws PersistentException {
 		try {
 			return (Mangaka) session.get(orm.Mangaka.class, new Integer(idMangaka));
 		}
@@ -83,7 +128,15 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka loadMangakaByORMID(PersistentSession session, int idMangaka, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idMangaka
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka loadMangakaByORMID(PersistentSession session, int idMangaka, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (Mangaka) session.load(orm.Mangaka.class, new Integer(idMangaka), lockMode);
 		}
@@ -93,7 +146,15 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka getMangakaByORMID(PersistentSession session, int idMangaka, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idMangaka
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka getMangakaByORMID(PersistentSession session, int idMangaka, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (Mangaka) session.get(orm.Mangaka.class, new Integer(idMangaka), lockMode);
 		}
@@ -103,7 +164,14 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static List queryMangaka(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryMangaka(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryMangaka(session, condition, orderBy);
@@ -114,7 +182,15 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static List queryMangaka(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryMangaka(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryMangaka(session, condition, orderBy, lockMode);
@@ -125,7 +201,14 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka[] listMangakaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka[] listMangakaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listMangakaByQuery(session, condition, orderBy);
@@ -136,7 +219,15 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka[] listMangakaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka[] listMangakaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listMangakaByQuery(session, condition, orderBy, lockMode);
@@ -147,7 +238,15 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static List queryMangaka(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryMangaka(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Mangaka as Mangaka");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -163,7 +262,16 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static List queryMangaka(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryMangaka(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Mangaka as Mangaka");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -180,7 +288,15 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka[] listMangakaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka[] listMangakaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		try {
 			List list = queryMangaka(session, condition, orderBy);
 			return (Mangaka[]) list.toArray(new Mangaka[list.size()]);
@@ -191,7 +307,16 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka[] listMangakaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka[] listMangakaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			List list = queryMangaka(session, condition, orderBy, lockMode);
 			return (Mangaka[]) list.toArray(new Mangaka[list.size()]);
@@ -202,7 +327,14 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka loadMangakaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka loadMangakaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadMangakaByQuery(session, condition, orderBy);
@@ -213,7 +345,15 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka loadMangakaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka loadMangakaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadMangakaByQuery(session, condition, orderBy, lockMode);
@@ -224,7 +364,15 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka loadMangakaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka loadMangakaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		Mangaka[] mangakas = listMangakaByQuery(session, condition, orderBy);
 		if (mangakas != null && mangakas.length > 0)
 			return mangakas[0];
@@ -232,7 +380,16 @@ public class MangakaDAO {
 			return null;
 	}
 	
-	public static Mangaka loadMangakaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Mangaka loadMangakaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		Mangaka[] mangakas = listMangakaByQuery(session, condition, orderBy, lockMode);
 		if (mangakas != null && mangakas.length > 0)
 			return mangakas[0];
@@ -240,7 +397,14 @@ public class MangakaDAO {
 			return null;
 	}
 	
-	public static java.util.Iterator iterateMangakaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateMangakaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateMangakaByQuery(session, condition, orderBy);
@@ -251,7 +415,15 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateMangakaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateMangakaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateMangakaByQuery(session, condition, orderBy, lockMode);
@@ -262,7 +434,15 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateMangakaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateMangakaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Mangaka as Mangaka");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -278,7 +458,16 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateMangakaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateMangakaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Mangaka as Mangaka");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -295,11 +484,21 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static Mangaka createMangaka() {
+    /**
+     *
+     * @return
+     */
+    public static Mangaka createMangaka() {
 		return new orm.Mangaka();
 	}
 	
-	public static boolean save(orm.Mangaka mangaka) throws PersistentException {
+    /**
+     *
+     * @param mangaka
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean save(orm.Mangaka mangaka) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(mangaka);
 			return true;
@@ -310,7 +509,13 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static boolean delete(orm.Mangaka mangaka) throws PersistentException {
+    /**
+     *
+     * @param mangaka
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean delete(orm.Mangaka mangaka) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(mangaka);
 			return true;
@@ -321,7 +526,13 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Mangaka mangaka)throws PersistentException {
+    /**
+     *
+     * @param mangaka
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.Mangaka mangaka)throws PersistentException {
 		try {
 			orm.Manga[] lMangaidMangaArtistas = mangaka.mangaidMangaArtista.toArray();
 			for(int i = 0; i < lMangaidMangaArtistas.length; i++) {
@@ -339,7 +550,14 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Mangaka mangaka, org.orm.PersistentSession session)throws PersistentException {
+    /**
+     *
+     * @param mangaka
+     * @param session
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.Mangaka mangaka, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			orm.Manga[] lMangaidMangaArtistas = mangaka.mangaidMangaArtista.toArray();
 			for(int i = 0; i < lMangaidMangaArtistas.length; i++) {
@@ -362,7 +580,13 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.Mangaka mangaka) throws PersistentException {
+    /**
+     *
+     * @param mangaka
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean refresh(orm.Mangaka mangaka) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(mangaka);
 			return true;
@@ -373,7 +597,13 @@ public class MangakaDAO {
 		}
 	}
 	
-	public static boolean evict(orm.Mangaka mangaka) throws PersistentException {
+    /**
+     *
+     * @param mangaka
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean evict(orm.Mangaka mangaka) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(mangaka);
 			return true;

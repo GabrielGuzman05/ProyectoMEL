@@ -15,21 +15,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.orm.PersistentException;
+import org.orm.PersistentTransaction;
 
 /**
  *
- * @author Pablo
+ * @author Gabriel
  */
-@WebServlet(name = "Novelas", urlPatterns = {"/novelas"})
-public class Novelas extends HttpServlet {
+@WebServlet(name = "ModificarEntrada", urlPatterns = {"/ModificarEntrada"})
+public class ModificarEntrada extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
-     * Entregando una lista con las novelas a la vista
-     * <code>Novelas.jsp</code> cuando es llamada, accesible a traves del
-     * navegador a traves del urlPath /Novelas
+     * Procesa la modificacion de los datos de una entrada.
+     * Solo funciona en caso de usuario logueado.
+     * Redirecciona al home del usuario en usuario logueado, redirecciona al login
+     * en caso de login falso.
      *
      * @param request servlet request
      * @param response servlet response
@@ -39,16 +42,26 @@ public class Novelas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
-       
-        //orm.Novela novela = orm.NovelaDAO.getNovelaByORMID(55);
-        //System.out.println("sadasd"+ novela.getNombre());
-        
-        orm.Novela[] novelas = orm.NovelaDAO.listNovelaByQuery(null, null);
-        request.setAttribute("novelas", novelas);
-        RequestDispatcher rd = request.getRequestDispatcher("/Novelas.jsp");
-        rd.forward(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        HttpSession sesion = request.getSession();
+        if ("true".equals(sesion.getAttribute("loged").toString())) {
+            PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
+            try {
+                orm.EntradaLista auxEntradaLista = orm.EntradaListaDAO.getEntradaListaByORMID(Integer.parseInt(request.getParameter("id")));
+                if (auxEntradaLista != null) {
+                    
+                }
+                t.commit();
+            } catch (Exception e) {
+                t.rollback();
+            }
+            RequestDispatcher disp = request.getRequestDispatcher("home");
+            disp.forward(request, response);
+        } else {
+            RequestDispatcher disp = request.getRequestDispatcher("/login.html");
+            disp.forward(request, response);
         }
-    
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -65,7 +78,7 @@ public class Novelas extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(Novelas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ModificarEntrada.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -83,7 +96,7 @@ public class Novelas extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(Novelas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ModificarEntrada.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

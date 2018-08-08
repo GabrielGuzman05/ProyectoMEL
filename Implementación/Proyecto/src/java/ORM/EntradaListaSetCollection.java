@@ -15,12 +15,32 @@ package orm;
 
 import org.orm.*;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class EntradaListaSetCollection extends org.orm.util.ORMSet {
-	public EntradaListaSetCollection(Object owner, org.orm.util.ORMAdapter adapter, int ownerKey, int targetKey, int collType) {
+
+    /**
+     *
+     * @param owner
+     * @param adapter
+     * @param ownerKey
+     * @param targetKey
+     * @param collType
+     */
+    public EntradaListaSetCollection(Object owner, org.orm.util.ORMAdapter adapter, int ownerKey, int targetKey, int collType) {
 		super(owner, adapter, ownerKey, targetKey, true, collType);
 	}
 	
-	public EntradaListaSetCollection(Object owner, org.orm.util.ORMAdapter adapter, int ownerKey, int collType) {
+    /**
+     *
+     * @param owner
+     * @param adapter
+     * @param ownerKey
+     * @param collType
+     */
+    public EntradaListaSetCollection(Object owner, org.orm.util.ORMAdapter adapter, int ownerKey, int collType) {
 		super(owner, adapter, ownerKey, -1, false, collType);
 	}
 	
@@ -98,7 +118,12 @@ public class EntradaListaSetCollection extends org.orm.util.ORMSet {
 		return (EntradaLista[]) super.toArray(new EntradaLista[size()], propertyName, ascending);
 	}
 	
-	protected PersistentManager getPersistentManager() throws PersistentException {
+    /**
+     *
+     * @return
+     * @throws PersistentException
+     */
+    protected PersistentManager getPersistentManager() throws PersistentException {
 		return ProyectoProgramacionAvanzadaPersistentManager.instance();
 	}
 	

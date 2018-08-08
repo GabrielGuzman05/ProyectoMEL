@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class TipoEmision {
-	public TipoEmision() {
+
+    /**
+     *
+     */
+    public TipoEmision() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -42,19 +50,35 @@ public class TipoEmision {
 		this.idTipoEmision = value;
 	}
 	
-	public int getIdTipoEmision() {
+    /**
+     *
+     * @return
+     */
+    public int getIdTipoEmision() {
 		return idTipoEmision;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdTipoEmision();
 	}
 	
-	public void setNombre(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public String getNombre() {
+    /**
+     *
+     * @return
+     */
+    public String getNombre() {
 		return nombre;
 	}
 	
@@ -66,7 +90,10 @@ public class TipoEmision {
 		return ORM_animacion;
 	}
 	
-	public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, ORMConstants.KEY_TIPOEMISION_ANIMACION, ORMConstants.KEY_ANIMACION_TIPOEMISIONIDTIPOEMISION, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, ORMConstants.KEY_TIPOEMISION_ANIMACION, ORMConstants.KEY_ANIMACION_TIPOEMISIONIDTIPOEMISION, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTipoEmision());

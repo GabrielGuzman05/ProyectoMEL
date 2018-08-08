@@ -5,9 +5,6 @@
  */
 package Servlets;
 
-import orm.SerieGenerica;
-import orm.SerieGenericaDAO;
-
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,8 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.orm.PersistentException;
-import orm.SerieGenerica;
-import orm.SerieGenericaDAO;
 
 /**
  *
@@ -31,11 +26,15 @@ public class Series extends HttpServlet {
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
+     * Entregando una lista con las series a la vista
+     * <code>Series.jsp</code> cuando es llamada, accesible a traves del
+     * navegador a traves del urlPath /Series
      *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws org.orm.PersistentException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {

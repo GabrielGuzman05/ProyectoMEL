@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class Tipo {
-	public Tipo() {
+
+    /**
+     *
+     */
+    public Tipo() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -42,19 +50,35 @@ public class Tipo {
 		this.idTipo = value;
 	}
 	
-	public int getIdTipo() {
+    /**
+     *
+     * @return
+     */
+    public int getIdTipo() {
 		return idTipo;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdTipo();
 	}
 	
-	public void setNombre(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public String getNombre() {
+    /**
+     *
+     * @return
+     */
+    public String getNombre() {
 		return nombre;
 	}
 	
@@ -66,7 +90,10 @@ public class Tipo {
 		return ORM_novela;
 	}
 	
-	public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_TIPO_NOVELA, ORMConstants.KEY_NOVELA_TIPOIDTIPO, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.NovelaSetCollection novela = new orm.NovelaSetCollection(this, _ormAdapter, ORMConstants.KEY_TIPO_NOVELA, ORMConstants.KEY_NOVELA_TIPOIDTIPO, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTipo());

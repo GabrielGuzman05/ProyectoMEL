@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class Temporada {
-	public Temporada() {
+
+    /**
+     *
+     */
+    public Temporada() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -44,31 +52,59 @@ public class Temporada {
 		this.idTemporada = value;
 	}
 	
-	public int getIdTemporada() {
+    /**
+     *
+     * @return
+     */
+    public int getIdTemporada() {
 		return idTemporada;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdTemporada();
 	}
 	
-	public void setEstacion(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setEstacion(String value) {
 		this.estacion = value;
 	}
 	
-	public String getEstacion() {
+    /**
+     *
+     * @return
+     */
+    public String getEstacion() {
 		return estacion;
 	}
 	
-	public void setAño(int value) {
+    /**
+     *
+     * @param value
+     */
+    public void setAño(int value) {
 		setAño(new Integer(value));
 	}
 	
-	public void setAño(Integer value) {
+    /**
+     *
+     * @param value
+     */
+    public void setAño(Integer value) {
 		this.año = value;
 	}
 	
-	public Integer getAño() {
+    /**
+     *
+     * @return
+     */
+    public Integer getAño() {
 		return año;
 	}
 	
@@ -80,7 +116,10 @@ public class Temporada {
 		return ORM_animacion;
 	}
 	
-	public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, ORMConstants.KEY_TEMPORADA_ANIMACION, ORMConstants.KEY_ANIMACION_TEMPORADAIDTEMPORADA, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.AnimacionSetCollection animacion = new orm.AnimacionSetCollection(this, _ormAdapter, ORMConstants.KEY_TEMPORADA_ANIMACION, ORMConstants.KEY_ANIMACION_TEMPORADAIDTEMPORADA, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdTemporada());

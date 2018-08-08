@@ -18,8 +18,19 @@ import org.hibernate.Query;
 import org.hibernate.LockMode;
 import java.util.List;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class TipoMangaDAO {
-	public static TipoManga loadTipoMangaByORMID(int idTipoManga) throws PersistentException {
+
+    /**
+     *
+     * @param idTipoManga
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga loadTipoMangaByORMID(int idTipoManga) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoMangaByORMID(session, idTipoManga);
@@ -30,7 +41,13 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga getTipoMangaByORMID(int idTipoManga) throws PersistentException {
+    /**
+     *
+     * @param idTipoManga
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga getTipoMangaByORMID(int idTipoManga) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTipoMangaByORMID(session, idTipoManga);
@@ -41,7 +58,14 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga loadTipoMangaByORMID(int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idTipoManga
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga loadTipoMangaByORMID(int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoMangaByORMID(session, idTipoManga, lockMode);
@@ -52,7 +76,14 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga getTipoMangaByORMID(int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idTipoManga
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga getTipoMangaByORMID(int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTipoMangaByORMID(session, idTipoManga, lockMode);
@@ -63,7 +94,14 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga loadTipoMangaByORMID(PersistentSession session, int idTipoManga) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTipoManga
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga loadTipoMangaByORMID(PersistentSession session, int idTipoManga) throws PersistentException {
 		try {
 			return (TipoManga) session.load(orm.TipoManga.class, new Integer(idTipoManga));
 		}
@@ -73,7 +111,14 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga getTipoMangaByORMID(PersistentSession session, int idTipoManga) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTipoManga
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga getTipoMangaByORMID(PersistentSession session, int idTipoManga) throws PersistentException {
 		try {
 			return (TipoManga) session.get(orm.TipoManga.class, new Integer(idTipoManga));
 		}
@@ -83,7 +128,15 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga loadTipoMangaByORMID(PersistentSession session, int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTipoManga
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga loadTipoMangaByORMID(PersistentSession session, int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (TipoManga) session.load(orm.TipoManga.class, new Integer(idTipoManga), lockMode);
 		}
@@ -93,7 +146,15 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga getTipoMangaByORMID(PersistentSession session, int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTipoManga
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga getTipoMangaByORMID(PersistentSession session, int idTipoManga, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (TipoManga) session.get(orm.TipoManga.class, new Integer(idTipoManga), lockMode);
 		}
@@ -103,7 +164,14 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static List queryTipoManga(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTipoManga(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTipoManga(session, condition, orderBy);
@@ -114,7 +182,15 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static List queryTipoManga(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTipoManga(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTipoManga(session, condition, orderBy, lockMode);
@@ -125,7 +201,14 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga[] listTipoMangaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga[] listTipoMangaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTipoMangaByQuery(session, condition, orderBy);
@@ -136,7 +219,15 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga[] listTipoMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga[] listTipoMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTipoMangaByQuery(session, condition, orderBy, lockMode);
@@ -147,7 +238,15 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static List queryTipoManga(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTipoManga(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.TipoManga as TipoManga");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -163,7 +262,16 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static List queryTipoManga(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTipoManga(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.TipoManga as TipoManga");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -180,7 +288,15 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga[] listTipoMangaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga[] listTipoMangaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		try {
 			List list = queryTipoManga(session, condition, orderBy);
 			return (TipoManga[]) list.toArray(new TipoManga[list.size()]);
@@ -191,7 +307,16 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga[] listTipoMangaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga[] listTipoMangaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			List list = queryTipoManga(session, condition, orderBy, lockMode);
 			return (TipoManga[]) list.toArray(new TipoManga[list.size()]);
@@ -202,7 +327,14 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga loadTipoMangaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga loadTipoMangaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoMangaByQuery(session, condition, orderBy);
@@ -213,7 +345,15 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga loadTipoMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga loadTipoMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTipoMangaByQuery(session, condition, orderBy, lockMode);
@@ -224,7 +364,15 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga loadTipoMangaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga loadTipoMangaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		TipoManga[] tipoMangas = listTipoMangaByQuery(session, condition, orderBy);
 		if (tipoMangas != null && tipoMangas.length > 0)
 			return tipoMangas[0];
@@ -232,7 +380,16 @@ public class TipoMangaDAO {
 			return null;
 	}
 	
-	public static TipoManga loadTipoMangaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static TipoManga loadTipoMangaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		TipoManga[] tipoMangas = listTipoMangaByQuery(session, condition, orderBy, lockMode);
 		if (tipoMangas != null && tipoMangas.length > 0)
 			return tipoMangas[0];
@@ -240,7 +397,14 @@ public class TipoMangaDAO {
 			return null;
 	}
 	
-	public static java.util.Iterator iterateTipoMangaByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTipoMangaByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTipoMangaByQuery(session, condition, orderBy);
@@ -251,7 +415,15 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateTipoMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTipoMangaByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTipoMangaByQuery(session, condition, orderBy, lockMode);
@@ -262,7 +434,15 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateTipoMangaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTipoMangaByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.TipoManga as TipoManga");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -278,7 +458,16 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateTipoMangaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTipoMangaByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.TipoManga as TipoManga");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -295,11 +484,21 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static TipoManga createTipoManga() {
+    /**
+     *
+     * @return
+     */
+    public static TipoManga createTipoManga() {
 		return new orm.TipoManga();
 	}
 	
-	public static boolean save(orm.TipoManga tipoManga) throws PersistentException {
+    /**
+     *
+     * @param tipoManga
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean save(orm.TipoManga tipoManga) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(tipoManga);
 			return true;
@@ -310,7 +509,13 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static boolean delete(orm.TipoManga tipoManga) throws PersistentException {
+    /**
+     *
+     * @param tipoManga
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean delete(orm.TipoManga tipoManga) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(tipoManga);
 			return true;
@@ -321,7 +526,13 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.TipoManga tipoManga)throws PersistentException {
+    /**
+     *
+     * @param tipoManga
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.TipoManga tipoManga)throws PersistentException {
 		try {
 			orm.Manga[] lMangas = tipoManga.manga.toArray();
 			for(int i = 0; i < lMangas.length; i++) {
@@ -335,7 +546,14 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.TipoManga tipoManga, org.orm.PersistentSession session)throws PersistentException {
+    /**
+     *
+     * @param tipoManga
+     * @param session
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.TipoManga tipoManga, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			orm.Manga[] lMangas = tipoManga.manga.toArray();
 			for(int i = 0; i < lMangas.length; i++) {
@@ -354,7 +572,13 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.TipoManga tipoManga) throws PersistentException {
+    /**
+     *
+     * @param tipoManga
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean refresh(orm.TipoManga tipoManga) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(tipoManga);
 			return true;
@@ -365,7 +589,13 @@ public class TipoMangaDAO {
 		}
 	}
 	
-	public static boolean evict(orm.TipoManga tipoManga) throws PersistentException {
+    /**
+     *
+     * @param tipoManga
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean evict(orm.TipoManga tipoManga) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(tipoManga);
 			return true;

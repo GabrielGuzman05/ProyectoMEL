@@ -18,8 +18,19 @@ import org.hibernate.Query;
 import org.hibernate.LockMode;
 import java.util.List;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class TagDAO {
-	public static Tag loadTagByORMID(int idTag) throws PersistentException {
+
+    /**
+     *
+     * @param idTag
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag loadTagByORMID(int idTag) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTagByORMID(session, idTag);
@@ -30,7 +41,13 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag getTagByORMID(int idTag) throws PersistentException {
+    /**
+     *
+     * @param idTag
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag getTagByORMID(int idTag) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTagByORMID(session, idTag);
@@ -41,7 +58,14 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag loadTagByORMID(int idTag, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idTag
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag loadTagByORMID(int idTag, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTagByORMID(session, idTag, lockMode);
@@ -52,7 +76,14 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag getTagByORMID(int idTag, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idTag
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag getTagByORMID(int idTag, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getTagByORMID(session, idTag, lockMode);
@@ -63,7 +94,14 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag loadTagByORMID(PersistentSession session, int idTag) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTag
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag loadTagByORMID(PersistentSession session, int idTag) throws PersistentException {
 		try {
 			return (Tag) session.load(orm.Tag.class, new Integer(idTag));
 		}
@@ -73,7 +111,14 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag getTagByORMID(PersistentSession session, int idTag) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTag
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag getTagByORMID(PersistentSession session, int idTag) throws PersistentException {
 		try {
 			return (Tag) session.get(orm.Tag.class, new Integer(idTag));
 		}
@@ -83,7 +128,15 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag loadTagByORMID(PersistentSession session, int idTag, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTag
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag loadTagByORMID(PersistentSession session, int idTag, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (Tag) session.load(orm.Tag.class, new Integer(idTag), lockMode);
 		}
@@ -93,7 +146,15 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag getTagByORMID(PersistentSession session, int idTag, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idTag
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag getTagByORMID(PersistentSession session, int idTag, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (Tag) session.get(orm.Tag.class, new Integer(idTag), lockMode);
 		}
@@ -103,7 +164,14 @@ public class TagDAO {
 		}
 	}
 	
-	public static List queryTag(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTag(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTag(session, condition, orderBy);
@@ -114,7 +182,15 @@ public class TagDAO {
 		}
 	}
 	
-	public static List queryTag(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTag(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryTag(session, condition, orderBy, lockMode);
@@ -125,7 +201,14 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag[] listTagByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag[] listTagByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTagByQuery(session, condition, orderBy);
@@ -136,7 +219,15 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag[] listTagByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag[] listTagByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listTagByQuery(session, condition, orderBy, lockMode);
@@ -147,7 +238,15 @@ public class TagDAO {
 		}
 	}
 	
-	public static List queryTag(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTag(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Tag as Tag");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -163,7 +262,16 @@ public class TagDAO {
 		}
 	}
 	
-	public static List queryTag(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryTag(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Tag as Tag");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -180,7 +288,15 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag[] listTagByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag[] listTagByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		try {
 			List list = queryTag(session, condition, orderBy);
 			return (Tag[]) list.toArray(new Tag[list.size()]);
@@ -191,7 +307,16 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag[] listTagByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag[] listTagByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			List list = queryTag(session, condition, orderBy, lockMode);
 			return (Tag[]) list.toArray(new Tag[list.size()]);
@@ -202,7 +327,14 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag loadTagByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag loadTagByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTagByQuery(session, condition, orderBy);
@@ -213,7 +345,15 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag loadTagByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag loadTagByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadTagByQuery(session, condition, orderBy, lockMode);
@@ -224,7 +364,15 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag loadTagByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag loadTagByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		Tag[] tags = listTagByQuery(session, condition, orderBy);
 		if (tags != null && tags.length > 0)
 			return tags[0];
@@ -232,7 +380,16 @@ public class TagDAO {
 			return null;
 	}
 	
-	public static Tag loadTagByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static Tag loadTagByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		Tag[] tags = listTagByQuery(session, condition, orderBy, lockMode);
 		if (tags != null && tags.length > 0)
 			return tags[0];
@@ -240,7 +397,14 @@ public class TagDAO {
 			return null;
 	}
 	
-	public static java.util.Iterator iterateTagByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTagByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTagByQuery(session, condition, orderBy);
@@ -251,7 +415,15 @@ public class TagDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateTagByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTagByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateTagByQuery(session, condition, orderBy, lockMode);
@@ -262,7 +434,15 @@ public class TagDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateTagByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTagByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Tag as Tag");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -278,7 +458,16 @@ public class TagDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateTagByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateTagByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.Tag as Tag");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -295,11 +484,21 @@ public class TagDAO {
 		}
 	}
 	
-	public static Tag createTag() {
+    /**
+     *
+     * @return
+     */
+    public static Tag createTag() {
 		return new orm.Tag();
 	}
 	
-	public static boolean save(orm.Tag tag) throws PersistentException {
+    /**
+     *
+     * @param tag
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean save(orm.Tag tag) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(tag);
 			return true;
@@ -310,7 +509,13 @@ public class TagDAO {
 		}
 	}
 	
-	public static boolean delete(orm.Tag tag) throws PersistentException {
+    /**
+     *
+     * @param tag
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean delete(orm.Tag tag) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(tag);
 			return true;
@@ -321,7 +526,13 @@ public class TagDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Tag tag)throws PersistentException {
+    /**
+     *
+     * @param tag
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.Tag tag)throws PersistentException {
 		try {
 			orm.Novela[] lNovelaidNovelas = tag.novelaidNovela.toArray();
 			for(int i = 0; i < lNovelaidNovelas.length; i++) {
@@ -339,7 +550,14 @@ public class TagDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.Tag tag, org.orm.PersistentSession session)throws PersistentException {
+    /**
+     *
+     * @param tag
+     * @param session
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.Tag tag, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			orm.Novela[] lNovelaidNovelas = tag.novelaidNovela.toArray();
 			for(int i = 0; i < lNovelaidNovelas.length; i++) {
@@ -362,7 +580,13 @@ public class TagDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.Tag tag) throws PersistentException {
+    /**
+     *
+     * @param tag
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean refresh(orm.Tag tag) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(tag);
 			return true;
@@ -373,7 +597,13 @@ public class TagDAO {
 		}
 	}
 	
-	public static boolean evict(orm.Tag tag) throws PersistentException {
+    /**
+     *
+     * @param tag
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean evict(orm.Tag tag) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(tag);
 			return true;

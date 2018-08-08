@@ -26,12 +26,15 @@ public class CreadorPaginaAnimes extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * methods. 
+     * Consigue la animacion, a traves de un parametro id de la
+     * peticion (request), entrega los datos al template AnimeTemplate.jsp
      *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws org.orm.PersistentException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
@@ -40,8 +43,7 @@ public class CreadorPaginaAnimes extends HttpServlet {
         request.setAttribute("animes", anime);
         RequestDispatcher rd = request.getRequestDispatcher("/AnimeTemplate.jsp");
         rd.forward(request, response);
-        }
-    
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

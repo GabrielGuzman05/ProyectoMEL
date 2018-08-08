@@ -13,8 +13,16 @@
  */
 package orm;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class SerieGenerica {
-	public SerieGenerica() {
+
+    /**
+     *
+     */
+    public SerieGenerica() {
 	}
 	
 	private java.util.Set this_getSet (int key) {
@@ -53,47 +61,91 @@ public class SerieGenerica {
 		this.idSerie = value;
 	}
 	
-	public int getIdSerie() {
+    /**
+     *
+     * @return
+     */
+    public int getIdSerie() {
 		return idSerie;
 	}
 	
-	public int getORMID() {
+    /**
+     *
+     * @return
+     */
+    public int getORMID() {
 		return getIdSerie();
 	}
 	
-	public void setNombre(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombre(String value) {
 		this.nombre = value;
 	}
 	
-	public String getNombre() {
+    /**
+     *
+     * @return
+     */
+    public String getNombre() {
 		return nombre;
 	}
 	
-	public void setNombreAlternativo(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setNombreAlternativo(String value) {
 		this.nombreAlternativo = value;
 	}
 	
-	public String getNombreAlternativo() {
+    /**
+     *
+     * @return
+     */
+    public String getNombreAlternativo() {
 		return nombreAlternativo;
 	}
 	
-	public void setCadena(String value) {
+    /**
+     *
+     * @param value
+     */
+    public void setCadena(String value) {
 		this.cadena = value;
 	}
 	
-	public String getCadena() {
+    /**
+     *
+     * @return
+     */
+    public String getCadena() {
 		return cadena;
 	}
 	
-	public void setEpisodios(int value) {
+    /**
+     *
+     * @param value
+     */
+    public void setEpisodios(int value) {
 		setEpisodios(new Integer(value));
 	}
 	
-	public void setEpisodios(Integer value) {
+    /**
+     *
+     * @param value
+     */
+    public void setEpisodios(Integer value) {
 		this.episodios = value;
 	}
 	
-	public Integer getEpisodios() {
+    /**
+     *
+     * @return
+     */
+    public Integer getEpisodios() {
 		return episodios;
 	}
 	
@@ -105,7 +157,10 @@ public class SerieGenerica {
 		return ORM_generoidGenero;
 	}
 	
-	public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, ORMConstants.KEY_SERIEGENERICA_GENEROIDGENERO, ORMConstants.KEY_GENERO_SERIEGENERICAIDSERIE, ORMConstants.KEY_MUL_MANY_TO_MANY);
+    /**
+     *
+     */
+    public final orm.GeneroSetCollection generoidGenero = new orm.GeneroSetCollection(this, _ormAdapter, ORMConstants.KEY_SERIEGENERICA_GENEROIDGENERO, ORMConstants.KEY_GENERO_SERIEGENERICAIDSERIE, ORMConstants.KEY_MUL_MANY_TO_MANY);
 	
 	private void setORM_EntradaLista(java.util.Set value) {
 		this.ORM_entradaLista = value;
@@ -115,7 +170,10 @@ public class SerieGenerica {
 		return ORM_entradaLista;
 	}
 	
-	public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, ORMConstants.KEY_SERIEGENERICA_ENTRADALISTA, ORMConstants.KEY_ENTRADALISTA_SERIEGENERICAIDSERIE, ORMConstants.KEY_MUL_ONE_TO_MANY);
+    /**
+     *
+     */
+    public final orm.EntradaListaSetCollection entradaLista = new orm.EntradaListaSetCollection(this, _ormAdapter, ORMConstants.KEY_SERIEGENERICA_ENTRADALISTA, ORMConstants.KEY_ENTRADALISTA_SERIEGENERICAIDSERIE, ORMConstants.KEY_MUL_ONE_TO_MANY);
 	
 	public String toString() {
 		return String.valueOf(getIdSerie());

@@ -18,8 +18,19 @@ import org.hibernate.Query;
 import org.hibernate.LockMode;
 import java.util.List;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class PublicadorInglesDAO {
-	public static PublicadorIngles loadPublicadorInglesByORMID(int idPublicadorIngles) throws PersistentException {
+
+    /**
+     *
+     * @param idPublicadorIngles
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles loadPublicadorInglesByORMID(int idPublicadorIngles) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorInglesByORMID(session, idPublicadorIngles);
@@ -30,7 +41,13 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles getPublicadorInglesByORMID(int idPublicadorIngles) throws PersistentException {
+    /**
+     *
+     * @param idPublicadorIngles
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles getPublicadorInglesByORMID(int idPublicadorIngles) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getPublicadorInglesByORMID(session, idPublicadorIngles);
@@ -41,7 +58,14 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles loadPublicadorInglesByORMID(int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idPublicadorIngles
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles loadPublicadorInglesByORMID(int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorInglesByORMID(session, idPublicadorIngles, lockMode);
@@ -52,7 +76,14 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles getPublicadorInglesByORMID(int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idPublicadorIngles
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles getPublicadorInglesByORMID(int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getPublicadorInglesByORMID(session, idPublicadorIngles, lockMode);
@@ -63,7 +94,14 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles loadPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idPublicadorIngles
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles loadPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles) throws PersistentException {
 		try {
 			return (PublicadorIngles) session.load(orm.PublicadorIngles.class, new Integer(idPublicadorIngles));
 		}
@@ -73,7 +111,14 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles getPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idPublicadorIngles
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles getPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles) throws PersistentException {
 		try {
 			return (PublicadorIngles) session.get(orm.PublicadorIngles.class, new Integer(idPublicadorIngles));
 		}
@@ -83,7 +128,15 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles loadPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idPublicadorIngles
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles loadPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (PublicadorIngles) session.load(orm.PublicadorIngles.class, new Integer(idPublicadorIngles), lockMode);
 		}
@@ -93,7 +146,15 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles getPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idPublicadorIngles
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles getPublicadorInglesByORMID(PersistentSession session, int idPublicadorIngles, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (PublicadorIngles) session.get(orm.PublicadorIngles.class, new Integer(idPublicadorIngles), lockMode);
 		}
@@ -103,7 +164,14 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static List queryPublicadorIngles(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryPublicadorIngles(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryPublicadorIngles(session, condition, orderBy);
@@ -114,7 +182,15 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static List queryPublicadorIngles(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryPublicadorIngles(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryPublicadorIngles(session, condition, orderBy, lockMode);
@@ -125,7 +201,14 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles[] listPublicadorInglesByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles[] listPublicadorInglesByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listPublicadorInglesByQuery(session, condition, orderBy);
@@ -136,7 +219,15 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles[] listPublicadorInglesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles[] listPublicadorInglesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listPublicadorInglesByQuery(session, condition, orderBy, lockMode);
@@ -147,7 +238,15 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static List queryPublicadorIngles(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryPublicadorIngles(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.PublicadorIngles as PublicadorIngles");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -163,7 +262,16 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static List queryPublicadorIngles(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryPublicadorIngles(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.PublicadorIngles as PublicadorIngles");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -180,7 +288,15 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles[] listPublicadorInglesByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles[] listPublicadorInglesByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		try {
 			List list = queryPublicadorIngles(session, condition, orderBy);
 			return (PublicadorIngles[]) list.toArray(new PublicadorIngles[list.size()]);
@@ -191,7 +307,16 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles[] listPublicadorInglesByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles[] listPublicadorInglesByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			List list = queryPublicadorIngles(session, condition, orderBy, lockMode);
 			return (PublicadorIngles[]) list.toArray(new PublicadorIngles[list.size()]);
@@ -202,7 +327,14 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles loadPublicadorInglesByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles loadPublicadorInglesByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorInglesByQuery(session, condition, orderBy);
@@ -213,7 +345,15 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles loadPublicadorInglesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles loadPublicadorInglesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadPublicadorInglesByQuery(session, condition, orderBy, lockMode);
@@ -224,7 +364,15 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles loadPublicadorInglesByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles loadPublicadorInglesByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		PublicadorIngles[] publicadorIngleses = listPublicadorInglesByQuery(session, condition, orderBy);
 		if (publicadorIngleses != null && publicadorIngleses.length > 0)
 			return publicadorIngleses[0];
@@ -232,7 +380,16 @@ public class PublicadorInglesDAO {
 			return null;
 	}
 	
-	public static PublicadorIngles loadPublicadorInglesByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static PublicadorIngles loadPublicadorInglesByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		PublicadorIngles[] publicadorIngleses = listPublicadorInglesByQuery(session, condition, orderBy, lockMode);
 		if (publicadorIngleses != null && publicadorIngleses.length > 0)
 			return publicadorIngleses[0];
@@ -240,7 +397,14 @@ public class PublicadorInglesDAO {
 			return null;
 	}
 	
-	public static java.util.Iterator iteratePublicadorInglesByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iteratePublicadorInglesByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iteratePublicadorInglesByQuery(session, condition, orderBy);
@@ -251,7 +415,15 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static java.util.Iterator iteratePublicadorInglesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iteratePublicadorInglesByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iteratePublicadorInglesByQuery(session, condition, orderBy, lockMode);
@@ -262,7 +434,15 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static java.util.Iterator iteratePublicadorInglesByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iteratePublicadorInglesByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.PublicadorIngles as PublicadorIngles");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -278,7 +458,16 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static java.util.Iterator iteratePublicadorInglesByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iteratePublicadorInglesByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.PublicadorIngles as PublicadorIngles");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -295,11 +484,21 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static PublicadorIngles createPublicadorIngles() {
+    /**
+     *
+     * @return
+     */
+    public static PublicadorIngles createPublicadorIngles() {
 		return new orm.PublicadorIngles();
 	}
 	
-	public static boolean save(orm.PublicadorIngles publicadorIngles) throws PersistentException {
+    /**
+     *
+     * @param publicadorIngles
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean save(orm.PublicadorIngles publicadorIngles) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(publicadorIngles);
 			return true;
@@ -310,7 +509,13 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static boolean delete(orm.PublicadorIngles publicadorIngles) throws PersistentException {
+    /**
+     *
+     * @param publicadorIngles
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean delete(orm.PublicadorIngles publicadorIngles) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(publicadorIngles);
 			return true;
@@ -321,7 +526,13 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.PublicadorIngles publicadorIngles)throws PersistentException {
+    /**
+     *
+     * @param publicadorIngles
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.PublicadorIngles publicadorIngles)throws PersistentException {
 		try {
 			orm.Novela[] lNovelas = publicadorIngles.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
@@ -335,7 +546,14 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.PublicadorIngles publicadorIngles, org.orm.PersistentSession session)throws PersistentException {
+    /**
+     *
+     * @param publicadorIngles
+     * @param session
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.PublicadorIngles publicadorIngles, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			orm.Novela[] lNovelas = publicadorIngles.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
@@ -354,7 +572,13 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.PublicadorIngles publicadorIngles) throws PersistentException {
+    /**
+     *
+     * @param publicadorIngles
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean refresh(orm.PublicadorIngles publicadorIngles) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(publicadorIngles);
 			return true;
@@ -365,7 +589,13 @@ public class PublicadorInglesDAO {
 		}
 	}
 	
-	public static boolean evict(orm.PublicadorIngles publicadorIngles) throws PersistentException {
+    /**
+     *
+     * @param publicadorIngles
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean evict(orm.PublicadorIngles publicadorIngles) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(publicadorIngles);
 			return true;

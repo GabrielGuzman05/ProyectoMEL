@@ -5,10 +5,19 @@
 package ormsamples;
 
 import org.orm.*;
+
+/**
+ *
+ * @author Gabriel
+ */
 public class ListProyectoProgramacionAvanzadaData {
 	private static final int ROW_COUNT = 100;
 	
-	public void listTestData() throws PersistentException {
+    /**
+     *
+     * @throws PersistentException
+     */
+    public void listTestData() throws PersistentException {
 		System.out.println("Listing Novela...");
 		orm.Novela[] ormNovelas = orm.NovelaDAO.listNovelaByQuery(null, null);
 		int length = Math.min(ormNovelas.length, ROW_COUNT);
@@ -179,7 +188,11 @@ public class ListProyectoProgramacionAvanzadaData {
 		
 	}
 	
-	public static void main(String[] args) {
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
 		try {
 			ListProyectoProgramacionAvanzadaData listProyectoProgramacionAvanzadaData = new ListProyectoProgramacionAvanzadaData();
 			try {

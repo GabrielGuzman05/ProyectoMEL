@@ -18,8 +18,19 @@ import org.hibernate.Query;
 import org.hibernate.LockMode;
 import java.util.List;
 
+/**
+ *
+ * @author Gabriel
+ */
 public class LenguajeOriginalDAO {
-	public static LenguajeOriginal loadLenguajeOriginalByORMID(int idLenguaje) throws PersistentException {
+
+    /**
+     *
+     * @param idLenguaje
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal loadLenguajeOriginalByORMID(int idLenguaje) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadLenguajeOriginalByORMID(session, idLenguaje);
@@ -30,7 +41,13 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal getLenguajeOriginalByORMID(int idLenguaje) throws PersistentException {
+    /**
+     *
+     * @param idLenguaje
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal getLenguajeOriginalByORMID(int idLenguaje) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getLenguajeOriginalByORMID(session, idLenguaje);
@@ -41,7 +58,14 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal loadLenguajeOriginalByORMID(int idLenguaje, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idLenguaje
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal loadLenguajeOriginalByORMID(int idLenguaje, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadLenguajeOriginalByORMID(session, idLenguaje, lockMode);
@@ -52,7 +76,14 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal getLenguajeOriginalByORMID(int idLenguaje, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param idLenguaje
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal getLenguajeOriginalByORMID(int idLenguaje, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return getLenguajeOriginalByORMID(session, idLenguaje, lockMode);
@@ -63,7 +94,14 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal loadLenguajeOriginalByORMID(PersistentSession session, int idLenguaje) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idLenguaje
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal loadLenguajeOriginalByORMID(PersistentSession session, int idLenguaje) throws PersistentException {
 		try {
 			return (LenguajeOriginal) session.load(orm.LenguajeOriginal.class, new Integer(idLenguaje));
 		}
@@ -73,7 +111,14 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal getLenguajeOriginalByORMID(PersistentSession session, int idLenguaje) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idLenguaje
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal getLenguajeOriginalByORMID(PersistentSession session, int idLenguaje) throws PersistentException {
 		try {
 			return (LenguajeOriginal) session.get(orm.LenguajeOriginal.class, new Integer(idLenguaje));
 		}
@@ -83,7 +128,15 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal loadLenguajeOriginalByORMID(PersistentSession session, int idLenguaje, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idLenguaje
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal loadLenguajeOriginalByORMID(PersistentSession session, int idLenguaje, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (LenguajeOriginal) session.load(orm.LenguajeOriginal.class, new Integer(idLenguaje), lockMode);
 		}
@@ -93,7 +146,15 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal getLenguajeOriginalByORMID(PersistentSession session, int idLenguaje, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param idLenguaje
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal getLenguajeOriginalByORMID(PersistentSession session, int idLenguaje, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			return (LenguajeOriginal) session.get(orm.LenguajeOriginal.class, new Integer(idLenguaje), lockMode);
 		}
@@ -103,7 +164,14 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static List queryLenguajeOriginal(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryLenguajeOriginal(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryLenguajeOriginal(session, condition, orderBy);
@@ -114,7 +182,15 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static List queryLenguajeOriginal(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryLenguajeOriginal(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return queryLenguajeOriginal(session, condition, orderBy, lockMode);
@@ -125,7 +201,14 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal[] listLenguajeOriginalByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal[] listLenguajeOriginalByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listLenguajeOriginalByQuery(session, condition, orderBy);
@@ -136,7 +219,15 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal[] listLenguajeOriginalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal[] listLenguajeOriginalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return listLenguajeOriginalByQuery(session, condition, orderBy, lockMode);
@@ -147,7 +238,15 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static List queryLenguajeOriginal(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryLenguajeOriginal(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.LenguajeOriginal as LenguajeOriginal");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -163,7 +262,16 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static List queryLenguajeOriginal(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static List queryLenguajeOriginal(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.LenguajeOriginal as LenguajeOriginal");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -180,7 +288,15 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal[] listLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal[] listLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		try {
 			List list = queryLenguajeOriginal(session, condition, orderBy);
 			return (LenguajeOriginal[]) list.toArray(new LenguajeOriginal[list.size()]);
@@ -191,7 +307,16 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal[] listLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal[] listLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			List list = queryLenguajeOriginal(session, condition, orderBy, lockMode);
 			return (LenguajeOriginal[]) list.toArray(new LenguajeOriginal[list.size()]);
@@ -202,7 +327,14 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal loadLenguajeOriginalByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal loadLenguajeOriginalByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadLenguajeOriginalByQuery(session, condition, orderBy);
@@ -213,7 +345,15 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal loadLenguajeOriginalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal loadLenguajeOriginalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return loadLenguajeOriginalByQuery(session, condition, orderBy, lockMode);
@@ -224,7 +364,15 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal loadLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal loadLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		LenguajeOriginal[] lenguajeOriginals = listLenguajeOriginalByQuery(session, condition, orderBy);
 		if (lenguajeOriginals != null && lenguajeOriginals.length > 0)
 			return lenguajeOriginals[0];
@@ -232,7 +380,16 @@ public class LenguajeOriginalDAO {
 			return null;
 	}
 	
-	public static LenguajeOriginal loadLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static LenguajeOriginal loadLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		LenguajeOriginal[] lenguajeOriginals = listLenguajeOriginalByQuery(session, condition, orderBy, lockMode);
 		if (lenguajeOriginals != null && lenguajeOriginals.length > 0)
 			return lenguajeOriginals[0];
@@ -240,7 +397,14 @@ public class LenguajeOriginalDAO {
 			return null;
 	}
 	
-	public static java.util.Iterator iterateLenguajeOriginalByQuery(String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateLenguajeOriginalByQuery(String condition, String orderBy) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateLenguajeOriginalByQuery(session, condition, orderBy);
@@ -251,7 +415,15 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateLenguajeOriginalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateLenguajeOriginalByQuery(String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		try {
 			PersistentSession session = ProyectoProgramacionAvanzadaPersistentManager.instance().getSession();
 			return iterateLenguajeOriginalByQuery(session, condition, orderBy, lockMode);
@@ -262,7 +434,15 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.LenguajeOriginal as LenguajeOriginal");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -278,7 +458,16 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static java.util.Iterator iterateLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
+    /**
+     *
+     * @param session
+     * @param condition
+     * @param orderBy
+     * @param lockMode
+     * @return
+     * @throws PersistentException
+     */
+    public static java.util.Iterator iterateLenguajeOriginalByQuery(PersistentSession session, String condition, String orderBy, org.hibernate.LockMode lockMode) throws PersistentException {
 		StringBuffer sb = new StringBuffer("From orm.LenguajeOriginal as LenguajeOriginal");
 		if (condition != null)
 			sb.append(" Where ").append(condition);
@@ -295,11 +484,21 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static LenguajeOriginal createLenguajeOriginal() {
+    /**
+     *
+     * @return
+     */
+    public static LenguajeOriginal createLenguajeOriginal() {
 		return new orm.LenguajeOriginal();
 	}
 	
-	public static boolean save(orm.LenguajeOriginal lenguajeOriginal) throws PersistentException {
+    /**
+     *
+     * @param lenguajeOriginal
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean save(orm.LenguajeOriginal lenguajeOriginal) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().saveObject(lenguajeOriginal);
 			return true;
@@ -310,7 +509,13 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static boolean delete(orm.LenguajeOriginal lenguajeOriginal) throws PersistentException {
+    /**
+     *
+     * @param lenguajeOriginal
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean delete(orm.LenguajeOriginal lenguajeOriginal) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().deleteObject(lenguajeOriginal);
 			return true;
@@ -321,7 +526,13 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.LenguajeOriginal lenguajeOriginal)throws PersistentException {
+    /**
+     *
+     * @param lenguajeOriginal
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.LenguajeOriginal lenguajeOriginal)throws PersistentException {
 		try {
 			orm.Novela[] lNovelas = lenguajeOriginal.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
@@ -335,7 +546,14 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static boolean deleteAndDissociate(orm.LenguajeOriginal lenguajeOriginal, org.orm.PersistentSession session)throws PersistentException {
+    /**
+     *
+     * @param lenguajeOriginal
+     * @param session
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean deleteAndDissociate(orm.LenguajeOriginal lenguajeOriginal, org.orm.PersistentSession session)throws PersistentException {
 		try {
 			orm.Novela[] lNovelas = lenguajeOriginal.novela.toArray();
 			for(int i = 0; i < lNovelas.length; i++) {
@@ -354,7 +572,13 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static boolean refresh(orm.LenguajeOriginal lenguajeOriginal) throws PersistentException {
+    /**
+     *
+     * @param lenguajeOriginal
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean refresh(orm.LenguajeOriginal lenguajeOriginal) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().refresh(lenguajeOriginal);
 			return true;
@@ -365,7 +589,13 @@ public class LenguajeOriginalDAO {
 		}
 	}
 	
-	public static boolean evict(orm.LenguajeOriginal lenguajeOriginal) throws PersistentException {
+    /**
+     *
+     * @param lenguajeOriginal
+     * @return
+     * @throws PersistentException
+     */
+    public static boolean evict(orm.LenguajeOriginal lenguajeOriginal) throws PersistentException {
 		try {
 			ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().evict(lenguajeOriginal);
 			return true;
