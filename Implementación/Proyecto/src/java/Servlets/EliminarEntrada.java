@@ -18,25 +18,23 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
+import orm.EntradaLista;
 
 /**
  *
  * @author Gabriel
  */
-@WebServlet(name = "ModificarEntrada", urlPatterns = {"/ModificarEntrada"})
-public class ModificarEntrada extends HttpServlet {
+@WebServlet(name = "EliminarEntrada", urlPatterns = {"/EliminarEntrada"})
+public class EliminarEntrada extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods. Procesa la modificacion de los datos de una entrada. Solo
-     * funciona en caso de usuario logueado. Redirecciona al home del usuario en
-     * usuario logueado, redirecciona al login en caso de login falso.
+     * methods.
      *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
-     * @throws org.orm.PersistentException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
@@ -45,35 +43,18 @@ public class ModificarEntrada extends HttpServlet {
         if ("true".equals(sesion.getAttribute("loged").toString())) {
             PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
             try {
-                orm.EntradaLista auxEntradaLista = orm.EntradaListaDAO.getEntradaListaByORMID(Integer.parseInt(request.getParameter("eId")));
+                EntradaLista auxEntradaLista = orm.EntradaListaDAO.getEntradaListaByORMID(Integer.parseInt(request.getParameter("id")));
                 if (auxEntradaLista != null) {
-                    System.out.println("Entra a Modificar");
-                    String ter = request.getParameter("terminado");
-                    String ult = request.getParameter("ulCap");
-                    String alD = request.getParameter("alDia");
-                    if ("on".equals(ter)) {
-                        auxEntradaLista.setTerminado(true);
-                    } else {
-                        auxEntradaLista.setTerminado(false);
-                    }
-                    if ("on".equals(alD)) {
-                        auxEntradaLista.setAlDia(true);
-                    } else {
-                        auxEntradaLista.setAlDia(false);
-                    }
-                    auxEntradaLista.setUltimoCapitulo(Integer.parseInt(ult));
-                    System.out.println(ter + " - " + ult + " - " + alD);
-                    RequestDispatcher disp = request.getRequestDispatcher("CreadorPaginaLista?id=" + auxEntradaLista.getListaidLista().getIdLista());
-                    disp.forward(request, response);
-                    //auxEntradaLista.setTerminado();
+                    orm.EntradaListaDAO.delete(auxEntradaLista);
                 }
-                orm.EntradaListaDAO.save(auxEntradaLista);
+                RequestDispatcher disp = request.getRequestDispatcher("CreadorPaginaLista?id=" + Integer.parseInt(request.getParameter("id")));
+                disp.forward(request, response);
                 t.commit();
             } catch (Exception e) {
                 t.rollback();
             }
         } else {
-            RequestDispatcher disp = request.getRequestDispatcher("/login.html");
+            RequestDispatcher disp = request.getRequestDispatcher("home");
             disp.forward(request, response);
         }
     }
@@ -93,7 +74,7 @@ public class ModificarEntrada extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(ModificarEntrada.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EliminarEntrada.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -111,7 +92,7 @@ public class ModificarEntrada extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (PersistentException ex) {
-            Logger.getLogger(ModificarEntrada.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(EliminarEntrada.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

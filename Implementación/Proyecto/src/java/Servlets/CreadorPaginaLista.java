@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
+import orm.EntradaLista;
 
 /**
  *
@@ -50,6 +51,10 @@ public class CreadorPaginaLista extends HttpServlet {
                 if (auxLista != null) {
                     System.out.println(auxLista.getNombreLista());
                     System.out.println(Arrays.toString(auxLista.entradaLista.toArray()));
+                    if (auxLista.entradaLista.toArray().length>=1) {
+                        EntradaLista aux = auxLista.entradaLista.toArray()[0];
+                        System.out.println(aux.getIdEntrada()+" - "+aux.getUltimoCapitulo()+" - "+aux.getTerminado()+" - "+aux.getAlDia());
+                    }
                     request.setAttribute("listas", auxLista.entradaLista.toArray());
                     RequestDispatcher disp = request.getRequestDispatcher("/Lista.jsp");
                     disp.forward(request, response);
