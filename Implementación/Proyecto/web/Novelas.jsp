@@ -50,9 +50,11 @@
                         <td>${novela.año}</td>
                         <c:if test="${sessionScope.loged}">
                             <td>
-                                <a href="">Agregar a una lista <br> </a>
+                            
                                 <!-- Trigger/Open The Modal -->
                                 <a data-toggle="modal" href="#myModal" class="open-CrearOnNew btn btn-primary" data-id="${novela.idNovela}">Agregar a nueva lista</a>
+                                <a data-toggle="modal" href="#myModal2" class="open-AgregarListaExistente btn btn-primary" >Agregar a una lista existente
+
                             </td>
                         </c:if>
                     </tr>
@@ -90,7 +92,41 @@
 
             </div>
         </div>
-        
+
+        <div class="modal fade" id="myModal2">
+            <div class="modal-dialog">
+                <div class="modal-content">       
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h3>Agregar a una lista</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="AgregarListaExistente">
+                            <label>Elegir la lista</label><br>
+                            <select name="Lista">
+                                <c:forEach var="list" items="${lista}" > 
+                                    <option value="${list.nombreLista}">${list.nombreLista}</option>
+                                </c:forEach>    
+                            </select>
+                            <br>
+                            <label>Ultimo Capitulo:</label><br>
+                            <input type="number" name="ulCap" id="ulcap"/><br>
+                            <label>Terminado:</label><br>
+                            <input type="checkbox" name="terminado" id="terminado"/><br>
+                            <label>Al Dia:</label><br>
+                            <input type="hidden" id="custId" name="origen" value="Novelas">
+                            <input type="hidden" id="custid" name="id" value="">
+                            <input type="checkbox" name="alDia" id="aldia"/><br>
+                            <input type="submit" value="Añadir a lista"/>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script>
             $(document).ready(function () {
@@ -111,5 +147,13 @@
                 modal.style.display = "block";
             });
         </script>
+        <script>
+            $(document).on("click", ".open-AgregarListaExistente", function () {
+                var myBookId = $(this).data('id');
+                $(".modal-body #bookId").val(myBookId);
+
+            });
+        </script>
+
     </body>
 </html>

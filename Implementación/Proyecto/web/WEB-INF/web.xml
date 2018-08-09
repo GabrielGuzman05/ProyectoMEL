@@ -41,6 +41,10 @@
         <servlet-name>AgregarEnCrearLista</servlet-name>
         <servlet-class>Servlets.AgregarEnCrearLista</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AgregarListaExistente</servlet-name>
+        <servlet-class>Servlets.AgregarListaExistente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Series</servlet-name>
         <url-pattern>/Series</url-pattern>
@@ -76,6 +80,10 @@
     <servlet-mapping>
         <servlet-name>AgregarEnCrearLista</servlet-name>
         <url-pattern>/AgregarEnCrearLista</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgregarListaExistente</servlet-name>
+        <url-pattern>/AgregarListaExistente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
