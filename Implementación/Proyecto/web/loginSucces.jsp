@@ -81,7 +81,7 @@
             var name = prompt('Ingrese un nombre', 'Poppy');
             
             if (name !== null && name !== "") {
-                location.replace(url + "name=" name);
+                location.replace(url + "name=" + name);
             }
         }
     </script>

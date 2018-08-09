@@ -57,7 +57,7 @@ public class CrearLista extends HttpServlet {
             } catch (Exception e) {
                 t.rollback();
             }
-            RequestDispatcher disp = request.getRequestDispatcher(request.getParameter("home"));
+            RequestDispatcher disp = request.getRequestDispatcher("home");
             disp.forward(request, response);
         } else {
             RequestDispatcher disp = request.getRequestDispatcher(request.getParameter("login.html"));

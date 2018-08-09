@@ -4,17 +4,19 @@
     Author     : Pablo
 --%>
 <h1 class="text-center">${novela.nombre}</h1>
-<p>${novela.nombreAlternativo}</p>
-<p>${novela.año}</p>
-<p>Episodios</p>
+<p>Nombre Alternativo: ${novela.nombreAlternativo}</p>
+<p>Año: ${novela.año}</p>
+<p>Tipo: ${novela.getTipoidTipo().getNombre()}</p>
 <div class="row" style="padding:30px;">
     <div class="col offset-lg-1">
-        <div><img class="float-none" src="assets/img/WW1.png" width="300"> <-- esto no va aqui</div>
+        <div><img class="float-none" src="images/novelas/${novela.idNovela}.jpg"></div>
     </div>
     <div class="col">
         <div></div>
-        <p><a href="ControladorListas?id=${novela.idNovela}">Agregar a una lista existente</p>
-        <p><a href="">Crear lista</p>
+        <c:if test="${sessionScope.loged}">
+            <p><a href="ControladorListas?id=${novela.idNovela}">Agregar a una lista existente</p>
+            <p><a href="">Crear lista</p>
+        </c:if>
 
     </div>
 </div>

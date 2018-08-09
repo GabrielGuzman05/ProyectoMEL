@@ -36,8 +36,10 @@
                 <tr>
                     <th>Thumbnail</th>
                     <th>Nombre de la novela</th> 
-                    <th>Año</th> 
-                    <th>Accion</th>
+                    <th>Año</th>
+                        <c:if test="${sessionScope.loged}">
+                        <th>Accion</th>
+                        </c:if>
                 </tr>
             </thead>
             <tbody>
@@ -46,45 +48,50 @@
                         <td><img class="float-none" src="images/novelas/${novela.idNovela}.jpg" height="200" width="140"></td>
                         <td><a href="CreadorPagina?id=${novela.idNovela}">${novela.nombre}</td>
                         <td>${novela.año}</td>
-                        <td>
-                            <a href="">Agregar a una lista <br> </a>
-                            <!-- Trigger/Open The Modal -->
-                            <button id="myBtn">Agregar a nueva lista</button>
-
-                            <!-- The Modal -->
-                            <div id="myModal" class="modal">
-
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <span class="close">&times;</span>
-
-                                    </div>
-                                    <div class="modal-body">
-                                        <form method="post" action="AgregarEnCrearLista">
-                                            <label>Nombre de la nueva lista:</label><br>
-                                            <input type="text" name="nombrelista" />
-                                            <label>Ultimo Capitulo:</label><br>
-                                            <input type="checknox" name="ulCap" id="ulcap"/><br>
-                                            <label>Terminado:</label><br>
-                                            <input type="checkbox" name="terminado" id="terminado"/><br>
-                                            <label>Al Dia:</label><br>
-                                            <input type="hidden" id="custId" name="origen" value="Novelas">
-                                            <input type="hidden" id="custId2" name="id" value=${novela.idNovela}>
-                                            <input type="checkbox" name="alDia" id="aldia"/><br>
-
-                                            <input type="submit" value="Crear Lista"/>
-                                        </form>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </td>
+                        <c:if test="${sessionScope.loged}">
+                            <td>
+                                <a href="">Agregar a una lista <br> </a>
+                                <!-- Trigger/Open The Modal -->
+                                <a data-toggle="modal" href="#myModal" class="open-CrearOnNew btn btn-primary" data-id="${novela.idNovela}">Agregar a nueva lista</a>
+                            </td>
+                        </c:if>
                     </tr>
                 </c:forEach>
             </tbody>
         </table>
 
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="AgregarEnCrearLista">
+                            <label>Nombre de la nueva lista:</label><br>
+                            <input type="text" name="nombrelista" />
+                            <label>Ultimo Capitulo:</label><br>
+                            <input type="number" name="ulCap" id="ulcap"/><br>
+                            <label>Terminado:</label><br>
+                            <input type="checkbox" name="terminado" id="terminado"/><br>
+                            <label>Al Dia:</label><br>
+                            <input type="hidden" id="custId" name="origen" value="Novelas">
+                            <input type="hidden" id="custid" name="id" value="">
+                            <input type="checkbox" name="alDia" id="aldia"/><br>
+
+                            <input type="submit" value="Crear Lista"/>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script>
             $(document).ready(function () {
                 $('#tabla').DataTable({
@@ -95,31 +102,14 @@
             });
         </script>
         <script>
-            // Get the modal
-            var modal = document.getElementById('myModal');
-            // Get the button that opens the modal
-            var btn = document.getElementById("myBtn");
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks the button, open the modal 
-            btn.onclick = function () {
+            $(document).on("click", ".open-CrearOnNew", function () {
+                var id = $(this).data('id');
+                console.log($(".modal-body #custid"));
+                $(".modal-body #custid").val(id);
+                $(".modal-body #custid").prop("type", "hidden");
+                var modal = document.getElementById('myModal');
                 modal.style.display = "block";
-            }
-
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function () {
-                modal.style.display = "none";
-            }
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
+            });
         </script>
-
-
     </body>
 </html>

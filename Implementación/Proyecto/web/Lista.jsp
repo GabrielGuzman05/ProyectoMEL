@@ -45,6 +45,7 @@
                     <thead>
                         <tr>
                             <th style="background-color:#60c659;">Anime</th>
+                            <th style="background-color:#60c659;"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,6 +65,7 @@
                     <thead>
                         <tr>
                             <th style="background-color:#60c659;">Manga</th>
+                            <th style="background-color:#60c659;"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -83,6 +85,7 @@
                     <thead>
                         <tr>
                             <th style="background-color:#60c659;">Novela Ligera</th>
+                            <th style="background-color:#60c659;"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -109,7 +112,7 @@
                     </div>
                     <div class="modal-body">
                         <form method="post" action="ModificarEntrada">
-                            <input type="text" name="eId" id="eid" type="hidden" id="eId"/>
+                            <input type="text" name="eId" id="eid" type="hidden"/>
                             <label>Ultimo Capitulo:</label><br>
                             <input type="text" name="ulCap" id="ulcap" value=""/><br>
                             <label>Terminado:</label><br>

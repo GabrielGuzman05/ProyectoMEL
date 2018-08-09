@@ -15,7 +15,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.orm.PersistentException;
+import orm.Usuario;
 
 /**
  *
@@ -26,8 +28,7 @@ public class Novelas extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     * Entregando una lista con las novelas a la vista
+     * methods. Entregando una lista con las novelas a la vista
      * <code>Novelas.jsp</code> cuando es llamada, accesible a traves del
      * navegador a traves del urlPath /Novelas
      *
@@ -39,16 +40,25 @@ public class Novelas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, PersistentException {
-       
+
         //orm.Novela novela = orm.NovelaDAO.getNovelaByORMID(55);
         //System.out.println("sadasd"+ novela.getNombre());
-        
+        HttpSession sesion = request.getSession();
         orm.Novela[] novelas = orm.NovelaDAO.listNovelaByQuery(null, null);
         request.setAttribute("novelas", novelas);
+        try{
+            sesion.getAttribute("loged").toString();
+        }catch(Exception e){
+            sesion.setAttribute("loged", false);
+        }
+        if ("true".equals(sesion.getAttribute("loged").toString())) {
+            Usuario usuarioByORMID = orm.UsuarioDAO.getUsuarioByORMID(Integer.
+                    parseInt(sesion.getAttribute("idUsuario").toString()));
+            request.setAttribute("lista", usuarioByORMID.lista.toArray());
+        }
         RequestDispatcher rd = request.getRequestDispatcher("/Novelas.jsp");
         rd.forward(request, response);
-        }
-    
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
