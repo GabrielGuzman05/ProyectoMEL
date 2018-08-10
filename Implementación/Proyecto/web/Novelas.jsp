@@ -53,6 +53,7 @@
                             
                                 <!-- Trigger/Open The Modal -->
                                 <a data-toggle="modal" href="#myModal" class="open-CrearOnNew btn btn-primary" data-id="${novela.idNovela}">Agregar a nueva lista</a>
+<!--                                Cambiar esto-->
                                 <a data-toggle="modal" href="#myModal2" class="open-AgregarListaExistente btn btn-primary" data-id="${novela.idNovela}">Agregar a una lista existente
 
                             </td>
