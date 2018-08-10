@@ -53,7 +53,7 @@
                             
                                 <!-- Trigger/Open The Modal -->
                                 <a data-toggle="modal" href="#myModal" class="open-CrearOnNew btn btn-primary" data-id="${novela.idNovela}">Agregar a nueva lista</a>
-                                <a data-toggle="modal" href="#myModal2" class="open-AgregarListaExistente btn btn-primary" >Agregar a una lista existente
+                                <a data-toggle="modal" href="#myModal2" class="open-AgregarListaExistente btn btn-primary" data-id="${novela.idNovela}">Agregar a una lista existente
 
                             </td>
                         </c:if>
@@ -112,11 +112,11 @@
                             <label>Ultimo Capitulo:</label><br>
                             <input type="number" name="ulCap" id="ulcap"/><br>
                             <label>Terminado:</label><br>
-                            <input type="checkbox" name="terminado" id="terminado"/><br>
+                            <input type="checkbox" name="terminado" id="Terminado"/><br>
                             <label>Al Dia:</label><br>
                             <input type="hidden" id="custId" name="origen" value="Novelas">
-                            <input type="hidden" id="custid" name="id" value="">
-                            <input type="checkbox" name="alDia" id="aldia"/><br>
+                            <input type="hidden" id="idNovela" name="id" value="">
+                            <input type="checkbox" name="alDia" id="alDia"/><br>
                             <input type="submit" value="Añadir a lista"/>
                         </form>
                     </div>
@@ -150,8 +150,7 @@
         <script>
             $(document).on("click", ".open-AgregarListaExistente", function () {
                 var myBookId = $(this).data('id');
-                $(".modal-body #bookId").val(myBookId);
-
+                document.getElementById("idNovela").setAttribute("value",myBookId);
             });
         </script>
 

@@ -19,6 +19,8 @@ import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
 import orm.EntradaListaDAO;
 import orm.ListaDAO;
+import orm.Novela;
+import orm.NovelaDAO;
 
 /**
  *
@@ -41,54 +43,61 @@ public class AgregarListaExistente extends HttpServlet {
         if ("true".equals(sesion.getAttribute("loged").toString())) {
             PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
             try {
-
+                System.out.println("Entra");
                 String nombreLista = request.getParameter("Lista");
                 String ter = request.getParameter("terminado");
                 String ult = request.getParameter("ulCap");
                 String alD = request.getParameter("alDia");
                 String origen = request.getParameter("origen");
                 String id = request.getParameter("id");
+                System.out.println(id);
+                System.out.println("Antes de entrada ----" + ter + ult + origen + alD);
 
+                System.out.println("Saca los datos");
                 orm.EntradaLista el = EntradaListaDAO.createEntradaLista();
                 orm.Lista list = ListaDAO.loadListaByQuery("nombreLista=" + "'" + nombreLista + "'", null);
-                el.setListaidLista(list);
+                System.out.println("Busca las lista");
+                System.out.println(list.getNombreLista());
+                if ("Series".equals(origen)) {
+                    el.setTipo(1);
+                    el.setSerieGenericaidSerie(orm.SerieGenericaDAO.getSerieGenericaByORMID(Integer.parseInt(id)));
+                } else if ("Anime".equals(origen)) {
+                    el.setTipo(2);
+                    el.setAnimacionidAnimacion(orm.AnimacionDAO.getAnimacionByORMID(Integer.parseInt(id)));
+                } else if ("Mangas".equals(origen)) {
+                    el.setTipo(3);
+                    el.setMangaidManga(orm.MangaDAO.getMangaByORMID(Integer.parseInt(id)));
+                } else if ("Novelas".equals(origen)) {
+                    el.setTipo(4);
+                    System.out.println("setea tipo");
+                    Novela novelaByORMID = orm.NovelaDAO.getNovelaByORMID(Integer.parseInt(id));
+                    System.out.println("la busca");
+                    el.setNovelaidNovela(novelaByORMID);
+                    System.out.println("la setea");
+                    NovelaDAO.save(novelaByORMID);
+                    System.out.println("no encuentra la novela");
+                }
 
+                System.out.println("origen");
                 if ("on".equals(ter)) {
                     el.setTerminado(true);
                 } else {
                     el.setTerminado(false);
                 }
+                System.out.println("terminado");
                 if ("on".equals(alD)) {
                     el.setAlDia(true);
                 } else {
                     el.setAlDia(false);
                 }
-
+                System.out.println("al dia");
                 el.setUltimoCapitulo(Integer.parseInt(ult));
-                
+                el.setListaidLista(list);
+
                 System.out.println("Antes de entrada" + ter + ult + origen + alD);
-
-                switch (origen) {
-                    case "Series":
-                        el.setTipo(1);
-                        el.setSerieGenericaidSerie(orm.SerieGenericaDAO.getSerieGenericaByORMID(Integer.parseInt(id)));
-                        break;
-                    case "Anime":
-                        el.setTipo(2);
-                        el.setAnimacionidAnimacion(orm.AnimacionDAO.getAnimacionByORMID(Integer.parseInt(id)));
-                        break;
-                    case "Mangas":
-                        el.setTipo(3);
-                        el.setMangaidManga(orm.MangaDAO.getMangaByORMID(Integer.parseInt(id)));
-                        break;
-                    case "Novelas":
-                        el.setTipo(4);
-                        el.setNovelaidNovela(orm.NovelaDAO.getNovelaByORMID(Integer.parseInt(id)));
-                        break;
-
-                }
-
+                
                 orm.EntradaListaDAO.save(el);
+                orm.ListaDAO.save(list);
                 t.commit();
             } catch (Exception e) {
                 t.rollback();
@@ -96,6 +105,7 @@ public class AgregarListaExistente extends HttpServlet {
             RequestDispatcher disp = request.getRequestDispatcher("home");
             disp.forward(request, response);
         } else {
+            System.out.println("");
             RequestDispatcher disp = request.getRequestDispatcher("home");
             disp.forward(request, response);
         }

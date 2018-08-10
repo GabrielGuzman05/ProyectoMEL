@@ -19,6 +19,8 @@ import javax.servlet.http.HttpSession;
 import jdk.nashorn.internal.ir.RuntimeNode;
 import org.orm.PersistentException;
 import org.orm.PersistentTransaction;
+import orm.EntradaLista;
+import orm.EntradaListaDAO;
 
 /**
  *
@@ -29,11 +31,10 @@ public class EliminarLista extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     * Permite eliminar alguna lista segun el id que sea entregado.
-     * Solo funciona en caso de usuario logueado.
-     * Redirecciona al home del usuario en usuario logueado, redirecciona al login
-     * en caso de login falso.
+     * methods. Permite eliminar alguna lista segun el id que sea entregado.
+     * Solo funciona en caso de usuario logueado. Redirecciona al home del
+     * usuario en usuario logueado, redirecciona al login en caso de login
+     * falso.
      *
      * @param request servlet request
      * @param response servlet response
@@ -48,7 +49,10 @@ public class EliminarLista extends HttpServlet {
             PersistentTransaction t = orm.ProyectoProgramacionAvanzadaPersistentManager.instance().getSession().beginTransaction();
             try {
                 orm.Lista auxLista = orm.ListaDAO.getListaByORMID(Integer.parseInt(request.getParameter("id")));
-                if (auxLista!=null) {
+                if (auxLista != null) {
+                    for (EntradaLista toArray : auxLista.entradaLista.toArray()) {
+                        EntradaListaDAO.deleteAndDissociate(toArray);
+                    }
                     orm.ListaDAO.delete(auxLista);
                 }
                 t.commit();
